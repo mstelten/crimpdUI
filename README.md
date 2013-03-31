@@ -9,6 +9,7 @@ the crimpd UI layer running on node
 * 'node app.js'
 * that's it!
 
-## File Structure
+## UI File Structure
 
-* fill out
+* **index.html** is located in /views
+* **all other UI files** are located in /public
