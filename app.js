@@ -1,9 +1,14 @@
 var express = require('express'),
-  	lessMiddleware = require('less-middleware')
+  	lessMiddleware = require('less-middleware');
 
 var pub = __dirname + '/public';
 
 var app = express();
+app.use(lessMiddleware({
+        src: __dirname + '/public',
+        force: true,
+        dumpLineNumbers: 'mediaquery'
+    }));
 app.use(express.static(pub));
 app.use(app.router);
 app.use(express.errorHandler());
