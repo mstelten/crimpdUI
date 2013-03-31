@@ -1,0 +1,522 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Scaffold - Metro style template with bootstrap</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="iWebStudio">
+	<meta name="copyright" content="iWebStudio">
+	<meta name="generator" content="">
+	<meta name="date" content="2013-02-06T00:00:00+01:00">
+	
+	<link rel="stylesheet" href="css/documenter_style.css" media="all">
+	
+	
+	<script src="js/jquery.1.6.4.js"></script>
+	
+	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+	<script src="js/jquery.easing.js"></script>
+	
+	<link rel="stylesheet" href="css/shDocumenter.css" media="screen">
+	<script src="js/shCore.js"></script>
+	<script src="js/shBrushXml.js"></script>
+	<script src="js/shBrushJScript.js"></script>
+	<script src="http://docs.revaxarts.com/js/"></script>
+	<script>SyntaxHighlighter.defaults['toolbar'] = false;SyntaxHighlighter.all();</script>
+
+	<script>document.createElement('section');var duration=500,easing='swing';</script>
+	<script src="js/script.js"></script>
+	
+	<style>
+		html{background-color:#F1F1CA;color:#554236;}
+		::-moz-selection{background:#45352C;color:#CDB380;}
+		::selection{background:#45352C;color:#CDB380;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#F77825;}
+		hr{border-top:1px solid #DEDEBA;border-bottom:1px solid #FFFFD6;}
+		#documenter_sidebar, #documenter_sidebar ol a{background-color:#554236;color:#CDB380;}
+		#documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #6B5344;-moz-text-shadow:1px 1px 0px #6B5344;text-shadow:1px 1px 0px #6B5344;}
+		#documenter_sidebar ol{border-top:1px solid #30251F;}
+		#documenter_sidebar ol a{border-top:1px solid #6B5344;border-bottom:1px solid #30251F;color:#F77825;}
+		#documenter_sidebar ol a:hover{background:#45352C;color:#CDB380;border-top:1px solid #45352C;}
+		#documenter_sidebar ol a.current{background:#45352C;color:#CDB380;border-top:1px solid #45352C;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body>
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ol id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+			<li><a href="#general">General</a></li>
+			<li><a href="#responsive_technology">Responsive technology</a></li>
+			<li><a href="#html_files">HTML Files</a></li>
+			<li><a href="#css_files">CSS files</a></li>
+			<li><a href="#javascript">Javascript</a></li>
+			<li><a href="#psd">PSD </a></li>
+			<li><a href="#template_elements_features">Template elements & features</a></li>
+			<li><a href="#settings">SETTINGS</a></li>
+			<li><a href="#source_and_credits">Source and credits</a></li>
+			<li><a href="#conclusion">Conclusion</a></li>
+
+		</ol>
+		<div id="documenter_copyright">Copyright iWebStudio 2013
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover"><h1>Scaffold</h1><h2>Metro style template with bootstrap</h2><hr><ul><li>Created: 02/05/2013</li><li>latest Update: 02/06/2013</li><li>By: iWebStudio</li><li><a href=""></a></li><li>Email: <a href="mailto:&#105;&#110;&#102;&#111;&#64;&#105;&#119;&#101;&#98;&#45;&#115;&#116;&#117;&#100;&#105;&#111;&#46;&#99;&#111;&#109;">&#105;&#110;&#102;&#111;&#64;&#105;&#119;&#101;&#98;&#45;&#115;&#116;&#117;&#100;&#105;&#111;&#46;&#99;&#111;&#109;</a></li></ul></section><section id="general">
+	<h3>General</h3><hr class="notop">
+<p>
+	Scaffold is a HTML site template built with twitter bootstrap and designed with metro style. This template coming with single custom color : &#39;<strong>orange</strong>&#39; which stored in file &#39;<strong>orange.css</strong>&#39; in folder <strong>assets/color</strong></p>
+<p>
+	We&#39;ve separated the custom color (orange) in a single file : <strong>orange.css</strong> to make you easy to understand and customize or overwrite with your own color/style</p>
+<p>
+	Since Scaffold tempalte built with bootstrap so you can go to <a href="http://twitter.github.com/bootstrap/">http://twitter.github.com/bootstrap/</a> to learn more about twitter boostrap. Also lot of basic documentation or template overview already added on each page under &#39;<strong>Features</strong>&#39; menu.</p>
+<p>
+	Since it&#39;s HTML CSS based you can edit all text, content with HTML editor like notepad++ or anykind else. Quite easy for people with basic HTML-CSS knowledge :)</p>
+</section>
+<section id="responsive_technology">
+	<h3>Responsive technology</h3><hr class="notop">
+<p>
+	Scaffold template using &#39;<strong>bootstrap-responsive.css</strong>&#39; to make the template responsive on various screen sizes.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Media queries:</strong></p>
+<pre>
+
+<span class="com">/* Large desktop */
+</span><span class="lit">@media</span><span class="pln"> </span><span class="pun">(</span><span class="pln">min</span><span class="pun">-</span><span class="pln">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1200px</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="pun">...</span><span class="pln"> </span><span class="pun">}
+
+</span><span class="com">/* Portrait tablet to landscape and desktop */</span>
+<span class="lit">@media</span><span class="pln"> </span><span class="pun">(</span><span class="pln">min</span><span class="pun">-</span><span class="pln">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">768px</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> </span><span class="pun">(</span><span class="pln">max</span><span class="pun">-</span><span class="pln">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">979px</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="pun">...</span><span class="pln"> </span><span class="pun">}
+
+</span><span class="com">/* Landscape phone to portrait tablet */</span>
+<span class="lit">@media</span><span class="pln"> </span><span class="pun">(</span><span class="pln">max</span><span class="pun">-</span><span class="pln">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">767px</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="pun">...</span><span class="pln"> </span><span class="pun">}
+
+</span><span class="com">/* Landscape phones and down */</span>
+<span class="lit">@media</span><span class="pln"> </span><span class="pun">(</span><span class="pln">max</span><span class="pun">-</span><span class="pln">width</span><span class="pun">:</span><span class="pln"> </span><span class="lit">480px</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="pun">...</span><span class="pln"> </span><span class="pun">}</span>
+
+</pre>
+</section>
+<section id="html_files">
+	<h3>HTML Files</h3><hr class="notop">
+<p>
+	Below are HTML files in Scaffold template:</p>
+<ol>
+	<li>
+		404.html</li>
+	<li>
+		about.html</li>
+	<li>
+		blog_left_sidebar.html</li>
+	<li>
+		blog_right_sidebar.html</li>
+	<li>
+		fullwidth.html</li>
+	<li>
+		contact.html</li>
+	<li>
+		overview.html</li>
+	<li>
+		base-css.html</li>
+	<li>
+		scaffolding.html</li>
+	<li>
+		components.html</li>
+	<li>
+		javascript.html</li>
+	<li>
+		pricingtable.html</li>
+	<li>
+		faq.html</li>
+	<li>
+		index.html</li>
+	<li>
+		index_alt1.html</li>
+	<li>
+		index_alt2.html</li>
+	<li>
+		portfolio_detail.html</li>
+	<li>
+		portfolio-alt1-2cols.html</li>
+	<li>
+		portfolio-alt1-3cols.html</li>
+	<li>
+		portfolio-alt1-4cols.html</li>
+	<li>
+		portfolio-alt2-2cols.html</li>
+	<li>
+		portfolio-alt2-3cols.html</li>
+	<li>
+		portfolio-alt2-4cols.html</li>
+	<li>
+		portfolio-alt3.html</li>
+	<li>
+		services.html</li>
+	<li>
+		post_left_sidebar.html</li>
+	<li>
+		post_right_sidebar.html</li>
+	<li>
+		services.html</li>
+</ol>
+</section>
+<section id="css_files">
+	<h3>CSS files</h3><hr class="notop">
+<p>
+	All CSS files stored in folder &#39;<strong>assets/css</strong>&#39; and there is one folder &#39;<strong>assets/color</strong>&#39; for orange color style of the template. However, you&#39;d just need to edit the <strong>style.css</strong> file for main style and <strong>orange.css</strong> for the template main color.</p>
+<p>
+	All orange color as seen on the template configured in orange.css so if you want to edit other color then don&#39;t go to orange.css (it&#39;s only set orange color)</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>All scaffold css files</strong></p>
+<ul>
+	<li>
+		bootstrap.css</li>
+	<li>
+		bootrsrap-responsive.css</li>
+	<li>
+		overwrite.css</li>
+	<li>
+		camera.css</li>
+	<li>
+		docs.css</li>
+	<li>
+		flexslider.css</li>
+	<li>
+		nivo-slider.css</li>
+	<li>
+		prettyPhoto.css</li>
+	<li>
+		style.css</li>
+	<li>
+		orange.css</li>
+</ul>
+</section>
+<section id="javascript">
+	<h3>Javascript</h3><hr class="notop">
+Start Here</section>
+<section id="psd">
+	<h3>PSD </h3><hr class="notop">
+<p>
+	We don&#39;t make the full page of PSD because that&#39;s not the way for us to create a template. But we&#39;ve included some PSD element files that can be used to reproduce buttons..etc. All PSD files stored in folder &#39;PSD&#39;</p>
+</section>
+<section id="template_elements_features">
+	<h3>Template elements & features</h3><hr class="notop">
+<p>
+	All template elements based from bootstrap as you can see on all pages under &#39;<strong>features</strong>&#39;</p>
+<ul>
+	<li>
+		overview.html</li>
+	<li>
+		base-css.html</li>
+	<li>
+		components.html</li>
+	<li>
+		javascript.html</li>
+</ul>
+<p>
+	Complete explanation and shortcodes already described on eah page listed above.</p>
+</section>
+<section id="settings">
+	<h3>SETTINGS</h3><hr class="notop">
+<p>
+	<strong>LOGO</strong></p>
+<p>
+	The current logo image located in folder &#39;<strong>assets/img/logo.png</strong>&#39;. You can change it with your own logo by replacing current logo, make sure use same fine name and format ( logo.png ) so you don&#39;t need to edit the style.css file. Current logo size is 200 x 40 (width - height in pixel).</p>
+<p>
+	HTML code for the logo:</p>
+<pre class="brush: html">
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &lt;!-- logo --&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a class=&quot;brand logo&quot; href=&quot;index.html&quot;&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;img src=&quot;assets/img/logo.png&quot; alt=&quot;&quot; /&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &lt;/a&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &lt;!-- end logo --&gt;</pre>
+<p>
+	&nbsp;</p>
+<hr>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>FEATURED AREA</strong></p>
+<p>
+	Featured area displayed on all index file: index.html, index_alt1.html and index_alt2.html. Each featured area has slider images</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>1. index.html --&gt; using flexslider</strong></p>
+<p>
+	All images for this slider stored in folder &#39;<strong>assets/img/slides/flexslider</strong>&#39;</p>
+<p>
+	You can adjust flexslider parameters directly on flexslider file : &quot; <strong>assets/js/jquery.flexslider.js</strong> &#39; to change speed for the sliding animation, animation speed..etc</p>
+<pre class="brush: js">
+&nbsp; //FlexSlider: Default Settings
+&nbsp; $.flexslider.defaults = {
+&nbsp;&nbsp;&nbsp; namespace: &quot;flex-&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} String: Prefix string attached to the class of every element generated by the plugin
+&nbsp;&nbsp;&nbsp; selector: &quot;.slides &gt; li&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Selector: Must match a simple pattern. &#39;{container} &gt; {slide}&#39; -- Ignore pattern at your own peril
+&nbsp;&nbsp;&nbsp; animation: &quot;fade&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //String: Select your animation type, &quot;fade&quot; or &quot;slide&quot;
+&nbsp;&nbsp;&nbsp; easing: &quot;swing&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} String: Determines the easing method used in jQuery transitions. jQuery easing plugin is supported!
+&nbsp;&nbsp;&nbsp; direction: &quot;horizontal&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //String: Select the sliding direction, &quot;horizontal&quot; or &quot;vertical&quot;
+&nbsp;&nbsp;&nbsp; reverse: false,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Boolean: Reverse the animation direction
+&nbsp;&nbsp;&nbsp; animationLoop: true,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Boolean: Should the animation loop? If false, directionNav will received &quot;disable&quot; classes at either end
+&nbsp;&nbsp;&nbsp; smoothHeight: false,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode &nbsp;
+&nbsp;&nbsp;&nbsp; startAt: 0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Integer: The slide that the slider should start on. Array notation (0 = first slide)
+&nbsp;&nbsp;&nbsp; slideshow: true,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Boolean: Animate slider automatically
+&nbsp;&nbsp;&nbsp; slideshowSpeed: 7000,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Integer: Set the speed of the slideshow cycling, in milliseconds
+&nbsp;&nbsp;&nbsp; animationSpeed: 600,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Integer: Set the speed of animations, in milliseconds
+&nbsp;&nbsp;&nbsp; initDelay: 0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Integer: Set an initialization delay, in milliseconds
+&nbsp;&nbsp;&nbsp; randomize: false,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Boolean: Randomize slide order
+&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp; // Usability features
+&nbsp;&nbsp;&nbsp; pauseOnAction: true,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
+&nbsp;&nbsp;&nbsp; pauseOnHover: false,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
+&nbsp;&nbsp;&nbsp; useCSS: true,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Boolean: Slider will use CSS3 transitions if available
+&nbsp;&nbsp;&nbsp; touch: true,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Boolean: Allow touch swipe navigation of the slider on touch-enabled devices
+&nbsp;&nbsp;&nbsp; video: false,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Boolean: If using video in the slider, will prevent CSS3 3D Transforms to avoid graphical glitches
+&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp; // Primary Controls
+&nbsp;&nbsp;&nbsp; controlNav: true,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage
+&nbsp;&nbsp;&nbsp; directionNav: true,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Boolean: Create navigation for previous/next navigation? (true/false)
+&nbsp;&nbsp;&nbsp; prevText: &quot;Previous&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //String: Set the text for the &quot;previous&quot; directionNav item
+&nbsp;&nbsp;&nbsp; nextText: &quot;Next&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //String: Set the text for the &quot;next&quot; directionNav item
+&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp; // Secondary Navigation
+&nbsp;&nbsp;&nbsp; keyboard: true,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Boolean: Allow slider navigating via keyboard left/right keys
+&nbsp;&nbsp;&nbsp; multipleKeyboard: false,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Boolean: Allow keyboard navigation to affect multiple sliders. Default behavior cuts out keyboard navigation with more than one slider present.
+&nbsp;&nbsp;&nbsp; mousewheel: false,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{UPDATED} Boolean: Requires jquery.mousewheel.js (https://github.com/brandonaaron/jquery-mousewheel) - Allows slider navigating via mousewheel
+&nbsp;&nbsp;&nbsp; pausePlay: false,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Boolean: Create pause/play dynamic element
+&nbsp;&nbsp;&nbsp; pauseText: &quot;Pause&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //String: Set the text for the &quot;pause&quot; pausePlay item
+&nbsp;&nbsp;&nbsp; playText: &quot;Play&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //String: Set the text for the &quot;play&quot; pausePlay item
+&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp; // Special properties
+&nbsp;&nbsp;&nbsp; controlsContainer: &quot;&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{UPDATED} jQuery Object/Selector: Declare which container the navigation elements should be appended too. Default container is the FlexSlider element. Example use would be $(&quot;.flexslider-container&quot;). Property is ignored if given element is not found.
+&nbsp;&nbsp;&nbsp; manualControls: &quot;&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{UPDATED} jQuery Object/Selector: Declare custom control navigation. Examples would be $(&quot;.flex-control-nav li&quot;) or &quot;#tabs-nav li img&quot;, etc. The number of elements in your controlNav should match the number of slides/tabs.
+&nbsp;&nbsp;&nbsp; sync: &quot;&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Selector: Mirror the actions performed on this slider with another slider. Use with care.
+&nbsp;&nbsp;&nbsp; asNavFor: &quot;&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Selector: Internal property exposed for turning the slider into a thumbnail navigation for another slider
+&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp; // Carousel Options
+&nbsp;&nbsp;&nbsp; itemWidth: 0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Integer: Box-model width of individual carousel items, including horizontal borders and padding.
+&nbsp;&nbsp;&nbsp; itemMargin: 0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Integer: Margin between carousel items.
+&nbsp;&nbsp;&nbsp; minItems: 0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Integer: Minimum number of carousel items that should be visible. Items will resize fluidly when below this.
+&nbsp;&nbsp;&nbsp; maxItems: 0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Integer: Maxmimum number of carousel items that should be visible. Items will resize fluidly when above this limit.
+&nbsp;&nbsp;&nbsp; move: 0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Integer: Number of carousel items that should move on animation. If 0, slider will move all visible items.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp; // Callback API
+&nbsp;&nbsp;&nbsp; start: function(){},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Callback: function(slider) - Fires when the slider loads the first slide
+&nbsp;&nbsp;&nbsp; before: function(){},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Callback: function(slider) - Fires asynchronously with each slider animation
+&nbsp;&nbsp;&nbsp; after: function(){},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Callback: function(slider) - Fires after each slider animation completes
+&nbsp;&nbsp;&nbsp; end: function(){},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Callback: function(slider) - Fires when the slider reaches the last slide (asynchronous)
+&nbsp;&nbsp;&nbsp; added: function(){},&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Callback: function(slider) - Fires after a slide is added
+&nbsp;&nbsp;&nbsp; removed: function(){}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //{NEW} Callback: function(slider) - Fires after a slide is removed
+&nbsp; }</pre>
+<p>
+	&nbsp;</p>
+<p>
+	and the javascript function to call flexslider is written in file &#39; <strong>assets/js/custom.js</strong> &#39; as follows:</p>
+<pre class="brush: js">
+&nbsp; $(&#39;#mainslider&#39;).flexslider({
+&nbsp;&nbsp;&nbsp; animation: &quot;slide&quot;,
+&nbsp;&nbsp;&nbsp; controlNav: &quot;thumbnails&quot;
+&nbsp; });</pre>
+<p>
+	&nbsp;</p>
+<p>
+	You may also write parameter setting on flexslider function in custom.js above</p>
+<p>
+	&nbsp;</p>
+<hr>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>2. index_alt1.html --&gt; using camera slider</strong></p>
+<p>
+	&nbsp;</p>
+<p>
+	All images for this slider stored in folder &#39;<strong>assets/img/slides/camera </strong>&#39;</p>
+<p>
+	You can adjust camera slider parameters on camera slider javascript function file : &quot; <strong>assets/js/camera/setting.js&nbsp;</strong> &#39; to change loader, pagination..etc</p>
+<pre class="brush: js">
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; jQuery(function(){
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; jQuery(&#39;#camera_wrap_2&#39;).camera({
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; height: &#39;400px&#39;,
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; loader: &#39;bar&#39;,
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; pagination: false,
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; thumbnails: true
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; });
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; });</pre>
+<p>
+	For complete parametersans setting you can read on <a href="http://www.pixedelic.com/plugins/camera/" target="_blank">http://www.pixedelic.com/plugins/camera/</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<hr>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>3. index_alt2.html --&gt; using nivo slider</strong></p>
+<p>
+	All images for this slider stored in folder &#39;<strong>assets/img/slides/nivo</strong>&#39;</p>
+<p>
+	You can adjust nivo slider parameters directly on nivo slider javascript file : &quot; <strong>assets/js/nivo/jquery.nivo.slider.js</strong> &#39; to change effect, times..etc,</p>
+<pre class="brush: js">
+&nbsp;&nbsp; //Default settings
+&nbsp;&nbsp;&nbsp; $.fn.nivoSlider.defaults = {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; effect: &#39;random&#39;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; slices: 15,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; boxCols: 8,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; boxRows: 4,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; animSpeed: 500,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pauseTime: 6000,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; startSlide: 0,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; directionNav: true,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; controlNav: true,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; controlNavThumbs: false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pauseOnHover: false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; manualAdvance: false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prevText: &#39;Prev&#39;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nextText: &#39;Next&#39;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; randomStart: false,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; beforeChange: function(){},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; afterChange: function(){},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; slideshowEnd: function(){},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lastSlide: function(){},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; afterLoad: function(){}
+&nbsp;&nbsp;&nbsp; };
+</pre>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<hr>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>LATEST TWEET</strong></p>
+<p>
+	Latest tweet located on footer widget. You can add your own twitter account and change all parameters by editing directly on the widget location in the html file</p>
+<pre class="brush: js">
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $(document).ready(function(){
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; //TWITTER
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $(&quot;.twitter&quot;).tweet({
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; join_text: &quot;auto&quot;,
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; username: &quot;wrapbootstrap&quot;,  --&gt; change with yoour twitter username
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; avatar_size: 20,
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; count: 2,
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; auto_join_text_default: &quot;we said,&quot;,
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; auto_join_text_ed: &quot;we&quot;,
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; auto_join_text_ing: &quot;we were&quot;,
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; auto_join_text_reply: &quot;we replied&quot;,
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; auto_join_text_url: &quot;we were checking out&quot;,
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; loading_text: &quot;loading tweets...&quot;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; });
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; });</pre>
+<p>
+	&nbsp;</p>
+<hr>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>PORTFOLIO </strong></p>
+<p>
+	There are 5 portfolio page variations:</p>
+<ul>
+	<li>
+		portfolio alt 1 - 2 columns</li>
+	<li>
+		portfolio alt 1 - 3 columns</li>
+	<li>
+		portfolio alt 1 - 4 columns</li>
+	<li>
+		portfolio alt 2 - 2 columns</li>
+	<li>
+		portfolio alt 2 - 3 columns</li>
+	<li>
+		portfolio alt 2 - 4 columns</li>
+	<li>
+		portfolio alt 3</li>
+	<li>
+		portfolio detail</li>
+</ul>
+<p>
+	all portfolio images stored in folder &quot; <strong>assets/img/dummies</strong> &quot;</p>
+<p>
+	Filterable portfolio using jquery script called quicksand : &quot;<strong> assets/js/portfolio/jquery.quicksand.js</strong> &quot;</p>
+<p>
+	&nbsp;</p>
+<hr>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Upload template to your hosting</strong></p>
+<p>
+	After you&#39;ve done with content editing, you can just upload all files &amp; folders directly with FTP to your hosting root directory. If you&#39;re very new with FTP you can learn from&nbsp; <a href="http://wiki.filezilla-project.org/Using" target="_blank">http://wiki.filezilla-project.org/Using</a></p>
+</section>
+<section id="source_and_credits">
+	<h3>Source and credits</h3><hr class="notop">
+<p>
+	We&#39;ve used the following images, icons or other files as listed.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>FONTS:</strong></p>
+<ol>
+	<li>
+		Source sans pro - google web font from http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300</li>
+	<li>
+		Open sans - google web font from http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic</li>
+</ol>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>ICONS:</strong></p>
+<ol>
+	<li>
+		Icon set from http://iconmonstr.com/</li>
+</ol>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>JAVASCRIPT ,JQUERY PLUGINS &amp; SCRIPTS :</strong></p>
+<ol>
+	<li>
+		Twitter bootstrap from <a href="http://twitter.github.com/bootstrap/" target="_blank">http://twitter.github.com/bootstrap/</a></li>
+	<li>
+		Flexslider from http://www.woothemes.com/flexslider/</li>
+	<li>
+		Nivo slider from http://nivo.dev7studios.com</li>
+	<li>
+		Camera slider from www.pixedelic.com</li>
+	<li>
+		Google code prettify from</li>
+	<li>
+		prettyPhoto from http://www.no-margin-for-errors.com</li>
+	<li>
+		jQuery from<a href="http:// jquery.com" target="_blank"> jquery.com</a></li>
+	<li>
+		jQuery easing v.1.3&nbsp; from <a href="http://gsgd.co.uk/sandbox/jquery/easing/" target="_blank">http://gsgd.co.uk/sandbox/jquery/easing/</a></li>
+	<li>
+		modernizr from&nbsp; <a href="http://www.modernizr.com" target="_blank">http://www.modernizr.com</a></li>
+</ol>
+</section>
+<section id="conclusion">
+	<h3>Conclusion</h3><hr class="notop">
+<p>
+	Once again, thank you so much for purchasing this template. As we said at the beginning, I&#39;d be glad to help you if you have any questions relating to this template. No guarantees, but we&#39;ll do the best to assist. If you have a more question regarding Scaffold template,&nbsp; you can drop us message through our profile contact form</p>
+</section>
+
+	</div>
+</body>
+</html>

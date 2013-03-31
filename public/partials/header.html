@@ -1,0 +1,61 @@
+<header ng-controller="HeaderCtrl">
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<!-- logo -->
+				<a class="brand logo" href="#">
+				<img src="img/logo-header.png" alt="crimpd logo" />
+				</a>
+				<!-- end logo -->
+                <div class="userInfo">
+                    <div>
+                        <span class="headerUserMessage">{{userMessage}}</span> <strong>{{currentUser.name}}</strong>
+                    </div>
+                    <div ng-show="isSignedIn()">
+                        <a href="#">settings</a> / <a href="#" ng-click="signOut($event)">log out</a>
+                    </div>
+                    <div ng-show="!isSignedIn()">
+                    	<a href="/login">log in</a> / <a href="/register">register</a>
+                    </div>
+                </div>
+				<!-- top menu -->
+				<div>
+					<nav>
+					<ul class="nav topnav">
+						<li class="active">
+							<a href="#">ho<br/>me</a>
+						</li>
+						<li class="dropdown">
+							<a href="#">dash<br/>board</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Overview</a></li>
+								<li><a href="#">Scaffolding</a></li>
+								<li><a href="#">Base CSS</a></li>
+								<li><a href="#">Components</a></li>
+								<li><a href="#">Javascripts</a></li>
+								<li class="dropdown"><a href="#">3rd level</a>
+								<ul class="dropdown-menu sub-menu">
+									<li><a href="#">Example menu</a></li>
+									<li><a href="#">Example menu</a></li>
+									<li><a href="#">Example menu</a></li>
+								</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">exercise<br/>library</a>
+						</li>
+						<li>
+							<a href="#">bl<br/>og</a>
+						</li>
+						<li>
+							<a href="#">comm<br/>unity</a>
+						</li>
+					</ul>
+					</nav>
+				</div>
+				<!-- end menu -->
+			</div>
+		</div>
+	</div>
+</header>

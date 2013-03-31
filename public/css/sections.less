@@ -1,0 +1,224 @@
+
+
+/* ------------------------------------- variables ------------------------------------- */
+
+
+@bgr-primary: #fff;
+@bgr-secondary: #eee;
+@text-primary: #000;
+@font-header: 'Raleway', sans-serif;
+
+
+/* ------------------------------------- header / top nav ------------------------------------- */
+
+
+.navbar-static-top {
+  	position: static;
+ 	margin-bottom: 0;
+  	.navbar-inner {
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+		-webkit-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+		-moz-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+		box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+	}
+}
+.navbar-fixed-top {
+  	top: 0;
+	.navbar-inner {
+		padding-left: 0;
+		padding-right: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+		-webkit-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+		-moz-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+		box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+	}
+}
+.navbar {
+	.brand.logo {
+		padding: 0;
+	  	margin-left: 0;
+	  	margin-top: 10px;
+	}
+    .userInfo {
+		margin: 20px 0 0 30px;
+		font-size: 16px;
+		float: left;
+    }
+	ul.topnav {
+		float: right;	
+	}
+	.nav > li > a {
+		font-family: @font-header;
+		float: none;
+		padding: 20px 15px;
+		color: #888;
+		font-size: 24px;
+		text-decoration: none;
+		text-shadow: none;
+	}
+	.nav > li > a:hover {
+		border-right: #000 5px solid;
+		background-color: #e5e5e5;
+		-webkit-transition: all 0.2s ease;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+	.nav .active > a,
+	.nav .active > a:hover,
+	.nav .active > a:focus {
+		background-color: #f4bb32;
+		color:#fff;
+		-webkit-transition: all 0.2s ease;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+}
+header .topnav .dropdown-submenu > .dropdown-menu {
+	top: 0;
+	left: 100%;
+	margin-top: -6px;
+	margin-left: -1px;
+	-webkit-border-radius: 0;
+   	-moz-border-radius: 0;
+   	border-radius: 0;
+}
+.dropdown-menu {
+  	border: 1px solid #eee;
+  	border: 1px solid rgba(0, 0, 0, 0.2);
+  	*border-right-width: 0;
+  	*border-bottom-width: 0;
+  	-webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  	-webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  	-webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    .sub-menu {
+		left: 100%;
+		position: absolute;
+		top: 0;
+		visibility: hidden;
+		margin-top: -1px;
+	}
+	li:hover .sub-menu {
+		visibility: visible;
+		margin-left: 1px;
+	}
+}
+ul.topnav  .dropdown-menu {
+  	border: 1px solid #eee;
+ 	background:#fff;
+ 	padding: 0 0;
+  	margin: 0 0 0;
+ 	.sub-menu {
+		margin-left:1px;
+	}
+	li {
+	  	padding:0;
+	}
+	li > a {
+	  	padding: 5px 20px;
+	  	line-height: 1.6em;
+	}
+	li.active a {
+
+	}
+}
+.headerUserMessage {
+	font-style: italic;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+
+}
+
+
+/* ------------------------------------- footer ------------------------------------- */
+
+
+footer {
+	padding-top:30px;
+	color:#f8f8f8;
+}
+footer.footer {
+	background: #f4bb32;
+}
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+	color:#fff;
+}
+footer .block-a {
+	background:#bcab37;
+}
+footer a, footer a:hover {
+	color:#fff;
+}
+footer a:hover {
+	text-decoration:underline;
+}
+
+footer .verybottom {
+	padding-top:30px;
+	background:#0f0f0f;
+}
+footer .nav-list li, footer .nav-list li a, footer .nav-list li.nav-header {
+	text-shadow:none;
+	color:#f6f6f6;
+}
+footer .nav-list li a {
+	text-shadow:none;
+}
+footer .nav-list.regular .nav-header {
+	padding: 3px 0;
+}
+footer .nav-list.regular > .active > a,
+.nav-list.regular > .active > a:hover {
+	text-shadow: none;
+	background-color: transparent;
+}
+footer .nav-list.regular li a:hover {
+	background-color: transparent;
+}
+footer .nav-list.regular > li > a {
+	padding: 0;
+}
+footer .nav-list li.divider {
+	text-shadow:none;
+	*width: 100%;
+	height: 1px;
+	margin: 9px 1px;
+	*margin: -5px 0 5px;
+	overflow: hidden;
+	background-color: #222;
+	border-bottom: none;
+}
+footer .twitter li{    
+    border-bottom: 1px dashed #2d2d2d;    
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    list-style: none;
+}
+footer.footer .input-append button, footer.footer .input-append input {
+	border:none;
+}
+
+
+/* ------------------------------------- login page ------------------------------------- */
+
+
+.loginMod.row {
+	margin: 100px 0 200px 0;
+}
+
