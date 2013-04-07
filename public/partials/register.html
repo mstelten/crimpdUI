@@ -1,39 +1,16 @@
-<section id="intro">
+<section id="maincontent" class="noIntro">
 	<div class="container">
-	</div>
-</section>
-
-<section id="maincontent">
-	<div class="container">
-		<div class="row">
-			<div class="span12">
-				<strong>Register Content</strong><br/>
+		<div class="row loginMod">
+			<div class="span6">
+                <form name="registrationForm" class="formLarge emailLoginForm" ng-submit="register()" form-validator novalidate>
+                    <h3>register / crimpd</h3>
+                    <input type="text" ng-model="login.email" name="inputEmail" placeholder="email or username" required>
+                    <input type="password" ng-model="login.password" name="inputPassword" placeholder="password" required>
+                    <div class="formMessageError" ng-show="errorPresent && loginForm.$error.required">A required field is missing</div>
+                    <div class="formMessageError" ng-show="!errorPresent">{{registrationMessageError}}</div>
+                    <button type="submit" class="btn btn-large btn-warning" ng-click="formClick($event)">register</button>
+                </form>
 			</div>
-		</div>
-		<!-- divider -->
-		<div class="row">
-			<div class="span12">
-				<div class="divider">
-				</div>
-			</div>
-		</div>
-		<!-- end divider -->
-		<div class="row">
-		</div>
-	</div>
-</section>
-
-<section id="bottom">
-	<div class="container">
-		<!-- divider -->
-		<div class="row">
-			<div class="span12">
-				<div class="divider">
-				</div>
-			</div>
-		</div>
-		<!-- end divider -->
-		<div class="row">
 		</div>
 	</div>
 </section>

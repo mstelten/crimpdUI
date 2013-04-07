@@ -1,6 +1,8 @@
 var crimpdApp = angular.module('crimpdApp', ['myServices', 'myDirectives', 'myFilters']);
 var myFilters = angular.module('myFilters', []);
 
+// ROUTER & CONFIGURE
+
 crimpdApp.config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 	$routeProvider.when('/', {
@@ -28,6 +30,18 @@ crimpdApp.run(function($rootScope, $location, $route, userInfo) {
     });
 });
 
+// CONTROLLERS
+
+function MainCtrl($scope, $route, $routeParams, $location) {
+    $scope.$route = $route;
+    $scope.$location = $location;
+    $scope.$routeParams = $routeParams;
+};
+
+function HomeCtrl($scope, userInfo, $location) {
+    $scope.name = "HomeCntl";
+};
+
 function HeaderCtrl($scope, userInfo, $http, $timeout) {
     $scope.userMessage = 'user';
     $scope.refreshUser = function() {
@@ -54,47 +68,49 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
             });    
     };
 };
-function MainCtrl($scope, $route, $routeParams, $location) {
-	$scope.$route = $route;
-	$scope.$location = $location;
-	$scope.$routeParams = $routeParams;
-};
-function HomeCtrl($scope, userInfo, $location) {
- 	$scope.name = "HomeCntl";
-};
+
 function LoginCtrl($scope, $http, userInfo) {
     $scope.signIn = function() {
-        if (!$scope.loginForm.$invalid) {
         $http.post('http://test.crimpd.com/crimpd/auth/' + $scope.login.email, {'password': $scope.login.password})
             .success(function(data) {
                 $scope.signInResponseData = data;
             }).then(function() {
-                $scope.returnLoginMessage();
+                $scope.returnErrorMessage();
             });
-        } else {
-            return false;
-        }
     };
-    $scope.returnLoginMessage = function() {
+    $scope.returnErrorMessage = function() {
         if ($scope.signInResponseData.success) {
             userInfo.updateUser($scope.signInResponseData.user.username);
         } else {
             $scope.loginMessageError = $scope.signInResponseData.errors.message;
         }
     };
-    $scope.loginFormClick = function (e) {
-        $scope.errorPresent = false;
-        var thisForm = $(e.target).parent('form');
-        $(thisForm).removeClass('error');
-        if ($scope.loginForm.$error.required) {
-            $scope.errorPresent = true;
-            $(thisForm).addClass('error');
+};
+
+function RegisterCtrl($scope) {
+    $scope.register = function() {
+        var userRegInfo = {
+            'username': $scope.registration.userName,
+            'firstName': $scope.registration.firstName,
+            'lastName': $scope.registration.lastName,
+            'email': $scope.registration.email,
+            'passoword': $scope.registration.passworld,
+            'confirmPassword': $scope.registration.confirmPassword
+        }
+        $http.post('http://test.crimpd.com/crimpd/registration/', userRegInfo)
+            .success(function(data) {
+                $scope.registerResponseData = data;
+            }).then(function() {
+                $scope.returnErrorMessage();
+            });
+    };
+    $scope.returnErrorMessage = function() {
+        if ($scope.registerResponseData.success) {
+            userInfo.updateUser($scope.signInResponseData.user.username);
+        } else {
+            $scope.registrationMessageError = $scope.registerResponseData.errors.message;
         }
     };
-};
-function RegisterCtrl($scope, $routeParams) {
-  	$scope.name = "RegisterCtrl";
-  	$scope.params = $routeParams;
 };
 
 

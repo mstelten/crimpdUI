@@ -195,7 +195,7 @@ select:focus:invalid:focus {
   border-color: #333;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003175}}
-form.error input:required:invalid {
+form.error input.ng-invalid-required {
   border-color: red;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003178}}

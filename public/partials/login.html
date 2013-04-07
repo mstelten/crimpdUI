@@ -2,13 +2,13 @@
 	<div class="container">
 		<div class="row loginMod">
 			<div class="span6">
-                <form name="loginForm" class="formLarge emailLoginForm" ng-submit="signIn()" novalidate>
+                <form name="loginForm" class="formLarge emailLoginForm" ng-submit="signIn()" form-validator>
                     <h3>sign in / crimpd</h3>
                     <input type="text" ng-model="login.email" name="inputEmail" placeholder="email or username" required>
                     <input type="password" ng-model="login.password" name="inputPassword" placeholder="password" required>
                     <div class="formMessageError" ng-show="errorPresent && loginForm.$error.required">A required field is missing</div>
                     <div class="formMessageError" ng-show="!errorPresent">{{loginMessageError}}</div>
-                    <button type="submit" class="btn btn-large btn-warning" ng-click="loginFormClick($event)">sign in</button>
+                    <button type="submit" class="btn btn-large btn-warning" ng-click="formClick($event)">sign in</button>
                 </form>
 			</div>
 		</div>
