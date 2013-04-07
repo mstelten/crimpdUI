@@ -1,6 +1,4 @@
 var crimpdApp = angular.module('crimpdApp', ['myServices', 'myDirectives', 'myFilters']);
-var myServices = angular.module('myServices', []);
-var myDirectives = angular.module('myDirectives', []);
 var myFilters = angular.module('myFilters', []);
 
 crimpdApp.config(function($routeProvider, $locationProvider) {
@@ -23,13 +21,12 @@ crimpdApp.config(function($routeProvider, $locationProvider) {
 
 crimpdApp.run(function($rootScope, $location, $route, userInfo) {
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
-        if (userInfo.user.role == 0) {
-            $location.path('/login');
+        $rootScope.currentUser = userInfo.getUser();
+        if ($rootScope.currentUser.role == 0) {
+            // $location.path('/login');
         };
     });
 });
-
-// configure routeProvider .provider (with $get) before returning routeService
 
 function HeaderCtrl($scope, userInfo, $http, $timeout) {
     $scope.userMessage = 'user';
@@ -56,15 +53,15 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
             	userInfo.updateUser('guest', 0);
             });    
     };
-}
+};
 function MainCtrl($scope, $route, $routeParams, $location) {
 	$scope.$route = $route;
 	$scope.$location = $location;
 	$scope.$routeParams = $routeParams;
-}
+};
 function HomeCtrl($scope, userInfo, $location) {
  	$scope.name = "HomeCntl";
-}
+};
 function LoginCtrl($scope, $http, userInfo) {
     $scope.signIn = function() {
         if (!$scope.loginForm.$invalid) {
@@ -80,44 +77,25 @@ function LoginCtrl($scope, $http, userInfo) {
     };
     $scope.returnLoginMessage = function() {
         if ($scope.signInResponseData.success) {
-            $scope.loginMessage = $scope.signInResponseData.success.message;
-            userInfo.updateUser($scope.signInResponseData.success.username);
+            userInfo.updateUser($scope.signInResponseData.user.username);
         } else {
-            $scope.loginMessage = $scope.signInResponseData.errors.message;
+            $scope.loginMessageError = $scope.signInResponseData.errors.message;
         }
     };
-}
+    $scope.loginFormClick = function (e) {
+        $scope.errorPresent = false;
+        var thisForm = $(e.target).parent('form');
+        $(thisForm).removeClass('error');
+        if ($scope.loginForm.$error.required) {
+            $scope.errorPresent = true;
+            $(thisForm).addClass('error');
+        }
+    };
+};
 function RegisterCtrl($scope, $routeParams) {
   	$scope.name = "RegisterCtrl";
   	$scope.params = $routeParams;
-}
-
-myServices.factory('userInfo', function($rootScope) {
-	var user = {
-        name: 'guest',
-        role: 0
-    }
-    return {
-		getUser: function() {
-            return user;
-        },
-        updateUser: function(newName, newRole) {
-        	if (arguments.length == 2) {
-        		user.name = newName;
-        		user.role = newRole;
-        	} else {
-        		if (typeof arguments[0] == 'string') {
-        			user.name = arguments[0];
-        			user.role = 1;
-        		} else {
-        			user.role = arguments[1];
-        		}
-        	}
-            $rootScope.$broadcast('userChange');
-            return user;
-        }
-	};
-});
+};
 
 
 

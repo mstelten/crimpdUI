@@ -12,7 +12,7 @@
                         <span class="headerUserMessage">{{userMessage}}</span> <strong>{{currentUser.name}}</strong>
                     </div>
                     <div ng-show="isSignedIn()">
-                        <a href="#">settings</a> / <a href="#" ng-click="signOut($event)">log out</a>
+                        <a href="/user/settings">settings</a> / <a href="#" ng-click="signOut($event)">log out</a>
                     </div>
                     <div ng-show="!isSignedIn()">
                     	<a href="/login">log in</a> / <a href="/register">register</a>

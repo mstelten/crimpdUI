@@ -1,36 +1,15 @@
-<section id="intro">
-	<div class="container">
-	</div>
-</section>
-
-<section id="maincontent">
+<section id="maincontent" class="noIntro">
 	<div class="container">
 		<div class="row loginMod">
-			<div class="span12">
-				<h3>Login</h3>
-
-                <form name="loginForm" class="form-horizontal" ng-submit="signIn()">
-                    <div class="control-group">
-                        <label class="control-label" for="inputEmail">Email</label>
-                        <div class="controls">
-                            <!-- Make type="email" for email validation -->
-                            <input type="text" required ng-model="login.email" id="inputEmail" placeholder="Email Address">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="inputPassword">Password</label>
-                        <div class="controls">
-                            <input type="text" required ng-model="login.password" id="inputPassword" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="controls">
-                            <button type="submit" class="btn">Sign in</button>
-                        </div>
-                    </div>
+			<div class="span6">
+                <form name="loginForm" class="formLarge emailLoginForm" ng-submit="signIn()" novalidate>
+                    <h3>sign in / crimpd</h3>
+                    <input type="text" ng-model="login.email" name="inputEmail" placeholder="email or username" required>
+                    <input type="password" ng-model="login.password" name="inputPassword" placeholder="password" required>
+                    <div class="formMessageError" ng-show="errorPresent && loginForm.$error.required">A required field is missing</div>
+                    <div class="formMessageError" ng-show="!errorPresent">{{loginMessageError}}</div>
+                    <button type="submit" class="btn btn-large btn-warning" ng-click="loginFormClick($event)">sign in</button>
                 </form>
-                <br />
-                {{loginMessage}}
 			</div>
 		</div>
 	</div>

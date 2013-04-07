@@ -15,8 +15,11 @@ body {
 }
 #maincontent {
 	z-index:1000;
-	margin:20px 0 30px 0;
-	min-height: 600px;
+	margin: 20px 0 30px 0;
+	min-height: 750px;
+}
+#maincontent.noIntro {
+	margin-top: 120px;
 }
 
 
@@ -108,29 +111,11 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #fafafa;
+	color: #333;
 }
 textarea:focus,
 input[type="text"]:focus,
@@ -148,20 +133,14 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus {
-	border-color: rgba(82, 168, 236, 0.8);
+	border-color: #333;
+	background-color: #feef9c;
 	outline: 0;
 	outline: thin dotted \9;
 	/* IE6-9 */
-	-webkit-box-shadow: none;
+	webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
-}
-.uneditable-input,
-.uneditable-textarea {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	cursor: not-allowed;
 }
 input[disabled],
 select[disabled],
@@ -178,156 +157,53 @@ input[type="radio"][readonly],
 input[type="checkbox"][readonly] {
 	background-color: transparent;
 }
-.control-group.warning input,
-.control-group.warning select,
-.control-group.warning textarea {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-.control-group.warning input:focus,
-.control-group.warning select:focus,
-.control-group.warning textarea:focus {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-.control-group.error input,
-.control-group.error select,
-.control-group.error textarea {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-.control-group.error input:focus,
-.control-group.error select:focus,
-.control-group.error textarea:focus {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-.control-group.success input,
-.control-group.success select,
-.control-group.success textarea {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-.control-group.success input:focus,
-.control-group.success select:focus,
-.control-group.success textarea:focus {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-.control-group.info input,
-.control-group.info select,
-.control-group.info textarea {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
-.control-group.info input:focus,
-.control-group.info select:focus,
-.control-group.info textarea:focus {
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
+input[type="text"]:required,
+input[type="password"]:required,
+input[type="email"]:required {
+	background-image: url('/img/icons/asterisk-black-12.png');
+	background-position: 97% center;
+	background-repeat: no-repeat;
 }
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
-	-webkit-box-shadow: none;
+	webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
+	border-color: #333;
 }
-.input-append .form-search input,.input-append .form-search button {
-	border:none;
+form.error input:required:invalid {
+	border-color: red;
 }
-.input-append button, .input-prepend button {
-	border: 1px solid #bbbbbb;
+.formMessage {
+	margin-bottom: 15px;
 }
-.input-append input,
-.input-prepend input,
-.input-append select,
-.input-prepend select,
-.input-append .uneditable-input,
-.input-prepend .uneditable-input {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
+.formMessageError {
+	margin-bottom: 15px;
+	color: red;
+}
+.formLarge {
+	input {
+		display: block;
+		height: 48px;
+		padding: 0 10px;
+		margin-bottom: 20px;
+		font-size: 20px;
+		line-height: 30px;
+		width: 300px;
+	}
+}
+.formMedium {
+	input {
+		display: block;
+		height: 40px;
+		padding: 4px 10px;
+		margin-bottom: 15px;
+		font-size: 20px;
+		line-height: 48px;
+		width: 300px;
+	}
+}
 
-}
-.input-append .add-on,
-.input-prepend .add-on,
-.input-append .btn,
-.input-prepend .btn,
-.input-append .btn-group > .dropdown-toggle,
-.input-prepend .btn-group > .dropdown-toggle {
-	vertical-align: top;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
-.input-prepend .add-on:first-child,
-.input-prepend .btn:first-child {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
-.input-append input,
-.input-append select,
-.input-append .uneditable-input {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
-.input-append input + .btn-group .btn:last-child,
-.input-append select + .btn-group .btn:last-child,
-.input-append .uneditable-input + .btn-group .btn:last-child {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
-.input-append .add-on:last-child,
-.input-append .btn:last-child,
-.input-append .btn-group:last-child > .dropdown-toggle {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
-.input-prepend.input-append input,
-.input-prepend.input-append select,
-.input-prepend.input-append .uneditable-input {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
-.input-prepend.input-append input + .btn-group .btn,
-.input-prepend.input-append select + .btn-group .btn,
-.input-prepend.input-append .uneditable-input + .btn-group .btn {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
-.input-prepend.input-append .add-on:first-child,
-.input-prepend.input-append .btn:first-child {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
-.input-prepend.input-append .add-on:last-child,
-.input-prepend.input-append .btn:last-child {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
-.input-prepend.input-append .btn-group:first-child {
-	margin-left: 0;
-}
-input.search-query {
-	margin-bottom: 0;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
+
+
