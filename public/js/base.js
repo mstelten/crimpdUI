@@ -82,7 +82,7 @@ function LoginCtrl($scope, $http, userInfo) {
         if ($scope.signInResponseData.success) {
             userInfo.updateUser($scope.signInResponseData.user.username);
         } else {
-            $scope.loginMessageError = $scope.signInResponseData.errors.message;
+            $scope.loginModel.error = $scope.signInResponseData.errors.message;
         }
     };
 };

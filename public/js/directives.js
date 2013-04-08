@@ -7,8 +7,8 @@ myDirectives.directive('cmFormValidator', function() {
 	return {
 		restrict: "A",
 		scope: {
-			login: '=loginModel',
-			signIn: '&submitFunc'
+			formModel: '=formModel',
+			submit: '&submitFunc'
 		},
 		link: function (scope, elm, attrs) {
 			elm[0].addEventListener('invalid', function(e) {
