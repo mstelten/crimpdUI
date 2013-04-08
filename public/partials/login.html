@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row loginMod">
 			<div class="span6">
-                <form name="loginForm" class="formLarge emailLoginForm" ng-submit="signIn()" form-validator>
+                <form name="loginForm" class="formLarge emailLoginForm" ng-submit="signIn()" cm-form-validator login-model="loginModel" submit-func="signIn()">
                     <h3>sign in / crimpd</h3>
                     <input type="text" ng-model="login.email" name="inputEmail" placeholder="email or username" required>
                     <input type="password" ng-model="login.password" name="inputPassword" placeholder="password" required>

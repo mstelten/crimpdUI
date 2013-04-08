@@ -71,7 +71,7 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
 
 function LoginCtrl($scope, $http, userInfo) {
     $scope.signIn = function() {
-        $http.post('http://test.crimpd.com/crimpd/auth/' + $scope.login.email, {'password': $scope.login.password})
+        $http.post('http://test.crimpd.com/crimpd/auth/' + $scope.loginModel.email, {'password': $scope.loginModel.password})
             .success(function(data) {
                 $scope.signInResponseData = data;
             }).then(function() {
@@ -94,7 +94,7 @@ function RegisterCtrl($scope) {
             'firstName': $scope.registration.firstName,
             'lastName': $scope.registration.lastName,
             'email': $scope.registration.email,
-            'passoword': $scope.registration.passworld,
+            'password': $scope.registration.passworld,
             'confirmPassword': $scope.registration.confirmPassword
         }
         $http.post('http://test.crimpd.com/crimpd/registration/', userRegInfo)
