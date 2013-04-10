@@ -6,7 +6,7 @@
                     <h3>sign in / crimpd</h3>
                     <input type="text" ng-model="formModel.email" name="inputEmail" placeholder="email or username" required>
                     <input type="password" ng-model="formModel.password" name="inputPassword" placeholder="password" required>
-                    <div class="formMessageError" ng-show="errorPresent && loginForm.$error.required">A required field is missing</div>
+                    <div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
                     <div class="formMessageError" ng-show="!errorPresent">{{formModel.error}}</div>
                     <button type="submit" class="btn btn-large btn-warning" ng-click="formClick($event)">sign in</button>
                 </form>

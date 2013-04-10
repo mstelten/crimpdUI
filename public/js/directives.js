@@ -14,11 +14,11 @@ myDirectives.directive('cmFormValidator', function() {
 			elm[0].addEventListener('invalid', function(e) {
 				e.preventDefault();
 			}, true);
-			scope.formClick = function (e) {
+			scope.thisForm = scope[attrs.name];
+			scope.formClick = function () {
 				scope.errorPresent = false;
-				var formName = attrs.name;
 				elm.removeClass('error');
-				if (scope[formName].$error.required) {
+				if (scope[attrs.name].$error.required) {
 					scope.errorPresent = true;
 					elm.addClass('error');
 				};

@@ -47,7 +47,7 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
     $scope.refreshUser = function() {
         $scope.currentUser = userInfo.getUser();
         if ($scope.currentUser.name !== 'guest') {
-        	$scope.userMessage = 'welcome back, '
+        	$scope.userMessage = 'welcome back, ';
         	$timeout(function() {
         		$scope.userMessage = 'user'
         	}, 2000);
@@ -71,10 +71,11 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
 
 function LoginCtrl($scope, $http, userInfo) {
     $scope.signIn = function() {
-        $http.post('http://test.crimpd.com/crimpd/auth/' + $scope.loginModel.email, {'password': $scope.loginModel.password})
-            .success(function(data) {
+        $http.post('http://test.crimpd.com/crimpd/auth/' + $scope.loginModel.email, {'password': $scope.loginModel.password}).
+            success(function(data) {
                 $scope.signInResponseData = data;
-            }).then(function() {
+            }).
+			then(function() {
                 $scope.returnErrorMessage();
             });
     };
@@ -87,28 +88,37 @@ function LoginCtrl($scope, $http, userInfo) {
     };
 };
 
-function RegisterCtrl($scope) {
+function RegisterCtrl($scope, $http) {
     $scope.register = function() {
         var userRegInfo = {
-            'username': $scope.registration.userName,
-            'firstName': $scope.registration.firstName,
-            'lastName': $scope.registration.lastName,
-            'email': $scope.registration.email,
-            'password': $scope.registration.passworld,
-            'confirmPassword': $scope.registration.confirmPassword
-        }
-        $http.post('http://test.crimpd.com/crimpd/registration/', userRegInfo)
-            .success(function(data) {
+            'username': $scope.registerModel.username,
+            'firstName': $scope.registerModel.firstName,
+            'lastName': $scope.registerModel.lastName,
+            'email': $scope.registerModel.email,
+            'password': $scope.registerModel.password,
+            'confirmPassword': $scope.registerModel.confirmPassword
+        };
+        $http.post('http://test.crimpd.com/crimpd/registration/', {'user': userRegInfo}).
+            success(function(data) {
                 $scope.registerResponseData = data;
-            }).then(function() {
-                $scope.returnErrorMessage();
-            });
+            }).
+			error(function(data, status) {
+				$scope.registerResponseData = data || "Request failed";
+				console.log(status);
+				$scope.returnErrorMessage();
+			}).
+			then(function() {
+				$scope.returnErrorMessage();
+			});
     };
     $scope.returnErrorMessage = function() {
         if ($scope.registerResponseData.success) {
-            userInfo.updateUser($scope.signInResponseData.user.username);
-        } else {
-            $scope.registrationMessageError = $scope.registerResponseData.errors.message;
+			$scope.registerModel.error = $scope.registerResponseData.success.message;
+        } else if ($scope.registerResponseData.errors) {
+			// What do we really want to do here?
+			$scope.registerModel.error = $scope.registerResponseData.errors.message;
+		} else {
+            $scope.registerModel.error = "Request failed";
         }
     };
 };
