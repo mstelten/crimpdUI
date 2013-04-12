@@ -11,7 +11,8 @@
 					<input type="password" ng-model="formModel.password" name="inputPassword" placeholder="password" required />
 					<input type="password" ng-model="formModel.confirmPassword" name="inputConfirmPassword" placeholder="confirm password" required />
 					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
-					<div class="formMessageError" ng-show="!errorPresent">{{formModel.error}}</div>
+					<div class="formMessageError" ng-show="!errorPresent">{{formModel.message}}</div>
+					<div class="formMessageError" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 					<button type="submit" class="btn btn-large btn-warning" ng-click="formClick($event)">register</button>
 				</form>
 			</div>

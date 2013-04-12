@@ -49,7 +49,7 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
         if ($scope.currentUser.name !== 'guest') {
         	$scope.userMessage = 'welcome back, ';
         	$timeout(function() {
-        		$scope.userMessage = 'user'
+        		$scope.userMessage = 'user';
         	}, 2000);
         }
     };
@@ -69,28 +69,30 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
     };
 };
 
-function LoginCtrl($scope, $http, userInfo) {
+function LoginCtrl($scope, $http, $location, userInfo) {
     $scope.signIn = function() {
         $http.post('http://test.crimpd.com/crimpd/auth/' + $scope.loginModel.email, {'password': $scope.loginModel.password}).
             success(function(data) {
                 $scope.signInResponseData = data;
             }).
 			then(function() {
-                $scope.returnErrorMessage();
+                $scope.returnMessage();
             });
     };
-    $scope.returnErrorMessage = function() {
+    $scope.returnMessage = function() {
         if ($scope.signInResponseData.success) {
             userInfo.updateUser($scope.signInResponseData.user.username);
+			$location.path('/');
         } else {
-            $scope.loginModel.error = $scope.signInResponseData.errors.message;
+            $scope.loginModel.message = $scope.signInResponseData.errors.message;
         }
     };
 };
 
 function RegisterCtrl($scope, $http) {
+	var userRegInfo = {};
     $scope.register = function() {
-        var userRegInfo = {
+        userRegInfo = {
             'username': $scope.registerModel.username,
             'firstName': $scope.registerModel.firstName,
             'lastName': $scope.registerModel.lastName,
@@ -102,28 +104,22 @@ function RegisterCtrl($scope, $http) {
             success(function(data) {
                 $scope.registerResponseData = data;
             }).
-			error(function(data, status) {
-				$scope.registerResponseData = data || "Request failed";
-				console.log(status);
-				$scope.returnErrorMessage();
-			}).
 			then(function() {
-				$scope.returnErrorMessage();
+				$scope.returnMessage();
 			});
     };
-    $scope.returnErrorMessage = function() {
+    $scope.returnMessage = function() {
+		$scope.registerModel.errorMessages = null;
         if ($scope.registerResponseData.success) {
-			$scope.registerModel.error = $scope.registerResponseData.success.message;
-        } else if ($scope.registerResponseData.errors) {
-			// What do we really want to do here?
-			$scope.registerModel.error = $scope.registerResponseData.errors.message;
-		} else {
-            $scope.registerModel.error = "Request failed";
-        }
+			$scope.registerModel.message = "You have registered user " + userRegInfo.username + ". You will recieve an email shortly. Click the link in the email to finish the registration process.";
+        } else {
+			$scope.registerModel.errorMessages = $scope.registerResponseData.errors;
+		};
     };
 };
 
-
+// Need to put "The supplied passwords do not match" in an array by itself.
+// Can there be more than one error message returned at the same time?
 
 
 
