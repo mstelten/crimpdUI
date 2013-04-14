@@ -21,7 +21,26 @@ crimpdApp.config(function($routeProvider, $locationProvider) {
     // when url= '/login/blah' it doesn't redirect to '/'
 });
 
-crimpdApp.run(function($rootScope, $location, $route, userInfo) {
+crimpdApp.run(function($rootScope, $location, $route, $http, userInfo) {
+	var loginCheckResData = {};
+	var usrRole;
+	$http.get('http://test.crimpd.com/crimpd/user')
+		.success(function (data) {
+			if (data.success) {
+				switch (data.user.role) {
+					case "ROLE_USER":
+						usrRole = 1;
+						break;
+					case "ROLE_CONTRIBUTER":
+						usrRole = 2;
+						break;
+					case "ROLE_ADMIN":
+						usrRole = 3;
+						break;
+				};
+				userInfo.updateUser(data.user.username, usrRole);
+			}
+		});
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
         $rootScope.currentUser = userInfo.getUser();
         if ($rootScope.currentUser.role == 0) {
@@ -58,12 +77,12 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
         $scope.refreshUser();
     });
     $scope.isSignedIn = function() {
-       return !!($scope.currentUser.role == (1 || 2 || 3));
+       return userInfo.isUserSignedIn();
     };
     $scope.signOut = function($event) {
     	$event.preventDefault();
-        $http.get('http://test.crimpd.com/crimpd/auth/logout')
-            .success(function(data) {
+        $http.get('http://test.crimpd.com/crimpd/auth/logout').
+            success(function(data) {
             	userInfo.updateUser('guest', 0);
             });    
     };
@@ -73,18 +92,18 @@ function LoginCtrl($scope, $http, $location, userInfo) {
     $scope.signIn = function() {
         $http.post('http://test.crimpd.com/crimpd/auth/' + $scope.loginModel.email, {'password': $scope.loginModel.password}).
             success(function(data) {
-                $scope.signInResponseData = data;
+                $scope.signInResData = data;
             }).
 			then(function() {
                 $scope.returnMessage();
             });
     };
     $scope.returnMessage = function() {
-        if ($scope.signInResponseData.success) {
-            userInfo.updateUser($scope.signInResponseData.user.username);
+        if ($scope.signInResData.success) {
+            userInfo.updateUser($scope.signInResData.user.username);
 			$location.path('/');
         } else {
-            $scope.loginModel.message = $scope.signInResponseData.errors.message;
+            $scope.loginModel.message = $scope.signInResData.errors.message;
         }
     };
 };
@@ -102,7 +121,7 @@ function RegisterCtrl($scope, $http) {
         };
         $http.post('http://test.crimpd.com/crimpd/registration/', {'user': userRegInfo}).
             success(function(data) {
-                $scope.registerResponseData = data;
+                $scope.registerResData = data;
             }).
 			then(function() {
 				$scope.returnMessage();
@@ -110,10 +129,10 @@ function RegisterCtrl($scope, $http) {
     };
     $scope.returnMessage = function() {
 		$scope.registerModel.errorMessages = null;
-        if ($scope.registerResponseData.success) {
+        if ($scope.registerResData.success) {
 			$scope.registerModel.message = "You have registered user " + userRegInfo.username + ". You will recieve an email shortly. Click the link in the email to finish the registration process.";
         } else {
-			$scope.registerModel.errorMessages = $scope.registerResponseData.errors;
+			$scope.registerModel.errorMessages = $scope.registerResData.errors;
 		};
     };
 };

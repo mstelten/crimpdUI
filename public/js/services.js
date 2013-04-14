@@ -23,6 +23,9 @@ myServices.factory('userInfo', function($rootScope) {
         	}
             $rootScope.$broadcast('userChange');
             return user;
+        },
+        isUserSignedIn: function() {
+			return !!(user.role == (1 || 2 || 3));
         }
 	};
 });
