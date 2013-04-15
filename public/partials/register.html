@@ -1,22 +1,39 @@
 <section id="maincontent" class="noIntro">
 	<div class="container">
-		<div class="row rowExtraMargins">
-			<div class="span6">
-				<form name="registrationForm" class="formLarge emailLoginForm" form-model="registerModel" submit-func="register()" cm-form-validator ng-submit="submit()">
-					<h3>register / crimpd</h3>
-					<label>user name</label>
-					<input type="text" ng-model="formModel.username" name="inputUserName" placeholder="username" required />
-					<label> first name</label>
-					<input type="text" ng-model="formModel.firstName" name="inputFirstName" placeholder="first name" required />
-					<label>last name</label>
-					<input type="text" ng-model="formModel.lastName" name="inputLastName" placeholder="last name" required />
-					<input type="text" ng-model="formModel.email" name="inputEmail" placeholder="email" required />
-					<input type="password" ng-model="formModel.password" name="inputPassword" placeholder="password" required />
-					<input type="password" ng-model="formModel.confirmPassword" name="inputConfirmPassword" placeholder="confirm password" required />
+		<div class="row-fluid rowExtraMargins">
+			<div class="span12">
+				<form name="registrationForm" class="formLarge registrationForm" form-model="registerModel" submit-func="register()" cm-form-validator ng-submit="submit()">
+					<h3 class="span12 showMargin">register / crimpd</h3>
+					<div class="span4">
+						<label>user name</label>
+						<input type="text" ng-model="formModel.username" class="input-block-level" inputUserName" placeholder="username" required/>
+					</div>
+					<div class="span4">
+						<label>email</label>
+						<input type="text" ng-model="formModel.email" class="input-block-level" name="inputEmail" placeholder="email" required/>
+					</div>
+					<div class="span4 cL">
+						<label> first name</label>
+						<input type="text" ng-model="formModel.firstName" class="input-block-level" name="inputFirstName" placeholder="first name" required/>
+					</div>
+					<div class="span4">
+						<label>last name</label>
+						<input type="text" ng-model="formModel.lastName" class="input-block-level" name="inputLastName" placeholder="last name" required/>
+					</div>
+					<div class="span4 cL">
+						<label>password</label>
+						<input type="password" ng-model="formModel.password" class="input-block-level" name="inputPassword" placeholder="password" required/>
+					</div>
+					<div class="span4">
+						<label>confirm password</label>
+						<input type="password" ng-model="formModel.confirmPassword" class="input-block-level" name="inputConfirmPassword" placeholder="confirm password" required/>
+					</div>
 					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
 					<div class="formMessageError" ng-show="!errorPresent">{{formModel.message}}</div>
 					<div class="formMessageError" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
-					<button type="submit" class="btn btn-large btn-warning" ng-click="formClick($event)">register</button>
+					<div class="span12">
+						<button type="submit" class="btn btn-large btn-warning" ng-click="formClick($event)">register</button>
+					</div>
 				</form>
 			</div>
 		</div>

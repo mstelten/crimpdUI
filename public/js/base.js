@@ -1,7 +1,7 @@
 var crimpdApp = angular.module('crimpdApp', ['myServices', 'myDirectives', 'myFilters']);
 var myFilters = angular.module('myFilters', []);
 
-// ROUTER & CONFIGURE
+// ROUTER
 
 crimpdApp.config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
@@ -21,25 +21,31 @@ crimpdApp.config(function($routeProvider, $locationProvider) {
     // when url= '/login/blah' it doesn't redirect to '/'
 });
 
+// RUN AT APP STARTUP
+
 crimpdApp.run(function($rootScope, $location, $route, $http, userInfo) {
-	var loginCheckResData = {};
-	var usrRole;
+	$http.defaults.headers.common['withCredentials'] = 'true';
 	$http.get('http://test.crimpd.com/crimpd/user')
 		.success(function (data) {
 			if (data.success) {
-				switch (data.user.role) {
-					case "ROLE_USER":
-						usrRole = 1;
-						break;
-					case "ROLE_CONTRIBUTER":
-						usrRole = 2;
-						break;
-					case "ROLE_ADMIN":
-						usrRole = 3;
-						break;
+				var usrRole;
+				var roleMap = {
+					'ROLE_USER': 1,
+					'ROLE_CONTRIBUTER': 2,
+					'ROLE_ADMIN': 3
+				};
+				if (data.user.role.length == 1) {
+					usrRole = roleMap[data.user.role[0]];
+				} else {
+					var temp = 0;
+					for (i = 0; i < data.user.role.length; i++) {
+						if (roleMap[data.user.role[i]] > temp) {
+							usrRole = temp = roleMap[data.user.role[i]];
+						}
+					}
 				};
 				userInfo.updateUser(data.user.username, usrRole);
-			}
+			};
 		});
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
         $rootScope.currentUser = userInfo.getUser();
@@ -77,7 +83,7 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
         $scope.refreshUser();
     });
     $scope.isSignedIn = function() {
-       return userInfo.isUserSignedIn();
+       return userInfo.isUserAuth();
     };
     $scope.signOut = function($event) {
     	$event.preventDefault();
@@ -136,13 +142,6 @@ function RegisterCtrl($scope, $http) {
 		};
     };
 };
-
-// Need to put "The supplied passwords do not match" in an array by itself.
-// Can there be more than one error message returned at the same time?
-
-
-
-
 
 
 

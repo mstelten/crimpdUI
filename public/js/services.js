@@ -24,8 +24,14 @@ myServices.factory('userInfo', function($rootScope) {
             $rootScope.$broadcast('userChange');
             return user;
         },
-        isUserSignedIn: function() {
+        isUserAuth: function() {
 			return !!(user.role == (1 || 2 || 3));
+        },
+        isUserContributer: function() {
+        	return !!(user.role = (2 || 3));
+        },
+        isUserAdmin: function() {
+        	return !!(user.role = 3);
         }
 	};
 });

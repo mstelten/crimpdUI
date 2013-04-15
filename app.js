@@ -24,5 +24,5 @@ app.get('*', function(req, res){
   	res.render('index.html');
 });
 
-app.listen(2000);
-console.log('NodeCrimpd Express/Angular app started on port 2000');
+app.listen(80);
+console.log('NodeCrimpd Express/Angular app started on port 80');
