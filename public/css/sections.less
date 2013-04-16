@@ -41,6 +41,10 @@
 		font-size: 16px;
 		float: left;
     }
+    .userWelcome {
+    	float: left;
+    	font-style: italic;
+    }
 	ul.topnav {
 		float: right;	
 	}
@@ -128,16 +132,25 @@ ul.topnav  .dropdown-menu {
 
 	}
 }
-.headerUserMessage {
-	font-style: italic;
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
-	-ms-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
-
+.fade-show-setup {
+	-webkit-transition: all linear 1.5s;
+	-moz-transition: all linear 1.5s;
+	-ms-transition: all linear 1.5s;
+	-o-transition: all linear 1.5s;
+	transition: all linear 1.5s;
 }
-
+.fade-show-setup {
+ 	opacity: 0;
+}
+.fade-show-setup.fade-show-start {
+  	opacity: 1;
+}
+.fade-hide-setup {
+  	opacity: 1;
+}
+.fade-hide-setup.fade-hide-start {
+  	opacity: 0;
+}
 
 /* ------------------------------------- footer ------------------------------------- */
 

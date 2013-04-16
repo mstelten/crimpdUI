@@ -3,8 +3,9 @@ var myFilters = angular.module('myFilters', []);
 
 // ROUTER
 
-crimpdApp.config(function($routeProvider, $locationProvider) {
+crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
     $locationProvider.html5Mode(true);
+	$httpProvider.defaults.withCredentials = true;
 	$routeProvider.when('/', {
 		templateUrl: 'partials/home.html',
 		controller: HomeCtrl
@@ -24,23 +25,23 @@ crimpdApp.config(function($routeProvider, $locationProvider) {
 // RUN AT APP STARTUP
 
 crimpdApp.run(function($rootScope, $location, $route, $http, userInfo) {
-	$http.defaults.headers.common['withCredentials'] = 'true';
 	$http.get('http://test.crimpd.com/crimpd/user')
 		.success(function (data) {
 			if (data.success) {
 				var usrRole;
+				var rolesArray = data.user.role;
 				var roleMap = {
 					'ROLE_USER': 1,
 					'ROLE_CONTRIBUTER': 2,
 					'ROLE_ADMIN': 3
 				};
-				if (data.user.role.length == 1) {
-					usrRole = roleMap[data.user.role[0]];
+				if (rolesArray.length === 1) {
+					usrRole = roleMap[rolesArray[0]];
 				} else {
 					var temp = 0;
-					for (i = 0; i < data.user.role.length; i++) {
-						if (roleMap[data.user.role[i]] > temp) {
-							usrRole = temp = roleMap[data.user.role[i]];
+					for (i = 0; i < rolesArray.length; i++) {
+						if (roleMap[rolesArray[i]] > temp) {
+							usrRole = temp = roleMap[rolesArray[i]];
 						}
 					}
 				};
@@ -68,23 +69,22 @@ function HomeCtrl($scope, userInfo, $location) {
 };
 
 function HeaderCtrl($scope, userInfo, $http, $timeout) {
-    $scope.userMessage = 'user';
     $scope.refreshUser = function() {
         $scope.currentUser = userInfo.getUser();
-        if ($scope.currentUser.name !== 'guest') {
-        	$scope.userMessage = 'welcome back, ';
-        	$timeout(function() {
-        		$scope.userMessage = 'user';
-        	}, 2000);
-        }
     };
     $scope.refreshUser();
+	$scope.setTrue = function() {
+		$scope.isSignedIn = function () {
+			return !!($scope.currentUser.role !== 0);
+		};
+	};
+	$timeout(function() {
+		$scope.setTrue()
+	}, 200);
     $scope.$on('userChange', function(e) {
         $scope.refreshUser();
     });
-    $scope.isSignedIn = function() {
-       return userInfo.isUserAuth();
-    };
+    $scope.animateTerms = {show: 'fade-show', hide: 'fade-hide'};
     $scope.signOut = function($event) {
     	$event.preventDefault();
         $http.get('http://test.crimpd.com/crimpd/auth/logout').
