@@ -255,8 +255,4 @@ footer.footer .input-append input {
   border: none;
 }
 /* ------------------------------------- login page ------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003227}}
-.emailLoginForm {
-  margin-left: 100px;
-}
 /* ------------------------------------- registration page ------------------------------------- */

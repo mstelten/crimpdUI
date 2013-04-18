@@ -24,6 +24,25 @@ myServices.factory('userInfo', function($rootScope) {
             $rootScope.$broadcast('userChange');
             return user;
         },
+        determineRole: function(rolesArray) {
+			var usrRole;
+			var roleMap = {
+				'ROLE_USER': 1,
+				'ROLE_CONTRIBUTER': 2,
+				'ROLE_ADMIN': 3
+			};
+			if (rolesArray.length === 1) {
+				usrRole = roleMap[rolesArray[0]];
+			} else {
+				var temp = 0;
+				for (i = 0; i < rolesArray.length; i++) {
+					if (roleMap[rolesArray[i]] > temp) {
+						usrRole = temp = roleMap[rolesArray[i]];
+					}
+				}
+			}
+			return usrRole;
+        },
         isUserAuth: function() {
 			return !!(user.role == (1 || 2 || 3));
         },

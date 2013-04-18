@@ -1,11 +1,12 @@
 <section id="maincontent" class="noIntro">
 	<div class="container">
-		<div class="row rowExtraMargins">
-			<div class="span6">
-                <form name="loginForm" class="formLarge emailLoginForm" form-model="loginModel" submit-func="signIn()" cm-form-validator ng-submit="submit()">
+		<div class="row-fluid rowExtraMargins">
+			<div class="span2 hidden-phone"></div>
+			<div class="span4">
+                <form name="loginForm" class="formLarge" form-model="loginModel" submit-func="signIn()" cm-form-validator ng-submit="submit()">
                     <h3>sign in / crimpd</h3>
-                    <input type="text" ng-model="formModel.email" class="input-xlarge" name="inputEmail" placeholder="email or username" required>
-                    <input type="password" ng-model="formModel.password" class="input-xlarge" name="inputPassword" placeholder="password" required>
+                    <input type="text" ng-model="formModel.email" class="input-block-level" name="inputEmail" placeholder="email or username" required>
+                    <input type="password" ng-model="formModel.password" class="input-block-level" name="inputPassword" placeholder="password" required>
                     <div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
                     <div class="formMessageError" ng-show="!errorPresent">{{formModel.message}}</div>
                     <button type="submit" class="btn btn-large btn-warning" ng-click="formClick($event)">sign in</button>

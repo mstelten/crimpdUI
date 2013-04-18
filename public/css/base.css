@@ -20,7 +20,7 @@ body {
   margin-top: 120px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000324}}
-.rowExtraMargins.row {
+.rowExtraMargins.row-fluid {
   margin: 50px 0;
 }
 /* ------------------------------------- global level elements ------------------------------------- */
@@ -123,7 +123,7 @@ h4 small {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003106}}
 .row-fluid [class*="span"].showMargin:first-child {
-  margin-left: 30px;
+  margin-left: 2.564%;
 }
 /* ------------------------------------- forms / input elements ------------------------------------- */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003114}}
@@ -224,7 +224,12 @@ form.error input.ng-invalid-required {
   margin-bottom: 15px;
   color: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003202}}
+.row-fluid [class*="span"].formMessage,
+.row-fluid [class*="span"].formMessageError {
+  min-height: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003208}}
 .formLarge input {
   display: block;
   height: 48px;
@@ -233,7 +238,12 @@ form.error input.ng-invalid-required {
   font-size: 20px;
   line-height: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003213}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003216}}
+.formLarge label {
+  font-size: 16px;
+  color: #de470c;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003222}}
 .formMedium input {
   display: block;
   height: 40px;

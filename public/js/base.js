@@ -28,23 +28,7 @@ crimpdApp.run(function($rootScope, $location, $route, $http, userInfo) {
 	$http.get('http://test.crimpd.com/crimpd/user')
 		.success(function (data) {
 			if (data.success) {
-				var usrRole;
-				var rolesArray = data.user.role;
-				var roleMap = {
-					'ROLE_USER': 1,
-					'ROLE_CONTRIBUTER': 2,
-					'ROLE_ADMIN': 3
-				};
-				if (rolesArray.length === 1) {
-					usrRole = roleMap[rolesArray[0]];
-				} else {
-					var temp = 0;
-					for (i = 0; i < rolesArray.length; i++) {
-						if (roleMap[rolesArray[i]] > temp) {
-							usrRole = temp = roleMap[rolesArray[i]];
-						}
-					}
-				};
+				var usrRole = userInfo.determineRole(data.user.role);
 				userInfo.updateUser(data.user.username, usrRole);
 			};
 		});
@@ -106,7 +90,8 @@ function LoginCtrl($scope, $http, $location, userInfo) {
     };
     $scope.returnMessage = function() {
         if ($scope.signInResData.success) {
-            userInfo.updateUser($scope.signInResData.user.username);
+			var usrRole = userInfo.determineRole($scope.signInResData.user.role);
+            userInfo.updateUser($scope.signInResData.user.username, usrRole);
 			$location.path('/');
         } else {
             $scope.loginModel.message = $scope.signInResData.errors.message;

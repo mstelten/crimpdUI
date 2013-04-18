@@ -21,7 +21,7 @@ body {
 #maincontent.noIntro {
 	margin-top: 120px;
 }
-.rowExtraMargins.row {
+.rowExtraMargins.row-fluid {
   margin: 50px 0;
 }
 
@@ -104,7 +104,7 @@ h4 small {
 	clear: left;
 }
 .row-fluid [class*="span"].showMargin:first-child {
-  margin-left: 30px;
+  margin-left: 2.564%;
 }
 
 
@@ -199,6 +199,11 @@ form.error input.ng-invalid-required {
 	margin-bottom: 15px;
 	color: red;
 }
+.row-fluid [class*="span"].formMessage,
+.row-fluid [class*="span"].formMessageError {
+	min-height: 0;
+}
+
 .formLarge {
 	input {
 		display: block;
@@ -207,6 +212,10 @@ form.error input.ng-invalid-required {
 		margin-bottom: 20px;
 		font-size: 20px;
 		line-height: 30px;
+	}
+	label {
+		font-size: 16px;
+		color: @text-secondary;
 	}
 }
 .formMedium {
