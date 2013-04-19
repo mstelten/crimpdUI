@@ -126,6 +126,19 @@ function RegisterCtrl($scope, $http) {
 			$scope.registerModel.errorMessages = $scope.registerResData.errors;
 		};
     };
+    $scope.checkUserName = function() {
+		$http.get('http://test.crimpd.com/crimpd/registration/' + $scope.formModel.username).
+			success(function (data) {
+				if (data.success) {
+					alert('you good');
+					// mark as valid?  $setValidity
+				} else {
+					alert('username already exists');
+					// make it as errorous w/ message
+					// mark form as invalid until non-errorous
+				}
+			});
+    }
 };
 
 

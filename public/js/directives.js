@@ -26,3 +26,27 @@ myDirectives.directive('cmFormValidator', function() {
 		}
 	}
 });
+
+myDirectives.directive('cmUsernameInput', ['$http', function ($http) {
+	return {
+		restrict: "A",
+		link: function (scope, elm) {
+			$(elm).on('blur', function() {
+				checkUserName();
+			});
+			var checkUserName = function() {
+				$http.get('http://test.crimpd.com/crimpd/registration/' + elm.val()).
+					success(function(data) {
+						if (data.success) {
+							alert('you good');
+							// mark as valid?  $setValidity
+						} else {
+							alert('username already exists');
+							// make it as errorous w/ message
+							// mark form as invalid until non-errorous
+						}
+					});
+			};
+		}
+	}
+}]);
