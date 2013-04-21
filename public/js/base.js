@@ -52,10 +52,6 @@ function HomeCtrl($scope, userInfo, $location) {
     $scope.name = "HomeCntl";
 };
 
-function TestCtrl($scope) {
-	$scope.name = "testing..";
-};
-
 function HeaderCtrl($scope, userInfo, $http, $timeout) {
     $scope.refreshUser = function() {
         $scope.currentUser = userInfo.getUser();

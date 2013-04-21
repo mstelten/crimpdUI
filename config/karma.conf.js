@@ -27,4 +27,4 @@ colors = true;
 autoWatch = false;
 singleRun = true;
 browsers = ['Chrome'];
-reporters = ['progress'];
+reporters = ['progress', 'coverage'];
