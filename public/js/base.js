@@ -53,18 +53,24 @@ function HomeCtrl($scope, userInfo, $location) {
 };
 
 function HeaderCtrl($scope, userInfo, $http, $timeout) {
+    $scope.state = "hide";
     $scope.refreshUser = function() {
         $scope.currentUser = userInfo.getUser();
     };
     $scope.refreshUser();
-	$scope.setTrue = function() {
+
+	$scope.startAnimations = function() {
 		$scope.isSignedIn = function () {
 			return !!($scope.currentUser.role !== 0);
 		};
+		$timeout(function() {
+			$scope.state = undefined;
+		}, 200);
 	};
 	$timeout(function() {
-		$scope.setTrue()
-	}, 200);
+		$scope.startAnimations()
+	}, 300);
+
     $scope.$on('userChange', function(e) {
         $scope.refreshUser();
     });

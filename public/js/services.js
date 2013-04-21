@@ -2,7 +2,7 @@ var myServices = angular.module('myServices', []);
 
 myServices.factory('userInfo', function($rootScope) {
 	var user = {
-        name: 'guest',
+        name: 'noob',
         role: 0
     }
     return {

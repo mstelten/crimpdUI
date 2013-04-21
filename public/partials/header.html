@@ -8,12 +8,14 @@
 				</a>
 				<!-- end logo -->
                 <div class="userInfo">
-                    <div ng-show="isSignedIn()" ng-animate="animateTerms" class="userWelcome">
+                    <div class="userWelcome">
+	                    <span ng-show="isSignedIn()" ng-animate="animateTerms">
                         howdy, <strong>{{currentUser.name}}</strong>
+	                    </span>
+		                <span ng-show="!isSignedIn()" ng-animate="animateTerms" ng-class="state">
+			                hi there, <strong>noob</strong>
+		                </span>
                     </div>
-	                <div ng-show="!isSignedIn()" ng-animate="animateTerms" class="userWelcome">
-		                hi there, <strong>noob</strong>
-	                </div>
                     <div ng-show="isSignedIn()">
                         <a href="/user/settings">settings</a> / <a href="#" ng-click="signOut($event)">log out</a>
                     </div>
