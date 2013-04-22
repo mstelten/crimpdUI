@@ -35,7 +35,7 @@ myDirectives.directive('cmUsernameInput', ['$http', function ($http) {
 				checkUserName();
 			});
 			var checkUserName = function() {
-				$http.get('http://test.crimpd.com/crimpd/registration/' + elm.val()).
+				$http.get('http://api.crimpd.com/crimpd/registration/' + elm.val()).
 					success(function(data) {
 						if (data.success) {
 							alert('you good');

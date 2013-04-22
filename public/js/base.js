@@ -25,7 +25,7 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 // RUN AT APP STARTUP
 
 crimpdApp.run(function($rootScope, $location, $route, $http, userInfo) {
-	$http.get('http://test.crimpd.com/crimpd/user')
+	$http.get('http://api.crimpd.com/crimpd/user')
 		.success(function (data) {
 			if (data.success) {
 				var usrRole = userInfo.determineRole(data.user.role);
@@ -77,7 +77,7 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
     });
     $scope.signOut = function($event) {
     	$event.preventDefault();
-        $http.get('http://test.crimpd.com/crimpd/auth/logout').
+        $http.get('http://api.crimpd.com/crimpd/auth/logout').
             success(function(data) {
             	userInfo.updateUser('noob', 0);
             });    
@@ -86,7 +86,7 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
 
 function LoginCtrl($scope, $http, $location, userInfo) {
     $scope.signIn = function() {
-        $http.post('http://test.crimpd.com/crimpd/auth/' + $scope.loginModel.email, {'password': $scope.loginModel.password}).
+        $http.post('http://api.crimpd.com/crimpd/auth/' + $scope.loginModel.email, {'password': $scope.loginModel.password}).
             success(function(data) {
                 $scope.signInResData = data;
             }).
@@ -116,7 +116,7 @@ function RegisterCtrl($scope, $http) {
             'password': $scope.registerModel.password,
             'confirmPassword': $scope.registerModel.confirmPassword
         };
-        $http.post('http://test.crimpd.com/crimpd/registration/', {'user': userRegInfo}).
+        $http.post('http://api.crimpd.com/crimpd/registration/', {'user': userRegInfo}).
             success(function(data) {
                 $scope.registerResData = data;
             }).
@@ -133,7 +133,7 @@ function RegisterCtrl($scope, $http) {
 		};
     };
     $scope.checkUserName = function() {
-		$http.get('http://test.crimpd.com/crimpd/registration/' + $scope.formModel.username).
+		$http.get('http://api.crimpd.com/crimpd/registration/' + $scope.formModel.username).
 			success(function (data) {
 				if (data.success) {
 					alert('you good');
