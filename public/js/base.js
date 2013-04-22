@@ -59,6 +59,7 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
     };
     $scope.refreshUser();
 
+	$scope.animateTerms = {show: 'fade-show', hide: 'fade-hide'};
 	$scope.startAnimations = function() {
 		$scope.isSignedIn = function () {
 			return !!($scope.currentUser.role !== 0);
@@ -74,12 +75,11 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
     $scope.$on('userChange', function(e) {
         $scope.refreshUser();
     });
-    $scope.animateTerms = {show: 'fade-show', hide: 'fade-hide'};
     $scope.signOut = function($event) {
     	$event.preventDefault();
         $http.get('http://test.crimpd.com/crimpd/auth/logout').
             success(function(data) {
-            	userInfo.updateUser('guest', 0);
+            	userInfo.updateUser('noob', 0);
             });    
     };
 };

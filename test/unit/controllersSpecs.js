@@ -14,13 +14,13 @@ describe('Unit Testing: Header Controller', function () {
 		expect($scope.currentUser).not.toBeNull()
 	}));
 
-	it('signOut function send ajax request to sign user out & updates user to GUEST', inject(function ($httpBackend) {
+	it('signOut function send ajax request - signs user out & updates user to NOOB', inject(function ($httpBackend, userInfo) {
 		$httpBackend.when('GET', 'http://test.crimpd.com/crimpd/auth/logout').respond({"success": {"message": "You have successfully logged out"}});
 		var $event = {
 			preventDefault: function() {return 1}
 		};
 		$scope.signOut($event);
-		expect($scope.currentUser).toEqual({name: 'guest', role: 0});
+		expect(userInfo.getUser()).toEqual({name: 'noob', role: 0});
 	}));
 
 });
