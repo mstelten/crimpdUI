@@ -15,7 +15,7 @@ describe('Unit Testing: Header Controller', function () {
 	}));
 
 	it('signOut function send ajax request - signs user out & updates user to NOOB', inject(function ($httpBackend, userInfo) {
-		$httpBackend.when('GET', 'http://test.crimpd.com/crimpd/auth/logout').respond({"success": {"message": "You have successfully logged out"}});
+		$httpBackend.when('GET', 'http://api.crimpd.com/crimpd/auth/logout').respond({"success": {"message": "You have successfully logged out"}});
 		var $event = {
 			preventDefault: function() {return 1}
 		};

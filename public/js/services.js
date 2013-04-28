@@ -35,7 +35,7 @@ myServices.factory('userInfo', function($rootScope) {
 				usrRole = roleMap[rolesArray[0]];
 			} else {
 				var temp = 0;
-				for (i = 0; i < rolesArray.length; i++) {
+				for (var i = 0; i < rolesArray.length; i++) {
 					if (roleMap[rolesArray[i]] > temp) {
 						usrRole = temp = roleMap[rolesArray[i]];
 					}

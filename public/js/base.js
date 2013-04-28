@@ -100,7 +100,7 @@ function LoginCtrl($scope, $http, $location, userInfo) {
             userInfo.updateUser($scope.signInResData.user.username, usrRole);
 			$location.path('/');
         } else {
-            $scope.loginModel.message = $scope.signInResData.errors.message;
+            $scope.loginModel.errorMessages = $scope.signInResData.errors;
         }
     };
 };
@@ -131,20 +131,8 @@ function RegisterCtrl($scope, $http) {
         } else {
 			$scope.registerModel.errorMessages = $scope.registerResData.errors;
 		};
+		$scope.registerModel.clicked = true;
     };
-    $scope.checkUserName = function() {
-		$http.get('http://api.crimpd.com/crimpd/registration/' + $scope.formModel.username).
-			success(function (data) {
-				if (data.success) {
-					alert('you good');
-					// mark as valid?  $setValidity
-				} else {
-					alert('username already exists');
-					// make it as errorous w/ message
-					// mark form as invalid until non-errorous
-				}
-			});
-    }
 };
 
 
