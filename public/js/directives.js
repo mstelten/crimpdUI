@@ -12,14 +12,15 @@ myDirectives.directive('cmFormValidator', function() {
 				e.preventDefault();
 			}, true);
 			scope.thisForm = scope[attrs.name];
-			scope.formClick = function () {
+			scope.formClick = function ($event) {
 				scope.errorPresent = false;
 				scope.formModel.clicked = false;
 				elm.removeClass('error');
-				if (scope[attrs.name].$error.required) {
+				if (scope[attrs.name].$error.required || scope[attrs.name].$error.email || scope[attrs.name].$error.duplicate[0].$invalid) {
 					scope.errorPresent = true;
 					elm.addClass('error');
-				};
+					$event.preventDefault();
+				}
 			};
 		}
 	}
@@ -30,18 +31,17 @@ myDirectives.directive('cmUsernameInput', ['$http', function ($http) {
 		restrict: "A",
 		link: function (scope, elm) {
 			$(elm).on('blur', function() {
-				checkUserName();
+				scope.$apply(checkUserName());
 			});
 			var checkUserName = function() {
 				$http.get('http://api.crimpd.com/crimpd/registration/' + elm.val()).
 					success(function(data) {
 						if (data.success) {
-							alert('you good');
-							// mark as valid?  $setValidity
+							console.log("username is unique");
+							scope.registrationForm.inputUserName.$setValidity("duplicate", true);
 						} else {
-							alert('username already exists');
-							// make it as errorous w/ message
-							// mark form as invalid until non-errorous
+							console.log('username already exists');
+							scope.registrationForm.inputUserName.$setValidity("duplicate", false);
 						}
 					});
 			};

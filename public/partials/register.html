@@ -10,7 +10,7 @@
 				</div>
 				<div class="span5">
 					<label>email</label>
-					<input type="text" ng-model="formModel.email" class="input-block-level" name="inputEmail" placeholder="email" required />
+					<input type="email" ng-model="formModel.email" class="input-block-level" name="inputEmail" placeholder="email" required />
 				</div>
 				<div class="span5 cL">
 					<label> first name</label>
@@ -29,6 +29,8 @@
 					<input type="password" ng-model="formModel.confirmPassword" class="input-block-level" name="inputConfirmPassword" placeholder="confirm password" required/>
 				</div>
 				<div class="span10 formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
+				<div class="span10 formMessageError" ng-show="errorPresent && thisForm.$error.email">Email address is invalid.</div>
+				<div class="span10 formMessageError" ng-show="thisForm.$error.duplicate">Username is already taken.</div>
 				<div class="span10 formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 				<div class="span12">
 					<button type="submit" class="btn btn-large btn-warning" ng-click="formClick($event)">register</button>

@@ -188,8 +188,11 @@ select:focus:invalid:focus {
 	-moz-box-shadow: none;
 	box-shadow: none;
 	border-color: #333;
+	color: #333;
 }
-form.error input.ng-invalid-required {
+form.error input.ng-invalid-required,
+form.error input.ng-invalid-email,
+form input.ng-invalid-duplicate {
 	border-color: red;
 }
 .formMessage {

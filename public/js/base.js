@@ -102,6 +102,7 @@ function LoginCtrl($scope, $http, $location, userInfo) {
         } else {
             $scope.loginModel.errorMessages = $scope.signInResData.errors;
         }
+		$scope.loginModel.clicked = true;
     };
 };
 
