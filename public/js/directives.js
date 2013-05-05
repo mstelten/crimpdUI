@@ -29,7 +29,7 @@ myDirectives.directive('cmFormValidator', function() {
 myDirectives.directive('cmUsernameInput', ['$http', function ($http) {
 	return {
 		restrict: "A",
-		link: function (scope, elm) {
+		link: function (scope, elm, attrs) {
 			$(elm).on('blur', function() {
 				scope.$apply(checkUserName());
 			});
@@ -38,10 +38,10 @@ myDirectives.directive('cmUsernameInput', ['$http', function ($http) {
 					success(function(data) {
 						if (data.success) {
 							console.log("username is unique");
-							scope.registrationForm.inputUserName.$setValidity("duplicate", true);
+							scope[attrs.parentForm].inputUserName.$setValidity("duplicate", true);
 						} else {
 							console.log('username already exists');
-							scope.registrationForm.inputUserName.$setValidity("duplicate", false);
+							scope[attrs.parentForm].inputUserName.$setValidity("duplicate", false);
 						}
 					});
 			};
