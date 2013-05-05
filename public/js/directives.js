@@ -16,7 +16,7 @@ myDirectives.directive('cmFormValidator', function() {
 				scope.errorPresent = false;
 				scope.formModel.clicked = false;
 				elm.removeClass('error');
-				if (scope[attrs.name].$error.required || scope[attrs.name].$error.email || scope[attrs.name].$error.duplicate[0].$invalid) {
+				if (scope.thisForm.$error.required || scope.thisForm.$error.email || scope.thisForm.$error.duplicate[0].$invalid) {
 					scope.errorPresent = true;
 					elm.addClass('error');
 					$event.preventDefault();

@@ -18,6 +18,10 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 		templateUrl: 'partials/register.html',
 		controller: RegisterCtrl
 	}).
+	when('/oauth', {
+		templateUrl: 'partials/link-oauth.html',
+		controller: LinkOAuthCtrl
+	}).
 	otherwise({redirectTo: '/'});
     // when url= '/login/blah' it doesn't redirect to '/'
 });
@@ -104,6 +108,47 @@ function LoginCtrl($scope, $http, $location, userInfo) {
         }
 		$scope.loginModel.clicked = true;
     };
+};
+
+function LinkOAuthCtrl($scope, $http, $location, userInfo) {
+	$scope.linkAccount = function () {
+		$http.post('http://api.crimpd.com/crimpd/oauth/save/linkaccount', {'username': $scope.linkAccountModel.email, 'password': $scope.linkAccountModel.password}).
+			success(function (data) {
+				$scope.linkAccountResData = data;
+			}).
+			then(function () {
+				$scope.returnMessageLinkAccount();
+			});
+	};
+	$scope.returnMessageLinkAccount = function () {
+		if ($scope.linkAccountResData.success) {
+			var usrRole = userInfo.determineRole($scope.linkAccountResData.user.role);
+			userInfo.updateUser($scope.linkAccountResData.user.username, usrRole);
+			$location.path('/');
+		} else {
+			$scope.linkAccountModel.errorMessages = $scope.linkAccountResData.errors;
+		}
+		$scope.linkAccountModel.clicked = true;
+	};
+	$scope.createlinkedAccount = function () {
+		$http.post('http://api.crimpd.com/crimpd/oauth/save/createaccount', {'username': $scope.newAccountModel.username, 'email': $scope.newAccountModel.email}).
+			success(function (data) {
+				$scope.newAccountResData = data;
+			}).
+			then(function () {
+				$scope.returnMessageNewAccount();
+			});
+	};
+	$scope.returnMessageNewAccount = function () {
+		if ($scope.newAccountResData.success) {
+			var usrRole = userInfo.determineRole($scope.newAccountResData.user.role);
+			userInfo.updateUser($scope.newAccountResData.user.username, usrRole);
+			$location.path('/');
+		} else {
+			$scope.newAccountModel.errorMessages = $scope.newAccountResData.errors;
+		}
+		$scope.newAccountModel.clicked = true;
+	};
 };
 
 function RegisterCtrl($scope, $http) {
