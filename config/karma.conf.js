@@ -10,7 +10,9 @@ files = [
 	'./public/js/third-party/jquery-1.9.1.min.js',
 
 	//App-specific Code
-	'./public/js/base.js',
+	'./public/js/router.js',
+	'./public/js/uif-ctrls.js',
+	'./public/js/exercises-ctrls.js',
 	'./public/js/directives.js',
 	'./public/js/services.js',
 

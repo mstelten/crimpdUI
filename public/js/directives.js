@@ -34,7 +34,7 @@ myDirectives.directive('cmUsernameInput', ['$http', function ($http) {
 				scope.$apply(checkUserName());
 			});
 			var checkUserName = function() {
-				$http.get('http://api.crimpd.com/crimpd/registration/' + elm.val()).
+				$http.get(config.apiUrl + '/registration/' + elm.val()).
 					success(function(data) {
 						if (data.success) {
 							console.log("username is unique");
