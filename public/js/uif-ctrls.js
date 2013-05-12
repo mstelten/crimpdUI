@@ -86,38 +86,38 @@ function LinkOAuthCtrl($scope, $http, $location, userInfo) {
 	$scope.linkAccount = function () {
 		$http.post(config.apiUrl + '/oauth/save/linkaccount', {'username': $scope.linkAccountModel.email, 'password': $scope.linkAccountModel.password}).
 			success(function (data) {
-				$scope.linkAccountResData = data;
+				$scope.updateProfileResData = data;
 			}).
 			then(function () {
 				$scope.returnMessageLinkAccount();
 			});
 	};
 	$scope.returnMessageLinkAccount = function () {
-		if ($scope.linkAccountResData.success) {
-			var usrRole = userInfo.determineRole($scope.linkAccountResData.user.role);
-			userInfo.updateUser($scope.linkAccountResData.user.username, usrRole);
+		if ($scope.updateProfileResData.success) {
+			var usrRole = userInfo.determineRole($scope.updateProfileResData.user.role);
+			userInfo.updateUser($scope.updateProfileResData.user.username, usrRole);
 			$location.path('/');
 		} else {
-			$scope.linkAccountModel.errorMessages = $scope.linkAccountResData.errors;
+			$scope.linkAccountModel.errorMessages = $scope.updateProfileResData.errors;
 		}
 		$scope.linkAccountModel.clicked = true;
 	};
 	$scope.createlinkedAccount = function () {
 		$http.post(config.apiUrl + '/oauth/save/createaccount', {'username': $scope.newAccountModel.username, 'email': $scope.newAccountModel.email}).
 			success(function (data) {
-				$scope.newAccountResData = data;
+				$scope.changePasswordResData = data;
 			}).
 			then(function () {
 				$scope.returnMessageNewAccount();
 			});
 	};
 	$scope.returnMessageNewAccount = function () {
-		if ($scope.newAccountResData.success) {
-			var usrRole = userInfo.determineRole($scope.newAccountResData.user.role);
-			userInfo.updateUser($scope.newAccountResData.user.username, usrRole);
+		if ($scope.changePasswordResData.success) {
+			var usrRole = userInfo.determineRole($scope.changePasswordResData.user.role);
+			userInfo.updateUser($scope.changePasswordResData.user.username, usrRole);
 			$location.path('/');
 		} else {
-			$scope.newAccountModel.errorMessages = $scope.newAccountResData.errors;
+			$scope.newAccountModel.errorMessages = $scope.changePasswordResData.errors;
 		}
 		$scope.newAccountModel.clicked = true;
 	};
@@ -150,5 +150,45 @@ function RegisterCtrl($scope, $http) {
 			$scope.registerModel.errorMessages = $scope.registerResData.errors;
 		}
 		$scope.registerModel.clicked = true;
+	};
+}
+
+function UserSettingsCtrl($scope, $http, userInfo) {
+	$scope.updateProfile = function () {
+		$http.put(config.apiUrl + '/user', {'username': $scope.linkAccountModel.email, 'password': $scope.linkAccountModel.password}).
+			success(function (data) {
+				$scope.updateProfileResData = data;
+			}).
+			then(function () {
+				$scope.returnMessageUpdateProfile();
+			});
+	};
+	$scope.returnMessageUpdateProfile = function () {
+		if ($scope.updateProfileResData.success) {
+			var usrRole = userInfo.determineRole($scope.updateProfileResData.user.role);
+			userInfo.updateUser($scope.updateProfileResData.user.username, usrRole);
+		} else {
+			$scope.linkAccountModel.errorMessages = $scope.updateProfileResData.errors;
+		}
+		$scope.linkAccountModel.clicked = true;
+	};
+	$scope.changePassword = function () {
+		$http.post(config.apiUrl + '/oauth/save/createaccount', {'username': $scope.newAccountModel.username, 'email': $scope.newAccountModel.email}).
+			success(function (data) {
+				$scope.changePasswordResData = data;
+			}).
+			then(function () {
+				$scope.returnMessageChangePassword();
+			});
+	};
+	$scope.returnMessageChangePassword = function () {
+		if ($scope.changePasswordResData.success) {
+			var usrRole = userInfo.determineRole($scope.changePasswordResData.user.role);
+			userInfo.updateUser($scope.changePasswordResData.user.username, usrRole);
+			$location.path('/');
+		} else {
+			$scope.newAccountModel.errorMessages = $scope.changePasswordResData.errors;
+		}
+		$scope.newAccountModel.clicked = true;
 	};
 }

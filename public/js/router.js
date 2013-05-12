@@ -22,6 +22,10 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 		templateUrl: 'partials/link-oauth.html',
 		controller: LinkOAuthCtrl
 	}).
+	when('/settings', {
+		templateUrl: 'partials/user-settings.html',
+		controller: UserSettingsCtrl
+	}).
 	otherwise({redirectTo: '/'});
     // when url= '/login/blah' it doesn't redirect to '/'
 });
