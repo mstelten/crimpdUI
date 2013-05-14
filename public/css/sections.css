@@ -269,4 +269,24 @@ footer.footer .input-append input {
   border: none;
 }
 /* ------------------------------------- login page ------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003238}}
+.loginFacebook {
+  float: left;
+  background: url('/img/sign-in-with-facebook.png') no-repeat left top;
+  height: 48px;
+  width: 251px;
+  margin: 75px 0 0 20px;
+  cursor: pointer;
+  text-indent: -9999px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003247}}
+.loginGoogle {
+  float: left;
+  background: url('/img/sign-in-with-google.png') no-repeat left top;
+  height: 48px;
+  width: 251px;
+  margin: 20px 0 0 20px;
+  cursor: pointer;
+  text-indent: -9999px;
+}
 /* ------------------------------------- registration page ------------------------------------- */

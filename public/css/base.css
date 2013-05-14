@@ -121,12 +121,8 @@ h4 small {
 .cL {
   clear: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003106}}
-.row-fluid [class*="span"].showMargin:first-child {
-  margin-left: 2.564%;
-}
 /* ------------------------------------- forms / input elements ------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003111}}
 select,
 textarea,
 input[type="text"],
@@ -150,7 +146,7 @@ input[type="color"],
   background-color: #fafafa;
   color: #333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003137}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003134}}
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -177,7 +173,7 @@ input[type="color"]:focus,
   -moz-box-shadow: none;
   box-shadow: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003159}}
 input[disabled],
 select[disabled],
 textarea[disabled],
@@ -187,14 +183,14 @@ textarea[readonly] {
   cursor: not-allowed;
   background-color: #eeeeee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003171}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003168}}
 input[type="radio"][disabled],
 input[type="checkbox"][disabled],
 input[type="radio"][readonly],
 input[type="checkbox"][readonly] {
   background-color: transparent;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003177}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003174}}
 input[type="text"]:required,
 input[type="password"]:required,
 input[type="email"]:required {
@@ -202,7 +198,7 @@ input[type="email"]:required {
   background-position: 97% center;
   background-repeat: no-repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003184}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003181}}
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
@@ -212,27 +208,34 @@ select:focus:invalid:focus {
   border-color: #333;
   color: #333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003193}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003190}}
 form.error input.ng-invalid-required,
 form.error input.ng-invalid-email,
 form input.ng-invalid-duplicate {
   border-color: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003198}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003195}}
 .formMessage {
   margin-bottom: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003201}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003198}}
 .formMessageError {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003205}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003202}}
 .row-fluid [class*="span"].formMessage,
 .row-fluid [class*="span"].formMessageError {
   min-height: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003206}}
+form h3 {
+  border-bottom: solid 1px #AAA;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+/* --- login & registration forms --- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003213}}
 .formLarge input {
   display: block;
   height: 48px;
@@ -241,18 +244,46 @@ form input.ng-invalid-duplicate {
   font-size: 20px;
   line-height: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003219}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003221}}
 .formLarge label {
   font-size: 16px;
   color: #de470c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003225}}
-.formMedium input {
+/* --- formMedium requires .form-horizontal ---- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003228}}
+.formMediumHorz input {
   display: block;
   height: 40px;
   padding: 4px 10px;
   margin-bottom: 15px;
-  font-size: 20px;
-  line-height: 48px;
-  width: 300px;
+  font-size: 16px;
+  line-height: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003236}}
+.formMediumHorz label {
+  font-size: 16px;
+  line-height: 40px;
+  color: #de470c;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003241}}
+.formMediumHorz label.control-label {
+  width: 140px;
+  padding-top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003245}}
+.formMediumHorz .controls {
+  margin-left: 150px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003247}}
+.formMediumHorz .controls input {
+  margin-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003251}}
+.formMediumHorz .formMessageError {
+  padding-left: 150px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003254}}
+.formMediumHorz button {
+  float: left;
+  margin-left: 150px;
 }

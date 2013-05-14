@@ -154,8 +154,19 @@ function RegisterCtrl($scope, $http) {
 }
 
 function UserSettingsCtrl($scope, $http, userInfo) {
+	var userUpdateInfo = {};
+	var changePasswordInfo = {};
 	$scope.updateProfile = function () {
-		$http.put(config.apiUrl + '/user', {'username': $scope.linkAccountModel.email, 'password': $scope.linkAccountModel.password}).
+		userUpdateInfo = {
+			'email': $scope.updateProfileModel.email
+		};
+		if ($scope.updateProfileModel.firstname) {
+			userUpdateInfo.firstName = $scope.updateProfileModel.firstname;
+		}
+		if ($scope.updateProfileModel.lastname) {
+			userUpdateInfo.lastName = $scope.updateProfileModel.lastname;
+		}
+		$http.put(config.apiUrl + '/user', {'user': userUpdateInfo}).
 			success(function (data) {
 				$scope.updateProfileResData = data;
 			}).
@@ -164,16 +175,20 @@ function UserSettingsCtrl($scope, $http, userInfo) {
 			});
 	};
 	$scope.returnMessageUpdateProfile = function () {
-		if ($scope.updateProfileResData.success) {
-			var usrRole = userInfo.determineRole($scope.updateProfileResData.user.role);
-			userInfo.updateUser($scope.updateProfileResData.user.username, usrRole);
+		if ($scope.updateProfileResData.user) {
+			$scope.updateProfileModel.errorMessages = [{message: "Your profile has been succcessfully updated."}];
 		} else {
-			$scope.linkAccountModel.errorMessages = $scope.updateProfileResData.errors;
+			$scope.updateProfileModel.errorMessages = $scope.updateProfileResData.errors;
 		}
-		$scope.linkAccountModel.clicked = true;
+		$scope.updateProfileModel.clicked = true;
 	};
 	$scope.changePassword = function () {
-		$http.post(config.apiUrl + '/oauth/save/createaccount', {'username': $scope.newAccountModel.username, 'email': $scope.newAccountModel.email}).
+		changePasswordInfo = {
+			'currentPassword': $scope.changePasswordModel.currentPW,
+			'newPassword': $scope.changePasswordModel.newPW,
+			'confirmPassword': $scope.changePasswordModel.confirmNewPW
+		};
+		$http.post(config.apiUrl + '/user/changePassword', changePasswordInfo).
 			success(function (data) {
 				$scope.changePasswordResData = data;
 			}).
@@ -183,12 +198,10 @@ function UserSettingsCtrl($scope, $http, userInfo) {
 	};
 	$scope.returnMessageChangePassword = function () {
 		if ($scope.changePasswordResData.success) {
-			var usrRole = userInfo.determineRole($scope.changePasswordResData.user.role);
-			userInfo.updateUser($scope.changePasswordResData.user.username, usrRole);
-			$location.path('/');
+			$scope.changePasswordModel.errorMessages = [{message: "Your password has been succcessfully updated."}];
 		} else {
-			$scope.newAccountModel.errorMessages = $scope.changePasswordResData.errors;
+			$scope.changePasswordModel.errorMessages = $scope.changePasswordResData.errors;
 		}
-		$scope.newAccountModel.clicked = true;
+		$scope.changePasswordModel.clicked = true;
 	};
 }

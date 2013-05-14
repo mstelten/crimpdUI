@@ -2,39 +2,50 @@
 	<div class="container">
 		<div class="row-fluid rowExtraMargins">
 			<div class="span1 hidden-phone"></div>
-			<form name="registrationForm" class="formLarge span10 registrationForm" form-model="registerModel" submit-func="register()" cm-form-validator ng-submit="submit()">
-				<h3 class="span10 showMargin">register / crimpd</h3>
-				<div class="span5">
-					<label>user name</label>
-					<input type="text" ng-model="formModel.username" class="input-block-level" name="inputUserName" placeholder="username" parent-form="registrationForm" cm-username-input required autofocus/>
+			<form name="registrationForm" class="formMediumHorz form-horizontal span6" form-model="registerModel" submit-func="register()" cm-form-validator ng-submit="submit()">
+				<h3>register / crimpd</h3>
+				<div class="control-group">
+					<label class="control-label">user name</label>
+						<div class="controls">
+						<input type="text" ng-model="formModel.username" class="input-block-level" name="inputUserName" placeholder="username" parent-form="registrationForm" cm-username-input required autofocus/>
+					</div>
 				</div>
-				<div class="span5">
-					<label>email</label>
-					<input type="email" ng-model="formModel.email" class="input-block-level" name="inputEmail" placeholder="email" required />
+				<div class="control-group">
+					<label class="control-label">email</label>
+					<div class="controls">
+						<input type="email" ng-model="formModel.email" class="input-block-level" name="inputEmail" placeholder="email" required/>
+					</div>
 				</div>
-				<div class="span5 cL">
-					<label> first name</label>
-					<input type="text" ng-model="formModel.firstName" class="input-block-level" name="inputFirstName" placeholder="first name" />
+				<div class="control-group">
+					<label class="control-label">first name</label>
+					<div class="controls">
+						<input type="text" ng-model="formModel.firstName" class="input-block-level" name="inputFirstName" placeholder="first name"/>
+					</div>
 				</div>
-				<div class="span5">
-					<label>last name</label>
-					<input type="text" ng-model="formModel.lastName" class="input-block-level" name="inputLastName" placeholder="last name" />
+				<div class="control-group">
+					<label class="control-label">last name</label>
+					<div class="controls">
+						<input type="text" ng-model="formModel.lastName" class="input-block-level" name="inputLastName" placeholder="last name"/>
+					</div>
 				</div>
-				<div class="span5 cL">
-					<label>password</label>
-					<input type="password" ng-model="formModel.password" class="input-block-level" name="inputPassword" placeholder="password" required/>
+				<div class="control-group">
+					<label class="control-label">password</label>
+					<div class="controls">
+						<input type="password" ng-model="formModel.password" class="input-block-level" name="inputPassword" placeholder="password" required/>
+					</div>
 				</div>
-				<div class="span5">
-					<label>confirm password</label>
-					<input type="password" ng-model="formModel.confirmPassword" class="input-block-level" name="inputConfirmPassword" placeholder="confirm password" required/>
+				<div class="control-group">
+					<label class="control-label">confirm password</label>
+					<div class="controls">
+						<input type="password" ng-model="formModel.confirmPassword" class="input-block-level" name="inputConfirmPassword" placeholder="confirm password" required/>
+					</div>
 				</div>
-				<div class="span10 formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
-				<div class="span10 formMessageError" ng-show="errorPresent && thisForm.$error.email">Email address is invalid.</div>
-				<div class="span10 formMessageError" ng-show="thisForm.$error.duplicate">Username is already taken.</div>
-				<div class="span10 formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
-				<div class="span12">
-					<button type="submit" class="btn btn-large btn-warning" ng-click="formClick($event)">register</button>
-				</div>
+
+				<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
+				<div class="formMessageError" ng-show="errorPresent && thisForm.$error.email">Email address is invalid.</div>
+				<div class="formMessageError" ng-show="thisForm.$error.duplicate">Username is already taken.</div>
+				<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
+				<button type="submit" class="btn btn-medium btn-warning" ng-click="formClick($event)">register</button>
 			</form>
 		</div>
 	</div>

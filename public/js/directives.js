@@ -12,15 +12,23 @@ myDirectives.directive('cmFormValidator', function() {
 				e.preventDefault();
 			}, true);
 			scope.thisForm = scope[attrs.name];
+			scope.formModel = {};
 			scope.formClick = function ($event) {
 				scope.errorPresent = false;
 				scope.formModel.clicked = false;
 				elm.removeClass('error');
-				if (scope.thisForm.$error.required || scope.thisForm.$error.email || scope.thisForm.$error.duplicate[0].$invalid) {
+				if (scope.thisForm.$error.required || scope.thisForm.$error.email) {
 					scope.errorPresent = true;
 					elm.addClass('error');
 					$event.preventDefault();
+				} else if (scope.thisForm.$error.duplicate) {
+					if (scope.thisForm.$error.duplicate[0].$invalid) {
+						scope.errorPresent = true;
+						elm.addClass('error');
+						$event.preventDefault();
+					}
 				}
+
 			};
 		}
 	}
