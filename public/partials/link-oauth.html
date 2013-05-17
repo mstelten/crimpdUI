@@ -13,13 +13,11 @@
 				</form>
 			</div>
 			<div class="span4">
-				<form name="createAccountForm" class="formLarge" form-model="newAccountModel" submit-func="createlinkedAccount()" cm-form-validator ng-submit="submit()">
+				<form name="createAccountForm" class="formLarge" form-model="newAccountModel" submit-func="createNewAccount()" cm-form-validator ng-submit="submit()">
 					<h3>create new account</h3>
 					<input type="text" ng-model="formModel.username" class="input-block-level" name="inputUserName" placeholder="username" parent-form="createAccountForm" cm-username-input required>
-					<input type="email" ng-model="formModel.email" class="input-block-level" name="inputEmail" placeholder="email" required>
 					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
 					<div class="formMessageError" ng-show="thisForm.$error.duplicate">Username is already taken.</div>
-					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.email">Email address is invalid.</div>
 					<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 					<button type="submit" class="btn btn-large btn-warning" ng-click="formClick($event)">create account</button>
 				</form>
