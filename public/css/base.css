@@ -1,7 +1,24 @@
 /* ------------------------------------- body sections ------------------------------------- */
+/* -- start sticky footer -- */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\000037}}
+html,
+body {
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000310}}
+#wrapper {
+  min-height: 100%;
+  margin-bottom: 0px 0px -54px 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000314}}
+#contentWrapper {
+  padding: 0 0 54px 0;
+}
+/* -- end sticky footer -- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000319}}
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Railway', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.6em;
@@ -9,43 +26,44 @@ body {
   background-color: #ffffff;
   overflow-x: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000329}}
 #maincontent {
   z-index: 1000;
   margin: 20px 0 30px 0;
-  min-height: 550px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000333}}
 #maincontent.noIntro {
   margin-top: 120px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000336}}
 .rowExtraMargins.row-fluid {
   margin: 50px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000327}}
-#intro {
-  background-color: #666;
+@media (min-width: 1020px) and (max-width: 1199px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000340}}
+  .container,
+  .navbar-static-top .container,
+  .navbar-fixed-top .container,
+  .navbar-fixed-bottom .container {
+    width: 980px;
+  }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000329}}
-#intro .sectionTitle {
-  padding: 95px 0 15px 20px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000331}}
-#intro .sectionTitle .titleBox {
-  font-size: 25px;
-  color: #f4bb32;
-  text-shadow: 0px 1px 2px #000;
-  font-family: 'Source Sans Pro', sans-serif;
-  padding: 10px 0 10px 15px;
-  border-left: 10px solid #000;
+@media (max-width: 767px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000348}}
+  #maincontent .container {
+    margin: 0 20px;
+  }
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000351}}
+  #intro .container {
+    padding: 0 20px;
+  }
 }
 /* ------------------------------------- global level elements ------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000359}}
 p {
   margin: 0 0 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000362}}
 img {
   /* Responsive images (ensure images don't scale beyond their parents) */
 
@@ -62,24 +80,24 @@ img {
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000374}}
 a {
   color: #0088cc;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000378}}
 a:hover {
   color: #005580;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000382}}
 input,
 button,
 select,
 textarea {
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000388}}
 h1,
 h2,
 h3,
@@ -89,57 +107,57 @@ h6 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000392}}
 h1 {
   font-size: 34px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000395}}
 h2 {
   font-size: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000398}}
 h3 {
   font-size: 26px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000387}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003101}}
 h4 {
   font-size: 24px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003104}}
 h5 {
   font-size: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003107}}
 h6 {
   font-size: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003110}}
 h1 small {
   font-size: 24.5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003113}}
 h2 small {
   font-size: 17.5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003116}}
 h3 small {
   font-size: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003119}}
 h4 small {
   font-size: 14px;
 }
 /* ------------------------------------- helper classes ------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003127}}
 .cB {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003130}}
 .cL {
   clear: left;
 }
 /* ------------------------------------- forms / input elements ------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003138}}
 select,
 textarea,
 input[type="text"],
@@ -163,7 +181,7 @@ input[type="color"],
   background-color: #fafafa;
   color: #333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003161}}
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -190,7 +208,7 @@ input[type="color"]:focus,
   -moz-box-shadow: none;
   box-shadow: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003186}}
 input[disabled],
 select[disabled],
 textarea[disabled],
@@ -200,14 +218,14 @@ textarea[readonly] {
   cursor: not-allowed;
   background-color: #eeeeee;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003181}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003195}}
 input[type="radio"][disabled],
 input[type="checkbox"][disabled],
 input[type="radio"][readonly],
 input[type="checkbox"][readonly] {
   background-color: transparent;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003201}}
 input[type="text"]:required,
 input[type="password"]:required,
 input[type="email"]:required {
@@ -215,7 +233,7 @@ input[type="email"]:required {
   background-position: 97% center;
   background-repeat: no-repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003194}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003208}}
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
@@ -225,34 +243,34 @@ select:focus:invalid:focus {
   border-color: #333;
   color: #333;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003217}}
 form.error input.ng-invalid-required,
 form.error input.ng-invalid-email,
 form input.ng-invalid-duplicate {
   border-color: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003208}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003222}}
 .formMessage {
   margin-bottom: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003225}}
 .formMessageError {
   margin-bottom: 10px;
   color: red;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003215}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003229}}
 .row-fluid [class*="span"].formMessage,
 .row-fluid [class*="span"].formMessageError {
   min-height: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003219}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003233}}
 form h3 {
   border-bottom: solid 1px #AAA;
   margin-bottom: 20px;
   padding-bottom: 5px;
 }
 /* --- login & registration forms --- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003226}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003240}}
 .formLarge input {
   display: block;
   height: 48px;
@@ -261,13 +279,13 @@ form h3 {
   font-size: 20px;
   line-height: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003248}}
 .formLarge label {
   font-size: 16px;
   color: #de470c;
 }
 /* --- formMedium requires .form-horizontal ---- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003241}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003255}}
 .formMediumHorz input {
   display: block;
   height: 40px;
@@ -276,30 +294,30 @@ form h3 {
   font-size: 16px;
   line-height: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003249}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003263}}
 .formMediumHorz label {
   font-size: 16px;
   line-height: 40px;
   color: #de470c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003268}}
 .formMediumHorz label.control-label {
   width: 140px;
   padding-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003258}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003272}}
 .formMediumHorz .controls {
   margin-left: 150px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003260}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003274}}
 .formMediumHorz .controls input {
   margin-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003264}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003278}}
 .formMediumHorz .formMessageError {
   padding-left: 150px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003267}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003281}}
 .formMediumHorz button {
   float: left;
   margin-left: 150px;
