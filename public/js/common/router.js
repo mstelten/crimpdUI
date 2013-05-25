@@ -1,4 +1,6 @@
 var crimpdApp = angular.module('crimpdApp', ['myServices', 'myDirectives', 'myFilters']);
+var myDirectives = angular.module('myDirectives', []);
+var myServices = angular.module('myServices', []);
 var myFilters = angular.module('myFilters', []);
 
 // ROUTER
@@ -7,8 +9,12 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
     $locationProvider.html5Mode(true);
 	$httpProvider.defaults.withCredentials = true;
 	$routeProvider.when('/', {
-		templateUrl: 'partials/home.html',
-		controller: HomeCtrl
+		templateUrl: 'partials/community.html',
+		controller: CommunityCtrl
+	}).
+	when('/community', {
+		templateUrl: 'partials/community.html',
+		controller: CommunityCtrl
 	}).
 	when('/login', {
 		templateUrl: 'partials/login.html',
@@ -31,7 +37,23 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 });
 
 
+// RUN AT APP STARTUP
 
+crimpdApp.run(function ($rootScope, $location, $route, $http, userInfo) {
+	$http.get(config.apiUrl + '/user')
+		.success(function (data) {
+			if (data.success) {
+				var usrRole = userInfo.determineRole(data.user.role);
+				userInfo.updateUser(data.user.username, usrRole);
+			}
+		});
+	$rootScope.$on("$routeChangeStart", function (event, next, current) {
+		$rootScope.currentUser = userInfo.getUser();
+		if ($rootScope.currentUser.role == 0) {
+			// $location.path('/login');
+		}
+	});
+});
 
 
 

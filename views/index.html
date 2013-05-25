@@ -18,16 +18,23 @@
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
 
-	<script type="text/javascript" src="js/third-party/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="js/third-party/angular.min.js"></script>
-	<script type="text/javascript" src="js/third-party/bootstrap.js"></script>
-	<script type="text/javascript" src="js/third-party/modernizr-2.6.2.js"></script>
-	<script type="text/javascript" src="js/config.js"></script>
-	<script type="text/javascript" src="js/router.js"></script>
-	<script type="text/javascript" src="js/uif-ctrls.js"></script>
-	<script type="text/javascript" src="js/exercises-ctrls.js"></script>
-	<script type="text/javascript" src="js/services.js"></script>
-	<script type="text/javascript" src="js/directives.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular.min.js"></script>
+	<script type="text/javascript" src="js/lib/bootstrap.js"></script>
+	<script type="text/javascript" src="js/lib/modernizr-2.6.2.js"></script>
+	<script type="text/javascript" src="js/common/config.js"></script>
+	<script type="text/javascript" src="js/common/router.js"></script>
+	<script type="text/javascript" src="js/common/form.directives.js"></script>
+	<script type="text/javascript" src="js/common/view.ctrl.js"></script>
+	<script type="text/javascript" src="js/exercise/exercise.ctrls.js"></script>
+	<script type="text/javascript" src="js/section/community.ctrl.js"></script>
+	<script type="text/javascript" src="js/session/session.ctrls.js"></script>
+	<script type="text/javascript" src="js/user/header.ctrl.js"></script>
+	<script type="text/javascript" src="js/user/login.ctrl.js"></script>
+	<script type="text/javascript" src="js/user/oauth.ctrl.js"></script>
+	<script type="text/javascript" src="js/user/register.ctrl.js"></script>
+	<script type="text/javascript" src="js/user/settings.ctrl.js"></script>
+	<script type="text/javascript" src="js/user/user.services.js"></script>
 
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -41,7 +48,7 @@
 
 	<ng-include src="'partials/header.html'"></ng-include>
 
-	<div ng-controller="MainCtrl">
+	<div ng-controller="ViewCtrl">
 		<ng-view></ng-view>
 	</div>	
 

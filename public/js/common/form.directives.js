@@ -1,5 +1,3 @@
-var myDirectives = angular.module('myDirectives', []);
-
 myDirectives.directive('cmFormValidator', function() {
 	return {
 		restrict: "A",

@@ -1,5 +1,3 @@
-var myServices = angular.module('myServices', []);
-
 myServices.factory('userInfo', function($rootScope) {
 	var user = {
         name: 'noob',
