@@ -8,7 +8,7 @@ body {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000310}}
 #wrapper {
   min-height: 100%;
-  margin-bottom: 0px 0px -54px 0px;
+  margin: 0 0 -54px 0;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000314}}
 #contentWrapper {
