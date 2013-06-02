@@ -267,10 +267,12 @@ form h3 {
 	}
 	label.control-label {
 		width: 140px;
+		margin-right: 10px;
 		padding-top: 0;
 	}
 	.controls {
-		margin-left: 150px;
+		margin-left: 0;
+		overflow: hidden;
 		input {
 			margin-bottom: 0;
 		}
@@ -281,6 +283,25 @@ form h3 {
 	button {
 		float: left;
 		margin-left: 150px;
+	}
+}
+@media (max-width: 767px) {
+	.formMediumHorz,
+	.formLarge {
+		max-width: 500px;
+	}
+}
+@media (max-width: 480px) {
+	.formMediumHorz {
+		label {
+			line-height: 20px;
+		}
+		.formMessageError {
+			padding-left: 0;
+		}
+		button {
+			margin-left: 0;
+		}
 	}
 }
 

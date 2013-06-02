@@ -23,20 +23,36 @@
                     	<a href="/login">log in</a> | <a href="/register">register</a>
                     </div>
                 </div>
+                <div class="toggleNavHamburger" data-toggle="collapse" data-target="#toggleNav">
+					toggle
+                </div>
 				<!-- top menu -->
 				<div>
 					<nav>
-					<ul class="nav topnav">
-						<li class="active">
-							<a href="/">comm<br/>unity</a>
-						</li>
-						<li>
-							<a href="#">dash<br/>board</a>
-						</li>
-						<li>
-							<a href="#">exercise<br/>library</a>
-						</li>
-					</ul>
+						<ul class="nav topnav hidden-phone">
+							<li class="active">
+								<a href="/">comm<br/>unity</a>
+							</li>
+							<li>
+								<a href="#">dash<br/>board</a>
+							</li>
+							<li>
+								<a href="#">exercise<br/>library</a>
+							</li>
+						</ul>
+						<ul class="nav nav-tabs nav-stacked phoneNav visible-phone collapse" id="toggleNav">
+							<li>
+								<a data-toggle="collapse" data-target="#collapseOne">community</a>
+								<ul class="nav nav-tabs nav-stacked collapse" id="collapseOne">
+									<li><a href="#">Category Page</a></li>
+									<li><a href="#">Spill Page</a></li>
+									<li><a href="#">Family Page</a></li>
+									<li><a href="#">Product Page</a></li>
+								</ul>
+							</li>
+							<li><a href="#">dashboard</a></li>
+							<li><a href="#">exercise library</a></li>
+						</ul>
 					</nav>
 				</div>
 				<!-- end menu -->
