@@ -166,9 +166,7 @@ ul.topnav  .dropdown-menu {
 	-ms-transition: all linear 1.5s;
 	-o-transition: all linear 1.5s;
 	transition: all linear 1.5s;
-}
-.fade-show-setup {
- 	opacity: 0;
+	opacity: 0;
 }
 .fade-show-setup.fade-show-start {
   	opacity: 1;
@@ -223,6 +221,7 @@ ul.topnav  .dropdown-menu {
 	}
 }
 
+
 /* ------------------------------------- footer ------------------------------------- */
 
 
@@ -250,6 +249,7 @@ footer {
 }
 
 /* ------------------------------------- login page ------------------------------------- */
+
 
 .loginFacebook {
 	float: left;
@@ -282,6 +282,7 @@ footer {
 
 /* ------------------------------------- intro section ------------------------------------- */
 
+
 #intro {
 	background-color: #666;
 	.sectionTitle {
@@ -302,5 +303,43 @@ footer {
 		.sectionTitle {
 			padding: 10px 0;
 		}
+	}
+}
+
+
+/* ------------------------------------- exercise search section ------------------------------------- */
+
+.cards-enter,
+.cards-leave {
+	-webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	-moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	-ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	-o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	position: relative;
+	display: block;
+}
+
+.cards-enter.cards-enter-active,
+.cards-leave {
+	opacity: 1;
+	top: 0;
+	height: 120px;
+}
+
+.cards-leave.cards-leave-active,
+.cards-enter {
+	opacity: 0;
+	top: -100;
+	height: 0px;
+}
+.searchResults {
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	.exerciseCard {
+		border: 1px solid #222;
+		margin: 20px;
+		padding: 10px;
 	}
 }

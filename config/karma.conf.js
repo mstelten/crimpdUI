@@ -14,7 +14,7 @@ files = [
 	'./public/js/common/form.directives.js',
 	'./public/js/common/router.js',
 	'./public/js/common/view.ctrl.js',
-	'./public/js/exercise/exercise.ctrls.js',
+	'./public/js/exercise/search.ctrl.js',
 	'./public/js/section/community.ctrl.js',
 	'./public/js/session/session.ctrls.js',
 	'./public/js/user/header.ctrl.js',
