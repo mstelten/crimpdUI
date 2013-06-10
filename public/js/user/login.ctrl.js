@@ -1,12 +1,9 @@
-function LoginCtrl($scope, $http, $location, userInfo) {
+function LoginCtrl($scope, $location, userInfo) {
 	$scope.signIn = function () {
-		$http.post(config.apiUrl + '/auth/' + $scope.loginModel.email, {'password': $scope.loginModel.password}).
-			success(function (data) {
-				$scope.signInResData = data;
-			}).
-			then(function () {
-				$scope.returnMessage();
-			});
+		userInfo.signInUser($scope.loginModel.email, $scope.loginModel.password).then(function (data) {
+			$scope.signInResData = data;
+			$scope.returnMessage();
+		});
 	};
 	$scope.returnMessage = function () {
 		if ($scope.signInResData.success) {

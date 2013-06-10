@@ -14,8 +14,6 @@ function UserSettingsCtrl($scope, $http) {
 		$http.put(config.apiUrl + '/user', {'user': userUpdateInfo}).
 			success(function (data) {
 				$scope.updateProfileResData = data;
-			}).
-			then(function () {
 				$scope.returnMessageUpdateProfile();
 			});
 	};
@@ -38,8 +36,6 @@ function UserSettingsCtrl($scope, $http) {
 		$http.post(config.apiUrl + '/user/changePassword', changePasswordInfo).
 			success(function (data) {
 				$scope.changePasswordResData = data;
-			}).
-			then(function () {
 				$scope.returnMessageChangePassword();
 			});
 	};

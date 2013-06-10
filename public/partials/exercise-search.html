@@ -12,14 +12,20 @@
 	<div class="container">
 		<div class="row-fluid">
 			<div class="span4">
-				<label>Filter by Name</label>
-				<select ng-model="exerciseName" ng-options="x.name for x in exercises">
-					<option value="">-- choose name --</option>
+				<label>Filter by Any Text</label>
+				<input type="text" ng-model="search.$"/>
+				<label>Filter by Target</label>
+				<select ng-model="search.target" ng-options="x.target as x.target for x in exercises">
+					<option value="">-- all targets --</option>
+				</select>
+				<label>Filter by Difficulty</label>
+				<select ng-model="search.difficulty" ng-options="x.difficulty as x.difficulty for x in exercises">
+					<option value="">-- all difficulties --</option>
 				</select>
 			</div>
 			<div class="span7">
 				<ul class="searchResults">
-					<li class="exerciseCard" ng-repeat="exr in exercises | filter:exerciseName" ng-animate="'cards'">
+					<li class="exerciseCard" ng-repeat="exr in exercises | filter:search" ng-animate="'cards'">
 						<div class="name">{{exr.name}}</div>
 						<div class="author">{{exr.author}}</div>
 						<div class="description">{{exr.description}}</div>
@@ -32,3 +38,5 @@
 		</div>
 	</div>
 </section>
+
+

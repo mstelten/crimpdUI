@@ -3,8 +3,6 @@ function LinkOAuthCtrl($scope, $http, $location, userInfo) {
 		$http.post(config.apiUrl + '/oauth/save/linkaccount', {'username': $scope.linkAccountModel.email, 'password': $scope.linkAccountModel.password}).
 			success(function (data) {
 				$scope.linkAccountResData = data;
-			}).
-			then(function () {
 				$scope.returnMessageLinkAccount();
 			});
 	};
@@ -22,8 +20,6 @@ function LinkOAuthCtrl($scope, $http, $location, userInfo) {
 		$http.post(config.apiUrl + '/oauth/save/createaccount', {'username': $scope.newAccountModel.username}).
 			success(function (data) {
 				$scope.newAccountResData = data;
-			}).
-			then(function () {
 				$scope.returnMessageNewAccount();
 			});
 	};

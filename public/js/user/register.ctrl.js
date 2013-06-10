@@ -12,8 +12,6 @@ function RegisterCtrl($scope, $http) {
 		$http.post(config.apiUrl + '/registration/', {'user': userRegInfo}).
 			success(function (data) {
 				$scope.registerResData = data;
-			}).
-			then(function () {
 				$scope.returnMessage();
 			});
 	};

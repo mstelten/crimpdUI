@@ -1,4 +1,4 @@
-function HeaderCtrl($scope, userInfo, $http, $timeout) {
+function HeaderCtrl($scope, userInfo, $timeout) {
 	$scope.state = "hide";
 	$scope.refreshUser = function () {
 		$scope.currentUser = userInfo.getUser();
@@ -23,9 +23,8 @@ function HeaderCtrl($scope, userInfo, $http, $timeout) {
 	});
 	$scope.signOut = function ($event) {
 		$event.preventDefault();
-		$http.get(config.apiUrl + '/auth/logout').
-			success(function (data) {
-				userInfo.updateUser('noob', 0);
-			});
+		userInfo.signOutUser().then(function () {
+			userInfo.updateUser('noob', 0);
+		});
 	};
 };

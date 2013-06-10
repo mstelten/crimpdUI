@@ -15,6 +15,7 @@ files = [
 	'./public/js/common/router.js',
 	'./public/js/common/view.ctrl.js',
 	'./public/js/exercise/search.ctrl.js',
+	'./public/js/exercise/exercise.srvs.js',
 	'./public/js/section/community.ctrl.js',
 	'./public/js/session/session.ctrls.js',
 	'./public/js/user/header.ctrl.js',
@@ -22,7 +23,7 @@ files = [
 	'./public/js/user/oauth.ctrl.js',
 	'./public/js/user/register.ctrl.js',
 	'./public/js/user/settings.ctrl.js',
-	'./public/js/user/user.services.js',
+	'./public/js/user/user.srvs.js',
 
 	//Test-Specs
 	'./test/unit/*.js'
