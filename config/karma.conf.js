@@ -8,6 +8,7 @@ files = [
 	'./public/js/lib/angular.min.js',
 	'./public/js/lib/angular-mocks.js',
 	'./public/js/lib/jquery-1.9.1.min.js',
+	'./public/js/lib/underscore-min.js',
 
 	//App-specific Code
 	'./public/js/common/config.js',

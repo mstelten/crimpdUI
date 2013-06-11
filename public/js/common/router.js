@@ -32,7 +32,7 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 		templateUrl: 'partials/user-settings.html',
 		controller: UserSettingsCtrl
 	}).
-	when('/exercise-search', {
+	when('/exercise-library', {
 		templateUrl: 'partials/exercise-search.html',
 		controller: ExerciseSearchCtrl
 	}).
