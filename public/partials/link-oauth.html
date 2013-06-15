@@ -19,7 +19,7 @@
 					<input type="password" ng-model="formModel.password" class="input-block-level" name="inputPassword" placeholder="password" required>
 					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
 					<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
-					<button type="submit" class="btn btn-large btn-warning" ng-click="formClick($event)">link account</button>
+					<button type="submit" class="btn btn-large btn-primary" ng-click="formClick($event)">link account</button>
 				</form>
 			</div>
 			<div class="span4">
@@ -29,7 +29,7 @@
 					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
 					<div class="formMessageError" ng-show="thisForm.$error.duplicate">Username is already taken.</div>
 					<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
-					<button type="submit" class="btn btn-large btn-warning" ng-click="formClick($event)">create account</button>
+					<button type="submit" class="btn btn-large btn-primary" ng-click="formClick($event)">create account</button>
 				</form>
 			</div>
 		</div>

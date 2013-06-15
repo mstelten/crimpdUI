@@ -16,6 +16,11 @@ html, body {
 }
 /* -- end sticky footer -- */
 
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
 body {
 	margin: 0;
 	padding: 0;
@@ -152,11 +157,22 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	height: 28px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 	background-color: #fafafa;
 	color: #333;
+}
+input,
+textarea,
+.uneditable-input {
+	width: 220px;
+}
+select,
+input[type="file"] {
+	height: 30px;
+	line-height: 30px;
 }
 textarea:focus,
 input[type="text"]:focus,
@@ -305,5 +321,58 @@ form h3 {
 	}
 }
 
+/* ------------------------------------- buttons ------------------------------------- */
 
+.btn {
+	display: inline-block;
+	*display: inline;
+	padding: 4px 12px;
+	margin-bottom: 0;
+	*margin-left: .3em;
+	font-size: 14px;
+	line-height: 20px;
+	color: #333333;
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	vertical-align: middle;
+	cursor: pointer;
+	background-color: #f5f5f5;
+	*background-color: #e6e6e6;
+	background-image: none;
+	background-repeat: repeat-x;
+	border: 1px solid #cccccc;
+	*border: 0;
+	border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	border-bottom-color: #b3b3b3;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	filter: none;
+	*zoom: 1;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.btn-primary {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #ff7d23;
+	*background-color: #ff7d23;
+	background-image: none;
+	border-color: #0044cc #0044cc #002a80;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: none;
+	filter: none;
+}
 
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+	color: #eee;
+	background-color: #ff7d23;
+	*background-color: #ff7d23;
+}

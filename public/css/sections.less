@@ -19,15 +19,17 @@
 .navbar-fixed-top {
   	top: 0;
 	.navbar-inner {
-		background-color: #fafafa;
+		background-color: #f2f2f2;
+		background-image: none;
+		border-bottom: 1px #666 solid;
 		padding-left: 0;
 		padding-right: 0;
 		-webkit-border-radius: 0;
 		-moz-border-radius: 0;
 		border-radius: 0;
-		-webkit-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
-		-moz-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
-		box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+		-webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+		-moz-box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+		box-shadow: 0 2px 5px rgba(0,0,0,0.4);
 	}
 }
 .navbar {
@@ -35,20 +37,23 @@
 		width: 100%;
 	}
 	.brand.logo {
+		font-size: 40px;
+		text-shadow: none;
+		color: #111;
 		padding: 0;
 	  	margin-left: 0;
-	  	margin-top: 5px;
+	  	margin-top: 17px;
 	}
     .userInfo {
-		margin: 15px 0 0 30px;
+		margin: 9px 0 0 60px;
 		font-size: 16px;
 		float: left;
 		a {
-			color: #de470c;
+			color: @text-secondary;
 		}
     }
     .userWelcome {
-    	font-style: italic;
+    	font-style: normal;
     	height: 20px;
     }
 	ul.topnav {
@@ -57,8 +62,8 @@
 	.nav > li > a {
 		font-family: @font-header;
 		float: none;
-		padding: 15px 15px;
-		color: #888;
+		padding: 10px 15px;
+		color: #333;
 		font-size: 24px;
 		text-decoration: none;
 		text-shadow: none;
@@ -66,6 +71,7 @@
 	.nav > li > a:hover {
 		border-right: #000 5px solid;
 		background-color: #e5e5e5;
+		color: #000;
 		-webkit-transition: all 0.2s ease;
 		-moz-transition: all 0.2s ease-in-out;
 		-o-transition: all 0.2s ease-in-out;
@@ -75,7 +81,7 @@
 	.nav .active > a,
 	.nav .active > a:hover,
 	.nav .active > a:focus {
-		background-color: #f4bb32;
+		background-color: #08C; /* #f4bb32 - orange */
 		color:#fff;
 		-webkit-transition: all 0.2s ease;
 		-moz-transition: all 0.2s ease-in-out;
@@ -286,10 +292,10 @@ footer {
 #intro {
 	background-color: #666;
 	.sectionTitle {
-		padding: 80px 0 10px 20px;
+		padding: 67px 0 8px 20px;
 		.titleBox {
-			font-size: 25px;
-			color: #f4bb32;
+			font-size: 21px;
+			color: #ff7d23;
 			text-shadow: 0px 1px 2px #000;
 			font-family: 'Source Sans Pro', sans-serif;
 			padding: 5px 0 5px 15px;
