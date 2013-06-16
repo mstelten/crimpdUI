@@ -42,6 +42,7 @@
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000339}}
 .navbar .brand.logo {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 40px;
   text-shadow: none;
   color: #111;
@@ -49,28 +50,29 @@
   margin-left: 0;
   margin-top: 17px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000348}}
 .navbar .userInfo {
   margin: 9px 0 0 60px;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000353}}
 .navbar .userInfo a {
   color: #0088cc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000357}}
 .navbar .userWelcome {
   font-style: normal;
   height: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000361}}
 .navbar ul.topnav {
   float: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000364}}
 .navbar .nav > li > a {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   float: none;
   padding: 10px 15px;
   color: #333;
@@ -78,44 +80,48 @@
   text-decoration: none;
   text-shadow: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000373}}
 .navbar .nav > li > a:hover {
   border-right: #000 5px solid;
-  background-color: #e5e5e5;
+  background-color: #DEDEDE;
   color: #000;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000386}}
 .navbar .nav .active > a,
 .navbar .nav .active > a:hover,
 .navbar .nav .active > a:focus {
-  background-color: #08C;
-  /* #f4bb32 - orange */
-
+  background-color: #0088cc;
   color: #fff;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003103}}
 .navbar .nav-stacked {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003106}}
 .navbar .nav-stacked > li {
   width: 50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003109}}
 .navbar .nav-stacked > li > a {
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003112}}
 .navbar .nav-tabs.nav-stacked > li:first-child > a,
 .navbar .nav-tabs.nav-stacked > li:last-child > a {
   -webkit-border-top-right-radius: 0;
@@ -125,7 +131,7 @@
   -moz-border-radius-topright: 0;
   -moz-border-radius-topleft: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003123}}
 header .topnav .dropdown-submenu > .dropdown-menu {
   top: 0;
   left: 100%;
@@ -135,7 +141,7 @@ header .topnav .dropdown-submenu > .dropdown-menu {
   -moz-border-radius: 0;
   border-radius: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003132}}
 .dropdown-menu {
   border: 1px solid #eee;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -151,7 +157,7 @@ header .topnav .dropdown-submenu > .dropdown-menu {
   -moz-background-clip: padding;
   background-clip: padding-box;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003146}}
 .dropdown-menu .sub-menu {
   left: 100%;
   position: absolute;
@@ -159,32 +165,32 @@ header .topnav .dropdown-submenu > .dropdown-menu {
   visibility: hidden;
   margin-top: -1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003145}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003153}}
 .dropdown-menu li:hover .sub-menu {
   visibility: visible;
   margin-left: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003158}}
 ul.topnav .dropdown-menu {
   border: 1px solid #eee;
   background: #fff;
   padding: 0 0;
   margin: 0 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003163}}
 ul.topnav .dropdown-menu .sub-menu {
   margin-left: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003158}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003166}}
 ul.topnav .dropdown-menu li {
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003169}}
 ul.topnav .dropdown-menu li > a {
   padding: 5px 20px;
   line-height: 1.6em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003169}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003177}}
 .fade-show-setup {
   -webkit-transition: all linear 1.5s;
   -moz-transition: all linear 1.5s;
@@ -193,33 +199,33 @@ ul.topnav .dropdown-menu li > a {
   transition: all linear 1.5s;
   opacity: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003177}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003185}}
 .fade-show-setup.fade-show-start {
   opacity: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003180}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003188}}
 .fade-hide-setup {
   opacity: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003183}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003191}}
 .fade-hide-setup.fade-hide-start {
   opacity: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003186}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003194}}
 .fade-show-setup.hide,
 .fade-hide-setup.hide {
   display: none;
   opacity: 0;
   line-height: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003192}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003200}}
 .fade-show-start.hide,
 .fade-hide-start.hide {
   display: none;
   opacity: 0;
   line-height: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003198}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003206}}
 .toggleNavHamburger {
   float: right;
   cursor: pointer;
@@ -229,59 +235,59 @@ ul.topnav .dropdown-menu li > a {
   margin: 10px 20px 0 0;
 }
 @media (max-width: 979px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003207}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003215}}
   .navbar-fixed-top .navbar-inner,
   .navbar-fixed-bottom .navbar-inner {
     padding: 0;
   }
 }
 @media (max-width: 767px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003213}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003221}}
   .navbar-fixed-top,
   .navbar-fixed-bottom,
   .navbar-static-top {
     margin: 0 0 20px 0;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003218}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003226}}
   .navbar .nav {
     margin: 0;
   }
 }
 @media (max-width: 480px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003224}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003232}}
   .navbar .nav-stacked > li {
     width: 100%;
   }
 }
 /* ------------------------------------- footer ------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003242}}
 footer {
   padding-top: 15px;
   color: #fff;
-  background-color: #666;
+  background-color: #666666;
   border-top: 4px solid #999;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003239}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003247}}
 footer a,
 footer a:hover {
   color: #fff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003242}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003250}}
 footer a:hover {
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003245}}
-footer .orange {
-  color: #f4bb32;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003253}}
+footer .black {
+  color: #000;
 }
 @media (max-width: 767px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003251}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003259}}
   footer .container {
     padding: 0 20px;
   }
 }
 /* ------------------------------------- login page ------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003260}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003268}}
 .loginFacebook {
   float: left;
   background: url('/img/sign-in-with-facebook.png') no-repeat left top;
@@ -291,7 +297,7 @@ footer .orange {
   cursor: pointer;
   text-indent: -9999px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003269}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003277}}
 .loginGoogle {
   float: left;
   background: url('/img/sign-in-with-google.png') no-repeat left top;
@@ -302,46 +308,47 @@ footer .orange {
   text-indent: -9999px;
 }
 @media (max-width: 767px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003279}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003287}}
   .loginFacebook {
     margin: 30px 0 0 0;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003282}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003290}}
   .loginGoogle {
     margin: 20px 0 0 0;
     clear: left;
   }
 }
 /* ------------------------------------- intro section ------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003300}}
 #intro {
-  background-color: #666;
+  background-color: #666666;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003294}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003302}}
 #intro .sectionTitle {
   padding: 67px 0 8px 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003296}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003304}}
 #intro .sectionTitle .titleBox {
   font-size: 21px;
-  color: #ff7d23;
-  text-shadow: 0px 1px 2px #000;
-  font-family: 'Source Sans Pro', sans-serif;
+  color: #e3e8cd;
+  /* text-shadow: 0px 1px 2px #000; */
+
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 5px 0 5px 15px;
   border-left: 10px solid #000;
 }
 @media (max-width: 979px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003307}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003315}}
   #intro {
     margin-top: -20px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003309}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003317}}
   #intro .sectionTitle {
     padding: 10px 0;
   }
 }
 /* ------------------------------------- exercise search section ------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003326}}
 .cards-enter,
 .cards-leave {
   -webkit-transition: 400ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
@@ -352,29 +359,30 @@ footer .orange {
   position: relative;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003337}}
 .cards-enter.cards-enter-active,
 .cards-leave {
   opacity: 1;
   top: 0;
   height: 120px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003344}}
 .cards-leave.cards-leave-active,
 .cards-enter {
   opacity: 0;
   top: -100;
   height: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003350}}
 .searchResults {
   width: 100%;
   list-style: none;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/sections\.less}line{font-family:\00003354}}
 .searchResults .exerciseCard {
   border: 1px solid #222;
+  background-color: #e3e8cd;
   margin: 20px;
   padding: 10px;
 }

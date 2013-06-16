@@ -25,11 +25,11 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Railway', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
   line-height: 1.6em;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #fff;
   overflow-x: hidden;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000334}}
@@ -101,7 +101,7 @@ input,
 button,
 select,
 textarea {
-  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000393}}
 h1,
@@ -110,7 +110,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\0000397}}
@@ -399,10 +399,10 @@ form h3 {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/mstelten\/Sites\/nodeCrimpd\/public\/css\/base\.less}line{font-family:\00003357}}
 .btn-primary {
-  color: #ffffff;
+  color: #000;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #ff7d23;
-  *background-color: #ff7d23;
+  background-color: #e3e8cd;
+  *background-color: #e3e8cd;
   background-image: none;
   border-color: #0044cc #0044cc #002a80;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -415,7 +415,8 @@ form h3 {
 .btn-primary.active,
 .btn-primary.disabled,
 .btn-primary[disabled] {
-  color: #eee;
-  background-color: #ff7d23;
-  *background-color: #ff7d23;
+  color: #333;
+  background-color: #e3e8cd;
+  *background-color: #e3e8cd;
+  border-color: #111;
 }
