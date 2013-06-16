@@ -12,8 +12,8 @@ files = [
 
 	//App-specific Code
 	'./public/js/common/config.js',
-	'./public/js/common/form.directives.js',
 	'./public/js/common/router.js',
+	'./public/js/common/form.directives.js',
 	'./public/js/common/view.ctrl.js',
 	'./public/js/exercise/search.ctrl.js',
 	'./public/js/exercise/exercise.srvs.js',

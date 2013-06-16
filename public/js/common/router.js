@@ -5,7 +5,7 @@ var myFilters = angular.module('myFilters', []);
 
 // ROUTER
 
-crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
+crimpdApp.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
     $locationProvider.html5Mode(true);
 	$httpProvider.defaults.withCredentials = true;
 	$routeProvider.when('/', {
@@ -38,12 +38,12 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 	}).
 	otherwise({redirectTo: '/'});
     // when url= '/login/blah' it doesn't redirect to '/'
-});
+}]);
 
 
 // RUN AT APP STARTUP
 
-crimpdApp.run(function ($rootScope, $location, $route, $http, userInfo) {
+crimpdApp.run(['$rootScope', '$location', '$route', '$http', 'userInfo', function ($rootScope, $location, $route, $http, userInfo) {
 	$http.get(config.apiUrl + '/user')
 		.success(function (data) {
 			if (data.success) {
@@ -57,7 +57,7 @@ crimpdApp.run(function ($rootScope, $location, $route, $http, userInfo) {
 			// $location.path('/login');
 		}
 	});
-});
+}]);
 
 
 

@@ -1,4 +1,4 @@
-myServices.factory('exerciseData', function ($http, $q) {
+myServices.factory('exerciseData', ['$http', '$q', function ($http, $q) {
 	return {
 		queryAllExercises: function () {
 			var deferred = $q.defer();
@@ -8,4 +8,4 @@ myServices.factory('exerciseData', function ($http, $q) {
 			return deferred.promise;
 		}
 	}
-});
+}]);

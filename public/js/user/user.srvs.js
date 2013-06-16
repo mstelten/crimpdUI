@@ -1,4 +1,4 @@
-myServices.factory('userInfo', function($rootScope, $http, $q) {
+myServices.factory('userInfo', ['$rootScope', '$http', '$q', function($rootScope, $http, $q) {
 	var user = {
         name: 'noob',
         role: 0
@@ -65,4 +65,4 @@ myServices.factory('userInfo', function($rootScope, $http, $q) {
 			return deferred.promise;
 		}
 	};
-});
+}]);

@@ -27,4 +27,5 @@ function HeaderCtrl($scope, userInfo, $timeout) {
 			userInfo.updateUser('noob', 0);
 		});
 	};
-};
+}
+HeaderCtrl.$inject = ['$scope', 'userInfo', '$timeout'];

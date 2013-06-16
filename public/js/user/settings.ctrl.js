@@ -50,3 +50,4 @@ function UserSettingsCtrl($scope, $http) {
 		$scope.changePasswordModel.clicked = true;
 	};
 }
+UserSettingsCtrl.$inject = ['$scope', '$http'];
