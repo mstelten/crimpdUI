@@ -14,7 +14,7 @@ function ExerciseSearchCtrl($scope, exerciseData) {
 			if ((!$scope.search.Difficulty || _.contains($scope.exercises[i].Difficulty, $scope.search.Difficulty))
 			&& (!$scope.search.$ || _.some(_.values($scope.exercises[i]), function(z) {
 				if (_.isString(z)) {
-					if (z.indexOf($scope.search.$) > -1) return true;
+					if (z.toLowerCase().indexOf($scope.search.$.toLowerCase()) > -1) return true;
 				} else if (_.isArray(z)) {
 					return _.some(z, function(zz) {
 						return zz.toLowerCase().indexOf($scope.search.$.toLowerCase()) > -1;
@@ -35,7 +35,7 @@ function ExerciseSearchCtrl($scope, exerciseData) {
 			if ((!$scope.search.Target || _.contains($scope.exercises[i].Target, $scope.search.Target))
 			&& (!$scope.search.$ || _.some(_.values($scope.exercises[i]), function (z) {
 				if (_.isString(z)) {
-					if (z.indexOf($scope.search.$) > -1) return true;
+					if (z.toLowerCase().indexOf($scope.search.$.toLowerCase()) > -1) return true;
 				} else if (_.isArray(z)) {
 					return _.some(z, function(zz) {
 						return zz.toLowerCase().indexOf($scope.search.$.toLowerCase()) > -1;

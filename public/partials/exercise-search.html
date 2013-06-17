@@ -33,6 +33,7 @@
 						<div class="difficulty">Difficulty: <span ng-repeat="x in exr.Difficulty">{{x}}<span ng-show="!$last">,</span> </span></div>
 					</li>
 				</ul>
+				<div ng-show="(exercises | filter:search).length == 0">No search results match the criteria.</div>
 			</div>
 		</div>
 	</div>
