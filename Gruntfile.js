@@ -2,32 +2,47 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		watch: {
-			jsANDhtml: {
-				files: ['public/js/**/*.js', 'public/partials/*.html', '/views/index.html'],
-				options: {
-					livereload: true,
-				}
-			},
-			css: {
-				files: 'public/css/*.less',
-				tasks: ['less'],
-				options: {
-					livereload: true,
-				}
-			}
-		},
-		less: {
-			development: {
-				options: {
-					paths: ["public/css"]
-				}
-			}
-		},
 		bgShell: {
 			runNode: {
 				cmd: 'sudo node app.js',
 				bg: true
+			}
+		},
+		watch: {
+			jsANDhtml: {
+				files: ['public/js/**/*.js', 'public/partials/*.html', '/views/index.html'],
+				options: {
+					livereload: true
+				}
+			},
+			css: {
+				files: 'public/css/*.less',
+				tasks: ['less:dev'],
+				options: {
+					livereload: true
+				}
+			}
+		},
+		clean: {
+			before:{
+				src:['bin','temp']
+			},
+			after: {
+				src:['temp']
+			}
+		},
+		less: {
+			dev: {
+				options: {
+					paths: ["public/css"]
+				}
+			},
+			prod: {
+				options: {
+				},
+				files: {
+					"temp/app.css": "css/app.less"
+				}
 			}
 		}
 	});
@@ -36,6 +51,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-bg-shell');
 
-	grunt.registerTask('dev', ['bgShell', 'watch']);
+	grunt.registerTask('server', ['bgShell', 'watch']);
+	grunt.registerTask('build', ['clean:before', 'clean:after']);
 
 };

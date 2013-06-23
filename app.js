@@ -6,8 +6,7 @@ var pub = __dirname + '/public';
 var app = express();
 app.use(lessMiddleware({
         src: __dirname + '/public',
-        force: true,
-        dumpLineNumbers: 'mediaquery'
+        force: true
     }));
 app.use(express.static(pub));
 app.use(app.router);
