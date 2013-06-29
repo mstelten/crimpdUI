@@ -49,9 +49,9 @@ module.exports = function (grunt) {
 		ngtemplates: {
 			main: {
 				options: {
-					module:'<%= _.slugify(appname) %>'
+					module:'crimpdApp'
 				},
-				src: [ 'partial/**/*.html','directive/**/*.html' ],
+				src: ['public/partials/*.html'],
 				dest: 'temp/templates.js'
 			}
 		},
@@ -110,19 +110,13 @@ module.exports = function (grunt) {
 				dest:'bin/css/app.full.min.css'
 			}
 		},
-		concat: {
-			main: {
-				src:['<%= dom_munger.data.appjs %>'],
-				dest:'temp/js/app.full.js'
-			}
-		},
 		uglify: {
 			options: {
-				mangle: false
+				wrap: true
 			},
 			main: {
-				src: 'temp/js/app.full.js',
-				dest:'bin/js/app.full.min.js'
+				src: ['<%= dom_munger.data.appjs %>','temp/templates.js'],
+				dest: 'bin/js/app.full.min.js'
 			}
 		},
 		htmlmin: {
@@ -155,16 +149,11 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-dom-munger');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	grunt.registerTask('server', ['bgShell', 'watch']);
-	grunt.registerTask('build', ['clean:before','less','dom_munger:readcss','dom_munger:readscripts','copy:main','cssmin','concat','uglify','dom_munger:removecss','dom_munger:addcss','dom_munger:removescripts','dom_munger:addscript','htmlmin','imagemin']);
-	// uglify is not working properly
-	// replace with bootstrap & modernizr's minified versions?
-	// add 'ngtemplates' (before copy:main) & 'clean:after' (at end)
-
+	grunt.registerTask('build', ['clean:before','less','dom_munger:readcss','dom_munger:readscripts','ngtemplates','copy:main','cssmin','uglify','dom_munger:removecss','dom_munger:addcss','dom_munger:removescripts','dom_munger:addscript','htmlmin','imagemin','clean:after']);
 };

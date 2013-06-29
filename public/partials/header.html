@@ -5,25 +5,25 @@
 				<!-- logo -->
 				<a class="brand logo" href="/">crimpd</a>
 				<!-- end logo -->
-                <div class="userInfo">
-                    <div class="userWelcome">
-	                    <span ng-show="isSignedIn()" ng-animate="animateTerms">
-                        howdy, <strong>{{currentUser.name}}</strong>
-	                    </span>
-		                <span ng-show="!isSignedIn()" ng-animate="animateTerms" ng-class="state">
-			                hi there, <strong>noob</strong>
-		                </span>
-                    </div>
-                    <div ng-show="isSignedIn()">
-                        <a href="/settings">settings</a> | <a href="#" ng-click="signOut($event)">log out</a>
-                    </div>
-                    <div ng-show="!isSignedIn()">
-                    	<a href="/login">log in</a> | <a href="/register">register</a>
-                    </div>
-                </div>
-                <div class="toggleNavHamburger visible-phone" data-toggle="collapse" data-target="#toggleNav">
+				<div class="userInfo">
+					<div class="userWelcome">
+						<span ng-show="isSignedIn()" ng-animate="animateTerms">
+						howdy, <strong>{{currentUser.name}}</strong>
+						</span>
+						<span ng-show="!isSignedIn()" ng-animate="animateTerms" ng-class="state">
+							hi there, <strong>noob</strong>
+						</span>
+					</div>
+					<div ng-show="isSignedIn()">
+						<a href="/settings">settings</a> | <a href="#" ng-click="signOut($event)">log out</a>
+					</div>
+					<div ng-show="!isSignedIn()">
+						<a href="/login">log in</a> | <a href="/register">register</a>
+					</div>
+				</div>
+				<div class="toggleNavHamburger visible-phone" data-toggle="collapse" data-target="#toggleNav">
 					toggle
-                </div>
+				</div>
 				<!-- top menu -->
 				<nav>
 					<ul class="nav topnav hidden-phone">
