@@ -12,7 +12,7 @@ app.use(express.static(pub));
 app.use(app.router);
 app.use(express.errorHandler());
 
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/public');
 app.engine('html', require('ejs').renderFile);
 
 // ROUTER
