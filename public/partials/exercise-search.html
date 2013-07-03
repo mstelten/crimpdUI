@@ -11,26 +11,31 @@
 <section id="maincontent">
 	<div class="container">
 		<div class="row-fluid">
-			<div class="span4">
-				<label>Filter by Any Text</label>
-				<input type="text" ng-model="search.$"/>
-				<label>Filter by Target</label>
-				<select ng-model="search.Target" ng-options="x for x in targetOptions()">
-					<option value="">-- all --</option>
-				</select>
-				<label>Filter by Difficulty</label>
-				<select ng-model="search.Difficulty" ng-options="x for x in difficultyOptions()">
-					<option value="">-- all --</option>
-				</select>
+			<div class="span3">
+				<div class="filterContainer">
+					<label>Filter by Any Text</label>
+					<input type="text" ng-model="search.$"/>
+					<label>Filter by Target</label>
+					<select ng-model="search.Target" ng-options="x for x in targetOptions()">
+						<option value="">-- all --</option>
+					</select>
+					<label>Filter by Difficulty</label>
+					<select ng-model="search.Difficulty" ng-options="x for x in difficultyOptions()">
+						<option value="">-- all --</option>
+					</select>
+				</div>
 			</div>
-			<div class="span7">
+			<div class="span9">
 				<ul class="searchResults">
 					<li class="exerciseCard" ng-repeat="exr in exercises | filter:search" ng-animate="'cards'">
-						<div class="name">{{exr.name}}</div>
-						<div class="author">{{exr.author}}</div>
+						<img class="thumb" src="{{exr.thumbnails[0]}}" alt=""/>
 						<div class="description">{{exr.description}}</div>
-						<div class="target">Target: <span ng-repeat="x in exr.Target">{{x}}<span ng-show="!$last">,</span> </span></div>
-						<div class="difficulty">Difficulty: <span ng-repeat="x in exr.Difficulty">{{x}}<span ng-show="!$last">,</span> </span></div>
+						<div class="shortInfo">
+							<div class="name">{{exr.name}}</div>
+						</div>
+						<!--<div class="author">{{exr.author}}</div>-->
+						<!--<div class="target">Target: <span ng-repeat="x in exr.Target">{{x}}<span ng-show="!$last">,</span> </span></div>-->
+						<!--<div class="difficulty">Difficulty: <span ng-repeat="x in exr.Difficulty">{{x}}<span ng-show="!$last">,</span> </span></div>-->
 					</li>
 				</ul>
 				<div ng-show="(exercises | filter:search).length == 0">No search results match the criteria.</div>

@@ -322,11 +322,57 @@ footer .black {
 .searchResults {
   width: 100%;
   list-style: none;
-  margin: 0;
+  margin-top: 20px;
 }
-.searchResults .exerciseCard {
-  border: 1px solid #222;
+.exerciseCard {
+  border: 0px solid #222;
   background-color: #e3e8cd;
-  margin: 20px;
+  margin: 0 10px 20px 10px;
+  padding: 0;
+  float: left;
+  width: 215px;
+  position: relative;
+}
+.exerciseCard .thumb {
+  height: 161px;
+  width: 215px;
+}
+.exerciseCard .shortInfo {
   padding: 10px;
+}
+.exerciseCard .description {
+  font-size: 12px;
+  background-color: #111;
+  color: #fff;
+  position: absolute;
+  bottom: 40px;
+  padding: 10px;
+  z-index: 5;
+  margin-top: -50px;
+  display: none;
+  opacity: 0.8;
+  width: 100%;
+}
+.exerciseCard:hover .description {
+  display: block;
+}
+.filterContainer {
+  background-color: #e3e8cd;
+  margin: 20px auto;
+  padding: 15px;
+  width: 240px;
+}
+.filterContainer input,
+.filterContainer select {
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .exerciseCard {
+    width: 250px;
+    margin: 0 15px 30px 15px;
+  }
+  .exerciseCard .thumb {
+    height: 200px;
+    width: 250px;
+  }
 }
