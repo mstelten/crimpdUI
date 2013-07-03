@@ -29,10 +29,10 @@
 				<ul class="searchResults">
 					<li class="exerciseCard" ng-repeat="exr in exercises | filter:search" ng-animate="'cards'">
 						<img class="thumb" src="{{exr.thumbnails[0]}}" alt=""/>
-						<div class="description">{{exr.description}}</div>
 						<div class="shortInfo">
 							<div class="name">{{exr.name}}</div>
 						</div>
+						<div class="description">{{exr.description}}</div>
 						<!--<div class="author">{{exr.author}}</div>-->
 						<!--<div class="target">Target: <span ng-repeat="x in exr.Target">{{x}}<span ng-show="!$last">,</span> </span></div>-->
 						<!--<div class="difficulty">Difficulty: <span ng-repeat="x in exr.Difficulty">{{x}}<span ng-show="!$last">,</span> </span></div>-->

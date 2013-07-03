@@ -27,20 +27,20 @@
 				<!-- top menu -->
 				<nav>
 					<ul class="nav topnav hidden-phone">
-						<li class="active">
+						<li ng-class="isActive('/')">
 							<a href="/">comm<br/>unity</a>
 						</li>
-						<li>
-							<a href="#">dash<br/>board</a>
+						<li ng-class="isActive('/dashboard')">
+							<a href="/dashboard">dash<br/>board</a>
 						</li>
-						<li>
+						<li ng-class="isActive('/exercise-library')">
 							<a href="/exercise-library">exercise<br/>library</a>
 						</li>
 					</ul>
 					<ul class="nav nav-tabs nav-stacked visible-phone collapse" id="toggleNav">
-						<li><a href="/">community</a></li>
-						<li><a href="#">dashboard</a></li>
-						<li><a href="/exercise-library">exercise library</a></li>
+						<li ng-class="isActive('/')"><a href="/">community</a></li>
+						<li ng-class="isActive('/dashboard')"><a href="/dashboard">dashboard</a></li>
+						<li ng-class="isActive('/exercise-library')"><a href="/exercise-library">exercise library</a></li>
 					</ul>
 				</nav>
 				<!-- end menu -->

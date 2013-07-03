@@ -357,7 +357,8 @@ footer .black {
   display: block;
 }
 .filterContainer {
-  background-color: #e3e8cd;
+  background-color: #f2f2f2;
+  border-left: 3px solid #111;
   margin: 20px auto;
   padding: 15px;
   width: 240px;

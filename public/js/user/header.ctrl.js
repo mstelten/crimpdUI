@@ -1,4 +1,4 @@
-function HeaderCtrl($scope, userInfo, $timeout) {
+function HeaderCtrl($scope, userInfo, $timeout, $location) {
 	$scope.state = "hide";
 	$scope.refreshUser = function () {
 		$scope.currentUser = userInfo.getUser();
@@ -27,5 +27,12 @@ function HeaderCtrl($scope, userInfo, $timeout) {
 			userInfo.updateUser('noob', 0);
 		});
 	};
+	$scope.isActive = function (path) {
+		if ($location.path() == path) {
+			return "active"
+		} else {
+			return ""
+		}
+	};
 }
-HeaderCtrl.$inject = ['$scope', 'userInfo', '$timeout'];
+HeaderCtrl.$inject = ['$scope', 'userInfo', '$timeout', '$location'];

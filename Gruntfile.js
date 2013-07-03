@@ -18,10 +18,10 @@ module.exports = function (grunt) {
 			},
 			css: {
 				files: 'public/css/*.less',
-				tasks: ['less'],
 				options: {
 					livereload: true
-				}
+				},
+				tasks: ['less']
 			}
 		},
 		clean: {

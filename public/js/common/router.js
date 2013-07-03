@@ -36,6 +36,11 @@ crimpdApp.config(['$routeProvider', '$locationProvider', '$httpProvider', functi
 		templateUrl: 'partials/exercise-search.html',
 		controller: ExerciseSearchCtrl
 	}).
+	when('/dashboard', {
+		templateUrl: 'partials/exercise-search.html',
+		controller: ExerciseSearchCtrl
+	}).
+
 	otherwise({redirectTo: '/'});
     // when url= '/login/blah' it doesn't redirect to '/'
 }]);
