@@ -30,13 +30,15 @@
 					<li class="exerciseCard" ng-repeat="exr in exercises | filter:search" ng-animate="'cards'">
 						<div class="thumbContainer">
 							<img class="thumb" src="{{exr.thumbnails[0]}}" alt=""/>
+							<div class="moreInfo">
+								<div class="target">Target: <span ng-repeat="x in exr.Target">{{x}}<span ng-show="!$last">,</span> </span></div>
+								<div class="difficulty">Difficulty: <span ng-repeat="x in exr.Difficulty">{{x}}<span ng-show="!$last">,</span> </span></div>
+							</div>
 						</div>
 						<div class="shortInfo">
 							<div class="name">{{exr.name}}</div>
-						</div>
-						<div class="moreInfo">
-							<div class="target">Target: <span ng-repeat="x in exr.Target">{{x}}<span ng-show="!$last">,</span> </span></div>
-							<div class="difficulty">Difficulty: <span ng-repeat="x in exr.Difficulty">{{x}}<span ng-show="!$last">,</span> </span></div>
+							<div class="details">See Exercise Details</div>
+							<div class="add">Add To Session</div>
 						</div>
 					</li>
 				</ul>

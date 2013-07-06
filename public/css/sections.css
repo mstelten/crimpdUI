@@ -40,8 +40,7 @@
   text-shadow: none;
   color: #111;
   padding: 0;
-  margin-left: 0;
-  margin-top: 17px;
+  margin: 17px 20px 20px 20px;
 }
 .navbar .userInfo {
   margin: 9px 0 0 60px;
@@ -196,10 +195,11 @@ ul.topnav .dropdown-menu li > a {
 .toggleNavHamburger {
   float: right;
   cursor: pointer;
-  height: 30px;
-  width: 30px;
-  background-color: yellow;
+  height: 40px;
+  width: 40px;
+  background: url('/img/icons/hamburger.png') no-repeat left top;
   margin: 10px 20px 0 0;
+  text-indent: -9999px;
 }
 @media (max-width: 979px) {
   .navbar-fixed-top .navbar-inner,
@@ -215,6 +215,9 @@ ul.topnav .dropdown-menu li > a {
   }
   .navbar .nav {
     margin: 0;
+  }
+  .navbar .userInfo {
+    margin-left: 30px;
   }
 }
 @media (max-width: 480px) {
@@ -349,8 +352,32 @@ footer .black {
   height: 161px;
   width: 215px;
 }
-.exerciseCard .shortInfo {
-  padding: 10px;
+.exerciseCard .name {
+  float: left;
+  width: 150px;
+  margin: 10px 10px 10px 10px;
+  font-size: 13px;
+}
+.exerciseCard .add {
+  float: right;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background: url('/img/icons/plus.png') no-repeat left top;
+  margin: 10px 15px 0 0;
+  text-indent: -9999px;
+}
+.exerciseCard .details {
+  float: right;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  background: url('/img/icons/details.png') no-repeat left top;
+  margin: 10px 15px 0 0;
+  text-indent: -9999px;
+}
+.exerciseCard .thumbContainer {
+  position: relative;
 }
 .exerciseCard .moreInfo {
   font-size: 11px;
@@ -359,7 +386,7 @@ footer .black {
   color: #fff;
   border-left: 3px solid #fff;
   position: absolute;
-  bottom: 40px;
+  bottom: 0px;
   right: -50%;
   padding: 10px;
   z-index: 5;
@@ -395,6 +422,16 @@ footer .black {
   .exerciseCard .thumb {
     height: 200px;
     width: 250px;
+  }
+}
+@media (min-width: 481px) and (max-width: 1199px) {
+  .exerciseCard .add,
+  .exerciseCard .details {
+    margin-right: 10px;
+  }
+  .exerciseCard .name {
+    width: 130px;
+    font-size: 12px;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
