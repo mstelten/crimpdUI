@@ -325,11 +325,11 @@ footer {
 
 .cards-enter,
 .cards-leave {
-	-webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-	-moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-	-ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-	-o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-	transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+	-webkit-transition: all 0.6s ease-in-out;
+	-moz-transition: all 0.6s ease-in-out;
+	-ms-transition: all 0.6s ease-in-out;
+	-o-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
 	position: relative;
 	display: block;
 }
@@ -337,20 +337,33 @@ footer {
 .cards-enter.cards-enter-active,
 .cards-leave {
 	opacity: 1;
-	top: 0;
-	height: 120px;
+	-webkit-transform: scale(1);
+	-moz-transition: scale(1);
+	-ms-transition: scale(1);
+	-o-transition: scale(1);
+	transform: scale(1);
+
 }
 
 .cards-leave.cards-leave-active,
 .cards-enter {
 	opacity: 0;
-	top: -100;
-	height: 0px;
+	-webkit-transform: scale(0);
+	-moz-transition: scale(0);
+	-ms-transition: scale(0);
+	-o-transition: scale(0);
+	transform: scale(0);
+
 }
 .searchResults {
 	width: 100%;
 	list-style: none;
-	margin-top: 20px;
+	margin: 20px 0 10px 0;
+	&:after {
+		content:"";
+		display: table;
+		clear: both;
+	}
 }
 .exerciseCard {
 	border: 0px solid #222;
@@ -360,6 +373,7 @@ footer {
 	float: left;
 	width: 215px;
 	position: relative;
+	overflow: hidden;
 	.thumb {
 		height: 161px;
 		width: 215px;
@@ -367,21 +381,29 @@ footer {
 	.shortInfo {
 		padding: 10px;
 	}
-	.description {
-		font-size: 12px;
+	.moreInfo {
+		font-size: 11px;
+		font-family: @font-tertiary;
 		background-color: #111;
 		color: #fff;
+		border-left: 3px solid #fff;
 		position: absolute;
 		bottom: 40px;
+		right: -50%;
 		padding: 10px;
 		z-index: 5;
 		margin-top: -50px;
-		display: none;
-		opacity: 0.8;
-		width: 100%;
+		opacity: 0;
+		-webkit-transition: all 0.2s linear;
+		-moz-transition: all 0.2s linear;
+		-ms-transition: all 0.2s linear;
+		-o-transition: all 0.2s linear;
+		transition: all 0.2s linear;
 	}
-	&:hover .description {
+	&:hover .moreInfo {
 		display: block;
+		right: 0;
+		opacity: 0.7;
 	}
 }
 .filterContainer {
@@ -402,6 +424,48 @@ footer {
 		.thumb {
 			height: 200px;
 			width: 250px;
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 979px) {
+	.filterContainer {
+		width: 100%;
+		input,
+		select {
+			max-width: 250px;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.filterContainer {
+		width: 100%;
+		input,
+		select {
+			max-width: 250px;
+		}
+	}
+}
+@media (min-width: 481px) and (max-width: 767px) {
+	.searchResults {
+		width: 475px;
+		margin: 10px auto 0 auto;
+	}
+}
+@media (max-width: 480px) {
+	.searchResults {
+		margin: 10px 0 0 0;
+	}
+	.exerciseCard {
+		width: 250px;
+		margin: 0 auto 20px auto;
+		float: none;
+		.thumb {
+			height: 200px;
+			width: 250px;
+		}
+		.thumbContainer {
+			height: 100px;
+			overflow: hidden;
 		}
 	}
 }
