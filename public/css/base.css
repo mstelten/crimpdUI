@@ -362,3 +362,35 @@ form h3 {
   *background-color: #e3e8cd;
   border-color: #111;
 }
+/* ------------------------------------- animations ------------------------------------- */
+.slide-enter-from-right,
+.slide-leave-to-left,
+.slide-enter-from-left,
+.slide-leave-to-right {
+  -webkit-transition: all 0.5s linear;
+  position: absolute;
+}
+.slide-enter-from-right {
+  left: 100%;
+}
+.slide-enter-from-right-active {
+  left: 0;
+}
+.slide-leave-to-left {
+  left: 0;
+}
+.slide-leave-to-left-active {
+  left: -100%;
+}
+.slide-enter-from-left {
+  left: -100%;
+}
+.slide-enter-from-left-active {
+  left: 0;
+}
+.slide-leave-to-right {
+  left: 0;
+}
+.slide-leave-to-right-active {
+  left: 100%;
+}

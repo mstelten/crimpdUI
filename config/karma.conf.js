@@ -5,7 +5,7 @@ files = [
 	JASMINE_ADAPTER,
 
 	//3rd Party Code
-	'./public/js/lib/angular.min.js',
+	'./public/js/lib/angular.js',
 	'./public/js/lib/angular-mocks.js',
 	'./public/js/lib/jquery-1.9.1.min.js',
 	'./public/js/lib/underscore-min.js',
@@ -16,6 +16,7 @@ files = [
 	'./public/js/common/form.directives.js',
 	'./public/js/common/view.ctrl.js',
 	'./public/js/exercise/search.ctrl.js',
+	'./public/js/exercise/details.ctrl.js',
 	'./public/js/exercise/exercise.srvs.js',
 	'./public/js/section/community.ctrl.js',
 	'./public/js/session/session.ctrls.js',

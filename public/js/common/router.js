@@ -32,17 +32,19 @@ crimpdApp.config(['$routeProvider', '$locationProvider', '$httpProvider', functi
 		templateUrl: 'partials/user-settings.html',
 		controller: UserSettingsCtrl
 	}).
-	when('/exercise-library', {
+	when('/exercises', {
 		templateUrl: 'partials/exercise-search.html',
 		controller: ExerciseSearchCtrl
+	}).
+	when('/exercises/:exerciseId', {
+		templateUrl: 'partials/exercise-details.html',
+		controller: ExerciseDetailsCtrl
 	}).
 	when('/dashboard', {
 		templateUrl: 'partials/exercise-search.html',
 		controller: ExerciseSearchCtrl
 	}).
-
 	otherwise({redirectTo: '/'});
-    // when url= '/login/blah' it doesn't redirect to '/'
 }]);
 
 
@@ -56,10 +58,26 @@ crimpdApp.run(['$rootScope', '$location', '$route', '$http', 'userInfo', functio
 				userInfo.updateUser(data.user.username, usrRole);
 			}
 		});
-	$rootScope.$on("$routeChangeStart", function (event, next, current) {
+	$rootScope.$on("$routeChangeStart", function (e, next, current) {
 		$rootScope.currentUser = userInfo.getUser();
 		if ($rootScope.currentUser.role == 0) {
 			// $location.path('/login');
+		}
+		if (next.templateUrl === 'partials/exercise-search.html' && current.templateUrl === 'partials/exercise-details.html') {
+			$rootScope.viewSlideAnimation = {
+				enter: 'slide-enter-from-left',
+				leave: 'slide-leave-to-right'
+			}
+		} else if (next.templateUrl === 'partials/exercise-details.html' && current.templateUrl === 'partials/exercise-search.html') {
+			$rootScope.viewSlideAnimation = {
+				enter: 'slide-enter-from-right',
+				leave: 'slide-leave-to-left'
+			}
+		} else {
+			$rootScope.viewSlideAnimation = {
+				enter: '',
+				leave: ''
+			}
 		}
 	});
 }]);

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="crimpd: where climbing meets training">
     <meta name="author" content="crimpd">
+	<base href="/">
 
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 	<link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
@@ -17,7 +18,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,500|Source+Sans+Pro:300|Open+Sans' rel='stylesheet' type='text/css' data-build="exclude">
 
 	<script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="js/lib/angular.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular.js"></script>
 	<script type="text/javascript" src="js/lib/bootstrap.js"></script>
 	<script type="text/javascript" src="js/lib/underscore-min.js"></script>
 	<script type="text/javascript" src="js/common/config.js"></script>
@@ -25,6 +26,7 @@
 	<script type="text/javascript" src="js/common/form.directives.js"></script>
 	<script type="text/javascript" src="js/common/view.ctrl.js"></script>
 	<script type="text/javascript" src="js/exercise/search.ctrl.js"></script>
+	<script type="text/javascript" src="js/exercise/details.ctrl.js"></script>
 	<script type="text/javascript" src="js/exercise/exercise.srvs.js"></script>
 	<script type="text/javascript" src="js/section/community.ctrl.js"></script>
 	<script type="text/javascript" src="js/session/session.ctrls.js"></script>
@@ -52,7 +54,7 @@
 			<ng-include src="'partials/header.html'"></ng-include>
 
 			<div ng-controller="ViewCtrl">
-				<ng-view></ng-view>
+				<ng-view ng-animate="viewSlideAnimation"></ng-view>
 			</div>
 
 		</div>
