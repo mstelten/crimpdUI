@@ -11,13 +11,15 @@ function ExerciseSearchCtrl($scope, exerciseData) {
 	};
 	$scope.search = exerciseData.getCachedSearch();
 	$scope.clearFilters = function () {
-		$scope.search = {
+		var clean = {
 			Target: "",
 			Difficulty: "",
 			Type: "",
 			Equipment: "",
 			$: ""
-		}
+		};
+		$scope.search = clean;
+		exerciseData.updateCachedSearch(clean);
 	};
 	$scope.targetOptions = function () {
 		var targets = [];

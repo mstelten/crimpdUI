@@ -23,6 +23,9 @@ myServices.factory('exerciseData', ['$http', '$q', function ($http, $q) {
 		},
 		getCachedSearch: function () {
 			return cachedSearch;
+		},
+		updateCachedSearch: function (searchObj) {
+			cachedSearch = searchObj;
 		}
 	}
 }]);
