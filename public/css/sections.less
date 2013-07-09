@@ -246,7 +246,7 @@ ul.topnav  .dropdown-menu {
 
 footer {
 	padding-top:15px;
-	color:#fff;
+	color:#000;
   	background-color: @bgr-dark;
   	border-top: 4px solid #999;
   	a, a:hover {
@@ -255,8 +255,8 @@ footer {
   	a:hover {
   		text-decoration: underline;
   	}
-  	.black {
-  		color: #000;
+  	.white {
+  		color: #fff;
   	}
 }
 @media (max-width: 767px) {
@@ -411,7 +411,7 @@ footer {
 		position: relative;
 	}
 	.moreInfo {
-		font-size: 11px;
+		font-size: 12px;
 		font-family: @font-tertiary;
 		background-color: #111;
 		color: #fff;
@@ -428,11 +428,15 @@ footer {
 		-ms-transition: all 0.2s linear;
 		-o-transition: all 0.2s linear;
 		transition: all 0.2s linear;
+		max-width: 200px;
+		span {
+			color: @scheme-two;
+		}
 	}
 	&:hover .moreInfo {
 		display: block;
 		right: 0;
-		opacity: 0.7;
+		opacity: 0.9;
 	}
 }
 .filterContainer {
@@ -444,6 +448,20 @@ footer {
 	input,
 	select {
 		width: 100%;
+	}
+	h3 {
+		margin: 0 0 10px 0;
+		color: @scheme-two;
+	}
+	.clearFilters {
+		cursor: pointer;
+		margin: 5px 0;
+		color: red;
+	}
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
 	}
 }
 @media (min-width: 1200px) {
@@ -475,14 +493,8 @@ footer {
 		select {
 			max-width: 250px;
 		}
-	}
-}
-@media (max-width: 767px) {
-	.filterContainer {
-		width: 100%;
-		input,
-		select {
-			max-width: 250px;
+		h3 {
+			font-size: 21px;
 		}
 	}
 }
@@ -491,10 +503,27 @@ footer {
 		width: 475px;
 		margin: 10px auto 0 auto;
 	}
+	.filterContainer {
+		width: 100%;
+		.section {
+			float: left;
+			width: 45%;
+			&:first-of-type {
+				margin-right: 40px;
+			}
+		}
+	}
 }
+
 @media (max-width: 480px) {
 	.searchResults {
 		margin: 10px 0 0 0;
+	}
+	.filterContainer {
+		width: 100%;
+		.section {
+			width: 100%;
+		}
 	}
 	.exerciseCard {
 		width: 250px;

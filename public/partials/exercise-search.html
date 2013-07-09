@@ -14,16 +14,30 @@
 			<div class="row-fluid">
 				<div class="span3">
 					<div class="filterContainer">
-						<label>Filter by Any Text</label>
-						<input type="text" ng-model="search.$"/>
-						<label>Filter by Target</label>
-						<select ng-model="search.Target" ng-options="x for x in targetOptions()">
-							<option value="">-- all --</option>
-						</select>
-						<label>Filter by Difficulty</label>
-						<select ng-model="search.Difficulty" ng-options="x for x in difficultyOptions()">
-							<option value="">-- all --</option>
-						</select>
+						<div class="section">
+							<h3>Exercise Filters</h3>
+							<div class="clearFilters" ng-show="!isCleanSlate()" ng-click="clearFilters()">(X) Clear All Filters</div>
+							<label>Search</label>
+							<input type="text" ng-model="search.$"/>
+							<label>Target</label>
+							<select ng-model="search.Target" ng-options="x for x in targetOptions()">
+								<option value="">-- all --</option>
+							</select>
+						</div>
+						<div class="section">
+							<label>Type</label>
+							<select ng-model="search.Type" ng-options="x for x in typeOptions()">
+								<option value="">-- all --</option>
+							</select>
+							<label>Difficulty</label>
+							<select ng-model="search.Difficulty" ng-options="x for x in difficultyOptions()">
+								<option value="">-- all --</option>
+							</select>
+							<label>Equipment</label>
+							<select ng-model="search.Equipment" ng-options="x for x in equipmentOptions()">
+								<option value="">-- all --</option>
+							</select>
+						</div>
 					</div>
 				</div>
 				<div class="span9">
@@ -34,7 +48,9 @@
 
 								<div class="moreInfo">
 									<div class="target">Target: <span ng-repeat="x in exr.Target">{{x}}<span ng-show="!$last">,</span> </span></div>
+									<div class="type">Type: <span ng-repeat="x in exr.Type">{{x}}<span ng-show="!$last">,</span> </span></div>
 									<div class="difficulty">Difficulty: <span ng-repeat="x in exr.Difficulty">{{x}}<span ng-show="!$last">,</span> </span></div>
+									<div class="equipment">Equipment: <span ng-repeat="x in exr.Equipment">{{x}}<span ng-show="!$last">,</span> </span></div>
 								</div>
 							</div>
 							<div class="shortInfo">

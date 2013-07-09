@@ -1,4 +1,11 @@
 myServices.factory('exerciseData', ['$http', '$q', function ($http, $q) {
+	var cachedSearch = {
+		Target: "",
+		Difficulty: "",
+		Type: "",
+		Equipment: "",
+		$: ""
+	}
 	return {
 		queryAllExercises: function () {
 			var deferred = $q.defer();
@@ -13,6 +20,9 @@ myServices.factory('exerciseData', ['$http', '$q', function ($http, $q) {
 				deferred.resolve(data);
 			});
 			return deferred.promise;
+		},
+		getCachedSearch: function () {
+			return cachedSearch;
 		}
 	}
 }]);
