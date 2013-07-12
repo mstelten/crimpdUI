@@ -36,9 +36,11 @@ function ExerciseSearchCtrl($scope, exerciseData) {
 					});
 				}
 			}))) {
-				for (var j = 0; j < $scope.exercises[i].Target.length; j++) {
-					if (targets.indexOf($scope.exercises[i].Target[j]) == -1)
-						targets.push($scope.exercises[i].Target[j]);
+				if ($scope.exercises[i].Target != undefined) {
+					for (var j = 0; j < $scope.exercises[i].Target.length; j++) {
+						if (targets.indexOf($scope.exercises[i].Target[j]) == -1)
+							targets.push($scope.exercises[i].Target[j]);
+					}
 				}
 			}
 		}
@@ -59,9 +61,11 @@ function ExerciseSearchCtrl($scope, exerciseData) {
 					});
 				}
 			}))) {
-				for (var j = 0; j < $scope.exercises[i].Difficulty.length; j++) {
-					if (difficulties.indexOf($scope.exercises[i].Difficulty[j]) == -1)
-						difficulties.push($scope.exercises[i].Difficulty[j]);
+				if ($scope.exercises[i].Difficulty != undefined) {
+					for (var j = 0; j < $scope.exercises[i].Difficulty.length; j++) {
+						if (difficulties.indexOf($scope.exercises[i].Difficulty[j]) == -1)
+							difficulties.push($scope.exercises[i].Difficulty[j]);
+					}
 				}
 			}
 		}
@@ -82,9 +86,11 @@ function ExerciseSearchCtrl($scope, exerciseData) {
 					});
 				}
 			}))) {
-				for (var j = 0; j < $scope.exercises[i].Type.length; j++) {
-					if (types.indexOf($scope.exercises[i].Type[j]) == -1)
-						types.push($scope.exercises[i].Type[j]);
+				if ($scope.exercises[i].Type != undefined) {
+					for (var j = 0; j < $scope.exercises[i].Type.length; j++) {
+						if (types.indexOf($scope.exercises[i].Type[j]) == -1)
+							types.push($scope.exercises[i].Type[j]);
+					}
 				}
 			}
 		}
@@ -105,9 +111,11 @@ function ExerciseSearchCtrl($scope, exerciseData) {
 					});
 				}
 			}))) {
-				for (var j = 0; j < $scope.exercises[i].Equipment.length; j++) {
-					if (equipments.indexOf($scope.exercises[i].Equipment[j]) == -1)
-						equipments.push($scope.exercises[i].Equipment[j]);
+				if ($scope.exercises[i].Equipment != undefined) {
+					for (var j = 0; j < $scope.exercises[i].Equipment.length; j++) {
+						if (equipments.indexOf($scope.exercises[i].Equipment[j]) == -1)
+							equipments.push($scope.exercises[i].Equipment[j]);
+					}
 				}
 			}
 		}

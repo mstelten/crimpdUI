@@ -2,11 +2,17 @@
 	<section id="maincontent" class="noIntro">
 		<div class="container">
 			<div class="row-fluid">
-				<div class="span12">
-					<a href="/exercises"><---- Back to Exercises</a>
-					<div>Id: {{ exr.id }}</div>
-					<div>Name: {{ exr.name }}</div>
-					<div>Description: {{ exr.description }}</div>
+				<div class="span12 exerciseDetails">
+					<a href="/exercises" class="backToSearch"><---- Back to Exercises</a>
+					<img class="photo" src="{{ imgBaseUrl + exr.images[1] }}" />
+					<div class="infoBlock">
+						<div class="title">{{ exr.name }}</div>
+						<div class="description">{{ exr.description }}</div>
+						<div class="author">Created by: {{ exr.author }}</div>
+						<div class="metadata">
+							<div>Equipment needed: <span ng-repeat="x in equipment()">{{x}}<span ng-show="!$last">,</span> </span></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

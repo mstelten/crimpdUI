@@ -504,3 +504,29 @@ footer .white {
     overflow: hidden;
   }
 }
+/* ------------------------------------- exercise details section ------------------------------------- */
+.exerciseDetails .backToSearch {
+  display: block;
+  margin-bottom: 20px;
+}
+.exerciseDetails .photo {
+  float: left;
+  width: 500px;
+  background-color: #e3e8cd;
+  padding: 10px;
+  margin: 0 20px 20px 0;
+}
+.exerciseDetails .infoBlock {
+  overflow: hidden;
+  font-size: 16px;
+}
+.exerciseDetails .infoBlock div {
+  margin-bottom: 20px;
+}
+.exerciseDetails .title {
+  font-size: 24px;
+  color: #0088cc;
+}
+.exerciseDetails .description {
+  margin: 0;
+}

@@ -328,6 +328,7 @@ footer {
 
 /* ------------------------------------- exercise search section ------------------------------------- */
 
+
 .cards-enter,
 .cards-leave {
 	-webkit-transition: all 0.6s ease-in-out;
@@ -537,5 +538,37 @@ footer {
 			height: 100px;
 			overflow: hidden;
 		}
+	}
+}
+
+
+/* ------------------------------------- exercise details section ------------------------------------- */
+
+
+.exerciseDetails {
+	.backToSearch {
+		display: block;
+		margin-bottom: 20px;
+	}
+	.photo {
+		float: left;
+		width: 500px;
+		background-color: @scheme-three;
+		padding: 10px;
+		margin: 0 20px 20px 0;
+	}
+	.infoBlock {
+		overflow: hidden;
+		font-size: 16px;
+		div {
+			margin-bottom: 20px;
+		}
+	}
+	.title {
+		font-size: 24px;
+		color: @scheme-two;
+	}
+	.description {
+		margin: 0;
 	}
 }

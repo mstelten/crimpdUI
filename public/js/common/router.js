@@ -63,7 +63,10 @@ crimpdApp.run(['$rootScope', '$location', '$route', '$http', 'userInfo', functio
 		if ($rootScope.currentUser.role == 0) {
 			// $location.path('/login');
 		}
-		if (next.templateUrl === 'partials/exercise-search.html' && current.templateUrl === 'partials/exercise-details.html') {
+		if (current === undefined) {
+			return false;
+		}
+		else if (next.templateUrl === 'partials/exercise-search.html' && current.templateUrl === 'partials/exercise-details.html') {
 			$rootScope.viewSlideAnimation = {
 				enter: 'slide-enter-from-left',
 				leave: 'slide-leave-to-right'
