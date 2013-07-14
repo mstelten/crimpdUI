@@ -21,6 +21,13 @@ myServices.factory('exerciseData', function ($http, $q) {
 			});
 			return deferred.promise;
 		},
+		queryAllMeta: function () {
+			var deferred = $q.defer();
+			$http.get(config.apiUrl + '/exercise/meta').success(function (data) {
+				deferred.resolve(data);
+			});
+			return deferred.promise;
+		},
 		getCachedSearch: function () {
 			return cachedSearch;
 		},

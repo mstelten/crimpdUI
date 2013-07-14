@@ -17,6 +17,7 @@ files = [
 	'./public/js/common/view.ctrl.js',
 	'./public/js/exercise/search.ctrl.js',
 	'./public/js/exercise/details.ctrl.js',
+	'./public/js/exercise/create.ctrl.js',
 	'./public/js/exercise/exercise.srvs.js',
 	'./public/js/section/community.ctrl.js',
 	'./public/js/session/session.ctrls.js',
