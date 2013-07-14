@@ -122,4 +122,3 @@ function ExerciseSearchCtrl($scope, exerciseData) {
 		return equipments;
 	}
 }
-ExerciseSearchCtrl.$inject = ['$scope', 'exerciseData'];

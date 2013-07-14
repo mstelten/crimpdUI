@@ -1,4 +1,4 @@
-myServices.factory('exerciseData', ['$http', '$q', function ($http, $q) {
+myServices.factory('exerciseData', function ($http, $q) {
 	var cachedSearch = {
 		Target: "",
 		Difficulty: "",
@@ -28,4 +28,4 @@ myServices.factory('exerciseData', ['$http', '$q', function ($http, $q) {
 			cachedSearch = searchObj;
 		}
 	}
-}]);
+});

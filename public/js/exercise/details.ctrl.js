@@ -14,5 +14,3 @@ function ExerciseDetailsCtrl($scope, $routeParams, exerciseData) {
 		return equips;
 	}
 }
-
-ExerciseDetailsCtrl.$inject = ['$scope', '$routeParams', 'exerciseData'];

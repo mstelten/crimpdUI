@@ -32,7 +32,7 @@ myDirectives.directive('cmFormValidator', function() {
 	}
 });
 
-myDirectives.directive('cmUsernameInput', ['$http', function ($http) {
+myDirectives.directive('cmUsernameInput', function ($http) {
 	return {
 		restrict: "A",
 		link: function (scope, elm, attrs) {
@@ -53,4 +53,4 @@ myDirectives.directive('cmUsernameInput', ['$http', function ($http) {
 			};
 		}
 	}
-}]);
+});

@@ -25,4 +25,3 @@ function RegisterCtrl($scope, $http) {
 		$scope.registerModel.clicked = true;
 	};
 }
-RegisterCtrl.$inject = ['$scope', '$http'];

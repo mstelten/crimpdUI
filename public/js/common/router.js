@@ -5,7 +5,7 @@ var myFilters = angular.module('myFilters', []);
 
 // ROUTER
 
-crimpdApp.config(['$routeProvider', '$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider) {
+crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
     $locationProvider.html5Mode(true);
 	$httpProvider.defaults.withCredentials = true;
 	$routeProvider.when('/', {
@@ -45,12 +45,12 @@ crimpdApp.config(['$routeProvider', '$locationProvider', '$httpProvider', functi
 		controller: ExerciseSearchCtrl
 	}).
 	otherwise({redirectTo: '/'});
-}]);
+});
 
 
 // RUN AT APP STARTUP
 
-crimpdApp.run(['$rootScope', '$location', '$route', '$http', 'userInfo', function ($rootScope, $location, $route, $http, userInfo) {
+crimpdApp.run(function ($rootScope, $location, $route, $http, userInfo) {
 	$http.get(config.apiUrl + '/user')
 		.success(function (data) {
 			if (data.success) {
@@ -83,7 +83,7 @@ crimpdApp.run(['$rootScope', '$location', '$route', '$http', 'userInfo', functio
 			}
 		}
 	});
-}]);
+});
 
 
 

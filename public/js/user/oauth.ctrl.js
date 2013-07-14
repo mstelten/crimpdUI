@@ -34,4 +34,3 @@ function LinkOAuthCtrl($scope, $http, $location, userInfo) {
 		$scope.newAccountModel.clicked = true;
 	};
 }
-LinkOAuthCtrl.$inject = ['$scope', '$http', '$location', 'userInfo'];

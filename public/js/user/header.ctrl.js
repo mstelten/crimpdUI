@@ -35,4 +35,3 @@ function HeaderCtrl($scope, userInfo, $timeout, $location) {
 		}
 	};
 }
-HeaderCtrl.$inject = ['$scope', 'userInfo', '$timeout', '$location'];

@@ -16,4 +16,3 @@ function LoginCtrl($scope, $location, userInfo) {
 		$scope.loginModel.clicked = true;
 	};
 }
-LoginCtrl.$inject = ['$scope', '$location', 'userInfo'];

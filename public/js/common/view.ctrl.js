@@ -3,4 +3,3 @@ function ViewCtrl($scope, $route, $routeParams, $location, $rootScope) {
 	$scope.$location = $location;
 	$scope.$routeParams = $routeParams;
 }
-ViewCtrl.$inject = ['$scope', '$route', '$routeParams', '$location'];
