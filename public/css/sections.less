@@ -19,7 +19,7 @@
 .navbar-fixed-top {
   	top: 0;
 	.navbar-inner {
-		background-color: @bgr-light;
+		background-color: @bgr-primary;
 		background-image: none;
 		border-bottom: 1px #666 solid;
 		padding-left: 0;
@@ -50,7 +50,7 @@
 		font-size: 16px;
 		float: left;
 		a {
-			color: @scheme-two;
+			color: @text-secondary;
 		}
     }
     .userWelcome {
@@ -85,7 +85,7 @@
 	.nav .active > a,
 	.nav .active > a:hover,
 	.nav .active > a:focus {
-		background-color: @scheme-two;
+		background-color: @text-secondary;
 		color:#fff;
 		-webkit-transition: all 0.2s ease;
 		-moz-transition: all 0.2s ease-in-out;
@@ -247,7 +247,7 @@ ul.topnav  .dropdown-menu {
 footer {
 	padding-top:15px;
 	color:#000;
-  	background-color: @bgr-dark;
+  	background-color: @bgr-tertiary;
   	border-top: 4px solid #999;
   	a, a:hover {
   		color: #fff;
@@ -303,16 +303,18 @@ footer {
 
 
 #intro {
-	background-color: @bgr-dark;
 	.sectionTitle {
-		padding: 67px 0 8px 20px;
+		padding: 67px 0 8px 10px;
+		background-color: @bgr-secondary;
+		border-left: 15px solid #D6DBC5;
+		border-right: 15px solid #eff2e3;
+		width: 400px;
 		.titleBox {
 			font-size: 21px;
-			color: @scheme-three;
+			color: @text-primary;
 			/* text-shadow: 0px 1px 2px #000; */
 			font-family: @font-secondary;
 			padding: 5px 0 5px 15px;
-			border-left: 10px solid #000;
 		}
 	}
 }
@@ -321,6 +323,8 @@ footer {
 		margin-top: -20px;
 		.sectionTitle {
 			padding: 10px 0;
+			width: 100%;
+			border-right: 0;
 		}
 	}
 }
@@ -373,7 +377,7 @@ footer {
 }
 .exerciseCard {
 	border: 0px solid #222;
-	background-color: @scheme-three;
+	background-color: @bgr-secondary;
 	margin: 0 10px 20px 10px;
 	padding: 0;
 	float: left;
@@ -431,7 +435,7 @@ footer {
 		transition: all 0.2s linear;
 		max-width: 200px;
 		span {
-			color: @scheme-two;
+			color: @text-secondary;
 		}
 	}
 	&:hover .moreInfo {
@@ -441,7 +445,7 @@ footer {
 	}
 }
 .filterContainer {
-	background-color: @scheme-four;
+	background-color: @bgr-primary;
 	border-left: 3px solid #111;
 	margin: 20px auto;
 	padding: 15px;
@@ -452,7 +456,7 @@ footer {
 	}
 	h3 {
 		margin: 0 0 10px 0;
-		color: @scheme-two;
+		color: @text-secondary;
 	}
 	.clearFilters {
 		cursor: pointer;
@@ -553,7 +557,7 @@ footer {
 	.photo {
 		float: left;
 		width: 500px;
-		background-color: @scheme-three;
+		background-color: @bgr-secondary;
 		padding: 10px;
 		margin: 0 20px 20px 0;
 	}
@@ -566,7 +570,7 @@ footer {
 	}
 	.title {
 		font-size: 24px;
-		color: @scheme-two;
+		color: @text-secondary;
 	}
 	.description {
 		margin: 0;

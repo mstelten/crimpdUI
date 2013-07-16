@@ -27,7 +27,7 @@ body {
 	font-family: @font-primary;
 	font-size: 14px;
 	line-height: 1.6em;
-	color: #333333;
+	color: @text-primary;
 	background-color: #fff;
 	overflow-x: hidden;
 }
@@ -54,7 +54,7 @@ body {
 		margin: 0 20px;
 	}
 	#intro .container {
-		padding: 0 20px;
+		padding: 0;
 	}
 }
 
@@ -141,7 +141,6 @@ h4 small {
 
 
 select,
-textarea,
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -158,6 +157,13 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
 	height: 28px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #fafafa;
+	color: #333;
+}
+textarea {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -263,7 +269,7 @@ form h3 {
 	}
 	label {
 		font-size: 16px;
-		color: @scheme-two;
+		color: @text-secondary;
 	}
 }
 /* --- formMedium requires .form-horizontal ---- */
@@ -279,7 +285,7 @@ form h3 {
 	label {
 	  	font-size: 16px;
 	  	line-height: 40px;
-	  	color: @scheme-two;
+	  	color: @text-secondary;
 	}
 	label.control-label {
 		width: 140px;
@@ -357,8 +363,8 @@ form h3 {
 .btn-primary {
 	color: #000;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	background-color: @scheme-three;
-	*background-color: @scheme-three;
+	background-color: @bgr-secondary;
+	*background-color: @bgr-secondary;
 	background-image: none;
 	border-color: #0044cc #0044cc #002a80;
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -373,8 +379,8 @@ form h3 {
 .btn-primary.disabled,
 .btn-primary[disabled] {
 	color: #333;
-	background-color: @scheme-three;
-	*background-color: @scheme-three;
+	background-color: @bgr-secondary;
+	*background-color: @bgr-secondary;
 	border-color: #111;
 }
 

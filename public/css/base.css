@@ -50,7 +50,7 @@ body {
     margin: 0 20px;
   }
   #intro .container {
-    padding: 0 20px;
+    padding: 0;
   }
 }
 /* ------------------------------------- global level elements ------------------------------------- */
@@ -135,7 +135,6 @@ h4 small {
 }
 /* ------------------------------------- forms / input elements ------------------------------------- */
 select,
-textarea,
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -152,6 +151,13 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   height: 28px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #fafafa;
+  color: #333;
+}
+textarea {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;

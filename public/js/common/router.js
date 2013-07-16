@@ -36,13 +36,13 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 		templateUrl: 'partials/exercise-search.html',
 		controller: ExerciseSearchCtrl
 	}).
-	when('/exercises/:exerciseId', {
-		templateUrl: 'partials/exercise-details.html',
-		controller: ExerciseDetailsCtrl
-	}).
 	when('/exercises/create', {
 		templateUrl: 'partials/exercise-create.html',
 		controller: ExerciseCreateCtrl
+	}).
+	when('/exercises/:exerciseId', {
+		templateUrl: 'partials/exercise-details.html',
+		controller: ExerciseDetailsCtrl
 	}).
 	when('/dashboard', {
 		templateUrl: 'partials/exercise-search.html',
