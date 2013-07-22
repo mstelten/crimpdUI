@@ -27,8 +27,15 @@ function HeaderCtrl($scope, userInfo, $timeout, $location) {
 			userInfo.updateUser('noob', 0);
 		});
 	};
-	$scope.isActive = function (path) {
+	$scope.isActiveExact = function (path) {
 		if ($location.path() == path) {
+			return "active"
+		} else {
+			return ""
+		}
+	};
+	$scope.isActive = function (path) {
+		if ($location.path().indexOf(path) > -1) {
 			return "active"
 		} else {
 			return ""

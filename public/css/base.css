@@ -34,6 +34,9 @@ body {
 #maincontent.noIntro {
   margin-top: 120px;
 }
+#maincontent.noIntroShort {
+  margin-top: 80px;
+}
 .rowExtraMargins.row-fluid {
   margin: 50px 0;
 }
