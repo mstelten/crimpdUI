@@ -11,5 +11,4 @@ the crimpd UI layer running on node
 
 ## UI File Structure
 
-* **index.html** is located in /views
-* **all other UI files** are located in /public
+* **all UI files** are located in /public
