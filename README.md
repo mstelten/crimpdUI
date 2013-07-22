@@ -11,4 +11,5 @@ the crimpd UI layer running on node
 
 ## UI File Structure
 
-* **all UI files** are located in /public
+* **development UI files** are located in /public
+* **production UI files** are located in /bin
