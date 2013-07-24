@@ -516,7 +516,8 @@ footer .white {
 }
 .exerciseDetails .photo {
   float: left;
-  width: 500px;
+  max-width: 600px;
+  max-height: 480px;
   background-color: #e3e8cd;
   padding: 10px;
   margin: 0 20px 20px 0;
