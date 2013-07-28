@@ -10,7 +10,10 @@
 						<div class="description">{{ exr.description }}</div>
 						<div class="author">Created by: {{ exr.author }}</div>
 						<div class="metadata">
-							<div>Equipment needed: <span ng-repeat="x in equipment()">{{x}}<span ng-show="!$last">,</span> </span></div>
+							<div class="target">Target: <span ng-repeat="x in exr.target">{{x}}<span ng-show="!$last">,</span> </span></div>
+							<div class="type">Type: <span ng-repeat="x in exr.type">{{x}}<span ng-show="!$last">,</span> </span></div>
+							<div class="difficulty">Difficulty: <span ng-repeat="x in exr.difficulty">{{x}}<span ng-show="!$last">,</span> </span></div>
+							<div class="equipment">Equipment: <span ng-repeat="x in exr.equipment">{{x}}<span ng-show="!$last">,</span> </span></div>
 						</div>
 					</div>
 				</div>

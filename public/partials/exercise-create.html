@@ -1,28 +1,48 @@
 <div>
+	<section id="intro">
+		<div class="container">
+			<div class="row-fluid">
+				<div class="sectionTitle">
+					<div class="titleBox">create exercise</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<section id="maincontent" class="noIntro createExercise">
 		<div class="container">
 			<div class="row-fluid">
 				<div class="span12">
-					<form name="updateProfileForm" class="formMediumHorz form-horizontal" form-model="updateProfileModel" submit-func="updateProfile()" cm-form-validator ng-submit="submit()">
-						<h3>create exercise</h3>
+					<form name="createNewExerciseForm" class="formMediumHorz form-horizontal" form-model="newExerciseModel" submit-func="createNewExercise()" cm-form-validator ng-submit="submit()">
 
 						<div class="control-group">
 							<label class="control-label">name</label>
 
 							<div class="controls">
-								<input type="text" ng-model="formModel.firstname" class="input-block-level" name="inputFirstName" placeholder="first name" autofocus>
+								<input type="text" ng-model="formModel.name" class="input-block-level" name="inputName" placeholder="first name" autofocus>
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label">description</label>
 
 							<div class="controls">
-								<textarea rows="7" ng-model="formModel.lastname" class="input-block-level" name="inputLastName" placeholder="exercise description">
+								<textarea rows="7" ng-model="formModel.description" class="input-block-level" name="inputDescription" placeholder="exercise description">
 								</textarea>
 							</div>
 						</div>
+						<div class="control-group">
+							<label class="control-label">target</label>
+
+							<div class="controls">
+								<select multiple ng-model="formModel.targets" ng-options="x.id as x.name for x in $parent.allMeta.target" class="input-block-level">
+									<option value="">-- all --</option>
+								</select>
+							</div>
+
+						</div>
 
 						<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
+						<div class="formMessageError" ng-show="!errorPresent">{{formModel.message}}</div>
 						<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 						<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">create</button>
 						<div class="cB"></div>
