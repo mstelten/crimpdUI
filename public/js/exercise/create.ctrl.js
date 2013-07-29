@@ -1,6 +1,7 @@
 function ExerciseCreateCtrl($scope, exerciseData) {
 	exerciseData.queryAllMeta().then(function (data) {
 		$scope.allMeta = data.exerciseMeta;
+		$scope.list = {};
 	});
 	$scope.createNewExercise = function () {
 		exerciseData.createBasic($scope.newExerciseModel.name, $scope.newExerciseModel.description).then(function (data) {
@@ -15,7 +16,12 @@ function ExerciseCreateCtrl($scope, exerciseData) {
 			$scope.newExerciseModel.clicked = true;
 		});
 		var addMetaData = function () {
-			var addMetaArray = $scope.newExerciseModel.targets.concat($scope.newExerciseModel.types, $scope.newExerciseModel.difficulties, $scope.newExerciseModel.equipment);
+			var addMetaArray = [];
+			angular.forEach($scope.list, function (value, key) {
+				if (value === true) {
+					addMetaArray.push(key);
+				}
+			});
 			exerciseData.addMeta($scope.createBasicResp.exercise.id, addMetaArray).then(function (data) {
 				$scope.addMetaResp = data;
 				$scope.newExerciseModel.errorMessages = null;
