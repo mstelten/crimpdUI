@@ -15,69 +15,74 @@
 				<div class="span12">
 					<form name="createNewExerciseForm" class="formMediumHorz form-horizontal" form-model="newExerciseModel" submit-func="createNewExercise()" cm-form-validator ng-submit="submit()">
 
-						<div class="control-group">
-							<label class="control-label">name</label>
+						<div class="span6">
+							<div class="control-group">
+								<label class="control-label">name</label>
 
-							<div class="controls">
-								<input type="text" ng-model="formModel.name" class="input-block-level" name="inputName" placeholder="first name" autofocus required>
+								<div class="controls">
+									<input type="text" ng-model="formModel.name" class="input-block-level" name="inputName" placeholder="first name" autofocus required>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">description</label>
+
+								<div class="controls">
+									<textarea rows="20" ng-model="formModel.description" class="input-block-level" name="inputDescription" placeholder="exercise description" required>
+									</textarea>
+								</div>
 							</div>
 						</div>
-						<div class="control-group">
-							<label class="control-label">description</label>
 
-							<div class="controls">
-								<textarea rows="7" ng-model="formModel.description" class="input-block-level" name="inputDescription" placeholder="exercise description" required>
-								</textarea>
+						<div class="span6 metaData">
+							<div class="control-group">
+								<label class="control-label">target</label>
+
+								<div class="controls">
+									<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.target">
+										<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}"/>
+										{{ x.name }}
+									</label>
+								</div>
+
 							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label">target</label>
+							<div class="control-group">
+								<label class="control-label">type</label>
 
-							<div class="controls">
-								<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.target">
-									<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}"/>
-									{{ x.name }}
-								</label>
+								<div class="controls">
+									<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.type">
+										<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}"/>
+										{{ x.name }}
+									</label>
+								</div>
+
 							</div>
+							<div class="control-group">
+								<label class="control-label">equipment</label>
 
-						</div>
-						<div class="control-group">
-							<label class="control-label">type</label>
-
-							<div class="controls">
-								<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.type">
-									<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}"/>
-									{{ x.name }}
-								</label>
+								<div class="controls">
+									<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.equipment">
+										<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}"/>
+										{{ x.name }}
+									</label>
+								</div>
 							</div>
+							<div class="control-group">
+								<label class="control-label">difficulty</label>
 
-						</div>
-						<div class="control-group">
-							<label class="control-label">difficulty</label>
+								<div class="controls">
+									<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.difficulty">
+										<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}"/>
+										{{ x.name }}
+									</label>
+								</div>
 
-							<div class="controls">
-								<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.difficulty">
-									<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}"/>
-									{{ x.name }}
-								</label>
-							</div>
-
-						</div>
-						<div class="control-group">
-							<label class="control-label">equipment</label>
-
-							<div class="controls">
-								<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.equipment">
-									<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}"/>
-									{{ x.name }}
-								</label>
 							</div>
 						</div>
 
 						<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
-						<div class="formMessageError" ng-show="!errorPresent">{{formModel.message}}</div>
 						<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 						<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">create</button>
+						<div class="formMessageError" ng-show="!errorPresent">{{formModel.message}}</div>
 						<div class="cB"></div>
 					</form>
 				</div>

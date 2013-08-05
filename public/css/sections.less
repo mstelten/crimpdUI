@@ -658,7 +658,53 @@ footer {
 
 
 .createExercise {
-
+	.metaData {
+		.control-group {
+			float: left;
+			margin-right: 20px;
+		}
+		.control-label {
+			width: auto;
+			float: none;
+			text-align: left;
+		}
+		.controls {
+			width: 225px;
+			height: 200px;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			border: 1px solid #CCC;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			background-color: #fafafa;
+			padding: 10px;
+			.checkbox:first-child {
+				padding-top: 0;
+			}
+			label {
+				color: @text-primary;
+			}
+			/* bring back webkit scrollbar by default */
+			&::-webkit-scrollbar {
+				-webkit-appearance: none;
+				width: 9px;
+			}
+			&::-webkit-scrollbar-thumb {
+				border-radius: 4px;
+				border: 2px solid #fafafa;
+				background-color: rgba(0, 0, 0, .5);
+				-webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+			}
+		}
+		label {
+			line-height: 20px;
+		}
+		input {
+			height: auto;
+			margin-top: 2px;
+		}
+	}
 }
 
 

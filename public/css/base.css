@@ -319,6 +319,7 @@ form h3 {
 }
 .formMediumHorz button {
   float: left;
+  clear: both;
   margin-left: 150px;
 }
 @media (max-width: 767px) {
