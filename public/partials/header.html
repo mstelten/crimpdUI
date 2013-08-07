@@ -1,50 +1,48 @@
 <header ng-controller="HeaderCtrl">
 	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<!-- logo -->
-				<a class="brand logo" href="/">
-					<img src="/img/logo-header.png" alt="crimpd logo">
-				</a>
-				<!-- end logo -->
-				<div class="userInfo">
-					<div class="userWelcome">
-						<span ng-show="isSignedIn()" ng-animate="animateTerms">
-						howdy, <strong>{{currentUser.name}}</strong>
-						</span>
-						<span ng-show="!isSignedIn()" ng-animate="animateTerms" ng-class="state">
-							hi there, <strong>noob</strong>
-						</span>
-					</div>
-					<div ng-show="isSignedIn()">
-						<a href="/settings">settings</a> | <a href="#" ng-click="signOut($event)">log out</a>
-					</div>
-					<div ng-show="!isSignedIn()">
-						<a href="/login">log in</a> | <a href="/register">register</a>
-					</div>
+		<div class="container">
+			<!-- logo -->
+			<a class="logo" href="/">
+				<img src="/img/logo-header.png" alt="crimpd logo">
+			</a>
+			<!-- end logo -->
+			<div class="userInfo">
+				<div class="userWelcome">
+					<span ng-show="isSignedIn()" ng-animate="animateTerms">
+					howdy, <strong>{{currentUser.name}}</strong>
+					</span>
+					<span ng-show="!isSignedIn()" ng-animate="animateTerms" ng-class="state">
+						hi there, <strong>noob</strong>
+					</span>
 				</div>
-				<div class="toggleNavHamburger visible-phone" data-toggle="collapse" data-target="#toggleNav">Menu</div>
-				<!-- top menu -->
-				<nav>
-					<ul class="nav topnav hidden-phone">
-						<li ng-class="isActiveExact('/')">
-							<a href="/">comm<br/>unity</a>
-						</li>
-						<li ng-class="isActive('/dashboard')">
-							<a href="/dashboard">dash<br/>board</a>
-						</li>
-						<li ng-class="isActive('/exercises')">
-							<a href="/exercises">exercise<br/>library</a>
-						</li>
-					</ul>
-					<ul class="nav nav-tabs nav-stacked visible-phone collapse" id="toggleNav">
-						<li ng-class="isActiveExact('/')"><a href="/">community</a></li>
-						<li ng-class="isActive('/dashboard')"><a href="/dashboard">dashboard</a></li>
-						<li ng-class="isActive('/exercises')"><a href="/exercises">exercise library</a></li>
-					</ul>
-				</nav>
-				<!-- end menu -->
+				<div ng-show="isSignedIn()">
+					<a href="/settings">settings</a> | <a href="#" ng-click="signOut($event)">log out</a>
+				</div>
+				<div ng-show="!isSignedIn()">
+					<a href="/login">log in</a> | <a href="/register">register</a>
+				</div>
 			</div>
+			<a class="toggleNavHamburger visible-sm" data-toggle="dropdown" id="toggleNav">Menu</a>
+			<!-- top menu -->
+			<nav>
+				<ul class="nav topnav hidden-sm">
+					<li ng-class="isActiveExact('/')">
+						<a href="/">comm<br/>unity</a>
+					</li>
+					<li ng-class="isActive('/dashboard')">
+						<a href="/dashboard">dash<br/>board</a>
+					</li>
+					<li ng-class="isActive('/exercises')">
+						<a href="/exercises">exercise<br/>library</a>
+					</li>
+				</ul>
+				<ul class="nav nav-pills nav-stacked visible-sm" aria-labelledby="toggleNav">
+					<li ng-class="isActiveExact('/')"><a href="/">community</a></li>
+					<li ng-class="isActive('/dashboard')"><a href="/dashboard">dashboard</a></li>
+					<li ng-class="isActive('/exercises')"><a href="/exercises">exercise library</a></li>
+				</ul>
+			</nav>
+			<!-- end menu -->
 		</div>
 	</div>
 </header>
