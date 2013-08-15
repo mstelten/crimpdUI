@@ -55,7 +55,7 @@ body {
 #maincontent.noIntroShort {
 	margin-top: 80px;
 }
-.rowExtraMargins.row-fluid {
+.rowExtraMargins.row {
   	margin: 50px 0;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -70,6 +70,9 @@ body {
 	.navbar-fixed-top {
 		position: static;
 		margin-bottom: 20px;
+	}
+	.rowExtraMargins.row {
+		margin: 0;
 	}
 }
 @media (max-width: 767px) {
@@ -297,7 +300,9 @@ form h3 {
 	border-bottom: solid 1px #AAA;
 	margin-bottom: 20px;
 	padding-bottom: 5px;
+	line-height: 40px;
 }
+
 /* --- login & registration forms --- */
 .formLarge {
 	input {
@@ -313,13 +318,13 @@ form h3 {
 		color: @text-secondary;
 	}
 }
-/* --- formMedium requires .form-horizontal ---- */
-.formMediumHorz {
+
+/* --- formMediumHorz ---- */
+.formMediumHorz.form-horizontal {
 	input {
 		display: block;
 		height: 40px;
 		padding: 4px 10px;
-		margin-bottom: 15px;
 		font-size: 16px;
 		line-height: 40px;
 	}
@@ -327,48 +332,33 @@ form h3 {
 	  	font-size: 16px;
 	  	line-height: 40px;
 	  	color: @text-secondary;
-	}
-	label.control-label {
-		width: 140px;
-		margin-right: 10px;
-		padding-top: 0;
-	}
-	.controls {
-		margin-left: 0;
-		overflow: hidden;
-		input {
-			margin-bottom: 0;
-		}
-	}
-	.formMessageError {
-		padding-left: 150px;
+	  	font-weight: normal;
+	  	padding-top: 0;
 	}
 	button {
-		float: left;
+		margin: 0 0 20px -4px;
+	}
+	&:after {
+		content: "";
+		display: table;
 		clear: both;
-		margin-left: 150px;
-	}
-}
-@media (max-width: 767px) {
-	.formMediumHorz,
-	.formLarge {
-		max-width: 500px;
-	}
-}
-@media (max-width: 480px) {
-	.formMediumHorz {
-		label {
-			line-height: 20px;
-		}
-		.formMessageError {
-			padding-left: 0;
-		}
-		button {
-			margin-left: 0;
-		}
 	}
 }
 
+@media (max-width: 767px) {
+	.formMediumHorz.form-horizontal,
+	.formLarge {
+		max-width: 500px;
+	}
+	.formMediumHorz.form-horizontal {
+		label {
+			line-height: 20px;
+		}
+		button {
+			margin: 10px 0 20px 0;
+		}
+	}
+}
 
 
 
@@ -387,6 +377,7 @@ form h3 {
 	margin-bottom: 0;
 	*margin-left: .3em;
 	font-size: 14px;
+	font-weight: normal;
 	line-height: 20px;
 	color: #333333;
 	text-align: center;

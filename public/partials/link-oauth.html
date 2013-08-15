@@ -1,7 +1,7 @@
 <section id="intro">
 	<div class="container">
-		<div class="row-fluid">
-			<div class="span12 sectionTitle">
+		<div class="row">
+			<div class="sectionTitle">
 				<div class="titleBox">link account</div>
 			</div>
 		</div>
@@ -10,22 +10,21 @@
 
 <section id="maincontent">
 	<div class="container">
-		<div class="row-fluid rowExtraMargins">
-			<div class="span2 hidden-phone"></div>
-			<div class="span4">
+		<div class="row rowExtraMargins">
+			<div class="col-sm-5 col-md-4 col-md-offset-1">
 				<form name="linkAccountForm" class="formLarge" form-model="linkAccountModel" submit-func="linkAccount()" cm-form-validator ng-submit="submit()">
 					<h3>link to existing account</h3>
-					<input type="text" ng-model="formModel.email" class="input-block-level" name="inputEmail" placeholder="email or username" required autofocus>
-					<input type="password" ng-model="formModel.password" class="input-block-level" name="inputPassword" placeholder="password" required>
+					<input type="text" ng-model="formModel.email" class="form-control" name="inputEmail" placeholder="email or username" required autofocus>
+					<input type="password" ng-model="formModel.password" class="form-control" name="inputPassword" placeholder="password" required>
 					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
 					<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 					<button type="submit" class="btn btn-large btn-primary" ng-click="formClick($event)">link account</button>
 				</form>
 			</div>
-			<div class="span4">
+			<div class="col-sm-5 col-sm-offset-1 col-md-4">
 				<form name="createAccountForm" class="formLarge" form-model="newAccountModel" submit-func="createNewAccount()" cm-form-validator ng-submit="submit()">
 					<h3>create new account</h3>
-					<input type="text" ng-model="formModel.username" class="input-block-level" name="inputUserName" placeholder="username" parent-form="createAccountForm" cm-username-input required>
+					<input type="text" ng-model="formModel.username" class="form-control" name="inputUserName" placeholder="username" parent-form="createAccountForm" cm-username-input required>
 					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
 					<div class="formMessageError" ng-show="thisForm.$error.duplicate">Username is already taken.</div>
 					<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>

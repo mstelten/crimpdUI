@@ -1,7 +1,7 @@
 <section id="intro">
 	<div class="container">
-		<div class="row-fluid">
-			<div class="span12 sectionTitle">
+		<div class="row">
+			<div class="sectionTitle">
 				<div class="titleBox">user settings</div>
 			</div>
 		</div>
@@ -10,63 +10,64 @@
 
 <section id="maincontent">
 	<div class="container">
-		<div class="row-fluid rowExtraMargins">
-			<div class="span1 hidden-phone"></div>
-			<div class="span5">
+		<div class="row rowExtraMargins">
+			<div class="col-sm-10 col-md-6 col-lg-5 col-lg-offset-1">
 				<form name="updateProfileForm" class="formMediumHorz form-horizontal" form-model="updateProfileModel" submit-func="updateProfile()" cm-form-validator ng-submit="submit()">
 					<h3>update profile</h3>
-					<div class="control-group">
-						<label class="control-label">first name</label>
-						<div class="controls">
-							<input type="text" ng-model="formModel.firstname" class="input-block-level" name="inputFirstName" placeholder="first name" autofocus>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">first name</label>
+						<div class="col-sm-8">
+							<input type="text" ng-model="formModel.firstname" class="form-control" name="inputFirstName" placeholder="first name" autofocus>
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label">last name</label>
-						<div class="controls">
-							<input type="text" ng-model="formModel.lastname" class="input-block-level" name="inputLastName" placeholder="last name">
+					<div class="form-group">
+						<label class="col-sm-4 control-label">last name</label>
+						<div class="col-sm-8">
+							<input type="text" ng-model="formModel.lastname" class="form-control" name="inputLastName" placeholder="last name">
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label">email</label>
-						<div class="controls">
-							<input type="email" ng-model="formModel.email" class="input-block-level" name="inputEmail" placeholder="email" required>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">email</label>
+						<div class="col-sm-8">
+							<input type="email" ng-model="formModel.email" class="form-control" name="inputEmail" placeholder="email" required>
 						</div>
 					</div>
 
-					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
-					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.email">Email address is invalid.</div>
-					<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
-					<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">update</button>
-					<div class="cB"></div>
+					<div class="col-sm-8 col-sm-offset-4">
+						<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
+						<div class="formMessageError" ng-show="errorPresent && thisForm.$error.email">Email address is invalid.</div>
+						<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
+						<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">update</button>
+					</div>
 				</form>
 			</div>
-			<div class="span5">
+			<div class="col-sm-10 col-md-6 col-lg-6">
 				<form name="changePasswordForm" class="formMediumHorz form-horizontal" form-model="changePasswordModel" submit-func="changePassword()" cm-form-validator ng-submit="submit()">
 					<h3>change password</h3>
-					<div class="control-group">
-						<label class="control-label">current password</label>
-						<div class="controls">
-							<input type="text" ng-model="formModel.currentPW" class="input-block-level" name="inputCurrentPW" placeholder="current password" required>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">current password</label>
+						<div class="col-sm-8">
+							<input type="text" ng-model="formModel.currentPW" class="form-control" name="inputCurrentPW" placeholder="current password" required>
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label">new password</label>
-						<div class="controls">
-							<input type="password" ng-model="formModel.newPW" class="input-block-level" name="inputNewPW" placeholder="new password" required>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">new password</label>
+						<div class="col-sm-8">
+							<input type="password" ng-model="formModel.newPW" class="form-control" name="inputNewPW" placeholder="new password" required>
 						</div>
 					</div>
-					<div class="control-group">
-						<label class="control-label">confirm password</label>
-						<div class="controls">
-							<input type="password" ng-model="formModel.confirmNewPW" class="input-block-level" name="inputConfirmNewPW" placeholder="confirm new password" required>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">confirm password</label>
+						<div class="col-sm-8">
+							<input type="password" ng-model="formModel.confirmNewPW" class="form-control" name="inputConfirmNewPW" placeholder="confirm new password" required>
 						</div>
 					</div>
 
-					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
-					<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
-					<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">update</button>
-					<div class="cB"></div>
+					<div class="col-sm-8 col-sm-offset-4">
+						<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
+						<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
+						<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">update</button>
+					</div>
 				</form>
 			</div>
 		</div>

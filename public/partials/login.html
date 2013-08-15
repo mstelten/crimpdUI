@@ -1,7 +1,7 @@
 <section id="intro">
 	<div class="container">
-		<div class="row-fluid">
-			<div class="span12 sectionTitle">
+		<div class="row">
+			<div class="sectionTitle">
 				<div class="titleBox">log in</div>
 			</div>
 		</div>
@@ -10,19 +10,18 @@
 
 <section id="maincontent">
 	<div class="container">
-		<div class="row-fluid rowExtraMargins">
-			<div class="span2 hidden-phone"></div>
-			<div class="span4">
+		<div class="row rowExtraMargins">
+			<div class="col-sm-6 col-md-5 col-md-offset-1 col-lg-4">
 				<form name="loginForm" class="formLarge" form-model="loginModel" submit-func="signIn()" cm-form-validator ng-submit="submit()">
 					<h3>sign in / crimpd</h3>
-					<input type="text" ng-model="formModel.email" class="input-block-level" name="inputEmail" placeholder="email or username" required autofocus>
-					<input type="password" ng-model="formModel.password" class="input-block-level" name="inputPassword" placeholder="password" required>
+					<input type="text" ng-model="formModel.email" class="form-control" name="inputEmail" placeholder="email or username" required autofocus>
+					<input type="password" ng-model="formModel.password" class="form-control" name="inputPassword" placeholder="password" required>
 					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
 					<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 					<button type="submit" class="btn btn-large btn-primary" ng-click="formClick($event)">sign in</button>
 				</form>
 			</div>
-			<div class="span4">
+			<div class="col-sm-6 col-md-5">
 				<a class="loginFacebook" href="http://api.crimpd.com/crimpd/oauth/facebook/authenticate">login with facebook</a>
 				<a class="loginGoogle" href="http://api.crimpd.com/crimpd/oauth/google/authenticate">login with google</a>
 			</div>

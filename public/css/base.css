@@ -46,7 +46,7 @@ body {
 #maincontent.noIntroShort {
   margin-top: 80px;
 }
-.rowExtraMargins.row-fluid {
+.rowExtraMargins.row {
   margin: 50px 0;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -61,6 +61,9 @@ body {
   .navbar-fixed-top {
     position: static;
     margin-bottom: 20px;
+  }
+  .rowExtraMargins.row {
+    margin: 0;
   }
 }
 @media (max-width: 767px) {
@@ -275,6 +278,7 @@ form h3 {
   border-bottom: solid 1px #AAA;
   margin-bottom: 20px;
   padding-bottom: 5px;
+  line-height: 40px;
 }
 /* --- login & registration forms --- */
 .formLarge input {
@@ -289,55 +293,39 @@ form h3 {
   font-size: 16px;
   color: #0088cc;
 }
-/* --- formMedium requires .form-horizontal ---- */
-.formMediumHorz input {
+/* --- formMediumHorz ---- */
+.formMediumHorz.form-horizontal input {
   display: block;
   height: 40px;
   padding: 4px 10px;
-  margin-bottom: 15px;
   font-size: 16px;
   line-height: 40px;
 }
-.formMediumHorz label {
+.formMediumHorz.form-horizontal label {
   font-size: 16px;
   line-height: 40px;
   color: #0088cc;
-}
-.formMediumHorz label.control-label {
-  width: 140px;
-  margin-right: 10px;
+  font-weight: normal;
   padding-top: 0;
 }
-.formMediumHorz .controls {
-  margin-left: 0;
-  overflow: hidden;
+.formMediumHorz.form-horizontal button {
+  margin: 0 0 20px -4px;
 }
-.formMediumHorz .controls input {
-  margin-bottom: 0;
-}
-.formMediumHorz .formMessageError {
-  padding-left: 150px;
-}
-.formMediumHorz button {
-  float: left;
+.formMediumHorz.form-horizontal:after {
+  content: "";
+  display: table;
   clear: both;
-  margin-left: 150px;
 }
 @media (max-width: 767px) {
-  .formMediumHorz,
+  .formMediumHorz.form-horizontal,
   .formLarge {
     max-width: 500px;
   }
-}
-@media (max-width: 480px) {
-  .formMediumHorz label {
+  .formMediumHorz.form-horizontal label {
     line-height: 20px;
   }
-  .formMediumHorz .formMessageError {
-    padding-left: 0;
-  }
-  .formMediumHorz button {
-    margin-left: 0;
+  .formMediumHorz.form-horizontal button {
+    margin: 10px 0 20px 0;
   }
 }
 /*------------------------------------------------------------------*\
@@ -350,6 +338,7 @@ form h3 {
   margin-bottom: 0;
   *margin-left: .3em;
   font-size: 14px;
+  font-weight: normal;
   line-height: 20px;
   color: #333333;
   text-align: center;

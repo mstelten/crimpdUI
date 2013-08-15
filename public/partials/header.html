@@ -22,10 +22,15 @@
 					<a href="/login">log in</a> | <a href="/register">register</a>
 				</div>
 			</div>
-			<a class="toggleNavHamburger visible-sm" data-toggle="dropdown" id="toggleNav">Menu</a>
+			<div style="float: left; margin: 10px 0 0 30px;">
+				<div class="visible-sm">sm</div>
+				<div class="visible-md">md</div>
+				<div class="visible-lg">lg</div>
+			</div>
+			<a class="toggleNavHamburger visible-xs" data-toggle="dropdown" id="toggleNav">Menu</a>
 			<!-- top menu -->
 			<nav>
-				<ul class="nav topnav hidden-sm">
+				<ul class="nav topnav hidden-xs">
 					<li ng-class="isActiveExact('/')">
 						<a href="/">comm<br/>unity</a>
 					</li>
@@ -36,7 +41,7 @@
 						<a href="/exercises">exercise<br/>library</a>
 					</li>
 				</ul>
-				<ul class="nav nav-pills nav-stacked visible-sm" aria-labelledby="toggleNav">
+				<ul class="nav nav-pills nav-stacked visible-xs" aria-labelledby="toggleNav">
 					<li ng-class="isActiveExact('/')"><a href="/">community</a></li>
 					<li ng-class="isActive('/dashboard')"><a href="/dashboard">dashboard</a></li>
 					<li ng-class="isActive('/exercises')"><a href="/exercises">exercise library</a></li>
