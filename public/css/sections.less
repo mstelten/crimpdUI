@@ -443,6 +443,7 @@ footer {
 	width: 100%;
 	list-style: none;
 	margin: 20px 0 10px 0;
+	padding: 0;
 	&:after {
 		content:"";
 		display: table;
@@ -527,10 +528,12 @@ footer {
 	input,
 	select {
 		width: 100%;
+		margin-bottom: 10px;
 	}
 	h3 {
 		margin: 0 0 10px 0;
 		color: @text-secondary;
+		line-height: 40px;
 	}
 	.clearFilters {
 		cursor: pointer;
@@ -577,7 +580,7 @@ footer {
 		}
 	}
 }
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 505px) and (max-width: 767px) {
 	.searchResults {
 		width: 475px;
 		margin: 10px auto 0 auto;
@@ -594,7 +597,7 @@ footer {
 	}
 }
 
-@media (max-width: 480px) {
+@media (max-width: 504px) {
 	.searchResults {
 		margin: 10px 0 0 0;
 	}
@@ -672,17 +675,20 @@ footer {
 
 
 .createExercise {
+	textarea {
+		background-color: #FAFAFA;
+	}
 	.metaData {
-		.control-group {
+		.form-group {
 			float: left;
-			margin-right: 20px;
+			margin: 0 20px 20px 0;
 		}
 		.control-label {
 			width: auto;
 			float: none;
 			text-align: left;
 		}
-		.controls {
+		.checkbox-group {
 			width: 225px;
 			height: 200px;
 			overflow-x: hidden;
@@ -695,6 +701,7 @@ footer {
 			padding: 10px;
 			.checkbox:first-child {
 				padding-top: 0;
+				margin-top: 0;
 			}
 			label {
 				color: @text-primary;

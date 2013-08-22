@@ -373,6 +373,7 @@ footer .white {
   width: 100%;
   list-style: none;
   margin: 20px 0 10px 0;
+  padding: 0;
 }
 .searchResults:after {
   content: "";
@@ -458,10 +459,12 @@ footer .white {
 .filterContainer input,
 .filterContainer select {
   width: 100%;
+  margin-bottom: 10px;
 }
 .filterContainer h3 {
   margin: 0 0 10px 0;
   color: #0088cc;
+  line-height: 40px;
 }
 .filterContainer .clearFilters {
   cursor: pointer;
@@ -505,7 +508,7 @@ footer .white {
     font-size: 21px;
   }
 }
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 505px) and (max-width: 767px) {
   .searchResults {
     width: 475px;
     margin: 10px auto 0 auto;
@@ -521,7 +524,7 @@ footer .white {
     margin-right: 40px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 504px) {
   .searchResults {
     margin: 10px 0 0 0;
   }
@@ -577,16 +580,19 @@ footer .white {
 /*------------------------------------------------------------------*\
     $CREATE-EXERCISE
 \*------------------------------------------------------------------*/
-.createExercise .metaData .control-group {
+.createExercise textarea {
+  background-color: #FAFAFA;
+}
+.createExercise .metaData .form-group {
   float: left;
-  margin-right: 20px;
+  margin: 0 20px 20px 0;
 }
 .createExercise .metaData .control-label {
   width: auto;
   float: none;
   text-align: left;
 }
-.createExercise .metaData .controls {
+.createExercise .metaData .checkbox-group {
   width: 225px;
   height: 200px;
   overflow-x: hidden;
@@ -600,17 +606,18 @@ footer .white {
   /* bring back webkit scrollbar by default */
 
 }
-.createExercise .metaData .controls .checkbox:first-child {
+.createExercise .metaData .checkbox-group .checkbox:first-child {
   padding-top: 0;
+  margin-top: 0;
 }
-.createExercise .metaData .controls label {
+.createExercise .metaData .checkbox-group label {
   color: #333333;
 }
-.createExercise .metaData .controls::-webkit-scrollbar {
+.createExercise .metaData .checkbox-group::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 9px;
 }
-.createExercise .metaData .controls::-webkit-scrollbar-thumb {
+.createExercise .metaData .checkbox-group::-webkit-scrollbar-thumb {
   border-radius: 4px;
   border: 2px solid #fafafa;
   background-color: rgba(0, 0, 0, 0.5);

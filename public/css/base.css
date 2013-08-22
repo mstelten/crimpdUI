@@ -161,6 +161,9 @@ h4 small {
 /*------------------------------------------------------------------*\
     $FORMS
 \*------------------------------------------------------------------*/
+label {
+  font-weight: normal;
+}
 select,
 input[type="text"],
 input[type="password"],
@@ -182,6 +185,7 @@ input[type="color"],
   -moz-border-radius: 3px;
   border-radius: 3px;
   background-color: #fafafa;
+  border: 1px solid #CCC;
   color: #333;
 }
 textarea {
@@ -190,11 +194,6 @@ textarea {
   border-radius: 3px;
   background-color: #fafafa;
   color: #333;
-}
-input,
-textarea,
-.uneditable-input {
-  width: 220px;
 }
 select,
 input[type="file"] {

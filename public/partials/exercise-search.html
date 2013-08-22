@@ -1,7 +1,7 @@
 <div>
 	<section id="intro">
 		<div class="container">
-			<div class="row-fluid">
+			<div class="row">
 				<div class="sectionTitle">
 					<div class="titleBox">exercise library</div>
 				</div>
@@ -11,8 +11,8 @@
 
 	<section id="maincontent">
 		<div class="container">
-			<div class="row-fluid">
-				<div class="span3">
+			<div class="row">
+				<div class="col-sm-4 col-md-3">
 					<div class="filterContainer">
 						<div class="section">
 							<h3>Exercise Filters</h3>
@@ -40,7 +40,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="span9">
+				<div class="col-sm-8 col-md-9">
 					<ul class="searchResults">
 						<li class="exerciseCard" ng-repeat="exr in exercises | filter:search" ng-animate="'cards'">
 							<div class="thumbContainer">
