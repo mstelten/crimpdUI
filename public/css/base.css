@@ -38,7 +38,7 @@ body {
 }
 #maincontent {
   z-index: 1000;
-  margin: 20px 0 30px 0;
+  margin: 40px 0 30px 0;
 }
 #maincontent.noIntro {
   margin-top: 120px;

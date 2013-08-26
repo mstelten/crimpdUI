@@ -372,7 +372,7 @@ footer .white {
 .searchResults {
   width: 100%;
   list-style: none;
-  margin: 20px 0 10px 0;
+  margin: 0 0 10px 0;
   padding: 0;
 }
 .searchResults:after {
@@ -452,7 +452,7 @@ footer .white {
 .filterContainer {
   background-color: #f2f2f2;
   border-left: 3px solid #111;
-  margin: 20px auto;
+  margin: 0 auto 20px auto;
   padding: 15px;
   width: 240px;
 }
@@ -583,9 +583,12 @@ footer .white {
 .createExercise textarea {
   background-color: #FAFAFA;
 }
+.createExercise .exerciseDesc {
+  height: 412px;
+}
 .createExercise .metaData .form-group {
   float: left;
-  margin: 0 20px 20px 0;
+  margin: 0 0 20px 0;
 }
 .createExercise .metaData .control-label {
   width: auto;
@@ -593,7 +596,6 @@ footer .white {
   text-align: left;
 }
 .createExercise .metaData .checkbox-group {
-  width: 225px;
   height: 200px;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -629,6 +631,19 @@ footer .white {
 .createExercise .metaData input {
   height: auto;
   margin-top: 2px;
+}
+.createExercise .metaData:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (max-width: 991px) {
+  .createExercise .formMediumHorz.form-horizontal label {
+    line-height: 20px;
+  }
+  .createExercise .exerciseDesc {
+    height: 200px;
+  }
 }
 /*------------------------------------------------------------------*\
     $COMMUNITY

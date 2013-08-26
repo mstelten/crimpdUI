@@ -9,30 +9,30 @@
 		</div>
 	</section>
 
-	<section id="maincontent" class="noIntro createExercise">
+	<section id="maincontent" class="createExercise">
 		<div class="container">
 			<div class="row">
 				<form name="createNewExerciseForm" class="formMediumHorz form-horizontal" form-model="newExerciseModel" submit-func="createNewExercise()" cm-form-validator ng-submit="submit()">
 
-					<div class="col-sm-6">
+					<div class="col-md-6">
 						<div class="form-group">
-							<label class="col-sm-3 control-label">name</label>
+							<label class="col-md-3 control-label">name</label>
 
-							<div class="col-sm-9">
+							<div class="col-md-9">
 								<input type="text" ng-model="formModel.name" class="form-control" name="inputName" placeholder="first name" autofocus required>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-sm-3 control-label">description</label>
+							<label class="col-md-3 control-label">description</label>
 
-							<div class="col-sm-9">
-								<textarea rows="20" ng-model="formModel.description" class="form-control" name="inputDescription" placeholder="exercise description" required></textarea>
+							<div class="col-md-9">
+								<textarea ng-model="formModel.description" class="exerciseDesc form-control" name="inputDescription" placeholder="exercise description" required></textarea>
 							</div>
 						</div>
 					</div>
 
-					<div class="col-sm-6 metaData">
-						<div class="form-group">
+					<div class="col-md-6 metaData">
+						<div class="col-xs-6 form-group">
 							<label class="control-label">target</label>
 
 							<div class="checkbox-group">
@@ -43,7 +43,7 @@
 							</div>
 
 						</div>
-						<div class="form-group">
+						<div class="col-xs-6 form-group">
 							<label class="control-label">type</label>
 
 							<div class="checkbox-group">
@@ -54,7 +54,7 @@
 							</div>
 
 						</div>
-						<div class="form-group">
+						<div class="col-xs-6 form-group">
 							<label class="control-label">equipment</label>
 
 							<div class="checkbox-group">
@@ -64,7 +64,7 @@
 								</label>
 							</div>
 						</div>
-						<div class="form-group">
+						<div class="col-xs-6 form-group">
 							<label class="control-label">difficulty</label>
 
 							<div class="checkbox-group">
@@ -77,11 +77,14 @@
 						</div>
 					</div>
 
-					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
-					<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
-					<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">create</button>
-					<div class="formMessageError" ng-show="!errorPresent">{{formModel.message}}</div>
-					<div class="cB"></div>
+					<div class="col-md-6">
+						<div class="col-md-9 col-md-offset-3">
+							<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
+							<div class="formMessageError" ng-show="formModel.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
+							<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">create</button>
+							<div class="formMessageError" ng-show="!errorPresent">{{formModel.message}}</div>
+						</div>
+					</div>
 				</form>
 			</div>
 		</div>
