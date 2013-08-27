@@ -22,6 +22,6 @@ function RegisterCtrl($scope, $http) {
 		} else {
 			$scope.registerModel.errorMessages = $scope.registerResData.errors;
 		}
-		$scope.registerModel.clicked = true;
+		$scope.registerFormClicked = true;
 	};
 }

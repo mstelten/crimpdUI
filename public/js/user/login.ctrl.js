@@ -13,6 +13,6 @@ function LoginCtrl($scope, $location, userInfo) {
 		} else {
 			$scope.loginModel.errorMessages = $scope.signInResData.errors;
 		}
-		$scope.loginModel.clicked = true;
+		$scope.loginFormClicked = true;
 	};
 }

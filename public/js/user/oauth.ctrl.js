@@ -14,7 +14,7 @@ function LinkOAuthCtrl($scope, $http, $location, userInfo) {
 		} else {
 			$scope.linkAccountModel.errorMessages = $scope.linkAccountResData.errors;
 		}
-		$scope.linkAccountModel.clicked = true;
+		$scope.linkAccountFormClicked = true;
 	};
 	$scope.createNewAccount = function () {
 		$http.post(config.apiUrl + '/oauth/save/createaccount', {'username': $scope.newAccountModel.username}).
@@ -31,6 +31,6 @@ function LinkOAuthCtrl($scope, $http, $location, userInfo) {
 		} else {
 			$scope.newAccountModel.errorMessages = $scope.newAccountResData.errors;
 		}
-		$scope.newAccountModel.clicked = true;
+		$scope.newAccountFormClicked = true;
 	};
 }

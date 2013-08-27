@@ -25,7 +25,7 @@ function UserSettingsCtrl($scope, $http) {
 		} else {
 			$scope.updateProfileModel.errorMessages = $scope.updateProfileResData.errors;
 		}
-		$scope.updateProfileModel.clicked = true;
+		$scope.updateProfileFormClicked = true;
 	};
 	$scope.changePassword = function () {
 		changePasswordInfo = {
@@ -47,6 +47,6 @@ function UserSettingsCtrl($scope, $http) {
 		} else {
 			$scope.changePasswordModel.errorMessages = $scope.changePasswordResData.errors;
 		}
-		$scope.changePasswordModel.clicked = true;
+		$scope.changePasswordFormClicked = true;
 	};
 }

@@ -9,6 +9,7 @@
  * FORMS
  * BUTTONS
  * ANIMATIONS
+ * NAV-TABS (TABS)
  */
 /*------------------------------------------------------------------*\
     $BODY-SECTIONS
@@ -259,6 +260,7 @@ select:focus:invalid:focus {
 }
 form.error input.ng-invalid-required,
 form.error input.ng-invalid-email,
+form.error textarea.ng-invalid-required,
 form input.ng-invalid-duplicate {
   border-color: red;
 }
@@ -416,4 +418,28 @@ form h3 {
 }
 .slide-leave-to-right-active {
   left: 100%;
+}
+/*------------------------------------------------------------------*\
+    $NAV-TABS (TABS)
+\*------------------------------------------------------------------*/
+.nav-tabs {
+  border-bottom: 1px solid #dddddd;
+}
+.nav-tabs > li > a {
+  border-radius: 0;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+.nav-tabs > li > a:hover {
+  cursor: pointer;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  cursor: default;
+  border-top: 1px solid #333333;
+  border-bottom-color: transparent;
+}
+.tab-content {
+  margin: 40px 0 20px 0;
 }
