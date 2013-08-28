@@ -13,11 +13,14 @@
 		<div class="container">
 			<div class="row">
 
+				<div class="workingOn" ng-show="exerciseModel.id">you are editing {{ exerciseModel.name }} (exercise #{{ exerciseModel.id }})</div>
+				<div class="workingOn" ng-show="!exerciseModel.id">you are creating a <i>new</i> exercise.</div>
+
 				<div ng-model="createTabs" bs-tabs> <!-- start createTabs tabs -->
 
 					<!-- Basic Info -->
-					<div data-title="Basic Info">
-						<form name="createNewExerciseForm" class="formMediumHorz form-horizontal" form-model="newExerciseModel" form-clicked="newExerciseFormClicked" submit-func="createNewExercise()" cm-form-validator ng-submit="submit()">
+					<div data-title="BASIC INFO">
+						<form name="createNewExerciseForm" class="formMediumHorz form-horizontal" form-model="exerciseModel" form-clicked="exerciseFormClicked" submit-func="addOrEditExercise()" cm-form-validator ng-submit="submit()">
 
 							<div class="col-md-6">
 								<div class="form-group">
@@ -85,20 +88,21 @@
 							<div class="col-md-6">
 								<div class="col-md-9 col-md-offset-3">
 									<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
-									<div class="formMessageError" ng-show="formClicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}
-									</div>
-									<button type="submit" ng-show="!exrId" class="btn btn-medium btn-primary" ng-click="formClick($event)">create</button>
-									<button type="submit" ng-show="exrId" class="btn btn-medium btn-primary" ng-click="formClick($event)">update</button>
+									<div class="formMessageError" ng-show="formClicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 									<div class="formMessageError" ng-show="!errorPresent">{{formModel.message}}</div>
+									<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">
+										<span ng-show="!formModel.id">create</span>
+										<span ng-show="formModel.id">update</span>
+									</button>
 								</div>
 							</div>
 						</form>
 					</div>
 
 					<!-- Steps & Images -->
-					<div data-title="Steps & Images">Steps & Images</div>
+					<div data-title="STEPS & IMAGES">steps & images</div>
 					<!-- Videos -->
-					<div data-title="Videos">Videos</div>
+					<div data-title="VIDEOS">videos</div>
 				</div>
 
 			</div>

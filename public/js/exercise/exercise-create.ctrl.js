@@ -1,30 +1,45 @@
-function ExerciseCreateCtrl($scope, exerciseData) {
+function ExerciseCreateCtrl($scope, exerciseData, $routeParams) {
 	$scope.createTabs = 0;
-	$scope.exrId = null;
-	$scope.newExerciseModel = {
-		name: "chipper"
-	};
 
+	// gets full list of metaData
 	exerciseData.queryAllMeta().then(function (data) {
 		$scope.allMeta = data.exerciseMeta;
 		$scope.list = {};
 	});
+
+	// gets current exercise data (unless user is creating a new exercise)
+	if ($routeParams.exerciseId) {
+		exerciseData.querySingleExercise($routeParams.exerciseId).then(function (data) {
+			$scope.exerciseModel = data;
+		});
+	}
+
+	// fires on Basic Info form submit
+	$scope.addOrEditExercise = function () {
+		if ($scope.exerciseModel != undefined) {
+			if ($scope.exerciseModel.id) {
+				$scope.editExercise();
+			} else {
+				$scope.createNewExercise();
+			}
+		} else {
+			$scope.createNewExercise();
+		}
+	};
+
+	// creates basic exercise, assigns excerise data to exerciseModel (formModel), adds metadata
 	$scope.createNewExercise = function () {
-		exerciseData.createBasic($scope.newExerciseModel.name, $scope.newExerciseModel.description).then(function (data) {
+		exerciseData.createBasic($scope.exerciseModel.name, $scope.exerciseModel.description).then(function (data) {
 			$scope.createBasicResp = data;
-			$scope.exrId = $scope.createBasicResp.exercise.id;
-			$scope.newExerciseModel = {
-				name: $scope.createBasicResp.exercise.name,
-				description: $scope.createBasicResp.exercise.description
-			};
-			$scope.newExerciseModel.errorMessages = null;
+			$scope.exerciseModel.errorMessages = null;
 			if ($scope.createBasicResp.success) {
-				$scope.newExerciseModel.message = "You have created the exercise: " + $scope.createBasicResp.exercise.name;
+				$scope.exerciseModel = angular.copy($scope.createBasicResp.exercise);
+				$scope.exerciseModel.message = "You have created the exercise: " + $scope.createBasicResp.exercise.name;
 				addMetaData();
 			} else {
-				$scope.newExerciseModel.errorMessages = $scope.createBasicResp.errors;
+				$scope.exerciseModel.errorMessages = $scope.createBasicResp.errors;
 			}
-			$scope.newExerciseFormClicked = true;
+			$scope.exerciseFormClicked = true;
 		});
 		var addMetaData = function () {
 			var addMetaArray = [];
@@ -35,24 +50,52 @@ function ExerciseCreateCtrl($scope, exerciseData) {
 			});
 			exerciseData.addMeta($scope.createBasicResp.exercise.id, addMetaArray).then(function (data) {
 				$scope.addMetaResp = data;
-				$scope.newExerciseModel.errorMessages = null;
+				$scope.exerciseModel.errorMessages = null;
 				if (!$scope.addMetaResp.success) {
-					$scope.newExerciseModel.errorMessages = $scope.addMetaResp.errors;
+					$scope.exerciseModel.errorMessages = $scope.addMetaResp.errors;
 				}
 			});
 		};
 	};
-	$scope.editBasic = function () {
-		exerciseData.updateBasic($scope.newExerciseModel.name, $scope.newExerciseModel.description, exrId).then(function (data) {
-			$scope.createBasicResp = data;
-			$scope.newExerciseModel.errorMessages = null;
-			if ($scope.createBasicResp.success) {
-				$scope.newExerciseModel.message = "You have created the exercise: " + $scope.createBasicResp.exercise.name;
-				addMetaData();
+
+	// updates basic exercise, adds new metadata, removes now un-checked metadata
+	$scope.editExercise = function () {
+		exerciseData.updateBasic($scope.exerciseModel.name, $scope.exerciseModel.description, $scope.exerciseModel.id).then(function (data) {
+			$scope.editBasicResp = data;
+			$scope.exerciseModel.errorMessages = null;
+			if ($scope.editBasicResp.success) {
+				$scope.exerciseModel = angular.copy($scope.editBasicResp.exercise);
+				$scope.exerciseModel.message = "You have created the exercise: " + $scope.editBasicResp.exercise.name;
+				updateMetaData();
 			} else {
-				$scope.newExerciseModel.errorMessages = $scope.createBasicResp.errors;
+				$scope.exerciseModel.errorMessages = $scope.editBasicResp.errors;
 			}
-			$scope.newExerciseModel.clicked = true;
+			$scope.exerciseFormClicked = true;
 		});
+		var updateMetaData = function () {
+			var currentMetaArray = [];
+			var newMetaArray = [];
+			var addMetaArray = [];
+			var removeMetaArray = [];
+			angular.forEach($scope.list, function (value, key) {
+				if (value === true) {
+					newMetaArray.push(key);
+				}
+			});
+			exerciseData.addMeta($scope.editBasicResp.exercise.id, addMetaArray).then(function (data) {
+				$scope.addMetaResp = data;
+				$scope.exerciseModel.errorMessages = null;
+				if (!$scope.addMetaResp.success) {
+					$scope.exerciseModel.errorMessages = $scope.addMetaResp.errors;
+				}
+			});
+			exerciseData.removeMeta($scope.editBasicResp.exercise.id, removeMetaArray).then(function (data) {
+				$scope.removeMetaResp = data;
+				$scope.exerciseModel.errorMessages = null;
+				if (!$scope.removeMetaResp.success) {
+					$scope.exerciseModel.errorMessages = $scope.removeMetaResp.errors;
+				}
+			});
+		};
 	};
 }

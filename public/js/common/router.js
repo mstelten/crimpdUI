@@ -40,6 +40,10 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 		templateUrl: 'partials/exercise-create.html',
 		controller: ExerciseCreateCtrl
 	}).
+	when('/exercises/edit/:exerciseId', {
+		templateUrl: 'partials/exercise-create.html',
+		controller: ExerciseCreateCtrl
+	}).
 	when('/exercises/:exerciseId', {
 		templateUrl: 'partials/exercise-details.html',
 		controller: ExerciseDetailsCtrl

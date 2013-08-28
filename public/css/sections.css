@@ -637,6 +637,9 @@ footer .white {
   display: table;
   clear: both;
 }
+.createExercise .workingOn {
+  margin-bottom: 20px;
+}
 @media (max-width: 991px) {
   .createExercise .formMediumHorz.form-horizontal label {
     line-height: 20px;
