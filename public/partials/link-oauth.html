@@ -12,22 +12,22 @@
 	<div class="container">
 		<div class="row rowExtraMargins">
 			<div class="col-sm-5 col-md-4 col-md-offset-1">
-				<form name="linkAccountForm" class="formLarge" form-model="linkAccountModel" form-clicked="linkAccountFormClicked" submit-func="linkAccount()" cm-form-validator ng-submit="submit()">
+				<form name="linkAccountForm" class="formLarge" form-model="linkAccountModel" form-utils="linkAccountFormUtils" submit-func="linkAccount()" cm-form-validator ng-submit="submit()">
 					<h3>link to existing account</h3>
 					<input type="text" ng-model="formModel.email" class="form-control" name="inputEmail" placeholder="email or username" required autofocus>
 					<input type="password" ng-model="formModel.password" class="form-control" name="inputPassword" placeholder="password" required>
 					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
-					<div class="formMessageError" ng-show="formClicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
+					<div class="formMessageError" ng-show="formUtils.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 					<button type="submit" class="btn btn-large btn-primary" ng-click="formClick($event)">link account</button>
 				</form>
 			</div>
 			<div class="col-sm-5 col-sm-offset-1 col-md-4">
-				<form name="createAccountForm" class="formLarge" form-model="newAccountModel" form-clicked="createAccountFormClicked" submit-func="createNewAccount()" cm-form-validator ng-submit="submit()">
+				<form name="createAccountForm" class="formLarge" form-model="newAccountModel" form-utils="createAccountFormUtils" submit-func="createNewAccount()" cm-form-validator ng-submit="submit()">
 					<h3>create new account</h3>
 					<input type="text" ng-model="formModel.username" class="form-control" name="inputUserName" placeholder="username" parent-form="createAccountForm" cm-username-input required>
 					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
 					<div class="formMessageError" ng-show="thisForm.$error.duplicate">Username is already taken.</div>
-					<div class="formMessageError" ng-show="formClicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
+					<div class="formMessageError" ng-show="formUtils.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 					<button type="submit" class="btn btn-large btn-primary" ng-click="formClick($event)">create account</button>
 				</form>
 			</div>

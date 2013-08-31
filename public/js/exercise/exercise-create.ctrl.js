@@ -1,5 +1,7 @@
-function ExerciseCreateCtrl($scope, exerciseData, $routeParams) {
-	$scope.createTabs = 0;
+function ExerciseCreateCtrl($scope, exerciseData, $routeParams, $timeout) {
+	$scope.panes = {
+		basicInfo: true
+	};
 
 	// gets full list of metaData
 	exerciseData.queryAllMeta().then(function (data) {
@@ -35,11 +37,15 @@ function ExerciseCreateCtrl($scope, exerciseData, $routeParams) {
 			if ($scope.createBasicResp.success) {
 				$scope.exerciseModel = angular.copy($scope.createBasicResp.exercise);
 				$scope.exerciseModel.message = "You have created the exercise: " + $scope.createBasicResp.exercise.name;
+				$scope.exerciseFormUtils.success = true;
+				$timeout(function () {
+					$scope.exerciseFormUtils.success = false;
+				}, 3000);
 				addMetaData();
 			} else {
 				$scope.exerciseModel.errorMessages = $scope.createBasicResp.errors;
 			}
-			$scope.exerciseFormClicked = true;
+			$scope.exerciseFormUtils.clicked = true;
 		});
 		var addMetaData = function () {
 			var addMetaArray = [];
@@ -70,7 +76,7 @@ function ExerciseCreateCtrl($scope, exerciseData, $routeParams) {
 			} else {
 				$scope.exerciseModel.errorMessages = $scope.editBasicResp.errors;
 			}
-			$scope.exerciseFormClicked = true;
+			$scope.exerciseFormUtils.clicked = true;
 		});
 		var updateMetaData = function () {
 			var currentMetaArray = [];

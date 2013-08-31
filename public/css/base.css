@@ -10,8 +10,9 @@
  * BUTTONS
  * ANIMATIONS
  * NAV-TABS (TABS)
+ * ALERTS
  */
-/*------------------------------------------------------------------*\
+/* a tad lighter than forth *//*------------------------------------------------------------------*\
     $BODY-SECTIONS
 \*------------------------------------------------------------------*/
 /* -- start sticky footer -- */
@@ -442,4 +443,21 @@ form h3 {
 }
 .tab-content {
   margin: 40px 0 20px 0;
+}
+/*------------------------------------------------------------------*\
+    $ALERTS
+\*------------------------------------------------------------------*/
+.alert {
+  padding: 10px 15px;
+  border-radius: 2px;
+  border: none;
+}
+.alert-info {
+  color: #333333;
+  background-color: #ffe168;
+  border-left: 3px solid #333333;
+}
+.alert-info span {
+  font-size: 16px;
+  font-style: italic;
 }

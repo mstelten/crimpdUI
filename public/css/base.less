@@ -11,6 +11,7 @@
  * BUTTONS
  * ANIMATIONS
  * NAV-TABS (TABS)
+ * ALERTS
  */
 
 
@@ -493,4 +494,24 @@ form h3 {
 }
 .tab-content {
 	margin: 40px 0 20px 0;
+}
+
+/*------------------------------------------------------------------*\
+    $ALERTS
+\*------------------------------------------------------------------*/
+
+
+.alert {
+	padding: 10px 15px;
+	border-radius: 2px;
+	border: none;
+}
+.alert-info {
+	color: @text-primary;
+	background-color: @bgr-fifth;
+	border-left: 3px solid @text-primary;
+	span {
+		font-size: 16px;
+		font-style: italic;
+	}
 }

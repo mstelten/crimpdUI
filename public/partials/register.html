@@ -11,7 +11,7 @@
 <section id="maincontent">
 	<div class="container">
 		<div class="row">
-			<form name="registrationForm" class="formMediumHorz form-horizontal col-sm-10 col-md-8 col-lg-8" form-model="registerModel" form-clicked="registerFormClicked" submit-func="register()" cm-form-validator ng-submit="submit()">
+			<form name="registrationForm" class="formMediumHorz form-horizontal col-sm-10 col-md-8 col-lg-8" form-model="registerModel" form-utils="registerFormUtils" submit-func="register()" cm-form-validator ng-submit="submit()">
 				<h3>register / crimpd</h3>
 				<div class="form-group">
 					<label class="col-sm-4 control-label">user name</label>
@@ -55,7 +55,7 @@
 					<div class="formMessageError" ng-show="errorPresent && thisForm.$error.email">Email address is invalid.</div>
 					<div class="formMessageError" ng-show="thisForm.$error.duplicate">Username is already taken.</div>
 					<div class="formMessageError" ng-show="!errorPresent">{{formModel.message}}</div>
-					<div class="formMessageError" ng-show="formClicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
+					<div class="formMessageError" ng-show="formUtils.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 					<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">register</button>
 				</div>
 			</form>
