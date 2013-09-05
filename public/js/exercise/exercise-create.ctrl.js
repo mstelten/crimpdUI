@@ -44,7 +44,7 @@ function ExerciseCreateCtrl($scope, exerciseData, $routeParams, $timeout) {
 			$scope.exerciseModel.errorMessages = null;
 			if ($scope.createBasicResp.success) {
 				$scope.exerciseModel = angular.copy($scope.createBasicResp.exercise);
-				$scope.exerciseModel.message = "You have created the exercise: " + $scope.createBasicResp.exercise.name;
+				$scope.exerciseModel.message = "Successfully created " + $scope.createBasicResp.exercise.name;
 				$scope.exerciseFormUtils.success = true;
 				$timeout(function () {
 					$scope.exerciseFormUtils.success = false;
@@ -69,6 +69,7 @@ function ExerciseCreateCtrl($scope, exerciseData, $routeParams, $timeout) {
 					$scope.exerciseModel.errorMessages = $scope.addMetaResp.errors;
 				}
 			});
+			currentMetaArray = addMetaArray;
 		};
 	};
 
@@ -79,7 +80,7 @@ function ExerciseCreateCtrl($scope, exerciseData, $routeParams, $timeout) {
 			$scope.exerciseModel.errorMessages = null;
 			if ($scope.editBasicResp.success) {
 				$scope.exerciseModel = angular.copy($scope.editBasicResp.exercise);
-				$scope.exerciseModel.message = "You have updated the exercise: " + $scope.editBasicResp.exercise.name;
+				$scope.exerciseModel.message = "Nice, you updated " + $scope.editBasicResp.exercise.name;
 				$scope.exerciseFormUtils.success = true;
 				$timeout(function () {
 					$scope.exerciseFormUtils.success = false;
