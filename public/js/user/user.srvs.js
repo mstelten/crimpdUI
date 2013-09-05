@@ -2,10 +2,10 @@ myServices.factory('userInfo', function($rootScope, $http, $q) {
 	var user = {
         name: 'noob',
         role: 0
-    }
+    };
     return {
 		getUser: function() {
-            return user;
+            return angular.copy(user);
         },
         updateUser: function(newName, newRole) {
         	if (arguments.length == 2) {
@@ -20,7 +20,7 @@ myServices.factory('userInfo', function($rootScope, $http, $q) {
         		}
         	}
             $rootScope.$broadcast('userChange');
-            return user;
+            return angular.copy(user);
         },
         determineRole: function(rolesArray) {
 			var usrRole;
@@ -42,13 +42,13 @@ myServices.factory('userInfo', function($rootScope, $http, $q) {
 			return usrRole;
         },
         isUserAuth: function() {
-			return !!(user.role == (1 || 2 || 3));
+			return !!(user.role === 1 || user.role === 2 || user.role === 3);
         },
         isUserContributer: function() {
-        	return !!(user.role = (2 || 3));
+        	return !!(user.role === 2 || user.role === 3);
         },
         isUserAdmin: function() {
-        	return !!(user.role = 3);
+        	return !!(user.role === 3);
         },
 		signInUser: function (email, pw) {
 			var deferred = $q.defer();

@@ -16,7 +16,8 @@
 					<div class="filterContainer">
 						<div class="section">
 							<h3>Exercise Filters</h3>
-							<div class="clearFilters" ng-show="!isCleanSlate()" ng-click="clearFilters()">(X) Clear All Filters</div>
+							<a class="manage" href="/exercises/create" ng-show="isContributer()">[ create new exercise ]</a>
+							<a class="clearFilters" ng-show="!isCleanSlate()" ng-click="clearFilters()">(X) Clear All Filters</a>
 							<label>Search</label>
 							<input type="text" ng-model="search.$"/>
 							<label>Target</label>

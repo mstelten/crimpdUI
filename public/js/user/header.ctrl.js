@@ -8,7 +8,7 @@ function HeaderCtrl($scope, userInfo, $timeout, $location) {
 	$scope.animateTerms = {show: 'fade-show', hide: 'fade-hide'};
 	$scope.startAnimations = function () {
 		$scope.isSignedIn = function () {
-			return !!($scope.currentUser.role !== 0);
+			return userInfo.isUserAuth();
 		};
 		$timeout(function () {
 			$scope.state = undefined;

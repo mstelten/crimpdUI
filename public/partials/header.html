@@ -16,7 +16,7 @@
 					</span>
 				</div>
 				<div ng-show="isSignedIn()">
-					<a href="/settings">settings</a> | <a href="#" ng-click="signOut($event)">log out</a>
+					<a href="/settings">settings</a> | <a ng-click="signOut($event)">log out</a>
 				</div>
 				<div ng-show="!isSignedIn()">
 					<a href="/login">log in</a> | <a href="/register">register</a>

@@ -536,9 +536,13 @@ footer {
 		line-height: 40px;
 	}
 	.clearFilters {
-		cursor: pointer;
+		display: block;
 		margin: 5px 0;
 		color: red;
+	}
+	.manage {
+		display: block;
+		margin: 5px 0;
 	}
 	&:after {
 		content: "";
@@ -733,9 +737,23 @@ footer {
 			clear: both;
 		}
 	}
-	.workingOn {
+	.status {
 		margin: -10px 0 20px 0;
 		float: left;
+	}
+	.status-tab {
+		margin: 5px 0 0 60px;
+		.newExr,
+		.editingExr {
+			color: #333;
+			background-color: #FFE168;
+			padding: 4px 10px;
+			border-radius: 4px;
+			.name {
+				font-size: 16px;
+				font-style: italic;
+			}
+		}
 	}
 }
 

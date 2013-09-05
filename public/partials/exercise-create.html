@@ -13,14 +13,20 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="workingOn alert alert-info" ng-show="exerciseModel.id">editing <span>{{ exerciseModel.name }}</span></div>
-				<div class="workingOn alert alert-info" ng-show="!exerciseModel.id">creating a <span>new exercise</span></div>
+				<div class="visible-xs">
+					<div class="status alert alert-info" ng-show="exerciseModel.id">editing <span>{{ exerciseModel.name }}</span></div>
+					<div class="status alert alert-info" ng-show="!exerciseModel.id">creating a <span>new exercise</span></div>
+				</div>
 
 
 				<ul class="nav nav-tabs cB" cm-tabs>
 					<li ng-class="{active: panes.basicInfo}"><a ng-click="tabSelect('basicInfo')">BASIC INFO</a></li>
 					<li ng-class="{active: panes.stepsImages}"><a ng-click="tabSelect('stepsImages')">STEPS &amp; IMAGES</a></li>
 					<li ng-class="{active: panes.videos}"><a ng-click="tabSelect('videos')">VIDEOS</a></li>
+					<li class="status-tab hidden-xs">
+						<div class="newExr" ng-show="!exerciseModel.id"><span class="glyphicon glyphicon-inbox"></span> creating a <span class="name">new exercise</span></div>
+						<div class="editingExr" ng-show="exerciseModel.id"><span class="glyphicon glyphicon-star"></span> editing <span class="name">{{ exerciseModel.name }}</span></div>
+					</li>
 				</ul>
 
 				<div class="tab-content">

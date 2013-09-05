@@ -103,8 +103,9 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #005580;
+  color: #0088cc;
   text-decoration: underline;
+  cursor: pointer;
 }
 input,
 button,

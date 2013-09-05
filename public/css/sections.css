@@ -467,9 +467,13 @@ footer .white {
   line-height: 40px;
 }
 .filterContainer .clearFilters {
-  cursor: pointer;
+  display: block;
   margin: 5px 0;
   color: red;
+}
+.filterContainer .manage {
+  display: block;
+  margin: 5px 0;
 }
 .filterContainer:after {
   content: "";
@@ -637,9 +641,24 @@ footer .white {
   display: table;
   clear: both;
 }
-.createExercise .workingOn {
+.createExercise .status {
   margin: -10px 0 20px 0;
   float: left;
+}
+.createExercise .status-tab {
+  margin: 5px 0 0 60px;
+}
+.createExercise .status-tab .newExr,
+.createExercise .status-tab .editingExr {
+  color: #333;
+  background-color: #FFE168;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.createExercise .status-tab .newExr .name,
+.createExercise .status-tab .editingExr .name {
+  font-size: 16px;
+  font-style: italic;
 }
 @media (max-width: 991px) {
   .createExercise .formMediumHorz.form-horizontal label {

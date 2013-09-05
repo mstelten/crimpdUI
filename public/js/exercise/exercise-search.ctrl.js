@@ -1,5 +1,8 @@
-function ExerciseSearchCtrl($scope, exerciseData) {
+function ExerciseSearchCtrl($scope, exerciseData, userInfo) {
 	$scope.exercises = {};
+	$scope.isContributer = function () {
+		return userInfo.isUserContributer();
+	};
 	exerciseData.queryAllExercises().then(function(data) {
 		$scope.exercises = data.exercises;
 	});
