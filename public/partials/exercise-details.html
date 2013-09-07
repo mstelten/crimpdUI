@@ -14,7 +14,7 @@
 						<div class="difficulty">Difficulty: <span ng-repeat="x in exr.difficulty">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
 						<div class="equipment">Equipment: <span ng-repeat="x in exr.equipment">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
 					</div>
-					<a href="/exercises/edit/{{ exr.id }}">EDIT</a>
+					<a href="/exercises/edit/{{ exr.id }}" ng-show="isContributer()">EDIT</a>
 				</div>
 			</div>
 		</div>

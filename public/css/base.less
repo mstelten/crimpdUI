@@ -168,7 +168,9 @@ h4 small {
     $HELPER-CLASSES
 \*------------------------------------------------------------------*/
 
-
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
 .cB {
 	clear: both;
 }
@@ -514,5 +516,16 @@ form h3 {
 	span {
 		font-size: 16px;
 		font-style: italic;
+	}
+}
+.alert-success {
+	color: #fff;
+	background-color: @text-secondary;
+	border-left: 3px solid @text-primary;
+	span {
+		font-size: 16px;
+		font-style: italic;
+		margin-right: 5px;
+		color: #000;
 	}
 }

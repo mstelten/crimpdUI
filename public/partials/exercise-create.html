@@ -32,10 +32,15 @@
 				<div class="tab-content">
 
 					<!-- Basic Info -->
-					<div class="tab-pane" ng-class="{active: panes.basicInfo}" >
+					<div class="tab-pane" ng-class="{active: panes.basicInfo}">
 						<div data-title="BASIC INFO">
+
+
+								<div class="alert alert-success newExerciseSuccess" ng-show="isNewExr"><span>{{ exerciseModel.name }}</span> has been created</div>
+
+
 							<form name="createNewExerciseForm" class="formMediumHorz form-horizontal" form-model="exerciseModel" form-utils="exerciseFormUtils" submit-func="addOrEditExercise()"
-									cm-form-validator ng-submit="submit()">
+									cm-form-validator ng-submit="submit()" >
 
 								<div class="col-md-6">
 									<div class="form-group">

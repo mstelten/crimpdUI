@@ -1,4 +1,4 @@
-function ExerciseCreateCtrl($scope, exerciseData, $routeParams, $timeout) {
+function ExerciseCreateCtrl($scope, exerciseData, $routeParams, $timeout, $location) {
 	$scope.panes = {
 		basicInfo: true
 	};
@@ -13,6 +13,11 @@ function ExerciseCreateCtrl($scope, exerciseData, $routeParams, $timeout) {
 	if ($routeParams.exerciseId) {
 		exerciseData.querySingleExercise($routeParams.exerciseId).then(function (data) {
 			$scope.exerciseModel = data;
+			$scope.isNewExr = exerciseData.getIsNewExr();
+			$timeout(function () {
+				$scope.isNewExr = false;
+				exerciseData.setIsNewExrFalse();
+			}, 2500);
 			$scope.list = {};
 			var combinedArray = $scope.exerciseModel.target.concat($scope.exerciseModel.type, $scope.exerciseModel.difficulty, $scope.exerciseModel.equipment);
 			angular.forEach(combinedArray, function (value) {
@@ -44,11 +49,6 @@ function ExerciseCreateCtrl($scope, exerciseData, $routeParams, $timeout) {
 			$scope.exerciseModel.errorMessages = null;
 			if ($scope.createBasicResp.success) {
 				$scope.exerciseModel = angular.copy($scope.createBasicResp.exercise);
-				$scope.exerciseModel.message = "Successfully created " + $scope.createBasicResp.exercise.name;
-				$scope.exerciseFormUtils.success = true;
-				$timeout(function () {
-					$scope.exerciseFormUtils.success = false;
-				}, 3000);
 				addMetaData();
 			} else {
 				$scope.exerciseModel.errorMessages = $scope.createBasicResp.errors;
@@ -69,7 +69,8 @@ function ExerciseCreateCtrl($scope, exerciseData, $routeParams, $timeout) {
 					$scope.exerciseModel.errorMessages = $scope.addMetaResp.errors;
 				}
 			});
-			currentMetaArray = addMetaArray;
+			exerciseData.setIsNewExrTrue();
+			$location.path('/exercises/edit/' + $scope.createBasicResp.exercise.id);
 		};
 	};
 

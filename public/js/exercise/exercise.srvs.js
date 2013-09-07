@@ -5,13 +5,23 @@ myServices.factory('exerciseData', function ($http, $q) {
 		Type: "",
 		Equipment: "",
 		$: ""
-	}
+	};
+	var isNewExr = false;
 	return {
 		getCachedSearch: function () {
 			return cachedSearch;
 		},
 		updateCachedSearch: function (searchObj) {
 			cachedSearch = searchObj;
+		},
+		getIsNewExr: function () {
+			return angular.copy(isNewExr);
+		},
+		setIsNewExrTrue: function () {
+			isNewExr = true;
+		},
+		setIsNewExrFalse: function () {
+			isNewExr = false;
 		},
 		queryAllExercises: function () {
 			var deferred = $q.defer();

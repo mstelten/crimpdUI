@@ -660,6 +660,12 @@ footer .white {
   font-size: 16px;
   font-style: italic;
 }
+.createExercise .newExerciseSuccess {
+  float: left;
+}
+.createExercise .formMediumHorz {
+  clear: both;
+}
 @media (max-width: 991px) {
   .createExercise .formMediumHorz.form-horizontal label {
     line-height: 20px;
