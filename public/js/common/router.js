@@ -42,7 +42,7 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 	}).
 	when('/exercises/edit/:exerciseId', {
 		templateUrl: 'partials/exercise-create.html',
-		controller: ExerciseCreateCtrl
+		controller: ExerciseEditCtrl
 	}).
 	when('/exercises/:exerciseId', {
 		templateUrl: 'partials/exercise-details.html',
