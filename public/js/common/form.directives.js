@@ -69,3 +69,17 @@ myDirectives.directive('cmTabs', function () {
 		}
 	}
 });
+
+myDirectives.directive('cmCheckboxHighlight', function () {
+	return {
+		restrict: "A",
+		scope: false,
+		link: function (scope, elm) {
+			scope.$watch(elm[0], function () {
+				if (elm[0].value === true) {
+					alert("checked now");
+				}
+			});
+		}
+	}
+});

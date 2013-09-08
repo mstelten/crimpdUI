@@ -1,29 +1,25 @@
-function ExerciseEditCtrl($scope, exerciseData, $routeParams, $timeout) {
+function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseModel, isNewExr) {
 	$scope.panes = {
 		basicInfo: true
 	};
 	var currentMetaArray = [];
 
-	// gets full list of metaData
-	exerciseData.queryAllMeta().then(function (data) {
-		$scope.allMeta = data.exerciseMeta;
-	});
+	// gets full list of metaData from resolve
+	$scope.allMeta = allMeta;
 
-	// gets current exercise data
+	// gets current exercise data from resolve
+	$scope.exerciseModel = exerciseModel;
+	$scope.isNewExr = isNewExr;
 
-	exerciseData.querySingleExercise($routeParams.exerciseId).then(function (data) {
-		$scope.exerciseModel = data;
-		$scope.isNewExr = exerciseData.getIsNewExr();
-		$timeout(function () {
-			$scope.isNewExr = false;
-			exerciseData.setIsNewExrFalse();
-		}, 2500);
-		$scope.list = {};
-		var combinedArray = $scope.exerciseModel.target.concat($scope.exerciseModel.type, $scope.exerciseModel.difficulty, $scope.exerciseModel.equipment);
-		angular.forEach(combinedArray, function (value) {
-			$scope.list[value.id] = true;
-			currentMetaArray.push(value.id);
-		});
+	$timeout(function () {
+		$scope.isNewExr = false;
+		exerciseData.setIsNewExrFalse();
+	}, 2500);
+	$scope.list = {};
+	var combinedArray = $scope.exerciseModel.target.concat($scope.exerciseModel.type, $scope.exerciseModel.difficulty, $scope.exerciseModel.equipment);
+	angular.forEach(combinedArray, function (value) {
+		$scope.list[value.id] = true;
+		currentMetaArray.push(value.id);
 	});
 
 	// fires on Basic Info form submit
@@ -76,3 +72,23 @@ function ExerciseEditCtrl($scope, exerciseData, $routeParams, $timeout) {
 		};
 	};
 }
+
+ExerciseEditCtrl.resolve = {
+	allMeta: function ($q, $http) {
+		var deferred = $q.defer();
+		$http.get(config.apiUrl + '/exercise/meta').success(function (data) {
+			deferred.resolve(data.exerciseMeta);
+		});
+		return deferred.promise;
+	},
+	exerciseModel: function ($http, $route, $q) {
+		var deferred = $q.defer();
+		$http.get(config.apiUrl + '/exercise/' + $route.current.params.exerciseId).success(function (data) {
+			deferred.resolve(data);
+		});
+		return deferred.promise;
+	},
+	isNewExr: function (exerciseData) {
+		return exerciseData.getIsNewExr();
+	}
+};
