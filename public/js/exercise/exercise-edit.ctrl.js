@@ -1,6 +1,6 @@
 function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseModel, isNewExr, formDataObject, $http) {
 	$scope.panes = {
-		stepsImages: true
+		basicInfo: true
 	};
 	var currentMetaArray = [];
 
