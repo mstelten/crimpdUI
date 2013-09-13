@@ -632,6 +632,12 @@ footer .white {
 .createExercise .metaData label {
   line-height: 20px;
 }
+.createExercise .metaData label.checkbox {
+  padding-top: 2px;
+}
+.createExercise .metaData label.highlight {
+  background-color: #e3e8cd;
+}
 .createExercise .metaData input {
   height: auto;
   margin-top: 2px;

@@ -13,9 +13,13 @@ myDirectives.directive('cmFormValidator', function() {
 			scope.thisForm = scope[attrs.name];
 			scope.formClick = function ($event) {
 				scope.errorPresent = false;
-				scope.formUtils= {
-					clicked: false
-				};
+				if (scope.formUtils) {
+					scope.formUtils.clicked = false;
+				} else {
+					scope.formUtils= {
+						clicked: false
+					};
+				}
 				elm.removeClass('error');
 				if (scope.thisForm.$error.required || scope.thisForm.$error.email) {
 					scope.errorPresent = true;
@@ -53,33 +57,6 @@ myDirectives.directive('cmUsernameInput', function ($http) {
 						}
 					});
 			};
-		}
-	}
-});
-
-myDirectives.directive('cmTabs', function () {
-	return {
-		restrict: "A",
-		scope: false,
-		link: function (scope) {
-			scope.tabSelect = function (tabName) {
-				scope.panes = {};
-				scope.panes[tabName] = true;
-			}
-		}
-	}
-});
-
-myDirectives.directive('cmCheckboxHighlight', function () {
-	return {
-		restrict: "A",
-		scope: false,
-		link: function (scope, elm) {
-			scope.$watch(elm[0], function () {
-				if (elm[0].value === true) {
-					alert("checked now");
-				}
-			});
 		}
 	}
 });

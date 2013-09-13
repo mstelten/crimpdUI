@@ -1,6 +1,6 @@
-function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseModel, isNewExr) {
+function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseModel, isNewExr, formDataObject, $http) {
 	$scope.panes = {
-		basicInfo: true
+		stepsImages: true
 	};
 	var currentMetaArray = [];
 
@@ -70,6 +70,23 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 			});
 			currentMetaArray = newMetaArray;
 		};
+	};
+	$scope.addOrEditImage = function () {
+		$http({
+			method: 'POST',
+			url: config.apiUrl + '/exercise/basic/' + $scope.exerciseModel.id + '/image',
+			headers: {
+				'Content-Type': false
+			},
+			data: {
+				file: $scope.imageFormUtils.imgFile,
+				caption: $scope.imageModel.caption,
+				preview: true
+			},
+			transformRequest: formDataObject
+		}).success(function(data) {
+			$scope.addImageRes = data;
+		});
 	};
 }
 

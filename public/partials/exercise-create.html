@@ -65,8 +65,8 @@
 										<label class="control-label">target</label>
 
 										<div class="checkbox-group">
-											<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.target">
-												<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}" cm-checkbox-highlight/>
+											<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.target" ng-class="{highlight: $parent.$parent.list[x.id]}">
+												<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}" />
 												{{ x.name }}
 											</label>
 										</div>
@@ -76,8 +76,8 @@
 										<label class="control-label">type</label>
 
 										<div class="checkbox-group">
-											<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.type">
-												<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}" cm-checkbox-highlight/>
+											<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.type" ng-class="{highlight: $parent.$parent.list[x.id]}">
+												<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}" />
 												{{ x.name }}
 											</label>
 										</div>
@@ -87,8 +87,8 @@
 										<label class="control-label">equipment</label>
 
 										<div class="checkbox-group">
-											<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.equipment">
-												<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}" cm-checkbox-highlight/>
+											<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.equipment" ng-class="{highlight: $parent.$parent.list[x.id]}">
+												<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}" />
 												{{ x.name }}
 											</label>
 										</div>
@@ -97,8 +97,8 @@
 										<label class="control-label">difficulty</label>
 
 										<div class="checkbox-group">
-											<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.difficulty">
-												<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}" cm-checkbox-highlight/>
+											<label class="checkbox" for="{{ x.id }}" ng-repeat="x in $parent.allMeta.difficulty" ng-class="{highlight: $parent.$parent.list[x.id]}">
+												<input type="checkbox" ng-model="$parent.$parent.list[x.id]" id="{{ x.id }}" />
 												{{ x.name }}
 											</label>
 										</div>
@@ -123,7 +123,51 @@
 
 					<!-- Steps & Images -->
 					<div class="tab-pane" ng-class="{active: panes.stepsImages}">
-						steps & images
+
+						<form name="uploadImageForm" class="formMediumHorz form-horizontal" form-model="imageModel" form-utils="imageFormUtils" submit-func="addOrEditImage()"
+								cm-form-validator ng-submit="submit()">
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="col-md-3 control-label">image</label>
+
+									<div class="col-md-9">
+										<div class="input-group">
+											<span class="input-group-btn">
+												<span class="btn btn-primary btn-file">
+													Browse <input type="file" class="fileUpload" name="inputFile" cm-file-upload required>
+												</span>
+											</span>
+											<input type="text" class="form-control" readonly="" ng-model="formUtils.imgFile.name">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3 control-label">caption</label>
+
+									<div class="col-md-9">
+										<textarea ng-model="formModel.caption" class="exerciseDesc form-control" name="inputDescription" placeholder="image caption" required></textarea>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								
+							</div>
+
+							<div class="col-md-6">
+								<div class="col-md-9 col-md-offset-3">
+									<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
+									<div class="formMessageError" ng-show="formUtils.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}
+									</div>
+									<div class="alert alert-success" ng-show="!errorPresent && formUtils.success" ng-animate="{show: 'fade-show', hide: 'fade-hide'}">{{formModel.message}}</div>
+									<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">
+										<span ng-show="!formModel.id">create</span>
+										<span ng-show="formModel.id">update</span>
+									</button>
+								</div>
+							</div>
+						</form>
 					</div>
 
 					<!-- Videos -->
