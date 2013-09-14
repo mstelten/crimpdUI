@@ -21,12 +21,12 @@
 
 
 				<ul class="nav nav-tabs cB" cm-tabs>
-					<li ng-class="{active: panes.basicInfo}"><a ng-click="tabSelect('basicInfo')">BASIC INFO</a></li>
-					<li ng-class="{active: panes.stepsImages}"><a ng-click="tabSelect('stepsImages')">STEPS &amp; IMAGES</a></li>
-					<li ng-class="{active: panes.videos}"><a ng-click="tabSelect('videos')">VIDEOS</a></li>
+					<li ng-class="{active: panes.basicInfo}"><a ng-click="tabSelect('basicInfo')"><span class="glyphicon glyphicon-th-list"></span> BASIC INFO</a></li>
+					<li ng-class="{active: panes.stepsImages}"><a ng-click="tabSelect('stepsImages')"><span class="glyphicon glyphicon-camera"></span> STEPS &amp; IMAGES</a></li>
+					<li ng-class="{active: panes.videos}"><a ng-click="tabSelect('videos')"><span class="glyphicon glyphicon-facetime-video"></span> VIDEOS</a></li>
 					<li class="status-tab hidden-xs">
-						<div class="newExr" ng-show="!exerciseModel.id"><span class="glyphicon glyphicon-inbox"></span> creating a <span class="name">new exercise</span></div>
-						<div class="editingExr" ng-show="exerciseModel.id"><span class="glyphicon glyphicon-star"></span> editing <span class="name">{{ exerciseModel.name }}</span></div>
+						<div class="newExr" ng-show="!exerciseModel.id"><span class="glyphicon glyphicon-cloud-upload"></span> creating a <span class="name">new exercise</span></div>
+						<div class="editingExr" ng-show="exerciseModel.id"><span class="glyphicon glyphicon-pencil"></span> editing <span class="name">{{ exerciseModel.name }}</span></div>
 					</li>
 				</ul>
 
@@ -37,7 +37,7 @@
 						<div data-title="BASIC INFO">
 
 
-								<div class="alert alert-success newExerciseSuccess" ng-show="isNewExr"><span>{{ exerciseModel.name }}</span> has been created</div>
+								<div class="alert alert-success newExerciseSuccess" ng-show="isNewExr"><span class="glyphicon glyphicon-ok"></span><span class="callout">{{ exerciseModel.name }}</span> has been created</div>
 
 
 							<form name="createNewExerciseForm" class="formMediumHorz form-horizontal" form-model="exerciseModel" form-utils="exerciseFormUtils" submit-func="addOrEditExercise()"
@@ -110,7 +110,7 @@
 									<div class="col-md-9 col-md-offset-3">
 										<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
 										<div class="formMessageError" ng-show="formUtils.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
-										<div class="alert alert-success" ng-show="!errorPresent && formUtils.success" ng-animate="{show: 'fade-show', hide: 'fade-hide'}">{{formModel.message}}</div>
+										<div class="alert alert-success" ng-show="!errorPresent && formUtils.success" ng-animate="{show: 'fade-show', hide: 'fade-hide'}"><span class="glyphicon glyphicon-ok"></span> {{formModel.message}}</div>
 										<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">
 											<span ng-show="!formModel.id">create</span>
 											<span ng-show="formModel.id">update</span>
@@ -138,7 +138,7 @@
 													Browse <input type="file" class="fileUpload" name="inputFile" cm-file-upload required>
 												</span>
 											</span>
-											<input type="text" class="form-control" readonly="" ng-model="formUtils.imgFile.name">
+											<input type="text" class="form-control" ng-model="formUtils.imgFile.name" readonly>
 										</div>
 									</div>
 								</div>

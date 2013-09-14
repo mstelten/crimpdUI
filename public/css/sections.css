@@ -12,7 +12,13 @@
  * CREATE-EXERCISE..............Create Exercise page
  * COMMUNITY....................Community home page
  */
-/* a tad lighter than forth *//*------------------------------------------------------------------*\
+/* dark black */
+/* blue */
+/* off-white */
+/* light gray */
+/* dark gray */
+/* orange-yellow */
+/* orange-yellow lighter *//*------------------------------------------------------------------*\
     $HEADER / $TOP-NAV
 \*------------------------------------------------------------------*/
 .navbar-static-top {
@@ -671,6 +677,11 @@ footer .white {
 }
 .createExercise .formMediumHorz {
   clear: both;
+}
+.createExercise .nav-tabs .glyphicon {
+  margin-right: 4px;
+  top: 0;
+  font-size: 14px;
 }
 @media (max-width: 991px) {
   .createExercise .formMediumHorz.form-horizontal label {
