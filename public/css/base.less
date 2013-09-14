@@ -43,7 +43,7 @@ body {
 	font-family: @font-primary;
 	font-size: 14px;
 	line-height: 1.6em;
-	color: @text-primary;
+	color: @one-dark;
 	background-color: #fff;
 	overflow-x: hidden;
 }
@@ -113,11 +113,11 @@ img {
 	-ms-interpolation-mode: bicubic;
 }
 a {
-	color: @text-secondary;
+	color: @two-dark;
 	text-decoration: none;
 }
 a:hover {
-	color: @text-secondary;
+	color: @two-dark;
 	text-decoration: underline;
 	cursor: pointer;
 }
@@ -320,7 +320,7 @@ form h3 {
 	}
 	label {
 		font-size: 16px;
-		color: @text-secondary;
+		color: @two-dark;
 	}
 }
 
@@ -336,7 +336,7 @@ form h3 {
 	label {
 	  	font-size: 16px;
 	  	line-height: 40px;
-	  	color: @text-secondary;
+	  	color: @two-dark;
 	  	font-weight: normal;
 	  	padding-top: 0;
 	}
@@ -410,8 +410,8 @@ form h3 {
 .btn-primary {
 	color: #000;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	background-color: @bgr-secondary;
-	*background-color: @bgr-secondary;
+	background-color: @one-light;
+	*background-color: @one-light;
 	background-image: none;
 	border-color: #0044cc #0044cc #002a80;
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -426,8 +426,8 @@ form h3 {
 .btn-primary.disabled,
 .btn-primary[disabled] {
 	color: #333;
-	background-color: @bgr-secondary;
-	*background-color: @bgr-secondary;
+	background-color: @one-light;
+	*background-color: @one-light;
 	border-color: #111;
 }
 
@@ -510,7 +510,7 @@ form h3 {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
 	cursor: default;
-	border-top: 1px solid @text-primary;
+	border-top: 1px solid @one-dark;
 	border-bottom-color: transparent;
 }
 .tab-content {
@@ -528,18 +528,18 @@ form h3 {
 	border: none;
 }
 .alert-info {
-	color: @text-primary;
-	background-color: @bgr-fifth;
-	border-left: 3px solid @text-primary;
+	color: @one-xdark;
+	background-color: @three-dark;
+	border-left: 3px solid @one-dark;
 	span {
 		font-size: 16px;
 		font-style: italic;
 	}
 }
 .alert-success {
-	color: #000;
-	background-color: @text-secondary;
-	border-left: 3px solid @text-primary;
+	color: @one-xdark;
+	background-color: @three-middle;
+	border-left: 3px solid @one-dark;
 	.callout {
 		font-size: 16px;
 		font-style: italic;
@@ -549,6 +549,6 @@ form h3 {
 	.glyphicon {
 		font-size: 18px;
 		margin-right: 10px;
-		color: #fff;
+		color: @one-xdark;
 	}
 }

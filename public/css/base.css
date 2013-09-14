@@ -12,13 +12,15 @@
  * NAV-TABS (TABS)
  * ALERTS
  */
+/* darkest black */
 /* dark black */
-/* blue */
-/* off-white */
-/* light gray */
 /* dark gray */
-/* orange-yellow */
-/* orange-yellow lighter *//*------------------------------------------------------------------*\
+/* light gray */
+/* off-white */
+/* dark blue */
+/* middle blue */
+/* orange-yellow dark */
+/* orange-yellow middle *//*------------------------------------------------------------------*\
     $BODY-SECTIONS
 \*------------------------------------------------------------------*/
 /* -- start sticky footer -- */
@@ -487,8 +489,8 @@ form h3 {
   border: none;
 }
 .alert-info {
-  color: #333333;
-  background-color: #ffe168;
+  color: #000000;
+  background-color: #f8cb43;
   border-left: 3px solid #333333;
 }
 .alert-info span {
@@ -496,8 +498,8 @@ form h3 {
   font-style: italic;
 }
 .alert-success {
-  color: #000;
-  background-color: #0088cc;
+  color: #000000;
+  background-color: #ffe168;
   border-left: 3px solid #333333;
 }
 .alert-success .callout {
@@ -509,5 +511,5 @@ form h3 {
 .alert-success .glyphicon {
   font-size: 18px;
   margin-right: 10px;
-  color: #fff;
+  color: #000000;
 }

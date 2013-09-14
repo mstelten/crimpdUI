@@ -12,13 +12,15 @@
  * CREATE-EXERCISE..............Create Exercise page
  * COMMUNITY....................Community home page
  */
+/* darkest black */
 /* dark black */
-/* blue */
-/* off-white */
-/* light gray */
 /* dark gray */
-/* orange-yellow */
-/* orange-yellow lighter *//*------------------------------------------------------------------*\
+/* light gray */
+/* off-white */
+/* dark blue */
+/* middle blue */
+/* orange-yellow dark */
+/* orange-yellow middle *//*------------------------------------------------------------------*\
     $HEADER / $TOP-NAV
 \*------------------------------------------------------------------*/
 .navbar-static-top {
@@ -663,7 +665,7 @@ footer .white {
 .createExercise .status-tab .newExr,
 .createExercise .status-tab .editingExr {
   color: #333;
-  background-color: #FFE168;
+  background-color: #f8cb43;
   padding: 4px 10px;
   border-radius: 4px;
 }

@@ -22,7 +22,7 @@
 
 				<ul class="nav nav-tabs cB" cm-tabs>
 					<li ng-class="{active: panes.basicInfo}"><a ng-click="tabSelect('basicInfo')"><span class="glyphicon glyphicon-th-list"></span> BASIC INFO</a></li>
-					<li ng-class="{active: panes.stepsImages}"><a ng-click="tabSelect('stepsImages')"><span class="glyphicon glyphicon-camera"></span> STEPS &amp; IMAGES</a></li>
+					<li ng-class="{active: panes.stepsImages}"><a ng-click="tabSelect('stepsImages')"><span class="glyphicon glyphicon-picture"></span> STEPS &amp; IMAGES</a></li>
 					<li ng-class="{active: panes.videos}"><a ng-click="tabSelect('videos')"><span class="glyphicon glyphicon-facetime-video"></span> VIDEOS</a></li>
 					<li class="status-tab hidden-xs">
 						<div class="newExr" ng-show="!exerciseModel.id"><span class="glyphicon glyphicon-cloud-upload"></span> creating a <span class="name">new exercise</span></div>
@@ -32,7 +32,7 @@
 
 				<div class="tab-content">
 
-					<!-- Basic Info -->
+	<!---- Basic Info ---->
 					<div class="tab-pane" ng-class="{active: panes.basicInfo}">
 						<div data-title="BASIC INFO">
 
@@ -121,7 +121,7 @@
 						</div>
 					</div>
 
-					<!-- Steps & Images -->
+	<!---- Steps & Images ---->
 					<div class="tab-pane" ng-class="{active: panes.stepsImages}">
 
 						<form name="uploadImageForm" class="formMediumHorz form-horizontal" form-model="imageModel" form-utils="imageFormUtils" submit-func="addOrEditImage()"
@@ -170,7 +170,7 @@
 						</form>
 					</div>
 
-					<!-- Videos -->
+	<!---- Videos ---->
 					<div class="tab-pane" ng-class="{active: panes.videos}">
 						videos
 					</div>
