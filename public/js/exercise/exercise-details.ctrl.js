@@ -1,4 +1,7 @@
 function ExerciseDetailsCtrl($scope, $routeParams, exerciseData, userInfo) {
+	$scope.panes = {
+		basicInfo: true
+	};
 	exerciseData.querySingleExercise($routeParams.exerciseId).then(function (data) {
 		$scope.exr = data;
 		for (var i = 0; i < $scope.exr.images.length; i++) {

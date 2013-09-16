@@ -24,33 +24,16 @@
 \*------------------------------------------------------------------*/
 
 
-.navbar-static-top {
-  	position: static;
- 	margin-bottom: 0;
-  	.navbar-inner {
-		-webkit-border-radius: 0;
-		-moz-border-radius: 0;
-		border-radius: 0;
-		-webkit-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
-		-moz-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
-		box-shadow: 0 1px 10px rgba(0,0,0,0.1);
-	}
-}
-.navbar-fixed-top {
-  	top: 0;
-	background-color: @one-xlight;
+.navbar {
+	color: @one-light;
+	background-color: #444;
 	background-image: none;
-	border-bottom: 1px #666 solid;
+	margin-bottom: 0;
 	padding-left: 0;
 	padding-right: 0;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
-	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-}
-.navbar {
 	nav {
 		width: 100%;
 	}
@@ -61,10 +44,7 @@
 		text-shadow: none;
 		color: #111;
 		padding: 0;
-	  	margin: 7px 0 7px 20px;
-	  	img {
-	  		height: 46px;
-	  	}
+	  	margin: 0 0 0 20px;
 	}
     .userInfo {
 		margin: 9px 0 0 60px;
@@ -90,7 +70,7 @@
 		font-family: @font-primary;
 		float: none;
 		padding: 10px 15px;
-		color: #333;
+		color: @two-dark;
 		font-size: 24px;
 		line-height: 20px;
 		text-decoration: none;
@@ -98,7 +78,7 @@
 	}
 	.nav > li > a:hover {
 		border-right: #000 5px solid;
-		background-color: #DEDEDE;
+		background-color: #888;
 		color: #000;
 		-webkit-transition: all 0.2s ease;
 		-moz-transition: all 0.2s ease-in-out;
@@ -142,7 +122,10 @@
 	}
 	.nav-stacked > li > a {
 		text-align: center;
-		border: 1px solid #DDD;
+		border: 0px solid #DDD;
+	}
+	.nav-stacked > li.onlyXXS {
+		display: none;
 	}
 	.nav-pills.nav-stacked > li > a,
 	.nav-pills.nav-stacked > li > a {
@@ -251,15 +234,11 @@ ul.topnav  .dropdown-menu {
 		max-width: 991px;
 		padding: 0;
 	}
-	.navbar-fixed-top {
+	.navbar {
 		padding: 0;
 	}
 }
 @media (max-width: 767px) {
-	.navbar-fixed-top,
-	.navbar-static-top {
-		margin: 0 0 20px 0;
-	}
 	.navbar {
 		.nav {
 			margin: 0;
@@ -273,6 +252,12 @@ ul.topnav  .dropdown-menu {
 	.navbar {
 		.nav-stacked > li {
 			width: 100%;
+		}
+		.nav-stacked > li.onlyXXS {
+			display: block;
+		}
+		.userInfo {
+			display: none;
 		}
 	}
 }
@@ -368,10 +353,9 @@ footer {
 
 #intro {
 	.sectionTitle {
-		padding: 67px 0 8px 10px;
-		background-color: @one-light;
+		padding: 7px 0;
+		background-color: @four-middle;
 		border-left: 15px solid #D6DBC5;
-		border-right: 15px solid #eff2e3;
 		width: 400px;
 		.titleBox {
 			font-size: 21px;
@@ -385,9 +369,7 @@ footer {
 }
 @media (max-width: 991px) {
 	#intro {
-		margin-top: -20px;
 		.sectionTitle {
-			padding: 10px 0;
 			width: 100%;
 			border-right: 0;
 		}
@@ -452,7 +434,8 @@ footer {
 }
 .exerciseCard {
 	border: 0px solid #222;
-	background-color: @one-light;
+	background-color: @four-light;
+	color: @one-xdark;
 	margin: 0 10px 20px 10px;
 	padding: 0;
 	float: left;
@@ -520,7 +503,7 @@ footer {
 	}
 }
 .filterContainer {
-	background-color: @one-xlight;
+	background-color: @one-xxl;
 	border-left: 3px solid #111;
 	margin: 0 auto 20px auto;
 	padding: 15px;
@@ -528,6 +511,7 @@ footer {
 	input,
 	select {
 		width: 100%;
+		padding-left: 10px;
 		margin-bottom: 10px;
 	}
 	h3 {
@@ -646,7 +630,7 @@ footer {
 		float: left;
 		max-width: 600px;
 		max-height: 480px;
-		background-color: @one-light;
+		background-color: @three-dark;
 		padding: 10px;
 		margin: 0 20px 20px 0;
 	}
@@ -730,7 +714,7 @@ footer {
 				padding-top: 2px;
 			}
 			&.highlight {
-				background-color: @one-light;
+				background-color: @four-middle;
 			}
 		}
 		input {
@@ -746,6 +730,9 @@ footer {
 	.status {
 		margin: -10px 0 20px 0;
 		float: left;
+		.glyphicon {
+			margin-right: 10px;
+		}
 	}
 	.status-tab {
 		margin: 5px 0 0 60px;
@@ -785,6 +772,19 @@ footer {
 			height: 200px;
 		}
 	}
+}
+@media (max-width: 480px) {
+.createExercise {
+	.metaData {
+		.form-group {
+			width: 100%;
+		}
+		.checkbox-group {
+			height: 100px;
+		}
+	}
+}
+
 }
 
 

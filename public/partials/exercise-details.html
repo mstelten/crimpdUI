@@ -1,21 +1,45 @@
 <div>
-	<section id="maincontent" class="noIntro exerciseDetails">
+	<section id="maincontent" class="exerciseDetails">
 		<div class="container">
-			<div class="row">
-				<a href="/exercises" class="backToSearch"><---- Back to Exercises</a>
-				<img class="photo" ng-src="{{ mainImage.url + '.medium' + mainImage.extension }}" />
-				<div class="infoBlock">
-					<div class="title">{{ exr.name }}</div>
-					<div class="description">{{ exr.description }}</div>
-					<div class="author">Created by: {{ exr.author }}</div>
-					<div class="metadata">
-						<div class="target">Target: <span ng-repeat="x in exr.target">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
-						<div class="type">Type: <span ng-repeat="x in exr.type">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
-						<div class="difficulty">Difficulty: <span ng-repeat="x in exr.difficulty">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
-						<div class="equipment">Equipment: <span ng-repeat="x in exr.equipment">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
+			<a href="/exercises" class="backToSearch"><---- Back to Exercises</a>
+
+			<ul class="nav nav-tabs cB" cm-tabs>
+				<li ng-class="{active: panes.basicInfo}"><a ng-click="tabSelect('basicInfo')"><span class="glyphicon glyphicon-th-list"></span> <span class="textName">BASIC INFO</span></a></li>
+				<li ng-class="{active: panes.stepsImages}"><a ng-click="tabSelect('stepsImages')"><span class="glyphicon glyphicon-picture"></span> <span class="textName">STEPS &amp; IMAGES</span></a></li>
+				<li ng-class="{active: panes.videos}"><a ng-click="tabSelect('videos')"><span class="glyphicon glyphicon-facetime-video"></span> <span class="textName">VIDEOS</span></a></li>
+			</ul>
+
+			<div class="tab-content">
+
+	<!---- Basic Info ---->
+				<div class="tab-pane" ng-class="{active: panes.basicInfo}">
+					<img class="photo" ng-src="{{ mainImage.url + '.medium' + mainImage.extension }}"/>
+
+					<div class="infoBlock">
+						<div class="title">{{ exr.name }}</div>
+						<div class="description">{{ exr.description }}</div>
+						<div class="author">Created by: {{ exr.author }}</div>
+						<div class="metadata">
+							<div class="target">Target: <span ng-repeat="x in exr.target">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
+							<div class="type">Type: <span ng-repeat="x in exr.type">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
+							<div class="difficulty">Difficulty: <span ng-repeat="x in exr.difficulty">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
+							<div class="equipment">Equipment: <span ng-repeat="x in exr.equipment">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
+						</div>
+						<a href="/exercises/edit/{{ exr.id }}" ng-show="isContributer()">EDIT</a>
 					</div>
-					<a href="/exercises/edit/{{ exr.id }}" ng-show="isContributer()">EDIT</a>
 				</div>
+
+
+	<!---- Steps & Images ---->
+				<div class="tab-pane" ng-class="{active: panes.stepsImages}">
+
+				</div>
+
+	<!---- Videos ---->
+				<div class="tab-pane" ng-class="{active: panes.videos}">
+					videos
+				</div>
+
 			</div>
 		</div>
 	</section>

@@ -1,9 +1,9 @@
 <header ng-controller="HeaderCtrl">
-	<div class="navbar navbar-fixed-top">
+	<div class="navbar">
 		<div class="container">
 			<!-- logo -->
 			<a class="logo" href="/">
-				<img src="/img/logo-header.png" alt="crimpd logo">
+				<img src="/img/logo-header-white.png" alt="crimpd logo">
 			</a>
 			<!-- end logo -->
 			<div class="userInfo">
@@ -45,6 +45,10 @@
 					<li ng-class="isActiveExact('/')"><a href="/">community</a></li>
 					<li ng-class="isActive('/dashboard')"><a href="/dashboard">dashboard</a></li>
 					<li ng-class="isActive('/exercises')"><a href="/exercises">exercise library</a></li>
+					<li ng-class="isActive('/settings')" ng-show="isSignedIn()" class="onlyXXS"><a href="/settings">settings</a></li>
+					<li ng-class="isActive('/login')" ng-show="!isSignedIn()" class="onlyXXS"><a href="/login">log in</a></li>
+					<li ng-show="isSignedIn()" class="onlyXXS"><a ng-click="signOut($event)">log out</a></li>
+					<li ng-class="isActive('/register')" ng-show="!isSignedIn()" class="onlyXXS"><a href="/register">register</a></li>
 				</ul>
 			</nav>
 			<!-- end menu -->

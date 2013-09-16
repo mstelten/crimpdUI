@@ -17,10 +17,13 @@
 /* dark gray */
 /* light gray */
 /* off-white */
+/* white-white */
 /* dark blue */
 /* middle blue */
 /* orange-yellow dark */
-/* orange-yellow middle *//*------------------------------------------------------------------*\
+/* orange-yellow middle */
+/* light brown */
+/* light steel blue *//*------------------------------------------------------------------*\
     $BODY-SECTIONS
 \*------------------------------------------------------------------*/
 /* -- start sticky footer -- */
@@ -43,18 +46,12 @@ body {
   font-size: 14px;
   line-height: 1.6em;
   color: #333333;
-  background-color: #fff;
+  background-color: #f2f2f2;
   overflow-x: hidden;
 }
 #maincontent {
   z-index: 1000;
   margin: 40px 0 30px 0;
-}
-#maincontent.noIntro {
-  margin-top: 120px;
-}
-#maincontent.noIntroShort {
-  margin-top: 80px;
 }
 .rowExtraMargins.row {
   margin: 50px 0;
@@ -77,9 +74,6 @@ body {
   }
 }
 @media (max-width: 767px) {
-  #maincontent .container {
-    margin: 0 20px;
-  }
   #intro .container {
     padding: 0;
   }
@@ -206,6 +200,12 @@ input[type="color"],
   background-color: #fafafa;
   border: 1px solid #CCC;
   color: #333;
+}
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+  background-color: #fafafa;
 }
 textarea {
   -webkit-border-radius: 3px;
@@ -336,8 +336,8 @@ form h3 {
   clear: both;
 }
 @media (max-width: 767px) {
-  .formMediumHorz.form-horizontal,
-  .formLarge {
+  .formMediumHorz.stopAt500,
+  .formLarge.stopAt500 {
     max-width: 500px;
   }
   .formMediumHorz.form-horizontal label {
@@ -460,7 +460,7 @@ form h3 {
     $NAV-TABS (TABS)
 \*------------------------------------------------------------------*/
 .nav-tabs {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #bbbbbb;
 }
 .nav-tabs > li > a {
   border-radius: 0;
@@ -469,16 +469,26 @@ form h3 {
 }
 .nav-tabs > li > a:hover {
   cursor: pointer;
+  background-color: #DDD;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   cursor: default;
+  color: #333333;
   border-top: 1px solid #333333;
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
   border-bottom-color: transparent;
+  background-color: #f2f2f2;
 }
 .tab-content {
   margin: 40px 0 20px 0;
+}
+@media (max-width: 480px) {
+  .nav-tabs .textName {
+    display: none;
+  }
 }
 /*------------------------------------------------------------------*\
     $ALERTS

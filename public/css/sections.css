@@ -17,39 +17,25 @@
 /* dark gray */
 /* light gray */
 /* off-white */
+/* white-white */
 /* dark blue */
 /* middle blue */
 /* orange-yellow dark */
-/* orange-yellow middle *//*------------------------------------------------------------------*\
+/* orange-yellow middle */
+/* light brown */
+/* light steel blue *//*------------------------------------------------------------------*\
     $HEADER / $TOP-NAV
 \*------------------------------------------------------------------*/
-.navbar-static-top {
-  position: static;
-  margin-bottom: 0;
-}
-.navbar-static-top .navbar-inner {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-}
-.navbar-fixed-top {
-  top: 0;
-  background-color: #f2f2f2;
+.navbar {
+  color: #bbbbbb;
+  background-color: #444;
   background-image: none;
-  border-bottom: 1px #666 solid;
+  margin-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-}
-.navbar {
   /* PHONE NAV */
 
 }
@@ -63,10 +49,7 @@
   text-shadow: none;
   color: #111;
   padding: 0;
-  margin: 7px 0 7px 20px;
-}
-.navbar .logo img {
-  height: 46px;
+  margin: 0 0 0 20px;
 }
 .navbar .userInfo {
   margin: 9px 0 0 60px;
@@ -92,7 +75,7 @@
   font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   float: none;
   padding: 10px 15px;
-  color: #333;
+  color: #0088cc;
   font-size: 24px;
   line-height: 20px;
   text-decoration: none;
@@ -100,7 +83,7 @@
 }
 .navbar .nav > li > a:hover {
   border-right: #000 5px solid;
-  background-color: #DEDEDE;
+  background-color: #888;
   color: #000;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease-in-out;
@@ -141,7 +124,10 @@
 }
 .navbar .nav-stacked > li > a {
   text-align: center;
-  border: 1px solid #DDD;
+  border: 0px solid #DDD;
+}
+.navbar .nav-stacked > li.onlyXXS {
+  display: none;
 }
 .navbar .nav-pills.nav-stacked > li > a,
 .navbar .nav-pills.nav-stacked > li > a {
@@ -243,15 +229,11 @@ ul.topnav .dropdown-menu li > a {
     max-width: 991px;
     padding: 0;
   }
-  .navbar-fixed-top {
+  .navbar {
     padding: 0;
   }
 }
 @media (max-width: 767px) {
-  .navbar-fixed-top,
-  .navbar-static-top {
-    margin: 0 0 20px 0;
-  }
   .navbar .nav {
     margin: 0;
   }
@@ -262,6 +244,12 @@ ul.topnav .dropdown-menu li > a {
 @media (max-width: 480px) {
   .navbar .nav-stacked > li {
     width: 100%;
+  }
+  .navbar .nav-stacked > li.onlyXXS {
+    display: block;
+  }
+  .navbar .userInfo {
+    display: none;
   }
 }
 /*------------------------------------------------------------------*\
@@ -322,10 +310,9 @@ footer .white {
     $INTRO
 \*------------------------------------------------------------------*/
 #intro .sectionTitle {
-  padding: 67px 0 8px 10px;
+  padding: 7px 0;
   background-color: #e3e8cd;
   border-left: 15px solid #D6DBC5;
-  border-right: 15px solid #eff2e3;
   width: 400px;
 }
 #intro .sectionTitle .titleBox {
@@ -337,11 +324,7 @@ footer .white {
   padding: 5px 0 5px 15px;
 }
 @media (max-width: 991px) {
-  #intro {
-    margin-top: -20px;
-  }
   #intro .sectionTitle {
-    padding: 10px 0;
     width: 100%;
     border-right: 0;
   }
@@ -390,7 +373,8 @@ footer .white {
 }
 .exerciseCard {
   border: 0px solid #222;
-  background-color: #e3e8cd;
+  background-color: #b0c4de;
+  color: #000000;
   margin: 0 10px 20px 10px;
   padding: 0;
   float: left;
@@ -458,7 +442,7 @@ footer .white {
   opacity: 0.9;
 }
 .filterContainer {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   border-left: 3px solid #111;
   margin: 0 auto 20px auto;
   padding: 15px;
@@ -467,6 +451,7 @@ footer .white {
 .filterContainer input,
 .filterContainer select {
   width: 100%;
+  padding-left: 10px;
   margin-bottom: 10px;
 }
 .filterContainer h3 {
@@ -571,7 +556,7 @@ footer .white {
   float: left;
   max-width: 600px;
   max-height: 480px;
-  background-color: #e3e8cd;
+  background-color: #f8cb43;
   padding: 10px;
   margin: 0 20px 20px 0;
 }
@@ -659,6 +644,9 @@ footer .white {
   margin: -10px 0 20px 0;
   float: left;
 }
+.createExercise .status .glyphicon {
+  margin-right: 10px;
+}
 .createExercise .status-tab {
   margin: 5px 0 0 60px;
 }
@@ -691,6 +679,14 @@ footer .white {
   }
   .createExercise .exerciseDesc {
     height: 200px;
+  }
+}
+@media (max-width: 480px) {
+  .createExercise .metaData .form-group {
+    width: 100%;
+  }
+  .createExercise .metaData .checkbox-group {
+    height: 100px;
   }
 }
 /*------------------------------------------------------------------*\
