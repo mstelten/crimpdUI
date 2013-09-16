@@ -71,6 +71,20 @@ myServices.factory('exerciseData', function ($http, $q) {
 				deferred.resolve(data);
 			});
 			return deferred.promise;
+		},
+		editImage: function (exerciseId, imageId, imgCaption, imgPreview) {
+			var deferred = $q.defer();
+			$http.put(config.apiUrl + '/exercise/basic/' + exerciseId + '/image', {'exerciseImage': {'id': imageId, 'caption': imgCaption, 'preview': imgPreview}}).success(function (data) {
+				deferred.resolve(data);
+			});
+			return deferred.promise;
+		},
+		deleteImage: function (exerciseId, imageId) {
+			var deferred = $q.defer();
+			$http.delete(config.apiUrl + '/exercise/basic/' + exerciseId + '/image', {'exerciseImage': {'id': imageId}}).success(function (data) {
+				deferred.resolve(data);
+			});
+			return deferred.promise;
 		}
 	}
 });

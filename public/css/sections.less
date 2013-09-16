@@ -127,11 +127,8 @@
 	.nav-stacked > li.onlyXXS {
 		display: none;
 	}
-	.nav-pills.nav-stacked > li > a,
 	.nav-pills.nav-stacked > li > a {
-	  -webkit-border--radius: 0;
 	  -webkit-border-radius: 0;
-	  -moz-border-radius: 0;
 	  -moz-border-radius: 0;
 	}
 
@@ -662,12 +659,13 @@ footer {
 \*------------------------------------------------------------------*/
 
 
+/* BASIC INFO TAB */
 .createExercise {
 	textarea {
 		background-color: #FAFAFA;
 	}
 	.exerciseDesc {
-		height: 412px;
+		height: 312px;
 	}
 	.metaData {
 		.form-group {
@@ -680,7 +678,7 @@ footer {
 			text-align: left;
 		}
 		.checkbox-group {
-			height: 200px;
+			height: 150px;
 			overflow-x: hidden;
 			overflow-y: scroll;
 			border: 1px solid #CCC;
@@ -758,6 +756,42 @@ footer {
 		margin-right: 4px;
 		top: 0;
 		font-size: 14px;
+	}
+}
+
+/* STEPS & IMAGES TAB */
+.createExercise {
+	.imageDesc {
+		height: 250px;
+	}
+	.imageForm {
+		.checkbox {
+			display: inline-block;
+			margin-right: 20px;
+		}
+	}
+	.thumbContainer {
+		float: left;
+		margin: 0 20px 20px 0;
+		img {
+			width: 100px;
+		}
+		.controls {
+			background-color: @one-light;
+			.edit {
+				float: left;
+				margin: 2px 8px;
+			}
+			.delete {
+				float: right;
+				margin: 2px 8px;
+			}
+			&:after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+		}
 	}
 }
 

@@ -119,21 +119,28 @@
 	<!---- Steps & Images ---->
 				<div class="tab-pane" ng-class="{active: panes.stepsImages}">
 
-					<form name="uploadImageForm" class="formMediumHorz form-horizontal" form-model="imageModel" form-utils="imageFormUtils" submit-func="addOrEditImage()"
+					<form name="uploadImageForm" class="formMediumHorz form-horizontal imageForm" form-model="exerciseModel" form-utils="imageFormUtils" submit-func="addOrEditImage()"
 							cm-form-validator ng-submit="submit()">
 
 						<div class="col-md-6">
 							<div class="form-group">
-								<label class="col-md-3 control-label">image</label>
+								<label class="col-md-3 control-label">
+									<span ng-show="!formUtils.id">add image</span>
+								</label>
 
 								<div class="col-md-9">
-									<div class="input-group">
+									<div ng-show="!formUtils.id" class="input-group">
 										<span class="input-group-btn">
 											<span class="btn btn-primary btn-file">
-												Browse <input type="file" class="fileUpload" name="inputFile" cm-file-upload required>
+												Browse <input type="file" class="fileUpload" name="inputFile" cm-file-upload>
 											</span>
 										</span>
 										<input type="text" class="form-control" ng-model="formUtils.imgFile.name" readonly>
+									</div>
+									<div ng-show="formUtils.id">
+										editing
+										<img ng-src="{{ formModel.images[formUtils.imgIndex].url }}.thumbnail{{ formModel.images[formUtils.imgIndex].extension }}" alt="current image thumbnail"/>
+										<a class="stopEditing" ng-click="$parent.stopEditingImg()">[stop editing]</a>
 									</div>
 								</div>
 							</div>
@@ -141,24 +148,38 @@
 								<label class="col-md-3 control-label">caption</label>
 
 								<div class="col-md-9">
-									<textarea ng-model="formModel.caption" class="exerciseDesc form-control" name="inputDescription" placeholder="image caption" required></textarea>
+									<textarea ng-model="formUtils.caption" class="imageDesc form-control" name="inputDescription" placeholder="image caption" required></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label">poster image</label>
+
+								<div class="col-md-9">
+									<input type="checkbox" ng-model="formUtils.preview" class="checkbox" />
+									[ make this the main image ]
 								</div>
 							</div>
 						</div>
 
 						<div class="col-md-6">
-
+							<div class="thumbContainer" ng-repeat="x in formModel.images">
+								<img ng-src="{{ x.url }}.thumbnail{{ x.extension }}" alt="image thumbnail"/>
+								<div class="controls">
+									<a class="edit" ng-click="$parent.$parent.setCurrentImg({{ x.id }})">edit</a>
+									<a class="delete">[x]</a>
+								</div>
+							</div>
 						</div>
 
-						<div class="col-md-6">
+						<div class="col-md-6 cB">
 							<div class="col-md-9 col-md-offset-3">
 								<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
 								<div class="formMessageError" ng-show="formUtils.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}
 								</div>
 								<div class="alert alert-success" ng-show="!errorPresent && formUtils.success" ng-animate="{show: 'fade-show', hide: 'fade-hide'}">{{formModel.message}}</div>
 								<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">
-									<span ng-show="!formModel.id">create</span>
-									<span ng-show="formModel.id">update</span>
+									<span ng-show="!formUtils.id">add image</span>
+									<span ng-show="formUtils.id">update image</span>
 								</button>
 							</div>
 						</div>

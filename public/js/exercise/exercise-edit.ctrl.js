@@ -71,22 +71,78 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 			currentMetaArray = newMetaArray;
 		};
 	};
+
+	// set current image to edit
+	$scope.setCurrentImg = function (passedId) {
+		var imagesArray = $scope.exerciseModel.images;
+		var index;
+		for (var i = 0; i < imagesArray.length; i += 1) {
+			if (imagesArray[i].id === passedId) {
+				index = i;
+			}
+		}
+		$scope.imageFormUtils = {
+			id: passedId,
+			caption: imagesArray[index].caption,
+			preview: imagesArray[index].preview,
+			imgIndex: index
+		}
+	};
+
+	// stops the current image editing
+	$scope.stopEditingImg = function () {
+		$scope.imageFormUtils = {};
+	};
+
+	// fires on image form submit
 	$scope.addOrEditImage = function () {
-		$http({
-			method: 'POST',
-			url: config.apiUrl + '/exercise/basic/' + $scope.exerciseModel.id + '/image',
-			headers: {
-				'Content-Type': false
-			},
-			data: {
-				file: $scope.imageFormUtils.imgFile,
-				caption: $scope.imageModel.caption,
-				preview: true
-			},
-			transformRequest: formDataObject
-		}).success(function(data) {
-			$scope.addImageRes = data;
-		});
+		var addImage = function () {
+			$http({
+				method: 'POST',
+				url: config.apiUrl + '/exercise/basic/' + $scope.exerciseModel.id + '/image',
+				headers: {
+					'Content-Type': false
+				},
+				data: {
+					file: $scope.imageFormUtils.imgFile,
+					caption: $scope.imageFormUtils.caption,
+					preview: $scope.imageFormUtils.preview
+				},
+				transformRequest: formDataObject
+			}).then(function (data) {
+					$scope.addEditImageRes = data;
+					$scope.processImage();
+				});
+		};
+		var editImage = function () {
+			exerciseData.editImage($scope.exerciseModel.id, $scope.imageFormUtils.id, $scope.imageFormUtils.caption, $scope.imageFormUtils.preview).then(function (data) {
+				$scope.addEditImageRes = data;
+				$scope.processImage();
+			});
+		};
+		if ($scope.imageFormUtils.id) {
+			editImage();
+		} else {
+			addImage();
+		}
+	};
+
+	$scope.processImage = function () {
+		if ($scope.addEditImageRes.success) {
+			$scope.exerciseModel = angular.copy($scope.addEditImageRes.exercise);
+			if ($scope.imageFormUtils.id) {
+				$scope.exerciseModel.message = "image updated";
+			} else {
+				$scope.exerciseModel.message = "new image added";
+			}
+			$scope.imageFormUtils.success = true;
+			$timeout(function () {
+				$scope.imageFormUtils.success = false;
+			}, 3000);
+		} else {
+			$scope.exerciseModel.errorMessages = $scope.addEditImageRes.errors;
+		}
+		$scope.imageFormUtils.clicked = true;
 	};
 }
 
