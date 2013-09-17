@@ -449,23 +449,12 @@ footer {
 		margin: 10px 10px 10px 10px;
 		font-size: 13px;
 	}
-	.add {
-		float: right;
-		cursor: pointer;
-		height: 20px;
-		width: 20px;
-		background: url('/img/icons/plus.png') no-repeat left top;
-		margin: 10px 15px 0 0;
-		text-indent: -9999px;
-	}
+	.add,
 	.details {
 		float: right;
-		cursor: pointer;
-		height: 20px;
-		width: 20px;
-		background: url('/img/icons/details.png') no-repeat left top;
-		margin: 10px 15px 0 0;
-		text-indent: -9999px;
+		color: @one-dark;
+		font-size: 20px;
+		margin: 6px 15px 0 0;
 	}
 	.thumbContainer {
 		position: relative;
@@ -609,19 +598,25 @@ footer {
 
 
 
-
-
-
-
-
 /*------------------------------------------------------------------*\
     $EXERCISE-DETAILS
 \*------------------------------------------------------------------*/
 
 .exerciseDetails {
+	.detailsTop {
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
 	.backToSearch {
-		display: block;
+		.flatBtn(@four-light, @one-dark, @two-dark);
 		margin-bottom: 20px;
+	}
+	.edit {
+		.flatBtn(@three-dark, @one-dark, @one-xlight);
+		margin: 0 0 0 20px;
 	}
 	.photo {
 		float: left;
@@ -770,6 +765,16 @@ footer {
 			margin-right: 20px;
 		}
 	}
+	.thumbnailsSection {
+		height: 250px;
+		width: 100%;
+		overflow: scroll;
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
 	.thumbContainer {
 		float: left;
 		margin: 0 20px 20px 0;
@@ -791,6 +796,24 @@ footer {
 				display: table;
 				clear: both;
 			}
+		}
+	}
+	.imageShowcase {
+		.editingImgLabel {
+			float: left;
+			font-size: 16px;
+			line-height: 30px;
+			color: @two-dark;
+		}
+		.stopEditing {
+			.flatBtn(@one-light, @one-dark, @two-dark);
+			margin: 0 0 15px 20px;
+		}
+		img {
+			display: block;
+			border: 1px solid @one-dark;
+			clear: both;
+			margin-top: 15px;
 		}
 	}
 }

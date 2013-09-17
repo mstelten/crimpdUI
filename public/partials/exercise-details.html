@@ -1,7 +1,10 @@
 <div>
 	<section id="maincontent" class="exerciseDetails">
 		<div class="container">
-			<a href="/exercises" class="backToSearch"><---- Back to Exercises</a>
+			<div class="detailsTop">
+				<a href="/exercises" class="backToSearch"><span class="glyphicon glyphicon-arrow-left"></span> exercises library</a>
+				<a href="/exercises/edit/{{ exr.id }}" ng-show="isContributer()" class="edit"><span class="glyphicon glyphicon-edit"></span>edit</a>
+			</div>
 
 			<ul class="nav nav-tabs cB" cm-tabs>
 				<li ng-class="{active: panes.basicInfo}"><a ng-click="tabSelect('basicInfo')"><span class="glyphicon glyphicon-th-list"></span> <span class="textName">BASIC INFO</span></a></li>
@@ -25,7 +28,6 @@
 							<div class="difficulty">Difficulty: <span ng-repeat="x in exr.difficulty">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
 							<div class="equipment">Equipment: <span ng-repeat="x in exr.equipment">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
 						</div>
-						<a href="/exercises/edit/{{ exr.id }}" ng-show="isContributer()">EDIT</a>
 					</div>
 				</div>
 

@@ -123,24 +123,19 @@
 							cm-form-validator ng-submit="submit()">
 
 						<div class="col-md-6">
-							<div class="form-group">
+							<div class="form-group" ng-show="!formUtils.id">
 								<label class="col-md-3 control-label">
-									<span ng-show="!formUtils.id">add image</span>
+									<span>add image</span>
 								</label>
 
 								<div class="col-md-9">
-									<div ng-show="!formUtils.id" class="input-group">
+									<div class="input-group">
 										<span class="input-group-btn">
 											<span class="btn btn-primary btn-file">
 												Browse <input type="file" class="fileUpload" name="inputFile" cm-file-upload>
 											</span>
 										</span>
 										<input type="text" class="form-control" ng-model="formUtils.imgFile.name" readonly>
-									</div>
-									<div ng-show="formUtils.id">
-										editing
-										<img ng-src="{{ formModel.images[formUtils.imgIndex].url }}.thumbnail{{ formModel.images[formUtils.imgIndex].extension }}" alt="current image thumbnail"/>
-										<a class="stopEditing" ng-click="$parent.stopEditingImg()">[stop editing]</a>
 									</div>
 								</div>
 							</div>
@@ -162,12 +157,19 @@
 						</div>
 
 						<div class="col-md-6">
-							<div class="thumbContainer" ng-repeat="x in formModel.images">
-								<img ng-src="{{ x.url }}.thumbnail{{ x.extension }}" alt="image thumbnail"/>
-								<div class="controls">
-									<a class="edit" ng-click="$parent.$parent.setCurrentImg({{ x.id }})">edit</a>
-									<a class="delete">[x]</a>
+							<div class="thumbnailsSection" ng-show="!formUtils.id">
+								<div class="thumbContainer" ng-repeat="x in formModel.images">
+									<img ng-src="{{ x.url }}.thumbnail{{ x.extension }}" alt="image thumbnail"/>
+									<div class="controls">
+										<a class="edit" ng-click="$parent.$parent.setCurrentImg({{ x.id }})">edit</a>
+										<a class="delete">[x]</a>
+									</div>
 								</div>
+							</div>
+							<div class="imageShowcase" ng-show="formUtils.id">
+								<div class="editingImgLabel">editing image #2</div>
+								<a class="stopEditing" ng-click="$parent.stopEditingImg()"><span class="glyphicon glyphicon-remove-circle"></span>cancel edit</a>
+								<img ng-src="{{ formModel.images[formUtils.imgIndex].url }}.thumbnail{{ formModel.images[formUtils.imgIndex].extension }}" alt="current image thumbnail"/>
 							</div>
 						</div>
 

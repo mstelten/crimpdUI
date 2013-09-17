@@ -17,3 +17,22 @@
 
 @four-middle: #E3E8CD;		/* light brown */
 @four-light: #B0C4DE;		/* light steel blue */
+
+.flatBtn (@bgrColor, @color:@one-dark, @hoverColor:@two-dark) {
+	float: left;
+	background-color: @bgrColor;
+	color: @color;
+	padding: 4px 10px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	.glyphicon {
+		margin-right: 6px;
+	}
+	&:hover {
+		text-decoration: none;
+		.glyphicon {
+			color: @hoverColor;
+		}
+	}
+}
