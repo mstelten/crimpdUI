@@ -622,6 +622,7 @@ footer {
 		float: left;
 		max-width: 600px;
 		max-height: 480px;
+		width: 100%;
 		background-color: @three-dark;
 		padding: 10px;
 		margin: 0 20px 20px 0;
@@ -766,14 +767,25 @@ footer {
 		}
 	}
 	.thumbnailsSection {
-		height: 250px;
 		width: 100%;
-		overflow: scroll;
 		&:after {
 			content: "";
 			display: table;
 			clear: both;
 		}
+	}
+	.currentImageHeader {
+		background-color: @four-light;
+		color: @one-dark;
+		padding: 4px 10px;
+		margin-bottom: 15px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	}
+	.editingHeader {
+		font-size: 16px;
+		font-weight: bold;
 	}
 	.thumbContainer {
 		float: left;
@@ -799,22 +811,33 @@ footer {
 		}
 	}
 	.imageShowcase {
-		.editingImgLabel {
-			float: left;
-			font-size: 16px;
-			line-height: 30px;
-			color: @two-dark;
-		}
-		.stopEditing {
-			.flatBtn(@one-light, @one-dark, @two-dark);
-			margin: 0 0 15px 20px;
-		}
 		img {
 			display: block;
 			border: 1px solid @one-dark;
 			clear: both;
 			margin-top: 15px;
+			max-height: 270px;
+			max-width: 400px;
+			width: 100%;
 		}
+	}
+	.stopEditing {
+		.flatBtn(@one-light, @one-dark, @two-dark);
+		margin: 0 0 0 20px;
+		float: none;
+		display: inline-block;
+	}
+	.deleteImg {
+		.flatBtn(@one-light, #E50000, @one-xxl);
+		margin: 0 0 0 20px;
+		float: none;
+		display: inline-block;
+	}
+	.formMediumHorz button {
+		margin: -3px 0 0 -4px;
+	}
+	.controlButtons {
+		margin-bottom: 25px;
 	}
 }
 

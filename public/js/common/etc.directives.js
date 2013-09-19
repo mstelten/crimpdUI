@@ -29,7 +29,7 @@ myDirectives.directive('cmFileUpload', function () {
 				var files = event.target.files;
 				var file = files[0];
 				if (scope.formUtils) {
-					scope.formUtils.clicked = false;
+					scope.formUtils.imgFile = file ? file : undefined;
 				} else {
 					scope.formUtils = {
 						imgFile: file ? file : undefined

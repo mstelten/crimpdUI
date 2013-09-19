@@ -94,6 +94,26 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 		$scope.imageFormUtils = {};
 	};
 
+	// deletes the current image editing
+	$scope.deleteImg = function () {
+		exerciseData.deleteImage($scope.exerciseModel.id, $scope.imageFormUtils.id).then(function (data) {
+			$scope.deleteImgRes = data;
+			if ($scope.deleteImgRes.success) {
+				$scope.exerciseModel = $scope.deleteImgRes.exercise;
+				$scope.exerciseModel.message = "image deleted";
+				$scope.imageFormUtils.success = true;
+				$timeout(function () {
+					$scope.imageFormUtils.success = false;
+				}, 3000);
+			} else {
+				$scope.exerciseModel.errorMessages = $scope.deleteImgRes.errors;
+			}
+			$scope.imageFormUtils = {
+				clicked: true
+			}
+		});
+	};
+
 	// fires on image form submit
 	$scope.addOrEditImage = function () {
 		var addImage = function () {

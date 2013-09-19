@@ -583,6 +583,7 @@ footer .white {
   float: left;
   max-width: 600px;
   max-height: 480px;
+  width: 100%;
   background-color: #f8cb43;
   padding: 10px;
   margin: 0 20px 20px 0;
@@ -710,14 +711,25 @@ footer .white {
   margin-right: 20px;
 }
 .createExercise .thumbnailsSection {
-  height: 250px;
   width: 100%;
-  overflow: scroll;
 }
 .createExercise .thumbnailsSection:after {
   content: "";
   display: table;
   clear: both;
+}
+.createExercise .currentImageHeader {
+  background-color: #b0c4de;
+  color: #333333;
+  padding: 4px 10px;
+  margin-bottom: 15px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.createExercise .editingHeader {
+  font-size: 16px;
+  font-weight: bold;
 }
 .createExercise .thumbContainer {
   float: left;
@@ -742,13 +754,16 @@ footer .white {
   display: table;
   clear: both;
 }
-.createExercise .imageShowcase .editingImgLabel {
-  float: left;
-  font-size: 16px;
-  line-height: 30px;
-  color: #0088cc;
+.createExercise .imageShowcase img {
+  display: block;
+  border: 1px solid #333333;
+  clear: both;
+  margin-top: 15px;
+  max-height: 270px;
+  max-width: 400px;
+  width: 100%;
 }
-.createExercise .imageShowcase .stopEditing {
+.createExercise .stopEditing {
   float: left;
   background-color: #bbbbbb;
   color: #333333;
@@ -756,22 +771,45 @@ footer .white {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  margin: 0 0 15px 20px;
+  margin: 0 0 0 20px;
+  float: none;
+  display: inline-block;
 }
-.createExercise .imageShowcase .stopEditing .glyphicon {
+.createExercise .stopEditing .glyphicon {
   margin-right: 6px;
 }
-.createExercise .imageShowcase .stopEditing:hover {
+.createExercise .stopEditing:hover {
   text-decoration: none;
 }
-.createExercise .imageShowcase .stopEditing:hover .glyphicon {
+.createExercise .stopEditing:hover .glyphicon {
   color: #0088cc;
 }
-.createExercise .imageShowcase img {
-  display: block;
-  border: 1px solid #333333;
-  clear: both;
-  margin-top: 15px;
+.createExercise .deleteImg {
+  float: left;
+  background-color: #bbbbbb;
+  color: #e50000;
+  padding: 4px 10px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin: 0 0 0 20px;
+  float: none;
+  display: inline-block;
+}
+.createExercise .deleteImg .glyphicon {
+  margin-right: 6px;
+}
+.createExercise .deleteImg:hover {
+  text-decoration: none;
+}
+.createExercise .deleteImg:hover .glyphicon {
+  color: #ffffff;
+}
+.createExercise .formMediumHorz button {
+  margin: -3px 0 0 -4px;
+}
+.createExercise .controlButtons {
+  margin-bottom: 25px;
 }
 @media (max-width: 991px) {
   .createExercise .formMediumHorz.form-horizontal label {
