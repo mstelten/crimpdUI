@@ -309,6 +309,7 @@ footer .white {
     $INTRO
 \*------------------------------------------------------------------*/
 #intro .sectionTitle {
+  float: left;
   padding: 7px 0;
   background-color: #e3e8cd;
   border-left: 15px solid #D6DBC5;
@@ -321,6 +322,21 @@ footer .white {
 
   font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 5px 0 5px 15px;
+}
+#intro .loaderContainer {
+  float: left;
+  position: relative;
+  margin: 10px 0 0 20px;
+}
+#intro .loaderContainer .loadingText {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+}
+#intro .loaderContainer:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 @media (max-width: 991px) {
   #intro .sectionTitle {
@@ -727,6 +743,10 @@ footer .white {
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
+.createExercise .defaultImgKey {
+  float: right;
+  margin-right: 10px;
+}
 .createExercise .editingHeader {
   font-size: 16px;
   font-weight: bold;
@@ -745,9 +765,14 @@ footer .white {
   float: left;
   margin: 2px 8px;
 }
-.createExercise .thumbContainer .controls .delete {
+.createExercise .thumbContainer .controls .edit:hover {
+  cursor: pointer;
+  color: #0088cc;
+}
+.createExercise .thumbContainer .controls .defaultImg {
   float: right;
   margin: 2px 8px;
+  line-height: 18px;
 }
 .createExercise .thumbContainer .controls:after {
   content: "";
@@ -771,7 +796,7 @@ footer .white {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  margin: 0 0 0 20px;
+  margin: 0 20px 0 20px;
   float: none;
   display: inline-block;
 }
@@ -792,7 +817,6 @@ footer .white {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  margin: 0 0 0 20px;
   float: none;
   display: inline-block;
 }
@@ -806,10 +830,10 @@ footer .white {
   color: #ffffff;
 }
 .createExercise .formMediumHorz button {
-  margin: -3px 0 0 -4px;
+  vertical-align: baseline;
 }
 .createExercise .controlButtons {
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 @media (max-width: 991px) {
   .createExercise .formMediumHorz.form-horizontal label {
@@ -819,12 +843,20 @@ footer .white {
     height: 200px;
   }
 }
+@media (max-width: 767px) {
+  .createExercise .imageDesc {
+    height: 200px;
+  }
+}
 @media (max-width: 480px) {
   .createExercise .metaData .form-group {
     width: 100%;
   }
   .createExercise .metaData .checkbox-group {
     height: 100px;
+  }
+  .createExercise .imageDesc {
+    height: 150px;
   }
 }
 /*------------------------------------------------------------------*\

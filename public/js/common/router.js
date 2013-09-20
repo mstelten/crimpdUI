@@ -8,6 +8,7 @@ var myFilters = angular.module('myFilters', []);
 crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
     $locationProvider.html5Mode(true);
 	$httpProvider.defaults.withCredentials = true;
+	$httpProvider.defaults.headers.common['Content-Type'] = $httpProvider.defaults.headers.post['Content-Type'];
 	$routeProvider.when('/', {
 		templateUrl: 'partials/community.html',
 		controller: CommunityCtrl
@@ -67,6 +68,12 @@ crimpdApp.run(function ($rootScope, $location, $route, $http, userInfo) {
 				userInfo.updateUser(data.user.username, usrRole);
 			}
 		});
+	$rootScope.$on('LOAD', function () {
+		$rootScope.$broadcast('LOADING');
+	});
+	$rootScope.$on('UNLOAD', function () {
+		$rootScope.$broadcast('UNLOADING');
+	});
 	$rootScope.$on("$routeChangeStart", function (e, next, current) {
 		$rootScope.currentUser = userInfo.getUser();
 		if ($rootScope.currentUser.role == 0) {

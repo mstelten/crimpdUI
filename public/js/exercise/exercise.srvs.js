@@ -81,9 +81,13 @@ myServices.factory('exerciseData', function ($http, $q) {
 		},
 		deleteImage: function (exerciseId, imageId) {
 			var deferred = $q.defer();
-			$http.delete(config.apiUrl + '/exercise/basic/' + exerciseId + '/image', {'exerciseImage': {'id': imageId}}).success(function (data) {
-				deferred.resolve(data);
-			});
+			$http({
+				method: 'DELETE',
+				url: config.apiUrl + '/exercise/basic/' + exerciseId + '/image',
+				data: {'exerciseImage': {'id': imageId}}
+			}).success(function (data) {
+					deferred.resolve(data);
+				});
 			return deferred.promise;
 		}
 	}

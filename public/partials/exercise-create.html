@@ -6,6 +6,10 @@
 					<div class="titleBox" ng-show="exerciseModel.id">edit exercise</div>
 					<div class="titleBox" ng-show="!exerciseModel.id">create exercise</div>
 				</div>
+				<div class="loaderContainer" ng-show="loading">
+					<div class="loader"></div>
+					<div class="loadingText">loading</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -174,12 +178,15 @@
 
 						<div class="col-md-6">
 							<div class="thumbnailsSection" ng-show="!formUtils.id">
-								<div class="currentImageHeader">current images</div>
+								<div class="currentImageHeader">
+									current images
+									<span class="defaultImgKey"><span class="glyphicon glyphicon-star"></span> : default</span>
+								</div>
 								<div class="thumbContainer" ng-repeat="x in formModel.images">
 									<img ng-src="{{ x.url }}.thumbnail{{ x.extension }}" alt="image thumbnail"/>
 									<div class="controls">
-										<a class="edit" ng-click="$parent.$parent.setCurrentImg({{ x.id }})">edit</a>
-										<a class="delete">[x]</a>
+										<span class="edit" ng-click="$parent.$parent.setCurrentImg({{ x.id }})"><span class="glyphicon glyphicon-edit"></span></span>
+										<span class="glyphicon glyphicon-star defaultImg" ng-show="x.preview"></span>
 									</div>
 								</div>
 							</div>
