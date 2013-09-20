@@ -35,6 +35,7 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 
 	// updates basic exercise, adds new metadata, removes now un-checked metadata
 	$scope.editExercise = function () {
+		$scope.$emit('LOAD');
 		exerciseData.updateBasic($scope.exerciseModel.name, $scope.exerciseModel.description, $scope.exerciseModel.id).then(function (data) {
 			$scope.editBasicResp = data;
 			$scope.exerciseModel.errorMessages = null;
@@ -48,6 +49,7 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 				updateMetaData();
 			} else {
 				$scope.exerciseModel.errorMessages = $scope.editBasicResp.errors;
+				$scope.$emit('UNLOAD');
 			}
 			$scope.exerciseFormUtils.clicked = true;
 		});
@@ -75,6 +77,7 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 				}
 			});
 			currentMetaArray = newMetaArray;
+			$scope.$emit('UNLOAD');
 		};
 	};
 
