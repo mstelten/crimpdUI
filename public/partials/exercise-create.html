@@ -136,10 +136,10 @@
 									<div class="input-group" ng-show="!formUtils.id">
 										<span class="input-group-btn">
 											<span class="btn btn-primary btn-file">
-												Browse <input type="file" class="fileUpload" name="inputFile" cm-file-upload parent-form="uploadImageForm">
+												Browse <input type="file" class="fileUpload" name="inputFile" cm-file-upload>
 											</span>
 										</span>
-										<input type="text" class="form-control" ng-model="formUtils.imgFile.name" readonly>
+										<input type="text" class="form-control" ng-model="formUtils.imgFile.name" required readonly>
 									</div>
 									<div class="editingHeader" ng-show="formUtils.id" >
 										editing image #2
@@ -163,7 +163,6 @@
 							</div>
 							<div class="col-md-9 col-md-offset-3 controlButtons">
 								<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
-								<div class="formMessageError" ng-show="errorPresent && thisForm.$error.fileRequired">You must attach an image file.</div>
 								<div class="formMessageError" ng-show="formUtils.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}
 								</div>
 								<div class="alert alert-success" ng-show="!errorPresent && formUtils.success" ng-animate="{show: 'fade-show', hide: 'fade-hide'}">{{formModel.message}}</div>

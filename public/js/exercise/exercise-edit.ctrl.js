@@ -94,14 +94,16 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 			id: passedId,
 			caption: imagesArray[index].caption,
 			preview: imagesArray[index].preview,
-			imgIndex: index
+			imgIndex: index,
+			imgFile: {name: "placeHolder"}
 		}
-		$scope.$broadcast('newImageEdit');
 	};
 
 	// stops the current image editing
 	$scope.stopEditingImg = function () {
 		$scope.imageFormUtils = {};
+		$scope.$broadcast('removeFormError');
+
 	};
 
 	// deletes the current image editing
@@ -110,6 +112,7 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 		exerciseData.deleteImage($scope.exerciseModel.id, $scope.imageFormUtils.id).then(function (data) {
 			$scope.$emit('UNLOAD');
 			$scope.deleteImgRes = data;
+			$scope.$broadcast('removeFormError');
 			if ($scope.deleteImgRes.success) {
 				$scope.exerciseModel = $scope.deleteImgRes.exercise;
 				$scope.exerciseModel.message = "image deleted";

@@ -16,6 +16,7 @@ function ExerciseCreateCtrl($scope, exerciseData, $location) {
 
 	// creates basic exercise, assigns excerise data to exerciseModel (formModel), adds metadata
 	$scope.createNewExercise = function () {
+		$scope.$emit('LOAD');
 		exerciseData.createBasic($scope.exerciseModel.name, $scope.exerciseModel.description).then(function (data) {
 			$scope.createBasicResp = data;
 			$scope.exerciseModel.errorMessages = null;
@@ -41,6 +42,7 @@ function ExerciseCreateCtrl($scope, exerciseData, $location) {
 					$scope.exerciseModel.errorMessages = $scope.addMetaResp.errors;
 				}
 			});
+			$scope.$emit('UNLOAD');
 			exerciseData.setIsNewExrTrue();
 			$location.path('/exercises/edit/' + $scope.createBasicResp.exercise.id);
 		};

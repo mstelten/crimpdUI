@@ -31,12 +31,12 @@ myDirectives.directive('cmFormValidator', function() {
 						elm.addClass('error');
 						$event.preventDefault();
 					}
-				} else if (scope.thisForm.$error.fileRequired) {
-					scope.errorPresent = true;
-					elm.addClass('error');
-					$event.preventDefault();
 				}
 			};
+			scope.$on('removeFormError', function () {
+				scope.errorPresent = false;
+				elm.removeClass('error');
+			});
 		}
 	}
 });
@@ -62,4 +62,34 @@ myDirectives.directive('cmUsernameInput', function ($http) {
 			};
 		}
 	}
+});
+
+myDirectives.factory('formDataObject', function () {
+	return function (data) {
+		var fd = new FormData();
+		angular.forEach(data, function (value, key) {
+			fd.append(key, value);
+		});
+		return fd;
+	};
+});
+
+myDirectives.directive('cmFileUpload', function () {
+	return {
+		scope: false,
+		link: function (scope, elm) {
+			elm.on('change', function (event) {
+				var files = event.target.files;
+				var file = files[0];
+				if (scope.formUtils) {
+					scope.formUtils.imgFile = file ? file : undefined;
+				} else {
+					scope.formUtils = {
+						imgFile: file ? file : undefined
+					}
+				}
+				scope.$apply();
+			});
+		}
+	};
 });
