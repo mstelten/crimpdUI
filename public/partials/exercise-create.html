@@ -136,7 +136,7 @@
 									<div class="input-group" ng-show="!formUtils.id">
 										<span class="input-group-btn">
 											<span class="btn btn-primary btn-file">
-												Browse <input type="file" class="fileUpload" name="inputFile" cm-file-upload>
+												Browse <input type="file" class="fileUpload" name="inputFile" cm-file-upload parent-form="uploadImageForm">
 											</span>
 										</span>
 										<input type="text" class="form-control" ng-model="formUtils.imgFile.name" readonly>
@@ -163,6 +163,7 @@
 							</div>
 							<div class="col-md-9 col-md-offset-3 controlButtons">
 								<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
+								<div class="formMessageError" ng-show="errorPresent && thisForm.$error.fileRequired">You must attach an image file.</div>
 								<div class="formMessageError" ng-show="formUtils.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}
 								</div>
 								<div class="alert alert-success" ng-show="!errorPresent && formUtils.success" ng-animate="{show: 'fade-show', hide: 'fade-hide'}">{{formModel.message}}</div>
@@ -172,7 +173,6 @@
 								</button>
 								<a class="stopEditing" ng-click="$parent.stopEditingImg()" ng-show="formUtils.id"><span class="glyphicon glyphicon-remove-circle"></span>cancel edit</a>
 								<a class="deleteImg" ng-click="$parent.deleteImg()" ng-show="formUtils.id"><span class="glyphicon glyphicon-remove"></span>delete</a>
-
 							</div>
 						</div>
 

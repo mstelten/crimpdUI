@@ -96,6 +96,7 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 			preview: imagesArray[index].preview,
 			imgIndex: index
 		}
+		$scope.$broadcast('newImageEdit');
 	};
 
 	// stops the current image editing
@@ -139,7 +140,7 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 				data: {
 					file: $scope.imageFormUtils.imgFile,
 					caption: $scope.imageFormUtils.caption,
-					preview: $scope.imageFormUtils.preview
+					preview: $scope.imageFormUtils.preview || false
 				},
 				transformRequest: formDataObject
 			}).then(function (data) {

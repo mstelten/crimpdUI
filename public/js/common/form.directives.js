@@ -31,8 +31,11 @@ myDirectives.directive('cmFormValidator', function() {
 						elm.addClass('error');
 						$event.preventDefault();
 					}
+				} else if (scope.thisForm.$error.fileRequired) {
+					scope.errorPresent = true;
+					elm.addClass('error');
+					$event.preventDefault();
 				}
-
 			};
 		}
 	}
