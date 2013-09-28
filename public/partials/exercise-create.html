@@ -180,16 +180,24 @@
 							<div class="thumbnailsSection" ng-show="!formUtils.id">
 								<div class="currentImageHeader">
 									current images
-									<a class="sortLink" ng-click="$parent.fireSortImages()">[ re-order ]</a>
+									<a class="sortLink" ng-click="startSortImages()">[ re-order ]</a>
 									<span class="defaultImgKey"><span class="glyphicon glyphicon-star"></span> : default</span>
 								</div>
-								<div class="thumbContainer" ng-repeat="x in formModel.images">
+								<!--regular image display	-->
+								<div class="thumbContainer" ng-repeat="x in formModel.images" ng-show="!sorting">
 									<img ng-src="{{ x.url }}.thumbnail{{ x.extension }}" alt="image thumbnail"/>
 									<div class="controls">
 										<span class="edit" ng-click="$parent.$parent.setCurrentImg({{ x.id }})"><span class="glyphicon glyphicon-edit"></span></span>
 										<span class="glyphicon glyphicon-star defaultImg" ng-show="x.preview"></span>
 									</div>
 								</div>
+								<!--sortable image display-->
+								<ul ui-sortable cm-image-sorting class="sortContainer" ng-model="formModel.images" ng-show="sorting">
+									<li class="sortImages" ng-repeat="x in formModel.images">
+										<img ng-src="{{ x.url }}.thumbnail{{ x.extension }}" alt="image thumbnail"/>
+									</li>
+									<a class="sortFinish" ng-click="saveSortImages()">Save</a>
+								</ul>
 							</div>
 							<div class="imageShowcase" ng-show="formUtils.id">
 								<img ng-src="{{ formModel.images[formUtils.sortIndex].url }}.medium{{ formModel.images[formUtils.sortIndex].extension }}" alt="current image thumbnail"/>

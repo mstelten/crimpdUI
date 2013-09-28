@@ -779,6 +779,14 @@ footer .white {
   margin-left: 20px;
   color: #0088cc;
 }
+.createExercise .sortContainer {
+  list-style: none;
+}
+.createExercise .sortContainer .sortImages {
+  float: left;
+  margin: 0 20px 20px 0;
+  width: 100px;
+}
 .createExercise .thumbContainer {
   float: left;
   margin: 0 20px 20px 0;

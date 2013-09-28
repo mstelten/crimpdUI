@@ -10,3 +10,18 @@ myDirectives.directive('cmTabs', function () {
 		}
 	}
 });
+
+myDirectives.directive('cmImageSorting', function () {
+	return {
+		restrict: "A",
+		scope: false,
+		link: function (scope) {
+			scope.startSortImages = function () {
+				scope.sorting = true;
+			};
+			scope.saveSortImages = function () {
+				scope.sorting = false;
+			};
+		}
+	}
+});
