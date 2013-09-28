@@ -1,0 +1,19 @@
+<div class="modal-header">
+	Sort Exercise Images
+</div>
+
+<div class="modal-body">
+	<div class="thumbContainer" ng-repeat="x in images">
+		<img ng-src="{{ x.url }}.thumbnail{{ x.extension }}" alt="image thumbnail"/>
+
+		<div class="controls">
+			<span class="edit" ng-click="$parent.$parent.setCurrentImg({{ x.id }})"><span class="glyphicon glyphicon-edit"></span></span>
+			<span class="glyphicon glyphicon-star defaultImg" ng-show="x.preview"></span>
+		</div>
+	</div>
+</div>
+
+<div class="modal-footer">
+	<button class="btn btn-primary" ng-click="ok()">OK</button>
+	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

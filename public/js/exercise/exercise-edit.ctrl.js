@@ -1,4 +1,4 @@
-function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseModel, isNewExr, formDataObject, $http) {
+function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseModel, isNewExr, formDataObject, $http, $modal) {
 	$scope.panes = {
 		basicInfo: true
 	};
@@ -94,7 +94,7 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 			id: passedId,
 			caption: imagesArray[index].caption,
 			preview: imagesArray[index].preview,
-			imgIndex: index,
+			sortIndex: index,
 			imgFile: {name: "placeHolder"}
 		}
 	};
@@ -170,9 +170,9 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 		if ($scope.addEditImageRes.success) {
 			$scope.exerciseModel = $scope.addEditImageRes.exercise;
 			if ($scope.imageFormUtils.id) {
-				$scope.exerciseModel.message = "image #2 updated";
+				$scope.exerciseModel.message = "image #" + ($scope.imageFormUtils.sortIndex + 1) + " updated";
 			} else {
-				$scope.exerciseModel.message = "new image added";
+				$scope.exerciseModel.message = "image #" + $scope.exerciseModel.images.length + " added";
 			}
 			$scope.imageFormUtils = {
 				clicked: true,
@@ -185,6 +185,26 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 			$scope.exerciseModel.errorMessages = $scope.addEditImageRes.errors;
 			$scope.imageFormUtils.clicked = true;
 		}
+	};
+
+	// fires sort images modal window
+	$scope.fireSortImages = function () {
+		var modalInstance = $modal.open({
+			templateUrl: 'partials/exercise-image-sort.html',
+			controller: ImageSortCtrl,
+			backdrop: false,
+			resolve: {
+				images: function () {
+					return $scope.exerciseModel.images;
+				}
+			}
+		});
+
+		modalInstance.result.then(function (selectedItem) {
+			$scope.selected = selectedItem;
+		}, function () {
+			console.log('Modal dismissed at: ' + new Date());
+		});
 	};
 }
 

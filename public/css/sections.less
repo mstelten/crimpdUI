@@ -670,7 +670,7 @@ footer {
 \*------------------------------------------------------------------*/
 
 
-/* BASIC INFO TAB */
+/************************* BASIC INFO TAB ***************************/
 .createExercise {
 	textarea {
 		background-color: #FAFAFA;
@@ -770,7 +770,7 @@ footer {
 	}
 }
 
-/* STEPS & IMAGES TAB */
+/************************ STEPS & IMAGES TAB ***********************/
 .createExercise {
 	.imageDesc {
 		height: 250px;
@@ -803,8 +803,21 @@ footer {
 		margin-right: 10px;
 	}
 	.editingHeader {
+		.flatBtn(@one-light, @one-dark, @two-dark);
 		font-size: 16px;
 		font-weight: bold;
+		background-color: #DDD;
+	}
+	.editingDefaultImg {
+		margin-left: 20px;
+		color: @two-dark;
+		.glyphicon {
+			margin-right: 5px;
+		}
+	}
+	.sortLink {
+		margin-left: 20px;
+		color:	@two-dark;
 	}
 	.thumbContainer {
 		float: left;

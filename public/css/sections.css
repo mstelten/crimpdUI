@@ -621,7 +621,7 @@ footer .white {
 /*------------------------------------------------------------------*\
     $CREATE-EXERCISE
 \*------------------------------------------------------------------*/
-/* BASIC INFO TAB */
+/************************* BASIC INFO TAB ***************************/
 .createExercise textarea {
   background-color: #FAFAFA;
 }
@@ -718,7 +718,7 @@ footer .white {
   top: 0;
   font-size: 14px;
 }
-/* STEPS & IMAGES TAB */
+/************************ STEPS & IMAGES TAB ***********************/
 .createExercise .imageDesc {
   height: 250px;
 }
@@ -748,8 +748,36 @@ footer .white {
   margin-right: 10px;
 }
 .createExercise .editingHeader {
+  float: left;
+  background-color: #bbbbbb;
+  color: #333333;
+  padding: 4px 10px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   font-size: 16px;
   font-weight: bold;
+  background-color: #DDD;
+}
+.createExercise .editingHeader .glyphicon {
+  margin-right: 6px;
+}
+.createExercise .editingHeader:hover {
+  text-decoration: none;
+}
+.createExercise .editingHeader:hover .glyphicon {
+  color: #0088cc;
+}
+.createExercise .editingDefaultImg {
+  margin-left: 20px;
+  color: #0088cc;
+}
+.createExercise .editingDefaultImg .glyphicon {
+  margin-right: 5px;
+}
+.createExercise .sortLink {
+  margin-left: 20px;
+  color: #0088cc;
 }
 .createExercise .thumbContainer {
   float: left;
