@@ -89,6 +89,13 @@ myServices.factory('exerciseData', function ($http, $q) {
 					deferred.resolve(data);
 				});
 			return deferred.promise;
+		},
+		sortImages: function (exerciseId, sortedArray) {
+			var deferred = $q.defer();
+			$http.put(config.apiUrl + '/exercise/basic/' + exerciseId + '/sortImages', {'images': sortedArray}).success(function (data) {
+				deferred.resolve(data);
+			});
+			return deferred.promise;
 		}
 	}
 });

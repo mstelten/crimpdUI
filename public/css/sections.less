@@ -817,14 +817,58 @@ footer {
 	}
 	.sortLink {
 		margin-left: 20px;
-		color:	@two-dark;
+		color: #0D4F8B;
+		.glyphicon {
+			margin-right: 5px;
+		}
+		&.sorting {
+			display: none;
+		}
+	}
+	.sortingHeader {
+		margin-bottom: 10px;
+		.glyphicon {
+			margin-right: 5px;
+		}
+		.sortFinish {
+			margin: 0 10px;
+			color: @two-dark;
+			text-decoration: underline;
+		}
+		.sortCancel {
+			color: #FF0000;
+			text-decoration: underline;
+		}
 	}
 	.sortContainer {
 		list-style: none;
+		padding: 0;
 		.sortImages {
 			float: left;
 			margin: 0 20px 20px 0;
 			width: 100px;
+			border: 1px solid @one-dark;
+		}
+		.sortNumber {
+			position: relative;
+			float: left;
+			margin: -30px 0 0 10px;
+			font-size: 20px;
+			color: #FFF;
+			text-shadow: 1px 1px 5px #000, -1px -1px 5px #000;
+		}
+		.imagePlaceholder {
+			float: left;
+			height: 80px;
+			width: 100px;
+			margin: 0 20px 20px 0;
+			background-color: @three-middle;
+			border: 2px solid @three-dark;
+		}
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
 		}
 	}
 	.thumbContainer {
@@ -843,9 +887,15 @@ footer {
 					color: @two-dark;
 				}
 			}
+			.sortNumber {
+				float: right;
+				margin: 2px 8px 0 0;
+				font-size: 14px;
+				font-family: @font-tertiary;
+			}
 			.defaultImg {
 				float: right;
-				margin: 2px 8px;
+				margin: 2px 8px 0 8px;
 				line-height: 18px;
 			}
 			&:after {
@@ -905,20 +955,25 @@ footer {
 }
 
 @media (max-width: 480px) {
-.createExercise {
-	.metaData {
-		.form-group {
-			width: 100%;
+	.createExercise {
+		.metaData {
+			.form-group {
+				width: 100%;
+			}
+			.checkbox-group {
+				height: 100px;
+			}
 		}
-		.checkbox-group {
-			height: 100px;
+		.imageDesc {
+			height: 150px;
 		}
-	}
-	.imageDesc {
-		height: 150px;
 	}
 }
 
+@media (max-width: 400px) {
+	.defaultImgKey {
+		display: none;
+	}
 }
 
 
