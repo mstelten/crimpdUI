@@ -36,7 +36,15 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 	// updates basic exercise, adds new metadata, removes now un-checked metadata
 	$scope.editExercise = function () {
 		$scope.$emit('LOAD');
-		exerciseData.updateBasic($scope.exerciseModel.name, $scope.exerciseModel.description, $scope.exerciseModel.id).then(function (data) {
+		var newMetaArray = [];
+		angular.forEach($scope.list, function (value, key) {
+			if (value === true) {
+				newMetaArray.push(parseInt(key));
+			}
+		});
+		var addMetaArray = _.difference(newMetaArray, currentMetaArray);
+		var removeMetaArray = _.difference(currentMetaArray, newMetaArray);
+		exerciseData.updateBasic($scope.exerciseModel.name, $scope.exerciseModel.description, $scope.exerciseModel.id, addMetaArray, removeMetaArray).then(function (data) {
 			$scope.editBasicResp = data;
 			$scope.exerciseModel.errorMessages = null;
 			if ($scope.editBasicResp.success) {
@@ -46,39 +54,13 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 				$timeout(function () {
 					$scope.exerciseFormUtils.success = false;
 				}, 3000);
-				updateMetaData();
 			} else {
 				$scope.exerciseModel.errorMessages = $scope.editBasicResp.errors;
-				$scope.$emit('UNLOAD');
 			}
 			$scope.exerciseFormUtils.clicked = true;
-		});
-		var updateMetaData = function () {
-			var newMetaArray = [];
-			angular.forEach($scope.list, function (value, key) {
-				if (value === true) {
-					newMetaArray.push(parseInt(key));
-				}
-			});
-			var addMetaArray = _.difference(newMetaArray, currentMetaArray);
-			var removeMetaArray = _.difference(currentMetaArray, newMetaArray);
-			exerciseData.addMeta($scope.editBasicResp.exercise.id, addMetaArray).then(function (data) {
-				$scope.addMetaResp = data;
-				$scope.exerciseModel.errorMessages = null;
-				if (!$scope.addMetaResp.success) {
-					$scope.exerciseModel.errorMessages = $scope.addMetaResp.errors;
-				}
-			});
-			exerciseData.removeMeta($scope.editBasicResp.exercise.id, removeMetaArray).then(function (data) {
-				$scope.removeMetaResp = data;
-				$scope.exerciseModel.errorMessages = null;
-				if (!$scope.removeMetaResp.success) {
-					$scope.exerciseModel.errorMessages = $scope.removeMetaResp.errors;
-				}
-			});
 			currentMetaArray = newMetaArray;
 			$scope.$emit('UNLOAD');
-		};
+		});
 	};
 
 	// set current image to edit

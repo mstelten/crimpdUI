@@ -51,9 +51,9 @@ myServices.factory('exerciseData', function ($http, $q) {
 			});
 			return deferred.promise;
 		},
-		updateBasic: function (name, desc, exerciseId) {
+		updateBasic: function (name, desc, exerciseId, addMetaArray, removeMetaArray) {
 			var deferred = $q.defer();
-			$http.put(config.apiUrl + '/exercise/basic/' + exerciseId, {'exercise': {'name': name, 'description': desc}}).success(function (data) {
+			$http.put(config.apiUrl + '/exercise/basic/' + exerciseId, {'exercise': {'name': name, 'description': desc, 'addMeta': addMetaArray, 'removeMeta': removeMetaArray}}).success(function (data) {
 				deferred.resolve(data);
 			});
 			return deferred.promise;
