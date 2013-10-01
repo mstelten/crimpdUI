@@ -86,7 +86,7 @@ module.exports = function (grunt) {
 			},
 			addscript: {
 				options:{
-					append:{selector:'head',html:'<script type="text/javascript" src="js/app.full.min.js"></script>'}
+					append:{selector:'head',html:'<script src="js/app.full.min.js"></script>'}
 				},
 				src:'bin/index.html'
 			},
@@ -98,7 +98,7 @@ module.exports = function (grunt) {
 			},
 			addcss: {
 				options:{
-					append:{selector:'meta[name=author]',html:'<link href="css/app.full.min.css" rel="stylesheet" type="text/css">'}
+					append:{selector:'meta[name=author]',html:'<link href="css/app.full.min.css" rel="stylesheet">'}
 				},
 				src:'bin/index.html'
 			}

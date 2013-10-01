@@ -599,13 +599,11 @@ footer .white {
   float: left;
   max-width: 600px;
   max-height: 480px;
-  width: 100%;
   background-color: #f8cb43;
   padding: 10px;
   margin: 0 20px 20px 0;
 }
 .exerciseDetails .infoBlock {
-  overflow: hidden;
   font-size: 16px;
 }
 .exerciseDetails .infoBlock div {
@@ -617,6 +615,50 @@ footer .white {
 }
 .exerciseDetails .description {
   margin: 0;
+}
+.exerciseDetails .stepLargeImgContainer {
+  float: left;
+  position: relative;
+  margin: 0 20px 20px 0;
+}
+.exerciseDetails .stepLargeImg {
+  max-width: 600px;
+  max-height: 480px;
+  background-color: #f8cb43;
+  padding: 10px;
+}
+.exerciseDetails .stepNumber {
+  position: absolute;
+  background-color: rgba(192, 192, 192, 0.5);
+  padding: 10px;
+  font-size: 24px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #000000;
+  text-shadow: 2px 2px 4px #ffffff, -2px -2px 4px #ffffff;
+  top: 10px;
+  left: 10px;
+  z-index: 5;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .exerciseDetails .photo {
+    max-width: 500px;
+    max-height: 400px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .exerciseDetails .photo {
+    max-width: 400px;
+    max-height: 320px;
+  }
+}
+@media (max-width: 767px) {
+  .exerciseDetails .photo {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  
 }
 /*------------------------------------------------------------------*\
     $CREATE-EXERCISE

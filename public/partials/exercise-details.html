@@ -34,7 +34,12 @@
 
 	<!---- Steps & Images ---->
 				<div class="tab-pane" ng-class="{active: panes.stepsImages}">
-
+					<div class="stepLargeImgContainer">
+						<div class="stepNumber">{{ stepIndex + 1 }}</div>
+						<img class="stepLargeImg" ng-src="{{ exr.images[stepIndex].url + '.medium' + exr.images[stepIndex].extension }}"/>
+					</div>
+					<a class="nextImg" ng-click="nextStep()">next</a><br/>
+					<a class="prevImg" ng-click="prevStep()">previous</a>
 				</div>
 
 	<!---- Videos ---->

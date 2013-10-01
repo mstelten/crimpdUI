@@ -637,13 +637,11 @@ footer {
 		float: left;
 		max-width: 600px;
 		max-height: 480px;
-		width: 100%;
 		background-color: @three-dark;
 		padding: 10px;
 		margin: 0 20px 20px 0;
 	}
 	.infoBlock {
-		overflow: hidden;
 		font-size: 16px;
 		div {
 			margin-bottom: 20px;
@@ -656,12 +654,59 @@ footer {
 	.description {
 		margin: 0;
 	}
+	.stepLargeImgContainer {
+		float: left;
+		position: relative;
+		margin: 0 20px 20px 0;
+	}
+	.stepLargeImg {
+		max-width: 600px;
+		max-height: 480px;
+		background-color: @three-dark;
+		padding: 10px;
+	}
+	.stepNumber {
+		position: absolute;
+		background-color: rgba(192, 192, 192, 0.5);
+		padding: 10px;
+		font-size: 24px;
+		font-family: @font-tertiary;
+		font-weight: bold;
+		color: @one-xdark;
+		text-shadow: 2px 2px 4px #FFF, -2px -2px 4px #FFF;
+		top: 10px;
+		left: 10px;
+		z-index: 5;
+	}
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+	.exerciseDetails {
+		.photo {
+			max-width: 500px;
+			max-height: 400px;
+		}
+	}
+}
 
+@media (min-width: 768px) and (max-width: 991px) {
+	.exerciseDetails {
+		.photo {
+			max-width: 400px;
+			max-height: 320px;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.exerciseDetails {
+		.photo {
+			width: 100%;
+		}
+	}
+}
+@media (max-width: 480px) {
 
-
-
+}
 
 
 
