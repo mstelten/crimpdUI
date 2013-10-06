@@ -48,7 +48,8 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 	}).
 	when('/exercises/:exerciseId', {
 		templateUrl: 'partials/exercise-details.html',
-		controller: ExerciseDetailsCtrl
+		controller: ExerciseDetailsCtrl,
+		resolve: ExerciseDetailsCtrl.resolve
 	}).
 	when('/dashboard', {
 		templateUrl: 'partials/exercise-search.html',
@@ -78,25 +79,6 @@ crimpdApp.run(function ($rootScope, $location, $route, $http, userInfo) {
 		$rootScope.currentUser = userInfo.getUser();
 		if ($rootScope.currentUser.role == 0) {
 			// $location.path('/login');
-		}
-		if (current === undefined) {
-			return false;
-		}
-		else if (next.templateUrl === 'partials/exercise-search.html' && current.templateUrl === 'partials/exercise-details.html') {
-			$rootScope.viewSlideAnimation = {
-				enter: 'slide-enter-from-left',
-				leave: 'slide-leave-to-right'
-			}
-		} else if (next.templateUrl === 'partials/exercise-details.html' && current.templateUrl === 'partials/exercise-search.html') {
-			$rootScope.viewSlideAnimation = {
-				enter: 'slide-enter-from-right',
-				leave: 'slide-leave-to-left'
-			}
-		} else {
-			$rootScope.viewSlideAnimation = {
-				enter: '',
-				leave: ''
-			}
 		}
 	});
 });

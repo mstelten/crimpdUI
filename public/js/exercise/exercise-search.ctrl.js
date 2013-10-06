@@ -3,9 +3,15 @@ function ExerciseSearchCtrl($scope, exerciseData, userInfo) {
 	$scope.isContributer = function () {
 		return userInfo.isUserContributer();
 	};
-	exerciseData.queryAllExercises().then(function(data) {
-		$scope.exercises = data.exercises;
-	});
+	var cachedExercises = exerciseData.getCachedExercises();
+	if (cachedExercises) {
+		$scope.exercises = cachedExercises;
+	} else {
+		exerciseData.queryAllExercises().then(function(data) {
+			$scope.exercises = data.exercises;
+			exerciseData.updateCachedExercises($scope.exercises);
+		});
+	}
 
 	$scope.isCleanSlate = function () {
 		return (_.every(_.values($scope.search), function (x) {
