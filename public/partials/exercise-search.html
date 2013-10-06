@@ -43,6 +43,10 @@
 				</div>
 				<div class="col-sm-8 col-md-9">
 					<ul class="searchResults">
+						<div class="loaderContainerSearch" ng-show="loading">
+							<div class="loader"></div>
+							<div class="loadingText">exercises loading</div>
+						</div>
 						<li class="exerciseCard" ng-repeat="exr in exercises | filter:search" ng-animate="'cards'">
 							<div class="thumbContainer">
 								<img class="thumb" src="{{exr.thumbnails[0]}}" alt=""/>

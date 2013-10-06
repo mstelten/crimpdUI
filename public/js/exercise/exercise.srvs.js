@@ -6,7 +6,6 @@ myServices.factory('exerciseData', function ($http, $q) {
 		Equipment: "",
 		$: ""
 	};
-	var cachedExercises = null;
 	var isNewExr = false;
 	return {
 		getCachedSearch: function () {
@@ -14,12 +13,6 @@ myServices.factory('exerciseData', function ($http, $q) {
 		},
 		updateCachedSearch: function (searchObj) {
 			cachedSearch = searchObj;
-		},
-		getCachedExercises: function () {
-			return cachedExercises;
-		},
-		updateCachedExercises: function (exercises) {
-			cachedExercises = exercises;
 		},
 		getIsNewExr: function () {
 			return angular.copy(isNewExr);

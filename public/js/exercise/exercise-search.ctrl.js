@@ -1,18 +1,13 @@
 function ExerciseSearchCtrl($scope, exerciseData, userInfo) {
+	$scope.loading = true;
 	$scope.exercises = {};
 	$scope.isContributer = function () {
 		return userInfo.isUserContributer();
 	};
-	var cachedExercises = exerciseData.getCachedExercises();
-	if (cachedExercises) {
-		$scope.exercises = cachedExercises;
-	} else {
-		exerciseData.queryAllExercises().then(function(data) {
-			$scope.exercises = data.exercises;
-			exerciseData.updateCachedExercises($scope.exercises);
-		});
-	}
-
+	exerciseData.queryAllExercises().then(function(data) {
+		$scope.exercises = data.exercises;
+		$scope.loading = false;
+	});
 	$scope.isCleanSlate = function () {
 		return (_.every(_.values($scope.search), function (x) {
 			return (x === "" || x === null);
