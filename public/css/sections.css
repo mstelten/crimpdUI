@@ -326,7 +326,7 @@ footer .white {
 #intro .loaderContainer {
   float: left;
   position: relative;
-  margin: 10px 0 0 20px;
+  margin: 8px 0 0 20px;
 }
 #intro .loaderContainer .loadingText {
   position: absolute;
@@ -688,6 +688,25 @@ footer .white {
 /*------------------------------------------------------------------*\
     $CREATE-EXERCISE
 \*------------------------------------------------------------------*/
+.backToDetails {
+  float: left;
+  background-color: #b0c4de;
+  color: #333333;
+  padding: 4px 10px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin: 8px 10px 0 20px;
+}
+.backToDetails .glyphicon {
+  margin-right: 6px;
+}
+.backToDetails:hover {
+  text-decoration: none;
+}
+.backToDetails:hover .glyphicon {
+  color: #0088cc;
+}
 /************************* BASIC INFO TAB ***************************/
 .createExercise textarea {
   background-color: #FAFAFA;
@@ -773,6 +792,10 @@ footer .white {
 .createExercise .status-tab .editingExr .name {
   font-size: 16px;
   font-style: italic;
+}
+.createExercise .status-tab .newExr .glyphicon,
+.createExercise .status-tab .editingExr .glyphicon {
+  top: 2px;
 }
 .createExercise .newExerciseSuccess {
   float: left;
