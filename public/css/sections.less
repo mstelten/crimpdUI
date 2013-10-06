@@ -544,6 +544,11 @@ footer {
 		display: block;
 		margin: 5px 0;
 	}
+	&.fixed {
+		position: fixed;
+		top: 20px;
+		margin-left: 10px;
+	}
 	&:after {
 		content: "";
 		display: table;
@@ -598,6 +603,11 @@ footer {
 				margin-right: 40px;
 			}
 		}
+		&.fixed {
+			position: relative;
+			margin: 0 auto 20px auto;
+			top: 0;
+		}
 	}
 }
 
@@ -609,6 +619,11 @@ footer {
 		width: 100%;
 		.section {
 			width: 100%;
+		}
+		&.fixed {
+			position: relative;
+			margin: 0 auto 20px auto;
+			top: 0;
 		}
 	}
 	.exerciseCard {

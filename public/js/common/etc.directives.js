@@ -59,3 +59,20 @@ myDirectives.directive('cmImageSorting', function (exerciseData, $timeout) {
 		}
 	}
 });
+
+myDirectives.directive('cmFixedFloating', function () {
+	return {
+		restrict: "A",
+		scope: false,
+		link: function (scope, elm) {
+			var offset = $(elm).offset().top;
+			$(window).scroll(function () {
+				if ($(window).scrollTop() >= offset) {
+					elm.addClass('fixed');
+				} else {
+					elm.removeClass('fixed');
+				}
+			});
+		}
+	}
+});

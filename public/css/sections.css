@@ -488,6 +488,11 @@ footer .white {
   display: block;
   margin: 5px 0;
 }
+.filterContainer.fixed {
+  position: fixed;
+  top: 20px;
+  margin-left: 10px;
+}
 .filterContainer:after {
   content: "";
   display: table;
@@ -540,6 +545,11 @@ footer .white {
   .filterContainer .section:first-of-type {
     margin-right: 40px;
   }
+  .filterContainer.fixed {
+    position: relative;
+    margin: 0 auto 20px auto;
+    top: 0;
+  }
 }
 @media (max-width: 504px) {
   .searchResults {
@@ -550,6 +560,11 @@ footer .white {
   }
   .filterContainer .section {
     width: 100%;
+  }
+  .filterContainer.fixed {
+    position: relative;
+    margin: 0 auto 20px auto;
+    top: 0;
   }
   .exerciseCard {
     width: 250px;
