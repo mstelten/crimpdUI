@@ -14,6 +14,9 @@ function ExerciseSearchCtrl($scope, exerciseData, userInfo) {
 		}))
 	};
 	$scope.search = exerciseData.getCachedSearch();
+	$scope.scrollToTop = function () {
+		$("body").animate({scrollTop: 0});
+	};
 	$scope.clearFilters = function () {
 		var clean = {
 			target: "",
