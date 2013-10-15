@@ -1,3 +1,3 @@
 var config = {};
-config.apiUrl = "http://api.crimpd.com/crimpd";
+config.apiUrl = "https://api.crimpd.com/crimpd";
 

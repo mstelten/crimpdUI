@@ -459,6 +459,30 @@ form h3 {
 .slide-leave-to-right-active {
   left: 100%;
 }
+.cards-enter,
+.cards-leave {
+  -webkit-transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  -ms-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  position: relative;
+  display: block;
+}
+.cards-enter.cards-enter-active,
+.cards-leave {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.cards-leave.cards-leave-active,
+.cards-enter {
+  opacity: 0;
+  -webkit-transform: scale(0.64);
+  -ms-transform: scale(0.64);
+  transform: scale(0.64);
+}
 /*------------------------------------------------------------------*\
     $NAV-TABS (TABS)
 \*------------------------------------------------------------------*/
