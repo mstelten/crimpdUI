@@ -1,5 +1,6 @@
 function ExerciseDetailsCtrl($scope, exerciseModel, userInfo) {
 	$scope.exr = exerciseModel;
+	$scope.placeholderMd = "/img/exrPlaceholder-md.png";
 	$scope.isContributer = function () {
 		return userInfo.isUserContributer();
 	};
@@ -10,6 +11,11 @@ function ExerciseDetailsCtrl($scope, exerciseModel, userInfo) {
 		if ($scope.exr.images[i].preview === true) {
 			$scope.mainImage = $scope.exr.images[i];
 		}
+	}
+	if ($scope.mainImage) {
+		$scope.mainImageMd = $scope.mainImage.url + '.medium' + $scope.mainImage.extension;
+	} else {
+		$scope.mainImageMd = "/img/exrPlaceholder-md.png";
 	}
 	$scope.stepIndex = 0;
 	$scope.nextStep = function () {

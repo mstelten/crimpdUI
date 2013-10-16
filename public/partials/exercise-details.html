@@ -1,22 +1,35 @@
 <div>
+	<section id="intro">
+		<div class="container">
+			<div class="row">
+				<div class="sectionTitle">
+					<div class="titleBox">exercise library &nbsp;&nbsp;>&nbsp;&nbsp; details</div>
+				</div>
+				<a href="/exercises" class="backToSearch"><span class="glyphicon glyphicon-arrow-left"></span> exercises library</a>
+				<a href="/exercises/edit/{{ exr.id }}" ng-show="isContributer()" class="editExercise"><span class="glyphicon glyphicon-edit"></span>edit</a>
+
+				<div class="loaderContainer" ng-show="loading">
+					<div class="loader"></div>
+					<div class="loadingText">loading</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<section id="maincontent" class="exerciseDetails">
 		<div class="container">
-			<div class="detailsTop">
-				<a href="/exercises" class="backToSearch"><span class="glyphicon glyphicon-arrow-left"></span> exercises library</a>
-				<a href="/exercises/edit/{{ exr.id }}" ng-show="isContributer()" class="edit"><span class="glyphicon glyphicon-edit"></span>edit</a>
-			</div>
 
 			<ul class="nav nav-tabs cB" cm-tabs>
 				<li ng-class="{active: panes.basicInfo}"><a ng-click="tabSelect('basicInfo')"><span class="glyphicon glyphicon-th-list"></span> <span class="textName">BASIC INFO</span></a></li>
-				<li ng-class="{active: panes.stepsImages}"><a ng-click="tabSelect('stepsImages')"><span class="glyphicon glyphicon-picture"></span> <span class="textName">STEPS &amp; IMAGES</span></a></li>
-				<li ng-class="{active: panes.videos}"><a ng-click="tabSelect('videos')"><span class="glyphicon glyphicon-facetime-video"></span> <span class="textName">VIDEOS</span></a></li>
+				<li ng-class="{active: panes.stepsImages}" ng-show="exr.images"><a ng-click="tabSelect('stepsImages')"><span class="glyphicon glyphicon-picture"></span> <span class="textName">STEPS &amp; IMAGES</span></a></li>
+				<li ng-class="{active: panes.videos}" ng-show="exr.video"><a ng-click="tabSelect('videos')"><span class="glyphicon glyphicon-facetime-video"></span> <span class="textName">VIDEOS</span></a></li>
 			</ul>
 
 			<div class="tab-content">
 
 	<!---- Basic Info ---->
 				<div class="tab-pane" ng-class="{active: panes.basicInfo}">
-					<img class="photo" ng-src="{{ mainImage.url + '.medium' + mainImage.extension }}"/>
+					<img class="photo" ng-src="{{ mainImageMd }}"/>
 
 					<div class="infoBlock">
 						<div class="title">{{ exr.name }}</div>

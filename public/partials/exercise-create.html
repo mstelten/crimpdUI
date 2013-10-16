@@ -3,8 +3,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="sectionTitle">
-					<div class="titleBox" ng-show="exerciseModel.id">edit exercise</div>
-					<div class="titleBox" ng-show="!exerciseModel.id">create exercise</div>
+					<div class="titleBox" ng-show="exerciseModel.id">exercise library &nbsp;&nbsp;>&nbsp;&nbsp; edit</div>
+					<div class="titleBox" ng-show="!exerciseModel.id">exercise library &nbsp;&nbsp;>&nbsp;&nbsp; create</div>
 				</div>
 				<a href="/exercises/{{ exerciseModel.id }}" class="backToDetails" ng-show="exerciseModel.id"><span class="glyphicon glyphicon-hand-right"></span>finish editing</a>
 				<div class="loaderContainer" ng-show="loading">

@@ -367,7 +367,7 @@ footer {
 	.loaderContainer {
 		float: left;
 		position: relative;
-		margin: 8px 0 0 20px;
+		margin: 12px 0 0 20px;
 		.loadingText {
 			position: absolute;
 			top: 5px;
@@ -616,22 +616,22 @@ footer {
     $EXERCISE-DETAILS
 \*------------------------------------------------------------------*/
 
+.backToSearch {
+	.flatBtn(@four-light, @one-dark, @two-dark);
+	margin: 12px 10px 0 20px;
+	&:hover {
+		color: @one-dark;
+	}
+}
+.editExercise {
+	.flatBtn(@three-dark, @one-dark, @one-xlight);
+	margin: 12px 10px 0 10px;
+	&:hover {
+		color: @one-dark;
+	}
+}
+
 .exerciseDetails {
-	.detailsTop {
-		&:after {
-			content: "";
-			display: table;
-			clear: both;
-		}
-	}
-	.backToSearch {
-		.flatBtn(@four-light, @one-dark, @two-dark);
-		margin-bottom: 20px;
-	}
-	.edit {
-		.flatBtn(@three-dark, @one-dark, @one-xlight);
-		margin: 0 0 0 20px;
-	}
 	.photo {
 		float: left;
 		max-width: 600px;
@@ -704,6 +704,11 @@ footer {
 			max-height: 320px;
 		}
 	}
+	.backToSearch,
+	.editExercise,
+	#intro .loaderContainer {
+		margin-top: 15px;
+	}
 }
 @media (max-width: 767px) {
 	.exerciseDetails {
@@ -711,9 +716,11 @@ footer {
 			width: 100%;
 		}
 	}
-}
-@media (max-width: 480px) {
-
+	.backToSearch,
+	.editExercise,
+	#intro .loaderContainer {
+		margin-top: 15px;
+	}
 }
 
 
@@ -725,7 +732,7 @@ footer {
 
 .backToDetails {
 	.flatBtn(@four-light, @one-dark, @two-dark);
-	margin: 8px 10px 0 20px;
+	margin: 12px 10px 0 20px;
 }
 
 /************************* BASIC INFO TAB ***************************/
@@ -1005,6 +1012,10 @@ footer {
 		.exerciseDesc {
 			height: 200px;
 		}
+	}
+	.backToDetails,
+	#intro .loaderContainer {
+		margin-top: 15px;
 	}
 }
 @media (max-width: 767px) {

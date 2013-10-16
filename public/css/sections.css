@@ -327,7 +327,7 @@ footer .white {
 #intro .loaderContainer {
   float: left;
   position: relative;
-  margin: 8px 0 0 20px;
+  margin: 12px 0 0 20px;
 }
 #intro .loaderContainer .loadingText {
   position: absolute;
@@ -556,12 +556,7 @@ footer .white {
 /*------------------------------------------------------------------*\
     $EXERCISE-DETAILS
 \*------------------------------------------------------------------*/
-.exerciseDetails .detailsTop:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.exerciseDetails .backToSearch {
+.backToSearch {
   float: left;
   background-color: #b0c4de;
   color: #333333;
@@ -569,18 +564,21 @@ footer .white {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  margin-bottom: 20px;
+  margin: 12px 10px 0 20px;
 }
-.exerciseDetails .backToSearch .glyphicon {
+.backToSearch .glyphicon {
   margin-right: 6px;
 }
-.exerciseDetails .backToSearch:hover {
+.backToSearch:hover {
   text-decoration: none;
 }
-.exerciseDetails .backToSearch:hover .glyphicon {
+.backToSearch:hover .glyphicon {
   color: #0088cc;
 }
-.exerciseDetails .edit {
+.backToSearch:hover {
+  color: #333333;
+}
+.editExercise {
   float: left;
   background-color: #f8cb43;
   color: #333333;
@@ -588,16 +586,19 @@ footer .white {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  margin: 0 0 0 20px;
+  margin: 12px 10px 0 10px;
 }
-.exerciseDetails .edit .glyphicon {
+.editExercise .glyphicon {
   margin-right: 6px;
 }
-.exerciseDetails .edit:hover {
+.editExercise:hover {
   text-decoration: none;
 }
-.exerciseDetails .edit:hover .glyphicon {
+.editExercise:hover .glyphicon {
   color: #f2f2f2;
+}
+.editExercise:hover {
+  color: #333333;
 }
 .exerciseDetails .photo {
   float: left;
@@ -664,14 +665,21 @@ footer .white {
     max-width: 400px;
     max-height: 320px;
   }
+  .backToSearch,
+  .editExercise,
+  #intro .loaderContainer {
+    margin-top: 15px;
+  }
 }
 @media (max-width: 767px) {
   .exerciseDetails .photo {
     width: 100%;
   }
-}
-@media (max-width: 480px) {
-  
+  .backToSearch,
+  .editExercise,
+  #intro .loaderContainer {
+    margin-top: 15px;
+  }
 }
 /*------------------------------------------------------------------*\
     $CREATE-EXERCISE
@@ -684,7 +692,7 @@ footer .white {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  margin: 8px 10px 0 20px;
+  margin: 12px 10px 0 20px;
 }
 .backToDetails .glyphicon {
   margin-right: 6px;
@@ -1004,6 +1012,10 @@ footer .white {
   }
   .createExercise .exerciseDesc {
     height: 200px;
+  }
+  .backToDetails,
+  #intro .loaderContainer {
+    margin-top: 15px;
   }
 }
 @media (max-width: 767px) {

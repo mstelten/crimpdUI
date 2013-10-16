@@ -49,7 +49,7 @@
 						</div>
 						<li class="exerciseCard" ng-repeat="exr in exercises | filter:search" ng-animate="'cards'">
 							<div class="thumbContainer">
-								<img class="thumb" src="{{exr.thumbnails[0]}}" alt=""/>
+								<img class="thumb" src="{{exr.thumbnails[0] || placeholderSm}}" alt=""/>
 
 								<div class="moreInfo">
 									<div class="target">Target: <span ng-repeat="x in exr.target">{{x}}<span ng-show="!$last">,</span> </span></div>

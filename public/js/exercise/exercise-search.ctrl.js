@@ -1,6 +1,7 @@
 function ExerciseSearchCtrl($scope, exerciseData, userInfo) {
 	$scope.loading = true;
 	$scope.exercises = {};
+	$scope.placeholderSm = "/img/exrPlaceholder-sm.png";
 	$scope.isContributer = function () {
 		return userInfo.isUserContributer();
 	};
