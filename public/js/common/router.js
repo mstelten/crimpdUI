@@ -51,6 +51,9 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 		controller: ExerciseDetailsCtrl,
 		resolve: ExerciseDetailsCtrl.resolve
 	}).
+	when('/privacy-policy', {
+		templateUrl: 'partials/privacy-policy.html',
+	}).
 	when('/dashboard', {
 		templateUrl: 'partials/exercise-search.html',
 		controller: ExerciseSearchCtrl
