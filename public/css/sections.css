@@ -12,7 +12,7 @@
  * CREATE-EXERCISE..............Create Exercise page
  * COMMUNITY....................Community home page
  * LOADING BAR..................Global loading bar
- * PRIVACY POLICY...............Privacy page & links
+ * PRIVACY-POLICY...............Privacy page & links
  */
 /* darkest black */
 /* dark black */
@@ -335,12 +335,7 @@ footer .white {
 #intro .loaderContainer {
   float: left;
   position: relative;
-  margin: 12px 0 0 20px;
-}
-#intro .loaderContainer .loadingText {
-  position: absolute;
-  top: 5px;
-  left: 8px;
+  margin: 16px 0 0 20px;
 }
 #intro .loaderContainer:after {
   content: "";
@@ -361,11 +356,15 @@ footer .white {
   position: relative;
   margin: 20px 0 0 40px;
 }
+.loaderContainerSearch .loader {
+  float: left;
+  margin-right: 10px;
+  height: 22px;
+  width: 22px;
+}
 .loaderContainerSearch .loadingText {
-  position: absolute;
-  top: 5px;
-  left: 8px;
-  width: 150px;
+  width: 200px;
+  font-size: 16px;
 }
 .loaderContainerSearch:after {
   content: "";
@@ -442,12 +441,20 @@ footer .white {
   right: 0;
   opacity: 0.9;
 }
+.searchSidebar {
+  margin: 0 auto 20px auto;
+  width: 240px;
+}
+.searchSidebar.fixed {
+  position: fixed;
+  top: 20px;
+  margin-left: 10px;
+}
 .filterContainer {
   background-color: #ffffff;
   border-left: 3px solid #111;
-  margin: 0 auto 20px auto;
   padding: 15px;
-  width: 240px;
+  width: 100%;
 }
 .filterContainer input,
 .filterContainer select {
@@ -469,12 +476,22 @@ footer .white {
   display: block;
   margin: 5px 0;
 }
-.filterContainer.fixed {
-  position: fixed;
-  top: 20px;
-  margin-left: 10px;
-}
 .filterContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.searchInfo {
+  margin: 20px 0;
+}
+.searchInfo .legend {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.searchInfo .legend .glyphicon {
+  margin-right: 10px;
+}
+.searchInfo:after {
   content: "";
   display: table;
   clear: both;
@@ -500,7 +517,7 @@ footer .white {
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .filterContainer {
+  .searchSidebar {
     width: 100%;
   }
   .filterContainer input,
@@ -516,8 +533,18 @@ footer .white {
     width: 475px;
     margin: 10px auto 0 auto;
   }
-  .filterContainer {
+  .searchSidebar {
     width: 100%;
+  }
+  .searchSidebar.fixed {
+    position: relative;
+    margin: 0 auto 20px auto;
+    top: 0;
+  }
+  .searchSidebar .legend {
+    float: left;
+    width: 50%;
+    margin-bottom: 10px;
   }
   .filterContainer .section {
     float: left;
@@ -526,26 +553,21 @@ footer .white {
   .filterContainer .section:first-of-type {
     margin-right: 40px;
   }
-  .filterContainer.fixed {
-    position: relative;
-    margin: 0 auto 20px auto;
-    top: 0;
-  }
 }
 @media (max-width: 504px) {
   .searchResults {
     margin: 10px 0 0 0;
   }
-  .filterContainer {
+  .searchSidebar {
     width: 100%;
   }
-  .filterContainer .section {
-    width: 100%;
-  }
-  .filterContainer.fixed {
+  .searchSidebar.fixed {
     position: relative;
     margin: 0 auto 20px auto;
     top: 0;
+  }
+  .filterContainer .section {
+    width: 100%;
   }
   .exerciseCard {
     width: 250px;
@@ -674,9 +696,12 @@ footer .white {
     max-height: 320px;
   }
   .backToSearch,
-  .editExercise,
-  #intro .loaderContainer {
+  .editExercise {
     margin-top: 15px;
+    margin-left: 15px;
+  }
+  #intro .loaderContainer {
+    margin-top: 20px;
   }
 }
 @media (max-width: 767px) {
@@ -684,9 +709,14 @@ footer .white {
     width: 100%;
   }
   .backToSearch,
-  .editExercise,
-  #intro .loaderContainer {
+  .editExercise {
     margin-top: 15px;
+  }
+  #intro .loaderContainer {
+    margin-top: 20px;
+  }
+  .backToSearch {
+    margin-left: 30px;
   }
 }
 /*------------------------------------------------------------------*\
@@ -1021,14 +1051,20 @@ footer .white {
   .createExercise .exerciseDesc {
     height: 200px;
   }
-  .backToDetails,
-  #intro .loaderContainer {
+  .backToDetails {
     margin-top: 15px;
+    margin-left: 15px;
+  }
+  #intro .loaderContainer {
+    margin-top: 20px;
   }
 }
 @media (max-width: 767px) {
   .createExercise .imageDesc {
     height: 200px;
+  }
+  .backToDetails {
+    margin-left: 30px;
   }
 }
 @media (max-width: 480px) {
@@ -1086,13 +1122,13 @@ footer .white {
   -moz-transition: width 500ms;
   -o-transition: width 500ms;
   transition: width 500ms;
-  background: #29d;
+  background: #0088cc;
   position: fixed;
   z-index: 2000;
-  top: 0;
+  top: 62px;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 4px;
 }
 /* Fancy blur effect */
 #loading-bar .peg {
@@ -1102,18 +1138,13 @@ footer .white {
   width: 100px;
   height: 100%;
   box-shadow: 0 0 10px #29d, 0 0 5px #29d;
-  opacity: 1.0;
-  -webkit-transform: rotate(3deg) translate(0px, -4px);
-  -moz-transform: rotate(3deg) translate(0px, -4px);
-  -ms-transform: rotate(3deg) translate(0px, -4px);
-  -o-transform: rotate(3deg) translate(0px, -4px);
-  transform: rotate(3deg) translate(0px, -4px);
+  opacity: 0.2;
 }
 #loading-bar-spinner {
   display: block;
   position: fixed;
-  z-index: 100;
-  top: 10px;
+  z-index: 1000;
+  top: 80px;
   left: 10px;
 }
 #loading-bar-spinner .spinner-icon {
@@ -1123,11 +1154,11 @@ footer .white {
   border-top-color: #29d;
   border-left-color: #29d;
   border-radius: 10px;
-  -webkit-animation: loading-bar-spinner 400ms linear infinite;
-  -moz-animation: loading-bar-spinner 400ms linear infinite;
-  -ms-animation: loading-bar-spinner 400ms linear infinite;
-  -o-animation: loading-bar-spinner 400ms linear infinite;
-  animation: loading-bar-spinner 400ms linear infinite;
+  -webkit-animation: loading-bar-spinner 600ms linear infinite;
+  -moz-animation: loading-bar-spinner 600ms linear infinite;
+  -ms-animation: loading-bar-spinner 600ms linear infinite;
+  -o-animation: loading-bar-spinner 600ms linear infinite;
+  animation: loading-bar-spinner 600ms linear infinite;
 }
 @-webkit-keyframes loading-bar-spinner {
   0% {
@@ -1177,10 +1208,16 @@ footer .white {
     transform: rotate(360deg);
   }
 }
+@media (max-width: 767px) {
+  #loading-bar-spinner {
+    display: none;
+  }
+}
 /*------------------------------------------------------------------*\
-    $LOADING BAR
+    $PRIVACY-POLICY
 \*------------------------------------------------------------------*/
 .privacyPolicyLink {
   margin: 10px 0;
   float: left;
+  clear: both;
 }

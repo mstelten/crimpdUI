@@ -1,4 +1,4 @@
-var crimpdApp = angular.module('crimpdApp', ['myServices', 'myDirectives', 'myFilters', 'ui.sortable']);
+var crimpdApp = angular.module('crimpdApp', ['myServices', 'myDirectives', 'myFilters', 'ui.sortable', 'ngAnimate', 'ngRoute', 'ngTouch','loadingBar']);
 var myDirectives = angular.module('myDirectives', []);
 var myServices = angular.module('myServices', []);
 var myFilters = angular.module('myFilters', []);

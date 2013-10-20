@@ -13,31 +13,37 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-md-3">
-					<div class="filterContainer" cm-fixed-floating>
-						<div class="section">
-							<h3>Exercise Filters</h3>
-							<a class="manage" href="/exercises/create" ng-show="isContributer()">[ create new exercise ]</a>
-							<a class="clearFilters" ng-show="!isCleanSlate()" ng-click="clearFilters()">(X) Clear All Filters</a>
-							<label>Search</label>
-							<input type="text" ng-model="search.$" ng-change="scrollToTop()"/>
-							<label>Target</label>
-							<select ng-model="search.target" ng-options="x for x in targetOptions()" ng-change="scrollToTop()">
-								<option value="">-- all --</option>
-							</select>
+					<div class="searchSidebar" cm-fixed-floating>
+						<div class="filterContainer">
+							<div class="section">
+								<h3>Exercise Filters</h3>
+								<a class="manage" href="/exercises/create" ng-show="isContributer()">[ create new exercise ]</a>
+								<a class="clearFilters" ng-show="!isCleanSlate()" ng-click="clearFilters()">(X) Clear All Filters</a>
+								<label>Search</label>
+								<input type="text" ng-model="search.$" ng-change="scrollToTop()"/>
+								<label>Target</label>
+								<select ng-model="search.target" ng-options="x for x in targetOptions()" ng-change="scrollToTop()">
+									<option value="">-- all --</option>
+								</select>
+							</div>
+							<div class="section">
+								<label>Type</label>
+								<select ng-model="search.type" ng-options="x for x in typeOptions()" ng-change="scrollToTop()">
+									<option value="">-- all --</option>
+								</select>
+								<label>Difficulty</label>
+								<select ng-model="search.difficulty" ng-options="x for x in difficultyOptions()" ng-change="scrollToTop()">
+									<option value="">-- all --</option>
+								</select>
+								<label>Equipment</label>
+								<select ng-model="search.equipment" ng-options="x for x in equipmentOptions()" ng-change="scrollToTop()">
+									<option value="">-- all --</option>
+								</select>
+							</div>
 						</div>
-						<div class="section">
-							<label>Type</label>
-							<select ng-model="search.type" ng-options="x for x in typeOptions()" ng-change="scrollToTop()">
-								<option value="">-- all --</option>
-							</select>
-							<label>Difficulty</label>
-							<select ng-model="search.difficulty" ng-options="x for x in difficultyOptions()" ng-change="scrollToTop()">
-								<option value="">-- all --</option>
-							</select>
-							<label>Equipment</label>
-							<select ng-model="search.equipment" ng-options="x for x in equipmentOptions()" ng-change="scrollToTop()">
-								<option value="">-- all --</option>
-							</select>
+						<div class="searchInfo">
+							<div class="legend"><span class="glyphicon glyphicon-list"></span>view exercise details</div>
+							<div class="legend"><span class="glyphicon glyphicon-plus-sign"></span>doesn't work yet</div>
 						</div>
 					</div>
 				</div>
@@ -47,7 +53,7 @@
 							<div class="loader"></div>
 							<div class="loadingText">exercises loading</div>
 						</div>
-						<li class="exerciseCard" ng-repeat="exr in exercises | filter:search" ng-animate="'cards'">
+						<li class="exerciseCard cardsAnimate" ng-repeat="exr in exercises | filter:search">
 							<div class="thumbContainer">
 								<img class="thumb" src="{{exr.thumbnails[0] || placeholderSm}}" alt=""/>
 

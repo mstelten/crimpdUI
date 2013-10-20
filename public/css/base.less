@@ -455,39 +455,8 @@ form h3 {
     $ANIMATIONS
 \*------------------------------------------------------------------*/
 
-
-.slide-enter-from-right, .slide-leave-to-left,
-.slide-enter-from-left, .slide-leave-to-right {
-	-webkit-transition: all 0.5s linear;
-	position: absolute;
-}
-.slide-enter-from-right {
-	left: 100%;
-}
-.slide-enter-from-right-active {
-	left: 0;
-}
-.slide-leave-to-left {
-	left: 0
-}
-.slide-leave-to-left-active {
-	left: -100%;
-}
-.slide-enter-from-left {
-	left: -100%;
-}
-.slide-enter-from-left-active {
-	left: 0;
-}
-.slide-leave-to-right {
-	left: 0;
-}
-.slide-leave-to-right-active {
-	left: 100%;
-}
-
-.cards-enter,
-.cards-leave {
+.cardsAnimate.ng-enter,
+.cardsAnimate.ng-leave {
 	-webkit-transition: all 0.6s ease-in-out;
 	-moz-transition: all 0.6s ease-in-out;
 	-ms-transition: all 0.6s ease-in-out;
@@ -496,25 +465,21 @@ form h3 {
 	position: relative;
 	display: block;
 }
-
-.cards-enter.cards-enter-active,
-.cards-leave {
+.cardsAnimate.ng-enter.ng-enter-active,
+.cardsAnimate.ng-leave {
 	opacity: 1;
 	-webkit-transform: scale(1);
 	-ms-transform: scale(1);
 	transform: scale(1);
 
 }
-
-.cards-leave.cards-leave-active,
-.cards-enter {
+.cardsAnimate.ng-leave.ng-leave-active,
+.cardsAnimate.ng-enter {
 	opacity: 0;
 	-webkit-transform: scale(0.64);
 	-ms-transform: scale(0.64);
 	transform: scale(0.64);
-
 }
-
 /*------------------------------------------------------------------*\
     $NAV-TABS (TABS)
 \*------------------------------------------------------------------*/
@@ -601,17 +566,19 @@ form h3 {
 
 
 .loader {
-	width: 24px;
-	height: 30px;
-	border: 7px solid @three-dark;
-	border-right-color: transparent;
-	border-radius: 50%;
-	-webkit-animation: spin 1s linear infinite;
-	-moz-animation: spin 1s linear infinite;
-	-ms-animation: spin 1s linear infinite;
-	-o-animation: spin 1s linear infinite;
-	animation: spin 1s linear infinite;
+	width: 18px;
+	height: 18px;
 
+	border: solid 3px transparent;
+	border-top-color: @two-dark;
+	border-left-color: @two-dark;
+	border-radius: 10px;
+
+	-webkit-animation: loading-bar-spinner 600ms linear infinite;
+	-moz-animation: loading-bar-spinner 600ms linear infinite;
+	-ms-animation: loading-bar-spinner 600ms linear infinite;
+	-o-animation: loading-bar-spinner 600ms linear infinite;
+	animation: loading-bar-spinner 600ms linear infinite;
 }
 @-webkit-keyframes spin {
 	from {

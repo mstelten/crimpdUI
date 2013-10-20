@@ -125,7 +125,7 @@
 	 */
 		.provider('cfpLoadingBar', function () {
 
-			this.includeSpinner = true;
+			this.includeSpinner = false;
 			this.parentSelector = 'body';
 
 			this.$get = ['$document', '$timeout', '$animate', function ($document, $timeout, $animate) {
@@ -236,7 +236,7 @@
 					inc: _inc,
 					complete: _complete,
 					includeSpinner: this.includeSpinner,
-					parentSelector: this.parentSelector,
+					parentSelector: this.parentSelector
 				};
 
 
