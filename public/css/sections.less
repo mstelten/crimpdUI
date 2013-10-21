@@ -189,35 +189,6 @@ ul.topnav  .dropdown-menu {
 
 	}
 }
-.fade-show-setup {
-	-webkit-transition: all linear 1.5s;
-	-moz-transition: all linear 1.5s;
-	-ms-transition: all linear 1.5s;
-	-o-transition: all linear 1.5s;
-	transition: all linear 1.5s;
-	opacity: 0;
-}
-.fade-show-setup.fade-show-start {
-  	opacity: 1;
-}
-.fade-hide-setup {
-  	opacity: 1;
-}
-.fade-hide-setup.fade-hide-start {
-  	opacity: 0;
-}
-.fade-show-setup.hide,
-.fade-hide-setup.hide {
-	display: none;
-	opacity: 0;
-	line-height: 20px;
-}
-.fade-show-start.hide,
-.fade-hide-start.hide {
-  	display: none;
-  	opacity: 0;
-  	line-height: 20px;
-}
 .toggleNavHamburger {
 	float: right;
 	cursor: pointer;
@@ -1151,7 +1122,7 @@ footer {
 	transition: width 500ms;
 
 	background: @two-dark;
-	position: fixed;
+	position: absolute;
 	z-index: 2000;
 	top: 62px;
 	left: 0;
@@ -1172,7 +1143,7 @@ footer {
 
 #loading-bar-spinner {
 	display: block;
-	position: fixed;
+	position: absolute;
 	z-index: 1000;
 	top: 80px;
 	left: 10px;

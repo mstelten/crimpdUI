@@ -1,9 +1,9 @@
 myServices.factory('exerciseData', function ($http, $q) {
 	var cachedSearch = {
-		Target: "",
-		Difficulty: "",
-		Type: "",
-		Equipment: "",
+		target: "",
+		difficulty: "",
+		type: "",
+		equipment: "",
 		$: ""
 	};
 	var isNewExr = false;

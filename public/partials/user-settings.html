@@ -36,7 +36,7 @@
 					<div class="col-sm-7 col-sm-offset-5">
 						<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
 						<div class="formMessageError" ng-show="errorPresent && thisForm.$error.email">Email address is invalid.</div>
-						<div class="formMessageError" ng-show="formUtils.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
+						<div class="formMessageError animateFade" ng-show="formUtils.clicked" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 						<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">update</button>
 					</div>
 				</form>
@@ -65,7 +65,7 @@
 
 					<div class="col-sm-7 col-sm-offset-5">
 						<div class="formMessageError" ng-show="errorPresent && thisForm.$error.required">A required field is missing</div>
-						<div class="formMessageError" ng-show="formUtils.clicked" ng-animate="{show: 'fade-show', hide: 'fade-hide'}" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
+						<div class="formMessageError animateFade" ng-show="formUtils.clicked" ng-repeat="err in formModel.errorMessages">{{err.message}}</div>
 						<button type="submit" class="btn btn-medium btn-primary" ng-click="formClick($event)">update</button>
 					</div>
 				</form>

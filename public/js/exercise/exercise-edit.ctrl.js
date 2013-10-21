@@ -88,7 +88,7 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 
 	};
 
-	// deletes the current image editing
+	// deletes the current image being edited
 	$scope.deleteImg = function () {
 		$scope.$emit('LOAD');
 		exerciseData.deleteImage($scope.exerciseModel.id, $scope.imageFormUtils.id).then(function (data) {
@@ -120,7 +120,7 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 				method: 'POST',
 				url: config.apiUrl + '/exercise/basic/' + $scope.exerciseModel.id + '/image',
 				headers: {
-					'Content-Type': false
+					'Content-Type': undefined
 				},
 				data: {
 					file: $scope.imageFormUtils.imgFile,

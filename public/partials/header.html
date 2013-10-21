@@ -8,10 +8,10 @@
 			<!-- end logo -->
 			<div class="userInfo">
 				<div class="userWelcome">
-					<span ng-show="isSignedIn()" ng-animate="animateTerms">
+					<span ng-show="isSignedIn()">
 					howdy, <strong>{{currentUser.name}}</strong>
 					</span>
-					<span ng-show="!isSignedIn()" ng-animate="animateTerms" ng-class="state">
+					<span ng-show="!isSignedIn()">
 						hi there, <strong>noob</strong>
 					</span>
 				</div>

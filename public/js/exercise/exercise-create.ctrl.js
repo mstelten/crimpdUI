@@ -1,8 +1,14 @@
-function ExerciseCreateCtrl($scope, exerciseData, $location) {
+function ExerciseCreateCtrl($scope, exerciseData, $location, $timeout) {
 	$scope.panes = {
 		basicInfo: true
 	};
 	$scope.list = {};
+	$scope.$on('LOADING', function () {
+		$scope.loading = true;
+	});
+	$scope.$on('UNLOADING', function () {
+		$scope.loading = false;
+	});
 
 	// gets full list of metaData
 	exerciseData.queryAllMeta().then(function (data) {
@@ -44,7 +50,9 @@ function ExerciseCreateCtrl($scope, exerciseData, $location) {
 			});
 			$scope.$emit('UNLOAD');
 			exerciseData.setIsNewExrTrue();
-			$location.path('/exercises/edit/' + $scope.createBasicResp.exercise.id);
+			$timeout(function () {
+				$location.path('/exercises/edit/' + $scope.createBasicResp.exercise.id);
+			}, 500);
 		};
 	};
 }

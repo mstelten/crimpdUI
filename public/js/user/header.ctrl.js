@@ -1,22 +1,13 @@
-function HeaderCtrl($scope, userInfo, $timeout, $location) {
+function HeaderCtrl($scope, userInfo, $location) {
 	$scope.state = "hide";
 	$scope.refreshUser = function () {
 		$scope.currentUser = userInfo.getUser();
 	};
 	$scope.refreshUser();
 
-	$scope.animateTerms = {show: 'fade-show', hide: 'fade-hide'};
-	$scope.startAnimations = function () {
-		$scope.isSignedIn = function () {
-			return userInfo.isUserAuth();
-		};
-		$timeout(function () {
-			$scope.state = undefined;
-		}, 200);
+	$scope.isSignedIn = function () {
+		return userInfo.isUserAuth();
 	};
-	$timeout(function () {
-		$scope.startAnimations()
-	}, 300);
 
 	$scope.$on('userChange', function (e) {
 		$scope.refreshUser();
