@@ -601,34 +601,68 @@ footer .white {
 .editExercise:hover {
   color: #333333;
 }
-.exerciseDetails .photo {
+/* ---------------------  DETAILS - BASIC INFO ----------------------*/
+.exerciseDetails .mainImageContainer {
   float: left;
-  max-width: 600px;
-  max-height: 480px;
-  background-color: #f8cb43;
-  padding: 10px;
+  position: relative;
   margin: 0 20px 20px 0;
+  width: 520px;
+  height: 420px;
+  background-color: #e1e1e1;
+  text-align: center;
+  border-top: 2px solid #999;
+  border-bottom: 2px solid #999;
+}
+.exerciseDetails .helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.exerciseDetails .mainImage {
+  vertical-align: middle;
+  margin-left: -5px;
+  max-height: 400px;
+  max-width: 500px;
 }
 .exerciseDetails .infoBlock {
+  float: left;
+  width: 575px;
   font-size: 16px;
-}
-.exerciseDetails .infoBlock div {
+  background-color: #e1e1e1;
+  padding: 10px 10px 20px 10px;
   margin-bottom: 20px;
+  border-top: 2px solid #999;
 }
-.exerciseDetails .title {
-  font-size: 24px;
+.exerciseDetails .infoBlock h3 {
   color: #0088cc;
+  margin: 10px 0;
+}
+.exerciseDetails .metaBlock {
+  float: left;
+  width: 575px;
+  background-color: #e1e1e1;
+  padding: 10px;
+  border-top: 2px solid #999;
+  font-size: 15px;
+}
+.exerciseDetails .metaBlock strong {
+  color: #0088cc;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  margin-right: 5px;
 }
 .exerciseDetails .description {
   margin: 0;
 }
+/* --------------------- DETAILS - STEPS & IMAGES ----------------------*/
 .exerciseDetails .stepLargeImgContainer {
   float: left;
   position: relative;
   margin: 0 20px 20px 0;
   width: 620px;
   height: 500px;
-  background-color: #bbbbbb;
+  background-color: #e1e1e1;
   text-align: center;
 }
 .exerciseDetails .helper {
@@ -639,8 +673,8 @@ footer .white {
 .exerciseDetails .stepLargeImg {
   vertical-align: middle;
   margin-left: -5px;
-  max-height: 480px;
   max-width: 600px;
+  max-height: 480px;
 }
 .exerciseDetails .stepNumber {
   position: absolute;
@@ -656,15 +690,31 @@ footer .white {
   z-index: 5;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  .exerciseDetails .photo {
-    max-width: 500px;
-    max-height: 400px;
+  .exerciseDetails .mainImageContainer {
+    width: 470px;
+    height: 380px;
+  }
+  .exerciseDetails .mainImage {
+    max-width: 450px;
+    max-height: 360px;
+  }
+  .exerciseDetails .infoBlock,
+  .exerciseDetails .metaBlock {
+    width: 450px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .exerciseDetails .photo {
-    max-width: 400px;
-    max-height: 320px;
+  .exerciseDetails .mainImageContainer {
+    width: 370px;
+    height: 300px;
+  }
+  .exerciseDetails .mainImage {
+    max-width: 350px;
+    max-height: 280px;
+  }
+  .exerciseDetails .infoBlock,
+  .exerciseDetails .metaBlock {
+    width: 300px;
   }
   .backToSearch,
   .editExercise {
@@ -676,8 +726,17 @@ footer .white {
   }
 }
 @media (max-width: 767px) {
-  .exerciseDetails .photo {
-    width: 100%;
+  .exerciseDetails .mainImageContainer {
+    width: 370px;
+    height: 300px;
+  }
+  .exerciseDetails .mainImage {
+    max-width: 350px;
+    max-height: 280px;
+  }
+  .exerciseDetails .infoBlock,
+  .exerciseDetails .metaBlock {
+    width: 300px;
   }
   .backToSearch,
   .editExercise {
@@ -712,7 +771,7 @@ footer .white {
 .backToDetails:hover .glyphicon {
   color: #0088cc;
 }
-/************************* BASIC INFO TAB ***************************/
+/************************* CREATE - BASIC INFO TAB ***************************/
 .createExercise textarea {
   background-color: #FAFAFA;
 }
@@ -813,7 +872,7 @@ footer .white {
   top: 0;
   font-size: 14px;
 }
-/************************ STEPS & IMAGES TAB ***********************/
+/************************ CREATE - STEPS & IMAGES TAB ***********************/
 .createExercise .imageDesc {
   height: 250px;
 }
@@ -1099,7 +1158,7 @@ footer .white {
   top: 62px;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 3px;
 }
 /* Fancy blur effect */
 #loading-bar .peg {

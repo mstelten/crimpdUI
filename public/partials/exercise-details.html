@@ -28,18 +28,21 @@
 
 	<!---- Basic Info ---->
 				<div class="tab-pane" ng-class="{active: panes.basicInfo}">
-					<img class="photo" ng-src="{{ mainImageMd }}"/>
+					<div class="mainImageContainer">
+						<span class="helper"></span>
+						<img class="mainImage" ng-src="{{ mainImageMd }}"/>
+					</div>
 
 					<div class="infoBlock">
-						<div class="title">{{ exr.name }}</div>
+						<h3>{{ exr.name }}</h3>
 						<div class="description">{{ exr.description }}</div>
-						<div class="author">Created by: {{ exr.author }}</div>
-						<div class="metadata">
-							<div class="target">Target: <span ng-repeat="x in exr.target">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
-							<div class="type">Type: <span ng-repeat="x in exr.type">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
-							<div class="difficulty">Difficulty: <span ng-repeat="x in exr.difficulty">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
-							<div class="equipment">Equipment: <span ng-repeat="x in exr.equipment">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
-						</div>
+					</div>
+					<div class="metaBlock">
+						<div class="author"><strong>author:</strong> {{ exr.author }}</div>
+						<div class="target"><strong>target:</strong> <span ng-repeat="x in exr.target">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
+						<div class="type"><strong>type:</strong> <span ng-repeat="x in exr.type">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
+						<div class="difficulty"><strong>difficulty:</strong> <span ng-repeat="x in exr.difficulty">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
+						<div class="equipment"><strong>equipment:</strong> <span ng-repeat="x in exr.equipment">{{ x.name }}<span ng-show="!$last">,</span> </span></div>
 					</div>
 				</div>
 

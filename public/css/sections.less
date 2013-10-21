@@ -634,35 +634,74 @@ footer {
 	}
 }
 
+/* ---------------------  DETAILS - BASIC INFO ----------------------*/
+
 .exerciseDetails {
-	.photo {
+	.mainImageContainer {
 		float: left;
-		max-width: 600px;
-		max-height: 480px;
-		background-color: @three-dark;
-		padding: 10px;
+		position: relative;
 		margin: 0 20px 20px 0;
+		width: 520px;
+		height: 420px;
+		background-color: #e1e1e1;
+		text-align: center;
+		border-top: 2px solid #999;
+		border-bottom: 2px solid #999;
+	}
+	.helper {
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+	.mainImage {
+		vertical-align: middle;
+		margin-left: -5px;
+		max-height: 400px;
+		max-width: 500px;
 	}
 	.infoBlock {
+		float: left;
+		width: 575px;
 		font-size: 16px;
-		div {
-			margin-bottom: 20px;
+		background-color: #e1e1e1;
+		padding: 10px 10px 20px 10px;
+		margin-bottom: 20px;
+		border-top: 2px solid #999;
+		h3 {
+			color: @two-dark;
+			margin: 10px 0;
 		}
 	}
-	.title {
-		font-size: 24px;
-		color: @two-dark;
+	.metaBlock {
+		float: left;
+		width: 575px;
+		background-color: #e1e1e1;
+		padding: 10px;
+		border-top: 2px solid #999;
+		font-size: 15px;
+		strong {
+			color: @two-dark;
+			font-family: @font-secondary;
+			font-weight: normal;
+			font-size: 18px;
+			margin-right: 5px;
+		}
 	}
 	.description {
 		margin: 0;
 	}
+}
+
+/* --------------------- DETAILS - STEPS & IMAGES ----------------------*/
+
+.exerciseDetails {
 	.stepLargeImgContainer {
 		float: left;
 		position: relative;
 		margin: 0 20px 20px 0;
 		width: 620px;
 		height: 500px;
-		background-color: @one-light;
+		background-color: #e1e1e1;
 		text-align: center;
 	}
 	.helper {
@@ -673,8 +712,8 @@ footer {
 	.stepLargeImg {
 		vertical-align: middle;
 		margin-left: -5px;
-		max-height: 480px;
 		max-width: 600px;
+		max-height: 480px;
 	}
 	.stepNumber {
 		position: absolute;
@@ -691,20 +730,37 @@ footer {
 	}
 }
 
+
 @media (min-width: 992px) and (max-width: 1199px) {
 	.exerciseDetails {
-		.photo {
-			max-width: 500px;
-			max-height: 400px;
+		.mainImageContainer {
+			width: 470px;
+			height: 380px;
+		}
+		.mainImage {
+			max-width: 450px;
+			max-height: 360px;
+		}
+		.infoBlock,
+		.metaBlock {
+			width: 450px;
 		}
 	}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
 	.exerciseDetails {
-		.photo {
-			max-width: 400px;
-			max-height: 320px;
+		.mainImageContainer {
+			width: 370px;
+			height: 300px;
+		}
+		.mainImage {
+			max-width: 350px;
+			max-height: 280px;
+		}
+		.infoBlock,
+		.metaBlock {
+			width: 300px;
 		}
 	}
 	.backToSearch,
@@ -718,8 +774,17 @@ footer {
 }
 @media (max-width: 767px) {
 	.exerciseDetails {
-		.photo {
-			width: 100%;
+		.mainImageContainer {
+			width: 370px;
+			height: 300px;
+		}
+		.mainImage {
+			max-width: 350px;
+			max-height: 280px;
+		}
+		.infoBlock,
+		.metaBlock {
+			width: 300px;
 		}
 	}
 	.backToSearch,
@@ -746,7 +811,7 @@ footer {
 	margin: 12px 10px 0 20px;
 }
 
-/************************* BASIC INFO TAB ***************************/
+/************************* CREATE - BASIC INFO TAB ***************************/
 .createExercise {
 	textarea {
 		background-color: #FAFAFA;
@@ -849,7 +914,7 @@ footer {
 	}
 }
 
-/************************ STEPS & IMAGES TAB ***********************/
+/************************ CREATE - STEPS & IMAGES TAB ***********************/
 .createExercise {
 	.imageDesc {
 		height: 250px;
@@ -1127,7 +1192,7 @@ footer {
 	top: 62px;
 	left: 0;
 	width: 100%;
-	height: 4px;
+	height: 3px;
 }
 
 /* Fancy blur effect */
