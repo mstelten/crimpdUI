@@ -2,7 +2,6 @@ module.exports = function (grunt) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		tester: 'moeMemoeman',
 		bgShell: {
 			runNode: {
 				cmd: 'sudo node app.js',
@@ -11,7 +10,7 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			jsANDhtml: {
-				files: ['public/js/**/*.js', 'public/partials/*.html', '/views/index.html'],
+				files: ['public/js/**/*.js', 'public/partials/*.html', 'public/index.html'],
 				options: {
 					livereload: true
 				}
