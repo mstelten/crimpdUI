@@ -1,4 +1,4 @@
-function ExerciseSearchCtrl($scope, exerciseData, userInfo) {
+crimpdApp.controller('ExerciseSearchCtrl', function ($scope, exerciseData, userInfo) {
 	$scope.loading = true;
 	$scope.exercises = {};
 	$scope.placeholderSm = "/img/exrPlaceholder-sm.png";
@@ -129,4 +129,4 @@ function ExerciseSearchCtrl($scope, exerciseData, userInfo) {
 		}
 		return equipments;
 	}
-}
+});

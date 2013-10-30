@@ -169,6 +169,7 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 		}
 	};
 }
+ExerciseEditCtrl.$inject = ['$scope', 'exerciseData', '$timeout', 'allMeta', 'exerciseModel', 'isNewExr', 'formDataObject', '$http'];
 
 ExerciseEditCtrl.resolve = {
 	allMeta: function ($q, $http) {

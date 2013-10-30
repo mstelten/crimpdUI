@@ -1,3 +1,3 @@
-function CommunityCtrl($scope) {
+crimpdApp.controller('CommunityCtrl', function ($scope) {
 
-}
+});

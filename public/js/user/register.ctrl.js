@@ -1,4 +1,4 @@
-function RegisterCtrl($scope, $http) {
+crimpdApp.controller('RegisterCtrl', function ($scope, $http) {
 	var userRegInfo = {};
 	$scope.register = function () {
 		userRegInfo = {
@@ -24,4 +24,4 @@ function RegisterCtrl($scope, $http) {
 		}
 		$scope.registerFormUtils.clicked = true;
 	};
-}
+});

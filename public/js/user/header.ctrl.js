@@ -1,4 +1,4 @@
-function HeaderCtrl($scope, userInfo, $location) {
+crimpdApp.controller('HeaderCtrl', function ($scope, userInfo, $location) {
 	$scope.state = "hide";
 	$scope.refreshUser = function () {
 		$scope.currentUser = userInfo.getUser();
@@ -32,4 +32,4 @@ function HeaderCtrl($scope, userInfo, $location) {
 			return ""
 		}
 	};
-}
+});

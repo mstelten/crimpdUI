@@ -1,4 +1,4 @@
-function LinkOAuthCtrl($scope, $http, $location, userInfo) {
+crimpdApp.controller('LinkOAuthCtrl', function ($scope, $http, $location, userInfo) {
 	$scope.linkAccount = function () {
 		$http.post(config.apiUrl + '/oauth/save/linkaccount', {'username': $scope.linkAccountModel.email, 'password': $scope.linkAccountModel.password}).
 			success(function (data) {
@@ -33,4 +33,4 @@ function LinkOAuthCtrl($scope, $http, $location, userInfo) {
 		}
 		$scope.createAccountFormUtils.clicked = true;
 	};
-}
+});

@@ -33,6 +33,7 @@ function ExerciseDetailsCtrl($scope, exerciseModel, userInfo) {
 		}
 	};
 }
+ExerciseDetailsCtrl.$inject = ['$scope', 'exerciseModel', 'userInfo'];
 
 ExerciseDetailsCtrl.resolve = {
 	exerciseModel: function ($http, $route, $q) {

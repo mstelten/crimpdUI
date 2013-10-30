@@ -1,4 +1,4 @@
-function ExerciseCreateCtrl($scope, exerciseData, $location, $timeout) {
+crimpdApp.controller('ExerciseCreateCtrl', function ($scope, exerciseData, $location, $timeout) {
 	$scope.panes = {
 		basicInfo: true
 	};
@@ -55,4 +55,4 @@ function ExerciseCreateCtrl($scope, exerciseData, $location, $timeout) {
 			}, 500);
 		};
 	};
-}
+});

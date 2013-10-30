@@ -11,55 +11,55 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 	$httpProvider.defaults.headers.common['Content-Type'] = $httpProvider.defaults.headers.post['Content-Type'];
 	$routeProvider.when('/', {
 		templateUrl: 'partials/community.html',
-		controller: CommunityCtrl
+		controller: 'CommunityCtrl'
 	}).
 	when('/community', {
 		templateUrl: 'partials/community.html',
-		controller: CommunityCtrl
+		controller: 'CommunityCtrl'
 	}).
 	when('/login', {
 		templateUrl: 'partials/login.html',
-		controller: LoginCtrl
+		controller: 'LoginCtrl'
 	}).
 	when('/register', {
 		templateUrl: 'partials/register.html',
-		controller: RegisterCtrl
+		controller: 'RegisterCtrl'
 	}).
 	when('/oauth', {
 		templateUrl: 'partials/link-oauth.html',
-		controller: LinkOAuthCtrl
+		controller: 'LinkOAuthCtrl'
 	}).
 	when('/settings', {
 		templateUrl: 'partials/user-settings.html',
-		controller: UserSettingsCtrl
+		controller: 'UserSettingsCtrl'
 	}).
 	when('/exercises', {
 		templateUrl: 'partials/exercise-search.html',
-		controller: ExerciseSearchCtrl
+		controller: 'ExerciseSearchCtrl'
 	}).
 	when('/exercises/create', {
 		templateUrl: 'partials/exercise-create.html',
-		controller: ExerciseCreateCtrl
+		controller: 'ExerciseCreateCtrl'
 	}).
 	when('/exercises/edit/:exerciseId', {
 		templateUrl: 'partials/exercise-create.html',
-		controller: ExerciseEditCtrl,
+		controller: 'ExerciseEditCtrl',
 		resolve: ExerciseEditCtrl.resolve
 	}).
 	when('/exercises/:exerciseId', {
 		templateUrl: 'partials/exercise-details.html',
-		controller: ExerciseDetailsCtrl,
+		controller: 'ExerciseDetailsCtrl',
 		resolve: ExerciseDetailsCtrl.resolve
 	}).
 	when('/privacy-policy', {
 		templateUrl: 'partials/privacy-policy.html',
 	}).
 	when('/terms', {
-                templateUrl: 'partials/terms.html',
-        }).
+		templateUrl: 'partials/terms.html',
+	}).
 	when('/dashboard', {
 		templateUrl: 'partials/exercise-search.html',
-		controller: ExerciseSearchCtrl
+		controller: 'ExerciseSearchCtrl'
 	}).
 	otherwise({redirectTo: '/'});
 });

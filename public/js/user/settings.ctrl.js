@@ -1,4 +1,4 @@
-function UserSettingsCtrl($scope, $http) {
+crimpdApp.controller('UserSettingsCtrl', function ($scope, $http) {
 	var userUpdateInfo = {};
 	var changePasswordInfo = {};
 	$scope.updateProfile = function () {
@@ -49,4 +49,4 @@ function UserSettingsCtrl($scope, $http) {
 		}
 		$scope.changePasswordFormUtils.clicked = true;
 	};
-}
+});

@@ -1,4 +1,4 @@
-function LoginCtrl($scope, $location, userInfo) {
+crimpdApp.controller('LoginCtrl', function ($scope, $location, userInfo) {
 	$scope.signIn = function () {
 		userInfo.signInUser($scope.loginModel.email, $scope.loginModel.password).then(function (data) {
 			$scope.signInResData = data;
@@ -15,4 +15,5 @@ function LoginCtrl($scope, $location, userInfo) {
 		}
 		$scope.loginFormUtils.clicked = true;
 	};
-}
+	$scope.apiUrl = config.apiUrl;
+});

@@ -11,11 +11,15 @@
     <meta name="author" content="crimpd">
 	<base href="/">
 
+    <!-- build:css css/app.full.min.css -->
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/base.css" rel="stylesheet">
 	<link href="css/sections.css" rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Raleway:400,500|Source+Sans+Pro:300|Open+Sans' rel='stylesheet' data-build="exclude">
+    <!-- endbuild -->
 
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway:400,500|Source+Sans+Pro:300|Open+Sans'>
+
+	<!-- build:js js/app.full.min.js -->
 	<script src="js/lib/jquery-1.9.1.min.js"></script>
 	<script src="js/lib/angular.js"></script>
 	<script src="js/lib/angular-route.js"></script>
@@ -25,32 +29,37 @@
 	<script src="js/lib/underscore-min.js"></script>
 	<script src="js/lib/jquery-ui-1.10.3.custom.js"></script>
 	<script src="js/lib/sortable.js"></script>
-	<script src="js/common/config.js"></script>
-	<script src="js/common/router.js"></script>
-	<script src="js/common/form.directives.js"></script>
-	<script src="js/common/etc.directives.js"></script>
-	<script src="js/common/view.ctrl.js"></script>
-	<script src="js/exercise/exercise-search.ctrl.js"></script>
-	<script src="js/exercise/exercise-details.ctrl.js"></script>
-	<script src="js/exercise/exercise-create.ctrl.js"></script>
-	<script src="js/exercise/exercise-edit.ctrl.js"></script>
-	<script src="js/exercise/exercise.srvs.js"></script>
-	<script src="js/section/community.ctrl.js"></script>
-	<script src="js/session/session.ctrls.js"></script>
-	<script src="js/user/header.ctrl.js"></script>
-	<script src="js/user/login.ctrl.js"></script>
-	<script src="js/user/oauth.ctrl.js"></script>
-	<script src="js/user/register.ctrl.js"></script>
-	<script src="js/user/settings.ctrl.js"></script>
-	<script src="js/user/user.srvs.js"></script>
-	<script src="js/common/loadingBar.js"></script>
-	<script src="http://localhost:35729/livereload.js" data-build="exclude"></script>
 
-	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--APP SCRIPTS-->
+<script src="js/common/_router.js"></script>
+<script src="js/common/config.js"></script>
+<script src="js/common/etc.directives.js"></script>
+<script src="js/common/form.directives.js"></script>
+<script src="js/common/loadingBar.js"></script>
+<script src="js/common/view.ctrl.js"></script>
+<script src="js/exercise/exercise-create.ctrl.js"></script>
+<script src="js/exercise/exercise-details.ctrl.js"></script>
+<script src="js/exercise/exercise-edit.ctrl.js"></script>
+<script src="js/exercise/exercise-search.ctrl.js"></script>
+<script src="js/exercise/exercise.srvs.js"></script>
+<script src="js/section/community.ctrl.js"></script>
+<script src="js/session/session.ctrls.js"></script>
+<script src="js/user/header.ctrl.js"></script>
+<script src="js/user/login.ctrl.js"></script>
+<script src="js/user/oauth.ctrl.js"></script>
+<script src="js/user/register.ctrl.js"></script>
+<script src="js/user/settings.ctrl.js"></script>
+<script src="js/user/user.srvs.js"></script>
+<!--APP SCRIPTS END-->
+    <!-- endbuild -->
+
+	<!-- build:remove -->
+	<script src="http://localhost:35729/livereload.js"></script>
+	<!-- /build -->
+
 	<!--[if lt IE 9]>
-	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" data-build="exclude"></script>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-
 
 </head>
 
