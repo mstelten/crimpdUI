@@ -73,7 +73,6 @@ module.exports = function (grunt) {
 				dest: '.tmp/templates.js',
 				options: {
 					module: 'crimpdApp',
-					concat: 'bin/js/app.full.min.js',
                     htmlmin: {
                         collapseWhitespace: true,
                         collapseBooleanAttributes: true
@@ -81,13 +80,32 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		concat: {
+			addTemplate: {
+				src: [ '.tmp/concat/js/app.full.min.js', '.tmp/templates.js' ],
+				dest: '.tmp/concat/js/app.full.min.js'
+			}
+		},
+		filerev: {
+			options: {
+				encoding: 'utf8',
+				algorithm: 'md5',
+				length: 8
+			},
+			files: {
+				src: [
+					'bin/css/app.full.min.css',
+					'bin/js/app.full.min.js'
+				]
+			}
+		},
 		copy: {
 			main: {
 				files: [{
-						cwd: 'public/',
-						src: ['img/**', 'index.html'],
-						dest: 'bin/',
-						expand: true
+					cwd: 'public/',
+					src: ['img/**', 'index.html'],
+					dest: 'bin/',
+					expand: true
 				}]
 			}
 		},
@@ -142,6 +160,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-usemin');
     grunt.loadNpmTasks('grunt-ngmin');
 	grunt.loadNpmTasks('grunt-processhtml');
+	grunt.loadNpmTasks('grunt-filerev');
 
 	grunt.registerTask('server', [
 		'sails-linker:appScripts',
@@ -154,21 +173,20 @@ module.exports = function (grunt) {
 		'sails-linker:appScripts',
 		'copy:main',
 		'useminPrepare',
-		'concat',
+		'ngtemplates',
+		'concat:generated',
+		'concat:addTemplate',
 		'ngmin',
 		'uglify',
 		'cssmin',
+		'filerev',
 		'usemin',
-        'ngtemplates',
         'processhtml',
 		'htmlmin',
 		'imagemin',
-		'clean:after'
+		//'clean:after'
 	]);
 };
 
-
-// add rev
-// ng-templates not working yet
 // DI minification not working yet on .resolve - exercise-edit & exercse-details
 // is concat + uglify working properly?
