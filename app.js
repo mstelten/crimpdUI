@@ -15,13 +15,9 @@ app.use(express.errorHandler());
 app.set('views', __dirname + '/public');
 app.engine('html', require('ejs').renderFile);
 
-// ROUTER
 app.get('/', function(req, res) {
   	res.render('index.html');
 });
-// app.get('/fonts/glyphicons-halflings-regular.eot', function (req, res) {
-// 	res.contentType('application/vnd.ms-fontobject');
-// });
 app.get('*', function(req, res) {
   	res.render('index.html');
 });
