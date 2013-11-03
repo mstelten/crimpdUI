@@ -51,18 +51,14 @@ myServices.factory('userInfo', function($rootScope, $http, $q) {
         	return !!(user.role === 3);
         },
 		signInUser: function (email, pw) {
-			var deferred = $q.defer();
-			$http.post(config.apiUrl + '/auth/' + email, {'password': pw}).success(function (data) {
-				deferred.resolve(data);
+			return $http.post(config.apiUrl + '/auth/' + email, {'password': pw}).then(function (result) {
+				return result.data;
 			});
-			return deferred.promise;
 		},
 		signOutUser: function () {
-			var deferred = $q.defer();
-			$http.get(config.apiUrl + '/auth/logout').success(function (data) {
-				deferred.resolve(data);
+			return $http.get(config.apiUrl + '/auth/logout').then(function (result) {
+				return result.data;
 			});
-			return deferred.promise;
 		}
 	};
 });

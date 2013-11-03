@@ -189,4 +189,3 @@ module.exports = function (grunt) {
 };
 
 // DI minification not working yet on .resolve - exercise-edit & exercse-details
-// is concat + uglify working properly?
