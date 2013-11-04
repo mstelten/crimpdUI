@@ -850,7 +850,8 @@ footer .white {
   color: #333;
   background-color: #f8cb43;
   padding: 4px 10px;
-  border-radius: 4px;
+  border-radius: 2px;
+  border-left: 3px solid #000;
 }
 .createExercise .status-tab .newExr .name,
 .createExercise .status-tab .editingExr .name {

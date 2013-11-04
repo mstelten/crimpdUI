@@ -184,8 +184,6 @@ module.exports = function (grunt) {
         'processhtml',
 		'htmlmin',
 		'imagemin',
-		//'clean:after'
+		'clean:after'
 	]);
 };
-
-// DI minification not working yet on .resolve - exercise-edit & exercse-details

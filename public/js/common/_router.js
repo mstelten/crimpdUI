@@ -44,12 +44,12 @@ crimpdApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 	when('/exercises/edit/:exerciseId', {
 		templateUrl: 'partials/exercise-create.html',
 		controller: 'ExerciseEditCtrl',
-		resolve: ExerciseEditCtrl.resolve
+		resolve: ExerciseEditCtrlResolve
 	}).
 	when('/exercises/:exerciseId', {
 		templateUrl: 'partials/exercise-details.html',
 		controller: 'ExerciseDetailsCtrl',
-		resolve: ExerciseDetailsCtrl.resolve
+		resolve: ExerciseDetailsCtrlResolve
 	}).
 	when('/privacy-policy', {
 		templateUrl: 'partials/privacy-policy.html',

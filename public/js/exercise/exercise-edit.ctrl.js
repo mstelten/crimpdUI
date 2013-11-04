@@ -1,4 +1,4 @@
-function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseModel, isNewExr, formDataObject, $http) {
+crimpdApp.controller('ExerciseEditCtrl', function ($scope, exerciseData, $timeout, allMeta, exerciseModel, isNewExr, formDataObject, $http) {
 	$scope.panes = {
 		basicInfo: true
 	};
@@ -168,25 +168,24 @@ function ExerciseEditCtrl ($scope, exerciseData, $timeout, allMeta, exerciseMode
 			$scope.imageFormUtils.clicked = true;
 		}
 	};
-}
-ExerciseEditCtrl.$inject = ['$scope', 'exerciseData', '$timeout', 'allMeta', 'exerciseModel', 'isNewExr', 'formDataObject', '$http'];
+});
 
-ExerciseEditCtrl.resolve = {
-	allMeta: function ($q, $http) {
+var ExerciseEditCtrlResolve = {
+	allMeta: ['$q', '$http', function ($q, $http) {
 		var deferred = $q.defer();
 		$http.get(config.apiUrl + '/exercise/meta').success(function (data) {
 			deferred.resolve(data.exerciseMeta);
 		});
 		return deferred.promise;
-	},
-	exerciseModel: function ($http, $route, $q) {
+	}],
+	exerciseModel: ['$http', '$route', '$q', function ($http, $route, $q) {
 		var deferred = $q.defer();
 		$http.get(config.apiUrl + '/exercise/' + $route.current.params.exerciseId).success(function (data) {
 			deferred.resolve(data);
 		});
 		return deferred.promise;
-	},
-	isNewExr: function (exerciseData) {
+	}],
+	isNewExr: ['exerciseData', function (exerciseData) {
 		return exerciseData.getIsNewExr();
-	}
+	}]
 };

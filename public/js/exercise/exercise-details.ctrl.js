@@ -1,4 +1,4 @@
-function ExerciseDetailsCtrl($scope, exerciseModel, userInfo) {
+crimpdApp.controller('ExerciseDetailsCtrl', function ($scope, exerciseModel, userInfo) {
 	$scope.exr = exerciseModel;
 	$scope.placeholderMd = "/img/exrPlaceholder-md.png";
 	$scope.isContributer = function () {
@@ -32,15 +32,14 @@ function ExerciseDetailsCtrl($scope, exerciseModel, userInfo) {
 			$scope.stepIndex = $scope.exr.images.length - 1;
 		}
 	};
-}
-ExerciseDetailsCtrl.$inject = ['$scope', 'exerciseModel', 'userInfo'];
+});
 
-ExerciseDetailsCtrl.resolve = {
-	exerciseModel: function ($http, $route, $q) {
+var ExerciseDetailsCtrlResolve = {
+	exerciseModel: ['$http', '$route', '$q', function ($http, $route, $q) {
 		var deferred = $q.defer();
 		$http.get(config.apiUrl + '/exercise/' + $route.current.params.exerciseId).success(function (data) {
 			deferred.resolve(data);
 		});
 		return deferred.promise;
-	}
+	}]
 };
